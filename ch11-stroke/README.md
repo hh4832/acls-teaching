@@ -1,0 +1,33 @@
+# 急性腦中風教學投影片
+
+急診神經急症教學用的 HTML 投影片：辨識、評估、再灌流（IVT／EVT），以及出血性中風的處置轉換。單一 `index.html`，不需建置，可離線開啟。
+
+**線上播放：** https://hh4832.github.io/stroke-teaching/
+
+## 操作
+
+- 桌機：← → 翻頁 · F 全螢幕 · N 講者備註 · P 列印（1600×900 PDF）；網址加 `#頁碼` 可直接跳頁；目錄可點選跳頁
+- 手機：自動切換直式閱讀，底部列翻頁
+- 版型與 [ACS-teaching](https://github.com/hh4832/ACS-teaching)、[ACLS_teaching_BLS](https://github.com/hh4832/ACLS_teaching_BLS) 一致
+
+## 內容（43 頁）
+
+| 章節 | 重點 |
+|---|---|
+| 前言 | 中風分類、生命之鍊 8D、黃金 60 分鐘與 Target: Stroke 目標 |
+| 一｜症狀 | TIA、ABCD²、院前量表（CPSS／FAST、LAPSS、LAMS／RACE） |
+| 二｜診斷 | 到院同步處理、圖 11-1（重繪）、鑑別診斷與必要檢查 |
+| 三｜評估 | NIHSS、mRS、ASPECTS |
+| 四｜治療 | 主流程、IVT（含 2025 台灣檢核表）、EVT 時間窗與試驗條件、血壓、抽搐、顱內壓、支持性照護、抗血小板 |
+| 五｜出血性中風 | ICH 血壓與抗凝逆轉、SAH |
+| 總結 | 口頭交班練習、Take-home、參考資料 |
+
+## 主要來源
+
+- 教科書〈急性腦中風〉第 11 章（頁 163–176）；圖 11-1 以 HTML 重繪
+- 2026 AHA/ASA 急性缺血性中風指引（doi:10.1161/STR.0000000000000513）
+- 台灣腦中風學會 2025 IVT 指引（總表三、四）
+- 2022 AHA/ASA 自發性 ICH 指引（doi:10.1161/STR.0000000000000407）
+- AHA 2023 TIA 急診科學聲明；AHA Target: Stroke Phase III
+
+教材為教學用途，臨床處置依院內 stroke code 及現行指引。
