@@ -6,9 +6,9 @@
 
 ## 操作
 
-- 桌機：← → 方向鍵、Page Up/Down、Home/End；右下角 ⛶ 全螢幕
-- 手機：上下捲動或底部「上一頁／下一頁」
-- 瀏覽器列印可輸出 PDF
+- 桌機：← → 翻頁 · F 全螢幕 · N 講者備註 · P 列印（1600×900 PDF）；網址加 `#頁碼` 可直接跳頁；目錄可點選跳頁
+- 手機：自動切換直式閱讀，底部列翻頁
+- 版型與 [ACS-teaching](https://github.com/hh4832/ACS-teaching)、[ACLS_teaching_BLS](https://github.com/hh4832/ACLS_teaching_BLS) 一致
 
 ## 內容（43 頁）
 
