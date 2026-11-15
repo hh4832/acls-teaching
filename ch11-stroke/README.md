@@ -1,14 +1,14 @@
 # 急性腦中風教學投影片
 
-急診神經急症教學用的 HTML 投影片：辨識、評估、再灌流（IVT／EVT），以及出血性中風的處置轉換。單一 `index.html`，不需建置，可離線開啟。
+急診神經急症教學用的 HTML 投影片：辨識、評估、再灌流（IVT／EVT），以及出血性中風的處置轉換。`index.html` 只放本章內容，共用版型在 [`../shared/`](../shared/)；不需建置。
 
-**線上播放：** https://hh4832.github.io/stroke-teaching/
+**線上播放：** https://hh4832.github.io/acls-teaching/ch11-stroke/
 
 ## 操作
 
 - 桌機：← → 翻頁 · F 全螢幕 · N 講者備註 · P 列印（1600×900 PDF）；網址加 `#頁碼` 可直接跳頁；目錄可點選跳頁
 - 手機：自動切換直式閱讀，底部列翻頁
-- 版型與 [ACS-teaching](https://github.com/hh4832/ACS-teaching)、[ACLS_teaching_BLS](https://github.com/hh4832/ACLS_teaching_BLS) 一致
+- 版型與同 repo 的 [BLS](../ch03-bls/)、[ACS](../ch09-acs/) 共用
 
 ## 內容（43 頁）
 

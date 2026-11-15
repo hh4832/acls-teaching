@@ -2,7 +2,7 @@
 
 ACLS 講師教學用的 HTML 投影片。以教科書〈第 9 章 急性冠狀動脈症候群〉（陳思州）為架構，逐項對照 **2025 ACC/AHA/ACEP/NAEMSP/SCAI ACS Guideline**，以及 2025 AHA CPR/ECC Part 11（Post-Cardiac Arrest Care）。
 
-**線上播放：** https://hh4832.github.io/ACS-teaching/
+**線上播放：** https://hh4832.github.io/acls-teaching/ch09-acs/
 
 ## 操作
 
@@ -27,6 +27,6 @@ ACLS 講師教學用的 HTML 投影片。以教科書〈第 9 章 急性冠狀�
 
 ## 檔案
 
-單一檔案 `index.html`，不需建置，直接用瀏覽器開啟即可。
+`index.html` 只放本章內容，共用版型在 [`../shared/`](../shared/)；不需建置。
 
 > 本投影片供教學使用。劑量請依病人狀況、藥品仿單與院內規範確認。
