@@ -7,6 +7,7 @@ ACLS 講師教學用的 HTML 投影片，依教科書章節整理，逐項對照
 | 章節 | 資料夾 | 線上播放 |
 |---|---|---|
 | 第 3 章 成人基本救命術（BLS） | [`ch03-bls/`](ch03-bls/) | https://hh4832.github.io/acls-teaching/ch03-bls/ |
+| 第 4 章 呼吸道、呼吸動力的處置及氧氣治療 | [`ch04-airway/`](ch04-airway/) | https://hh4832.github.io/acls-teaching/ch04-airway/ |
 | 第 9 章 急性冠狀動脈症候群（ACS） | [`ch09-acs/`](ch09-acs/) | https://hh4832.github.io/acls-teaching/ch09-acs/ |
 | 第 11 章 急性腦中風 | [`ch11-stroke/`](ch11-stroke/) | https://hh4832.github.io/acls-teaching/ch11-stroke/ |
 
