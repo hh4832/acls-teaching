@@ -55,6 +55,7 @@ body.m .dope{grid-template-columns:1fr 1fr}
 table.tight td,table.tight th{font-size:19px}
 .ph{margin:0;display:flex;flex-direction:column;height:200px}
 .ph img{flex:1;min-height:0;width:100%;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px}
+.ph .cr{font:500 13px var(--mono);color:#a29c8e;margin-top:3px;line-height:1.3;word-break:break-all}
 .ph figcaption{font-size:17px;line-height:1.4;color:var(--muted);margin-top:6px}
 .ph.empty .slot{flex:1;min-height:0;border:3px dashed #c9c3b5;border-radius:12px;display:flex;align-items:center;justify-content:center;font:700 22px var(--font);color:#a29c8e;background:#faf8f2}
 .fio .tn{position:absolute;top:0;bottom:0;display:flex;align-items:center;font-size:17px;line-height:1.25;color:var(--ink);padding:0 8px;justify-content:flex-start}
@@ -183,8 +184,8 @@ table.tight td,table.tight th{font-size:19px}
     </div>
     <div class="card teal"><h3>院前：屏障裝置</h3>
       <div class="cols c2" style="gap:16px;margin-top:6px">
-        <figure class="ph"><img src="https://s3.us-east-2.amazonaws.com/medictests-storage-production/images/ckeditor/529/content_pocket_mask.png" alt="口袋面罩" style="object-fit:contain"><figcaption><b>口袋面罩</b> pocket mask<br>通氣較佳，<b>有就優先用</b></figcaption></figure>
-        <figure class="ph empty"><div class="slot">face shield 圖片待補</div><figcaption><b>面膜式防護片</b> face shield<br>通氣較差</figcaption></figure>
+        <figure class="ph"><img src="https://s3.us-east-2.amazonaws.com/medictests-storage-production/images/ckeditor/529/content_pocket_mask.png" alt="口袋面罩" style="object-fit:contain"><div class="cr">圖片來源：s3.us-east-2.amazonaws.com</div><figcaption><b>口袋面罩</b> pocket mask<br>通氣較佳，<b>有就優先用</b></figcaption></figure>
+        <figure class="ph"><img src="https://www.defibshop.com.au/wp-content/uploads/2023/10/face-shield_3-scaled.jpg" alt="CPR face shield"><div class="cr">圖片來源：www.defibshop.com.au</div><figcaption><b>面膜式防護片</b> face shield<br>通氣較差</figcaption></figure>
       </div>
       <p class="lbl" style="margin-top:10px">一般民眾：口袋面罩、防護片、直接口對口皆可接受<br>EMS：確實打開呼吸道＋口袋面罩給氧，<b>可能改善存活</b></p></div>
   </div>
@@ -221,7 +222,7 @@ table.tight td,table.tight th{font-size:19px}
 <!-- ============ AIRWAY OBSTRUCTION SIGNS ============ -->
 <section class="slide">
   <div class="kicker">Airway assessment</div>
-  <h2>異物梗塞：輕微 vs 嚴重</h2><div class="rule"></div>
+  <h2>可能影響呼吸道的情形</h2><div class="rule"></div>
   <div class="cols" style="grid-template-columns:1fr 1fr 0.8fr;gap:22px">
     <div class="card teal"><h3>輕微（部分）阻塞</h3>
       <ul class="dots"><li><b>大力咳嗽</b></li><li>能說話、能發聲</li><li>問「你噎到了嗎？」→ <b>點頭</b></li></ul>
@@ -265,10 +266,10 @@ table.tight td,table.tight th{font-size:19px}
   <h2>打開呼吸道：壓額提下顎 vs 下顎推擠</h2><div class="rule"></div>
   <div class="cols c2" style="gap:36px">
     <div class="card navy"><h3>壓額－提下顎法 head tilt–chin lift</h3>
-      <figure class="ph" style="height:230px"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2hQ_JECBbG_EryZ8EDjB6Ax4CIrhJ11subxsNoT_5cfuu9E1bkT0nSXc&amp;s=10" alt="壓額提下顎法"></figure>
+      <figure class="ph" style="height:230px"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2hQ_JECBbG_EryZ8EDjB6Ax4CIrhJ11subxsNoT_5cfuu9E1bkT0nSXc&amp;s=10" alt="壓額提下顎法"><div class="cr">圖片來源：Google 圖片搜尋（原始來源待查）</div></figure>
       <p style="margin-top:10px"><b>非頸椎創傷</b> <span class="cor c1">1</span>；一般民眾不論是否創傷都教這招</p></div>
     <div class="card red"><h3>下顎推擠法 jaw thrust</h3>
-      <figure class="ph" style="height:230px"><img src="https://www.firstaidweb.com/wp-content/uploads/2025/02/Jaw-thrust-e1742741981703.png" alt="下顎推擠法"></figure>
+      <figure class="ph" style="height:230px"><img src="https://www.firstaidweb.com/wp-content/uploads/2025/02/Jaw-thrust-e1742741981703.png" alt="下顎推擠法"><div class="cr">圖片來源：www.firstaidweb.com</div></figure>
       <p style="margin-top:10px"><b>懷疑頸椎損傷</b>，受訓者執行，避免過度伸展 <span class="cor c1">1</span>；頸椎以<b>徒手固定</b></p></div>
   </div>
   <div class="callout red" style="margin-top:20px"><span class="h">抽吸</span>從<b>口角</b>或鼻孔放入，<b>勿從嘴巴正中間進去</b>（刺激懸雍垂、誘發嘔吐）。</div>
@@ -282,11 +283,11 @@ table.tight td,table.tight th{font-size:19px}
   <h2>口咽 vs 鼻咽呼吸道<small>適當使用甚至可避免插管</small></h2><div class="rule"></div>
   <div class="cols c2" style="gap:30px">
     <div class="card navy"><h3>口咽呼吸道 OPA</h3>
-      <figure class="ph" style="height:180px"><img src="https://www.openhouseproducts.com/wp-content/uploads/2024/05/30-00224.jpg" alt="口咽呼吸道"></figure>
+      <figure class="ph" style="height:180px"><img src="https://www.openhouseproducts.com/wp-content/uploads/2024/05/30-00224.jpg" alt="口咽呼吸道"><div class="cr">圖片來源：www.openhouseproducts.com</div></figure>
       <p style="margin-top:8px">時機：完全昏迷、<b class="hl">無嘔吐或咳嗽反射</b></p>
       <ul class="dots sm"><li>尺寸：<b>嘴角 → 同側耳垂</b>，先比再放</li><li>反向放入，碰咽後壁轉 <b>180°</b></li><li>太長壓會厭、太短推舌根；有反射 → 嘔吐</li></ul></div>
     <div class="card teal"><h3>鼻咽呼吸道 NPA</h3>
-      <figure class="ph" style="height:180px"><img src="https://www.uscimaging.com/wp-content/uploads/2026/01/IMG-20220418-WA0021u.jpg" alt="鼻咽呼吸道"></figure>
+      <figure class="ph" style="height:180px"><img src="https://www.uscimaging.com/wp-content/uploads/2026/01/IMG-20220418-WA0021u.jpg" alt="鼻咽呼吸道"><div class="cr">圖片來源：www.uscimaging.com</div></figure>
       <p style="margin-top:8px">時機：半昏迷、<b>仍有反射</b>；牙關緊閉也可</p>
       <ul class="dots sm"><li>尺寸：<b>鼻尖 → 耳垂</b>；先潤滑，斜面朝鼻中隔</li><li>鼻出血（30%）、喉痙攣、心搏過緩</li><li>顏面創傷、<b>疑顱底骨折</b>、凝血異常 → 用 OPA <span class="cor c2a">2a</span></li></ul></div>
   </div>
@@ -323,24 +324,30 @@ table.tight td,table.tight th{font-size:19px}
   <h2>聲門上呼吸道 SGA：LMA 與 i-gel</h2><div class="rule"></div>
   <div class="cols" style="grid-template-columns:1fr 1fr 0.9fr;gap:22px">
     <div class="card teal"><h3>喉頭面罩 LMA</h3>
-      <figure class="ph" style="height:150px"><img src="https://activelifemed.com/wp-content/uploads/2024/07/lma.png" alt="LMA"></figure>
+      <figure class="ph" style="height:150px"><img src="https://activelifemed.com/wp-content/uploads/2024/07/lma.png" alt="LMA"><div class="cr">圖片來源：activelifemed.com</div></figure>
       <table class="tight" style="margin-top:8px">
-        <tr><th>尺寸</th><th>對象</th></tr>
-        <tr><td><b>3</b></td><td>瘦一點</td></tr>
-        <tr><td><b>4</b></td><td>一般成人（50–70 kg）</td></tr>
-        <tr><td><b>5</b></td><td>胖一點</td></tr>
+        <tr><th>尺寸</th><th>體重</th><th>氣囊最大量</th></tr>
+        <tr><td><b>3</b></td><td>30–50 kg</td><td>20 mL</td></tr>
+        <tr><td><b>4</b></td><td>50–70 kg</td><td>30 mL</td></tr>
+        <tr><td><b>5</b></td><td>70–100 kg</td><td>40 mL</td></tr>
+        <tr><td><b>6</b></td><td>&gt; 100 kg</td><td>50 mL</td></tr>
       </table>
-      <p style="margin-top:8px">氣囊打氣 <b>(size − 1) × 10 mL</b></p></div>
+      <p style="margin-top:6px;font-size:19px">記法：<b>(size − 1) × 10 mL</b></p></div>
     <div class="card navy"><h3>i-gel</h3>
-      <figure class="ph" style="height:150px"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrwcm6qYZE5i3hbxzvlwwUj59W5QmeaTGaoZwNx_I0zhwB2MW7kEVQeXk&amp;s=10" alt="i-gel"></figure>
+      <figure class="ph" style="height:150px"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrwcm6qYZE5i3hbxzvlwwUj59W5QmeaTGaoZwNx_I0zhwB2MW7kEVQeXk&amp;s=10" alt="i-gel"><div class="cr">圖片來源：Google 圖片搜尋（原始來源待查）</div></figure>
       <p style="margin-top:8px"><b>不用打氣</b>（凝膠軟罩）</p>
-      <figure class="ph" style="height:170px;margin-top:6px"><img src="https://i0.wp.com/openairway.org/wp-content/uploads/2015/06/image1.jpg?ssl=1" alt="i-gel 尺寸表"><figcaption>i-gel 尺寸表</figcaption></figure></div>
+      <table class="tight" style="margin-top:8px">
+        <tr><th>尺寸</th><th>體重</th><th>顏色</th></tr>
+        <tr><td><b>3</b></td><td>30–60 kg</td><td>黃</td></tr>
+        <tr><td><b>4</b></td><td>50–90 kg</td><td>綠</td></tr>
+        <tr><td><b>5</b></td><td>&gt; 90 kg</td><td>橘</td></tr>
+      </table></div>
     <div>
       <div class="card teal"><h3>適用</h3><ul class="dots sm"><li><b>不需看到聲帶</b>，訓練後 EMT 可執行</li><li><b>頸椎受傷</b>不能動脖子</li><li><b>困難插管</b>時的通氣與給氧</li><li>CPR 中放置<b>不需中斷壓胸</b></li></ul></div>
       <div class="card red" style="margin-top:16px"><h3>注意</h3><ul class="dots sm"><li>口咽損傷、聲帶水腫</li><li>通氣量大、壓力高、放太久 → <b>胃內容物逆流</b></li><li>不能完全防止吸入</li></ul></div>
     </div>
   </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.83</div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.83；尺寸表：Teleflex LMA Classic／Supreme 使用說明、Intersurgical i-gel 產品資料</div>
   <div class="notes">臨床最常見的 SGA 是 LMA 與 i-gel，食道氣管合併管與喉管現在少用，不介紹。LMA 尺寸以體重抓：一般成人 4 號，胖一點 5 號，瘦一點 3 號；氣囊最多打 (size−1)×10 mL。i-gel 是凝膠軟罩，不需打氣，依尺寸表選號。LMA Fastrach 可經 LMA 再插 ET。</div>
 </section>
 
@@ -404,9 +411,9 @@ table.tight td,table.tight th{font-size:19px}
 <section class="slide">
   <div class="kicker">Bag-valve-mask</div>
   <h2>BVM 的構造<small>俗稱 Ambu（商品名）</small></h2><div class="rule"></div>
-  <figure class="ph empty" style="height:600px;margin-top:6px"><div class="slot">Ambu 構造圖（待補）</div></figure>
+  <figure class="ph" style="height:640px;margin-top:6px"><img src="assets/bvm-structure.jpg" alt="BVM 構造圖" style="border:none;padding:0;background:none"><div class="cr">圖片來源：講師提供</div></figure>
   <div class="src">ACLS 精華第七版 第 4 章 p.69–70</div>
-  <div class="notes">構造圖待補。講解時可帶到：面罩、病人端單向閥（不吸入呼出氣體）、自動充氣球體、氧氣接頭（15 L/min）、儲氧袋（提高氧濃度到接近 100%）、壓力釋放閥（成人常設 60 cmH₂O，CPR 時應關閉）。</div>
+  <div class="notes">講解時可帶到：面罩、病人端單向閥（不吸入呼出氣體）、自動充氣球體、氧氣接頭（15 L/min）、儲氧袋（提高氧濃度到接近 100%）、壓力釋放閥（成人常設 60 cmH₂O，CPR 時應關閉）。</div>
 </section>
 
 <!-- ============ BVM TECHNIQUE ============ -->
@@ -421,8 +428,8 @@ table.tight td,table.tight th{font-size:19px}
       <li><b>C-E 手勢</b>單手扣緊，另一手擠球</li>
       <li><b>二人操作更理想</b>：一人雙手密合面罩，一人擠球 <span class="cor c2a">2a</span></li>
     </ol>
-    <figure class="ph" style="height:440px"><img src="https://images.squarespace-cdn.com/content/v1/51af14e4e4b08dce860cec82/1574928415183-RKB19BSXBLBQOW072D3E/CE+Top+Logo.png" alt="C-E 手勢"><figcaption><b>C-E 手勢</b>：拇指＋食指成 C 壓面罩；三指成 E 扣下顎骨上抬</figcaption></figure>
-    <figure class="ph empty" style="height:440px"><div class="slot">雙人 BVM 圖片待補</div><figcaption><b>雙人法</b>：雙手 C-E 密合，另一人擠球</figcaption></figure>
+    <figure class="ph" style="height:440px"><img src="assets/bvm-ce-grip.jpg" alt="C-E 手勢" style="border:none;padding:0;background:none"><div class="cr">圖片來源：AI 生成（ChatGPT）</div><figcaption><b>C-E 手勢</b>：拇指＋食指成 C 壓面罩；三指成 E 扣下顎骨上抬</figcaption></figure>
+    <figure class="ph" style="height:440px"><img src="assets/bvm-two-person.jpg" alt="雙人 BVM" style="border:none;padding:0;background:none"><div class="cr">圖片來源：AI 生成（ChatGPT）</div><figcaption><b>雙人法</b>：雙手 C-E 密合，另一人擠球</figcaption></figure>
   </div>
   <div class="callout red" style="margin-top:16px"><span class="h">陷阱</span>緊張時不自覺<b>捏太快、太大</b> → 胃脹氣、逆流、回心血量 ↓、ROSC 機會 ↓</div>
   <div class="src">ACLS 精華第七版 第 4 章 p.68、70</div>
@@ -478,7 +485,7 @@ table.tight td,table.tight th{font-size:19px}
       <div class="nm">Venturi 面罩<small>4–8 → 10–12 L/min</small></div><div class="trk"><div class="seg" style="left:5%;width:37.5%;background:var(--amber)">24–50%</div><div class="tn" style="left:45%"><b>COPD</b>：FiO₂ <b>精準穩定</b></div></div>
       <div class="nm">非再呼吸面罩 NRM<small>10–15 L/min</small></div><div class="trk"><div class="tn" style="left:2%;width:46%;text-align:right">6 L ≈ 60%，每 +1 L 約 +10%；<b>儲氣袋不可塌陷</b></div><div class="seg" style="left:50%;width:50%;background:linear-gradient(90deg,#e7a3ad,var(--red))">60% → 95–100%</div></div>
     </div>
-    <figure class="ph" style="height:400px"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Adult_with_air_entrainment_%28Venturi%29_mask.png" alt="Venturi 面罩"><figcaption><b>Venturi 面罩</b>：噴嘴決定 FiO₂；好處是 COPD 病人氧濃度穩定，不抑制呼吸驅動力</figcaption></figure>
+    <figure class="ph" style="height:400px"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Adult_with_air_entrainment_%28Venturi%29_mask.png" alt="Venturi 面罩"><div class="cr">圖片來源：upload.wikimedia.org</div><figcaption><b>Venturi 面罩</b>：噴嘴決定 FiO₂；好處是 COPD 病人氧濃度穩定，不抑制呼吸驅動力</figcaption></figure>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.71–72</div>
   <div class="notes">用色條比較 FiO₂ 範圍，每種裝置的重點直接寫在色條旁。Venturi 是 4–8 L/min 給 24–40%，10–12 L/min 給 40–50%，特點是精準穩定，適合 COPD 合併 CO₂ 過高。NRM 正常使用吸入氧濃度可達 94% 以上，10–15 L/min 約 95–100%。</div>
@@ -606,7 +613,7 @@ table.tight td,table.tight th{font-size:19px}
       <tr><td><b>時間</b></td><td><b>20 秒</b>內；不成 → BVM 30–60 秒再試；CPR 中停壓 <b>&lt; 10 秒</b></td><td>一直試、不給氧</td></tr>
       <tr><td><b>固定</b></td><td>膠帶＋防咬器；CXR 管尖在 <b>carina 上 2–3 cm</b></td><td>躁動推入 → 單肺通氣</td></tr>
     </table>
-    <figure class="ph" style="height:560px"><img src="https://i0.wp.com/airwayjedi.com/wp-content/uploads/2018/10/Adult-airway-anatomy-cross-section.png?resize=528%2C567&amp;ssl=1" alt="呼吸道解剖"><figcaption>葉片尖端放在 <b>vallecula</b>（會厭谿：舌根與會厭之間）</figcaption></figure>
+    <figure class="ph" style="height:560px"><img src="https://i0.wp.com/airwayjedi.com/wp-content/uploads/2018/10/Adult-airway-anatomy-cross-section.png?resize=528%2C567&amp;ssl=1" alt="呼吸道解剖"><div class="cr">圖片來源：i0.wp.com</div><figcaption>葉片尖端放在 <b>vallecula</b>（會厭谿：舌根與會厭之間）</figcaption></figure>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.74–75</div>
   <div class="notes">喉鏡是「舉」不是「撬」，以門牙為支點會斷牙又看不到。聲帶看不到時請助手做 BURP（下一頁），並拉開右嘴角。CPR 中插管：喉鏡已放進口腔、管子備好，才喊停壓胸。</div>
@@ -651,23 +658,23 @@ table.tight td,table.tight th{font-size:19px}
 <section class="slide">
   <div class="kicker">Induction agents</div>
   <h2>鎮靜誘導藥物：怎麼選、給多少</h2><div class="rule"></div>
-  <div class="cols" style="grid-template-columns:1fr 360px;gap:24px">
+  <div class="cols" style="grid-template-columns:1fr 430px;gap:24px">
     <table class="tight">
-      <tr><th style="width:15%">藥物</th><th style="width:19%">劑量 IV</th><th style="width:15%">起效／作用</th><th style="width:25%">優點／適用</th><th>缺點／避免</th></tr>
-      <tr><td><b>Thiamylal</b><br><span class="lbl" style="font-size:16px">巴比妥</span></td><td>3–5 mg/kg（需泡製）</td><td>20–40 秒／5–10 分</td><td>護腦、降腦壓 → <b>頭傷 IICP</b></td><td>心臟抑制、<b>低血壓</b>；低血容減量或不用</td></tr>
-      <tr><td><b>Ketamine</b></td><td>2 mg/kg</td><td>30–60 秒／15 分</td><td>保留呼吸驅動；擴支氣管 → <b>氣喘、休克</b></td><td>腦壓、眼壓、分泌物 ↑；成人解離反應</td></tr>
-      <tr><td><b>Midazolam</b></td><td><b>0.1–0.3 mg/kg</b></td><td>2 分／60–120 分</td><td>急救車常備</td><td>劑量範圍廣；老人、瘦弱、低血容先 <b>2.5 mg</b> 緩推</td></tr>
-      <tr><td><b>Etomidate</b></td><td>0.2–0.4 mg/kg</td><td>60 秒／3–5 分</td><td><b>血流動力影響極小</b>、降腦壓</td><td>暫時抑制 cortisol；肌陣攣</td></tr>
-      <tr><td><b>Propofol</b></td><td><b>1–2 mg/kg</b></td><td>20–40 秒／3–5 分</td><td>甦醒快</td><td>血壓降約 15%、注射痛</td></tr>
+      <tr><th style="width:15%">藥物</th><th style="width:19%">劑量 IV</th><th style="width:15%">起效<br>作用</th><th style="width:25%">優點<br>適用</th><th>缺點<br>避免</th></tr>
+      <tr><td><b>Thiamylal</b><br><span class="lbl" style="font-size:16px">巴比妥</span></td><td>3–5 mg/kg（需泡製）</td><td>20–40 秒<br>5–10 分</td><td>護腦、降腦壓 → <b>頭傷 IICP</b></td><td>心臟抑制、<b>低血壓</b>；低血容減量或不用</td></tr>
+      <tr><td><b>Ketamine</b></td><td>2 mg/kg</td><td>30–60 秒<br>15 分</td><td>保留呼吸驅動；擴支氣管 → <b>氣喘、休克</b></td><td>腦壓、眼壓、分泌物 ↑；成人解離反應</td></tr>
+      <tr><td><b>Midazolam</b></td><td><b>0.1–0.3 mg/kg</b></td><td>2 分<br>60–120 分</td><td>急救車常備</td><td>劑量範圍廣；老人、瘦弱、低血容先 <b>2.5 mg</b> 緩推</td></tr>
+      <tr><td><b>Etomidate</b></td><td>0.2–0.4 mg/kg</td><td>60 秒<br>3–5 分</td><td><b>血流動力影響極小</b>、降腦壓</td><td>暫時抑制 cortisol；肌陣攣</td></tr>
+      <tr><td><b>Propofol</b></td><td><b>1–2 mg/kg</b></td><td>20–40 秒<br>3–5 分</td><td>甦醒快</td><td>血壓降約 15%、注射痛</td></tr>
     </table>
     <div class="card amber"><h3>依狀況選</h3>
       <table class="tight" style="margin-top:4px">
         <tr><td>血壓正常</td><td>都可</td></tr>
-        <tr><td>輕度低血壓</td><td>midazolam／ketamine／etomidate</td></tr>
-        <tr><td>嚴重低血壓</td><td><b>etomidate／ketamine</b></td></tr>
-        <tr><td>IICP、血壓正常</td><td>thiamylal／propofol／etomidate</td></tr>
+        <tr><td>輕度低血壓</td><td>midazolam<br>ketamine<br>etomidate</td></tr>
+        <tr><td>嚴重低血壓</td><td><b>etomidate<br>ketamine</b></td></tr>
+        <tr><td>IICP、血壓正常</td><td>thiamylal<br>propofol<br>etomidate</td></tr>
         <tr><td>IICP、低血壓</td><td><b>etomidate</b></td></tr>
-        <tr><td>氣喘重積</td><td><b>ketamine</b>／propofol</td></tr>
+        <tr><td>氣喘重積</td><td><b>ketamine</b><br>propofol</td></tr>
       </table></div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 圖 4-1、表 4-1、p.79–80</div>
@@ -690,32 +697,14 @@ table.tight td,table.tight th{font-size:19px}
         <tr><td></td><td>大面積挫傷或燒燙傷、<b>高血鉀、腎衰竭</b></td></tr>
       </table></div>
     <div>
-      <div class="card navy"><h3>Rocuronium（非去極化）</h3><p><b>0.9–1.2 mg/kg IV</b>；<b>&lt; 1 分</b>起效，作用約 <b>40 分</b></p><p class="lbl">插管劑量下起效接近 SCH、副作用較少；肝腎功能異常作用可能延長</p></div>
-      <div class="card" style="margin-top:16px"><h3>Vecuronium</h3><p>0.1–0.2 mg/kg IV；2–3 分起效，作用 30–60 分</p></div>
-      <div class="card amber" style="margin-top:16px"><h3>SCH 高血鉀高風險期</h3><ul class="dots sm"><li>燒傷、肌肉受傷：受傷後 <b>3–60 天</b></li><li>上運動神經元疾病：<b>1 週–6 個月</b></li></ul></div>
+      <div class="card navy"><h3>Rocuronium（非去極化）</h3><p><b>0.9–1.2 mg/kg IV</b>；<b>&lt; 1 分</b>起效，作用約 <b>40 分</b></p><p class="lbl">起效接近 SCH、副作用較少；肝腎異常作用延長</p></div>
+      <div class="card" style="margin-top:12px"><h3>Vecuronium</h3><p>0.1–0.2 mg/kg IV；2–3 分起效，作用 30–60 分</p></div>
+      <div class="card amber" style="margin-top:12px"><h3>SCH 高血鉀高風險期</h3><ul class="dots sm"><li>燒傷、肌肉受傷：受傷後 <b>3–60 天</b></li><li>上運動神經元疾病：<b>1 週–6 個月</b></li></ul></div>
     </div>
   </div>
+  <div class="callout red" style="margin-top:12px;padding:10px 20px;font-size:20px"><span class="h">注意作用時間</span>Rocuronium 約 <b>40 分</b>（SCH 3–5 分）→ 插管後要<b>持續鎮靜</b>；若<b>插管困難</b>，病人短時間<b>無法恢復自主呼吸</b>，更麻煩。</div>
   <div class="src">ACLS 精華第七版 第 4 章 表 4-1、表 4-2、p.81–82</div>
   <div class="notes">「大家常常忽略 SCH 的禁忌症」——腎衰竭高血鉀的洗腎病人是急診最常見的陷阱，這時改用 rocuronium。</div>
-</section>
-
-<!-- ============ TABLE 4-1 ============ -->
-<section class="slide">
-  <div class="kicker">Duration of action</div>
-  <h2>作用時間比較久的藥</h2><div class="rule"></div>
-  <div class="tl-bars">
-    <div class="fio" style="grid-template-columns:230px 1fr">
-      <div></div><div class="ax"><span style="left:0%">0</span><span style="left:25%">30 分</span><span style="left:50%">60 分</span><span style="left:75%">90 分</span><span style="left:100%">120 分</span></div>
-      <div class="nm">Midazolam</div><div class="trk"><div class="seg" style="left:50%;width:50%;background:var(--red)">60–120 分</div></div>
-      <div class="nm">Rocuronium</div><div class="trk"><div class="seg" style="left:0;width:33.3%;background:var(--red)">約 40 分</div></div>
-      <div class="nm">Vecuronium</div><div class="trk"><div class="seg" style="left:25%;width:25%;background:var(--amber)">30–60 分</div></div>
-      <div class="nm">Fentanyl</div><div class="trk"><div class="seg" style="left:25%;width:25%;background:var(--amber)">30–60 分</div></div>
-      <div class="nm" style="color:var(--muted)">其他誘導藥、SCH</div><div class="trk"><div class="seg" style="left:0;width:12.5%;background:#a9b2c3">≤ 15 分</div></div>
-    </div>
-  </div>
-  <div class="callout red" style="margin-top:26px"><span class="h">臨床意義</span>Etomidate、propofol、SCH 幾分鐘就退；用了 <b>rocuronium</b> 要記得插管後<b>持續鎮靜</b>，避免病人清醒卻不能動。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 表 4-1（p.78）</div>
-  <div class="notes">劑量與時間依表 4-1。Ketamine 約 15 分、thiamylal 5–10 分、etomidate 與 propofol 3–5 分、SCH 3–5 分。重點：短效鎮靜加長效肌鬆，插管後一定要接續鎮靜止痛。</div>
 </section>
 
 <!-- ============ CONFIRM POSITION ============ -->
@@ -800,12 +789,12 @@ table.tight td,table.tight th{font-size:19px}
     <div class="card red"><h3>環甲膜針刺術（緩兵之計）</h3>
       <div class="cols" style="grid-template-columns:1fr 250px;gap:16px">
         <ol class="steps"><li>Adam's apple 往腳側摸到凹陷</li><li><b>12–14 G</b> 導管接空針，正中 <b>45°</b> 朝腳側刺入</li><li>負壓消失 → 推軟管、抽硬管</li></ol>
-        <figure class="ph" style="height:250px"><img src="https://images.squarespace-cdn.com/content/v1/536a936ae4b09724c1063b54/1415366590839-NJDRFUPZ5GVVH7WBBRS2/image-asset.jpeg" alt="針筒接頭作法"></figure>
+        <figure class="ph" style="height:250px"><img src="https://images.squarespace-cdn.com/content/v1/536a936ae4b09724c1063b54/1415366590839-NJDRFUPZ5GVVH7WBBRS2/image-asset.jpeg" alt="針筒接頭作法"><div class="cr">圖片來源：images.squarespace-cdn.com</div></figure>
       </div>
       <div class="callout red" style="margin-top:8px"><span class="h">另類作法（拿針筒）</span>軟管接 <b>3 mL 針筒</b>（拔掉推柄）→ 塞入 <b>7.5 ET 的接頭</b> → 接 BVM 通氣</div>
       <p class="lbl">易 CO₂ 滯留，氧氣約撐<b>半小時</b> → 趕快找麻醉科</p></div>
     <div class="card navy"><h3>環甲膜切開術 cricothyroidotomy</h3>
-      <figure class="ph" style="height:290px"><img src="https://traumaicu.org/wp-content/uploads/2024/09/Cricothyroidotomy.jpg" alt="環甲膜切開術"></figure>
+      <figure class="ph" style="height:290px"><img src="https://traumaicu.org/wp-content/uploads/2024/09/Cricothyroidotomy.jpg" alt="環甲膜切開術"><div class="cr">圖片來源：traumaicu.org</div></figure>
       <ul class="dots sm" style="margin-top:10px"><li>放 <b>6 號 ET</b>，送到 cuff 進入氣管即可</li><li>或 <b>6.0 低壓帶囊氣切管</b></li><li>病人原有氣切管：<b>記得先檢查</b>能不能用</li></ul></div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.84</div>
