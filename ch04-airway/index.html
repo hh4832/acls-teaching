@@ -53,6 +53,12 @@ ol.steps.from7{counter-reset:s 6}
 .dope p{font-size:19px!important;color:var(--muted);margin-top:8px;line-height:1.45}
 body.m .dope{grid-template-columns:1fr 1fr}
 table.tight td,table.tight th{font-size:19px}
+.ph{margin:0;display:flex;flex-direction:column;height:200px}
+.ph img{flex:1;min-height:0;width:100%;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px}
+.ph figcaption{font-size:17px;line-height:1.4;color:var(--muted);margin-top:6px}
+.ph.empty .slot{flex:1;min-height:0;border:3px dashed #c9c3b5;border-radius:12px;display:flex;align-items:center;justify-content:center;font:700 22px var(--font);color:#a29c8e;background:#faf8f2}
+.fio .tn{position:absolute;top:0;bottom:0;display:flex;align-items:center;font-size:17px;line-height:1.25;color:var(--ink);padding:0 8px;justify-content:flex-start}
+.fio .trk .tn[style*="text-align:right"]{justify-content:flex-end}
 </style>
 </head>
 <body>
@@ -64,26 +70,32 @@ table.tight td,table.tight th{font-size:19px}
   <div class="inner">
     <div class="kicker">ACLS Instructor · Chapter 4</div>
     <h1>呼吸道、呼吸動力的處置及氧氣治療<br><span style="font-size:52px;font-weight:500;color:#c8d3ea">Airway, Ventilation &amp; Oxygen Therapy</span></h1>
-    <p class="sub">道・力・氣：從打開呼吸道到進階呼吸道與波形二氧化碳監測<br>依 2025 AHA 成人 ALS／BLS 指引核對</p>
     <p class="sub" style="margin-top:28px;font-size:30px;color:#fff;font-weight:700">講師：台北市立聯合醫院陽明院區　急診主治醫師 懷顥</p>
   </div>
-  <div class="meta">原著：鄭偉君、楊久滕、黃彥達〈第 4 章 呼吸道、呼吸動力的處置及氧氣治療〉<br>操作：← → 翻頁 · F 全螢幕 · N 備註 · P 列印</div>
-  <div class="notes">開場：心臟停止時的通氣與給氧，以及呼吸窘迫病人的呼吸道處置。全章用「道、力、氣」貫穿：先確保呼吸道暢通，再看呼吸動力夠不夠，最後評估氧氣供需。標題心電圖帶換成波形二氧化碳（capnography）的方波，呼應本章的確認工具。</div>
+  <div class="meta">原著：鄭偉君、楊久滕、黃彥達〈第 4 章 呼吸道、呼吸動力的處置及氧氣治療〉　依 2025 AHA 成人 ALS／BLS 指引核對<br>操作：← → 翻頁 · F 全螢幕 · N 備註 · P 列印</div>
+  <div class="notes">開場：心臟停止時的通氣與給氧，以及呼吸窘迫病人的呼吸道處置。全章用「道、力、氣」貫穿：先確保呼吸道暢通，再看呼吸動力夠不夠，最後評估氧氣供需。標題的波形是 capnography 方波，呼應本章的確認工具。</div>
 </section>
 
 <!-- ============ MAP ============ -->
 <section class="slide">
   <div class="kicker">Roadmap</div>
   <h2>本章地圖</h2><div class="rule"></div>
-  <div class="cols c3" style="gap:24px">
-    <div class="card red"><h3>① CPR 中的通氣與給氧</h3><ul class="dots sm"><li>為什麼壓胸優先</li><li>氧濃度、ROSC 後目標</li><li>被動給氧、口袋面罩</li></ul></div>
-    <div class="card navy"><h3>② 道・力・氣</h3><ul class="dots sm"><li>評估順序</li><li>小站教學與情境</li></ul></div>
-    <div class="card navy"><h3>③ 道：呼吸道</h3><ul class="dots sm"><li>異物、打開呼吸道、抽吸</li><li>口咽／鼻咽呼吸道</li><li>進階呼吸道時機</li></ul></div>
-    <div class="card teal"><h3>④ 力：呼吸動力</h3><ul class="dots sm"><li>BVM、C-E 手勢</li><li>環狀軟骨按壓 vs BURP</li></ul></div>
+  <div class="cols c4" style="gap:20px">
+    <div class="card red"><h3>① CPR 中的通氣與給氧</h3><ul class="dots sm"><li>壓胸優先</li><li>給多少氧、通氣速率</li><li>被動給氧、屏障裝置</li></ul></div>
+    <div class="card navy"><h3>② 道・力・氣</h3><ul class="dots sm"><li>評估與處置順序</li></ul></div>
+    <div class="card navy"><h3>③ 道：呼吸道</h3><ul class="dots sm"><li>異物梗塞</li><li>打開呼吸道、抽吸</li><li>口咽／鼻咽呼吸道</li><li>進階呼吸道、SGA</li></ul></div>
+    <div class="card teal"><h3>④ 力：呼吸動力</h3><ul class="dots sm"><li>何時通氣</li><li>Ambu 構造</li><li>C-E 手勢、雙人法</li></ul></div>
     <div class="card teal"><h3>⑤ 氣：氧氣治療</h3><ul class="dots sm"><li>SpO₂ 目標</li><li>四種給氧裝置</li></ul></div>
-    <div class="card red"><h3>⑥ 插管與確認</h3><ul class="dots sm"><li>插管流程、DOPE</li><li>波形 ETCO₂、RSI 藥物</li><li>LMA、環甲膜</li></ul></div>
+    <div class="card red"><h3>⑥ RSI 與插管</h3><ul class="dots sm"><li>流程、適應與禁忌</li><li>準備：人／物</li><li>動作與陷阱</li><li>LOAD、鎮靜、肌鬆</li></ul></div>
+    <div class="card red"><h3>⑦ 確認與排除</h3><ul class="dots sm"><li>確認位置、波形 ETCO₂</li><li>DOPE</li></ul></div>
+    <div class="card amber"><h3>⑧ 外科呼吸道</h3><ul class="dots sm"><li>環甲膜針刺</li><li>環甲膜切開</li></ul></div>
   </div>
-  <p style="margin-top:30px;font-size:22px" class="muted">圖例：<span class="cor c1">Class 1</span> 建議 <span class="cor c2a">2a</span> 合理 <span class="cor c2b">2b</span> 可考慮 <span class="cor c3">3</span> 無益／有害　<span class="tag new">NEW 2025</span></p>
+  <p style="margin-top:26px;font-size:22px" class="muted">圖例：<span class="cor c1">Class 1</span> 建議 <span class="cor c2a">2a</span> 合理 <span class="cor c2b">2b</span> 可考慮 <span class="cor c3">3</span> 無益／有害　<span class="tag new">NEW 2025</span></p>
+</section>
+
+<!-- ============ DIVIDER 01 ============ -->
+<section class="slide divider">
+  <div class="big"><div class="no">01</div><h2>CPR 期間的通氣與給氧</h2></div>
 </section>
 
 <!-- ============ OVERVIEW ============ -->
@@ -102,11 +114,6 @@ table.tight td,table.tight th{font-size:19px}
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.63</div>
   <div class="notes">本章第一段就給了兩條原則：不要過度換氣、不要為了呼吸道中斷壓胸。後面所有細節都可以用這兩條檢查。</div>
-</section>
-
-<!-- ============ DIVIDER 01 ============ -->
-<section class="slide divider">
-  <div class="big"><div class="no">01</div><h2>CPR 期間的通氣與給氧</h2><p>心腦缺氧的主因是血流量下降，不是動脈氧含量</p></div>
 </section>
 
 <!-- ============ COMPRESSION FIRST ============ -->
@@ -138,57 +145,51 @@ table.tight td,table.tight th{font-size:19px}
 
 <!-- ============ OXYGEN CONCENTRATION ============ -->
 <section class="slide">
-  <div class="kicker">Oxygen during CPR · 猜猜看</div>
-  <h2>給多少氧？<small>點卡片揭曉・按 A 全部揭曉</small></h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card red reveal"><p class="lbl" style="margin:0 0 10px"><b>CPR 進行中</b>，吸入氧濃度給多少？</p><div class="q">?</div>
-      <div class="ans"><div class="stat">最高可行<small> FiO₂</small></div><p style="margin-top:8px">通常給 <b>100% 氧氣</b> <span class="cor c2b">2b</span></p>
-      <p class="lbl">血流受限 → 把動脈血氧含量拉到最高<br>短時間使用，氧中毒機率極低</p></div><span class="hint">▸ 點擊揭曉</span></div>
-    <div class="card teal reveal"><p class="lbl" style="margin:0 0 10px"><b>ROSC 之後</b>，SpO₂ 目標是多少？</p><div class="q">?</div>
-      <div class="ans"><div class="stat" style="color:var(--teal)">90–98<small>%</small></div><p style="margin-top:8px">相當於 PaO₂ <b>60–105 mmHg</b> <span class="tag new">NEW 2025</span></p>
-      <p class="lbl">低血氧、高血氧都有害 → 穩定後開始調降 FiO₂<br>（詳見「復甦後之照顧及復原」）</p></div><span class="hint">▸ 點擊揭曉</span></div>
+  <div class="kicker">Oxygen &amp; ventilation during CPR · 猜猜看</div>
+  <h2>給多少氧？多快通氣？<small>點卡片揭曉・按 A 全部揭曉</small></h2><div class="rule"></div>
+  <div class="cols c2" style="gap:30px">
+    <div class="card red reveal"><p class="lbl" style="margin:0 0 6px"><b>CPR 進行中</b>，吸入氧濃度給多少？</p><div class="q">?</div>
+      <div class="ans"><div class="stat" style="font-size:54px">最高可行<small> FiO₂</small> <span class="cor c2b" style="vertical-align:12px">2b</span></div>
+      <p style="margin-top:4px">能給 <b>100%</b> 就給 100%：短時間使用，<b>氧中毒機率低</b></p>
+      <p class="lbl" style="margin-top:4px">「最高可行」：例如院前口對口，不一定給得到</p></div><span class="hint">▸ 點擊揭曉</span></div>
+    <div class="card teal reveal"><p class="lbl" style="margin:0 0 6px"><b>ROSC 之後</b>，SpO₂ 目標是多少？</p><div class="q">?</div>
+      <div class="ans"><div class="stat" style="font-size:54px;color:var(--teal)">90–98<small>%</small></div>
+      <p style="margin-top:4px">相當於 PaO₂ <b>60–105 mmHg</b> <span class="tag new">NEW 2025</span></p>
+      <p class="lbl" style="margin-top:4px">低血氧、高血氧都有害 → 穩定後調降 FiO₂</p></div><span class="hint">▸ 點擊揭曉</span></div>
   </div>
-  <div class="callout" style="margin-top:26px"><span class="h">證據</span>無直接人體試驗；回溯研究中肺泡氧分壓較高者預後較好，但受病人選擇、氣道策略、復甦品質干擾。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.63–64；2025 AHA Part 11 Post–Cardiac Arrest Care</div>
-  <div class="notes">2020 年 ROSC 後目標是 SpO₂ 92–98%，2025 年改成 90–98%（PaO₂ 60–105 mmHg），並建議在急診或加護病房穩定前先給 100% 氧氣。歐洲 ESICM 2025 則建議 94–98%，比較保守。可順便提醒：ROSC 後不要一直掛著 100% 不調。</div>
+  <table class="tight" style="margin-top:22px">
+    <tr><th style="width:26%">通氣速率</th><th>壓胸</th><th>通氣</th><th style="width:22%">量</th><th style="width:100px">等級</th></tr>
+    <tr><td><b>尚未放進階呼吸道</b></td><td>30 下後暫停</td><td>連續 <b>2 口</b>，每口 &gt; 1 秒</td><td>胸部明顯起伏（約 5–7 mL/kg）</td><td><span class="cor c2b">2b</span></td></tr>
+    <tr><td><b>已放進階呼吸道</b></td><td>持續 100–120／分，<b>不暫停</b></td><td><b>每 6 秒 1 口</b>（10／分），每口約 1 秒</td><td>見胸廓起伏即可</td><td><span class="cor c2b">2b</span></td></tr>
+    <tr><td><b>ROSC 後仍需 BVM</b></td><td>—</td><td><b>每 6 秒 1 口</b>（10／分），每口約 1 秒</td><td>見胸廓起伏</td><td><span class="cor c2a">2a</span></td></tr>
+  </table>
+  <div class="src">ACLS 精華第七版 第 4 章 p.63–64、68–70；2025 AHA Part 11 Post–Cardiac Arrest Care</div>
+  <div class="notes">CPR 中：能給 100% 就給，短時間不必擔心氧中毒；說「最高可行」是因為情境不同，例如院前口對口只有呼出氣的氧濃度。ROSC 後：2020 年目標 92–98%，2025 年改 90–98%（PaO₂ 60–105 mmHg），急診或加護病房穩定前可先給 100%，之後要調降。下方表格是整章最常用的數字：沒有進階呼吸道 30:2；有進階呼吸道持續壓、每 6 秒一口；ROSC 後也是每 6 秒一口。</div>
 </section>
 
 <!-- ============ PASSIVE O2 / POCKET MASK ============ -->
 <section class="slide">
-  <div class="kicker">Passive oxygen · Barrier devices</div>
-  <h2>被動給氧不夠；口袋面罩優於防護片</h2><div class="rule"></div>
+  <div class="kicker">Positive-pressure vs passive oxygen · Barrier devices</div>
+  <h2>正壓通氣才是主力；院前用口袋面罩</h2><div class="rule"></div>
   <div class="cols c2" style="gap:36px">
-    <div class="card navy"><h3>被動給氧 + 壓胸</h3>
-      <p>無法確保足夠通氣量，<b>正壓通氣</b>才是主要給氧方式。</p>
-      <ul class="dots sm" style="margin-top:12px"><li>壓胸 → 功能肺餘容量 ↓</li><li>間歇氣道塌陷、肺不張 → 肺順應性受損</li><li>結果：肺損傷、心輸出量 ↓</li></ul>
-      <p class="lbl" style="margin-top:14px">施救者常做不到標準通氣；能兼顧有效通氣與壓胸（30:2）者<b>預後顯著較好</b></p></div>
-    <div class="card teal"><h3>屏障裝置</h3>
-      <table class="tight" style="margin-top:8px">
-        <tr><th>裝置</th><th>通氣效果</th></tr>
-        <tr><td><b>口袋面罩</b> pocket mask</td><td><b>較佳</b>，有就優先用</td></tr>
-        <tr><td>面膜式防護片 face shield</td><td>較差</td></tr>
-        <tr><td>直接口對口</td><td>可接受</td></tr>
-      </table>
-      <p class="lbl" style="margin-top:14px">EMS 院外 CPR：確實打開呼吸道＋口袋面罩給氧，<b>可能改善存活</b></p></div>
+    <div>
+      <div class="cols c2" style="gap:16px">
+        <div class="card red" style="text-align:center"><h3>正壓通氣</h3><div class="stat" style="font-size:52px">主要</div><p class="lbl">口對口、口袋面罩、BVM</p></div>
+        <div class="card navy" style="text-align:center"><h3>被動給氧</h3><div class="stat" style="font-size:52px;color:var(--muted)">不夠</div><p class="lbl">只掛面罩＋壓胸</p></div>
+      </div>
+      <div class="card navy" style="margin-top:18px"><h3>為什麼被動給氧不夠</h3>
+        <ul class="dots sm"><li>無法確保足夠通氣量</li><li>壓胸 → 功能肺餘容量 ↓、氣道塌陷、肺不張</li><li>→ 肺損傷、心輸出量 ↓</li></ul>
+        <p class="lbl">能兼顧有效通氣與壓胸（30:2）者，<b>預後顯著較好</b></p></div>
+    </div>
+    <div class="card teal"><h3>院前：屏障裝置</h3>
+      <div class="cols c2" style="gap:16px;margin-top:6px">
+        <figure class="ph"><img src="https://s3.us-east-2.amazonaws.com/medictests-storage-production/images/ckeditor/529/content_pocket_mask.png" alt="口袋面罩" style="object-fit:contain"><figcaption><b>口袋面罩</b> pocket mask<br>通氣較佳，<b>有就優先用</b></figcaption></figure>
+        <figure class="ph empty"><div class="slot">face shield 圖片待補</div><figcaption><b>面膜式防護片</b> face shield<br>通氣較差</figcaption></figure>
+      </div>
+      <p class="lbl" style="margin-top:10px">一般民眾：口袋面罩、防護片、直接口對口皆可接受<br>EMS：確實打開呼吸道＋口袋面罩給氧，<b>可能改善存活</b></p></div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.64</div>
-  <div class="notes">有些單位以為壓胸時掛個面罩被動給氧就好，這章明確說不夠：正壓通氣才是主力。對一般民眾，願意吹氣的話口袋面罩、防護片、口對口都可以，但口袋面罩效果最好。</div>
-</section>
-
-<!-- ============ VENTILATION RATES ============ -->
-<section class="slide">
-  <div class="kicker">Quick reference</div>
-  <h2>通氣速率一頁看完</h2><div class="rule"></div>
-  <table class="tight" style="margin-top:10px">
-    <tr><th style="width:26%">情境</th><th>壓胸</th><th>通氣</th><th style="width:22%">量</th><th style="width:110px">等級</th></tr>
-    <tr><td><b>尚未放進階呼吸道</b></td><td>30 下後暫停</td><td>連續 <b>2 口</b>，每口 &gt; 1 秒</td><td>胸部明顯起伏（約 5–7 mL/kg）</td><td><span class="cor c2b">2b</span></td></tr>
-    <tr><td><b>已放進階呼吸道</b></td><td>持續 100–120／分，<b>不暫停</b></td><td><b>每 6 秒 1 口</b>（10／分），每口約 1 秒</td><td>見胸廓起伏即可</td><td><span class="cor c2b">2b</span></td></tr>
-    <tr><td><b>ROSC 後仍需 BVM</b></td><td>—</td><td><b>每 6 秒 1 口</b>（10／分），每口約 1 秒</td><td>見胸廓起伏</td><td><span class="cor c2a">2a</span></td></tr>
-    <tr><td>BVM 操作方式</td><td colspan="3">一人雙手打開呼吸道並扣緊面罩，另一人擠壓氣囊</td><td><span class="cor c2a">2a</span></td></tr>
-  </table>
-  <div class="callout red" style="margin-top:26px"><span class="h">記住</span>口訣：<b>1 秒、起伏、每 6 秒</b>。過度換氣會降低回心血量與 ROSC 機會。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.68–70</div>
-  <div class="notes">這頁是整章最常考、最常用的數字。建議學員背：沒有進階呼吸道 30:2；有進階呼吸道持續壓、每 6 秒一口；ROSC 後也是每 6 秒一口。</div>
+  <div class="notes">有些單位以為壓胸時掛個面罩被動給氧就好，這章明確說不夠：正壓通氣才是主力。院前屏障裝置中，口袋面罩通氣效果優於面膜式防護片，有的話優先使用。</div>
 </section>
 
 <!-- ============ DIVIDER 02 ============ -->
@@ -202,33 +203,14 @@ table.tight td,table.tight th{font-size:19px}
   <h2>評估與處置的順序：道 → 力 → 氣</h2><div class="rule"></div>
   <div class="dlq">
     <div class="step"><div class="ch">道</div><div class="en">AIRWAY</div><h3>呼吸道暢通？</h3>
-      <ul class="dots sm"><li>依意識選輔助呼吸道：口咽／鼻咽</li><li>必要時抽痰、移除異物</li></ul></div>
+      <ul class="dots sm"><li><b>打開呼吸道</b>、抽痰、移除異物</li><li>輔助呼吸道：口咽／鼻咽</li><li><b>進階呼吸道</b>：SGA、ETT</li><li><b>外科呼吸道</b></li></ul></div>
     <div class="step t"><div class="ch">力</div><div class="en">VENTILATION</div><h3>呼吸動力足夠？</h3>
-      <ul class="dots sm"><li>不足 → 立即<b>正壓通氣</b></li><li><b>不需急著插管</b>，可先非侵入性改善通氣</li></ul></div>
+      <ul class="dots sm"><li>不足 → 立即<b>正壓通氣</b><br>（= <b>ambu bagging</b>）</li><li><b>不需急著插管</b>，可先非侵入性改善通氣</li></ul></div>
     <div class="step y"><div class="ch">氣</div><div class="en">OXYGENATION</div><h3>氧氣供需平衡？</h3>
       <ul class="dots sm"><li>依 SpO₂ 與呼吸型態選裝置</li><li>鼻導管、面罩、高流量氧氣</li></ul></div>
   </div>
-  <div class="callout ok" style="margin-top:30px"><span class="h">原則</span>持續反覆評估；<b>臨床觀察先於儀器監測</b>，儀器作為輔助判斷。工欲善其事，必先利其器。</div>
   <div class="src">ACLS 精華第七版 第 4 章 p.64–65</div>
-  <div class="notes">道力氣是本章的骨架，也是呼吸窘迫小站的評分邏輯。學員常一看到 SpO₂ 低就想插管或加氧，提醒他們先看呼吸道通不通、再看有沒有在呼吸。</div>
-</section>
-
-<!-- ============ STATION ============ -->
-<section class="slide">
-  <div class="kicker">Teaching station</div>
-  <h2>小站教學</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card navy"><h3>呼吸道處置站：5 樣技術</h3>
-      <ol class="steps" style="margin-top:8px">
-        <li>暢通呼吸道</li><li>置放口咽、鼻咽呼吸道</li><li>BVM 操作</li><li>置放 LMA</li><li>經口氣管內管置入</li>
-      </ol></div>
-    <div class="card red"><h3>呼吸窘迫站：情境演練</h3>
-      <p>指導員描述呼吸系統失效情境，學員以<b>道 → 力 → 氣</b>評估並初步處置。</p>
-      <p class="lbl" style="margin-top:14px">經典案例</p>
-      <ul class="dots sm"><li>嗎啡類中毒、麻醉鎮靜劑中毒</li><li>火場嗆傷與燒燙傷</li><li>中風</li><li>肺水腫</li><li>氣喘發作</li></ul></div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.64</div>
-  <div class="notes">情境選擇建議：嗎啡中毒（道力問題，BVM 加 naloxone 可能不用插管）、火場嗆傷（道的問題，可能要早期確定呼吸道）、肺水腫（氣與力，可考慮 NPPV）。讓學員說出每個案例主要卡在道、力還是氣。</div>
+  <div class="notes">道力氣是本章的骨架，也是呼吸窘迫小站的評分邏輯。持續反覆評估，臨床觀察先於儀器監測。學員常一看到 SpO₂ 低就想插管或加氧，提醒他們先看呼吸道通不通、再看有沒有在呼吸。經典情境：嗎啡類或鎮靜劑中毒、火場嗆傷、中風、肺水腫、氣喘。</div>
 </section>
 
 <!-- ============ DIVIDER 03 ============ -->
@@ -239,29 +221,34 @@ table.tight td,table.tight th{font-size:19px}
 <!-- ============ AIRWAY OBSTRUCTION SIGNS ============ -->
 <section class="slide">
   <div class="kicker">Airway assessment</div>
-  <h2>看表情、聽聲音：呼吸道阻塞的線索</h2><div class="rule"></div>
-  <div class="cols c3" style="gap:22px">
-    <div class="card red"><h3>異物梗塞</h3><ul class="dots sm"><li>清醒、用力咳卻<b>發不出聲</b></li><li>咳嗽聲微弱、<b>喘鳴 stridor</b></li><li>膚色發紺</li><li><b>雙手緊握頸部</b></li></ul></div>
-    <div class="card navy"><h3>意識不清</h3><ul class="dots sm"><li>舌後肌肉張力喪失 → <b>舌根塌陷</b></li><li>常合併分泌物堆積或異物</li></ul></div>
-    <div class="card amber"><h3>創傷</h3><ul class="dots sm"><li>頭頸部傷害</li><li>顏面、口咽部腫脹</li><li>血液、分泌物</li></ul><p class="lbl">及早預防與處置</p></div>
+  <h2>異物梗塞：輕微 vs 嚴重</h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:1fr 1fr 0.8fr;gap:22px">
+    <div class="card teal"><h3>輕微（部分）阻塞</h3>
+      <ul class="dots"><li><b>大力咳嗽</b></li><li>能說話、能發聲</li><li>問「你噎到了嗎？」→ <b>點頭</b></li></ul>
+      <div class="fb t" style="margin-top:16px;text-align:center"><b>鼓勵咳嗽</b>，在旁觀察</div></div>
+    <div class="card red"><h3>嚴重（近乎完全）阻塞</h3>
+      <ul class="dots"><li><b>微弱／無聲咳嗽</b></li><li><b>無法說話</b></li><li>喘鳴 stridor、<b>膚色發紺</b></li><li><b>雙手緊握頸部</b></li><li>呼吸停止、意識改變</li></ul>
+      <div class="fb r" style="margin-top:16px;text-align:center"><b>背部拍擊 ⇄ 腹部推擠</b></div></div>
+    <div>
+      <div class="card navy"><h3>意識不清</h3><p style="font-size:20px">舌後肌張力喪失 → <b>舌根塌陷</b>；常合併分泌物或異物</p></div>
+      <div class="card amber" style="margin-top:18px"><h3>創傷</h3><p style="font-size:20px">頭頸、顏面、口咽腫脹；血液、分泌物 → 及早處置</p></div>
+    </div>
   </div>
-  <div class="card red" style="margin-top:24px"><h3>嚴重異物梗塞的 5 個徵兆<small style="font-size:18px;color:var(--muted);font-weight:500">　出現代表近乎完全阻塞</small></h3>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:10px;text-align:center">
-      <div class="fb r">微弱／無聲咳嗽</div><div class="fb r">無法說話</div><div class="fb r">膚色發紺</div><div class="fb r">呼吸停止</div><div class="fb r">意識改變</div></div></div>
   <div class="src">ACLS 精華第七版 第 4 章 p.65</div>
-  <div class="notes">院內、院外都可能發生，要高度警覺。病人還能大聲咳嗽，就鼓勵他咳；出現這五個徵兆才開始背擊、腹部推擠。</div>
+  <div class="notes">看表情與意識、聽說話與呼吸聲。輕微阻塞還能大聲咳嗽，鼓勵他咳；出現嚴重阻塞徵兆（微弱或無聲咳嗽、無法說話、發紺、呼吸停止、意識改變）代表近乎完全阻塞，立即背擊與腹部推擠。院內、院外都要高度警覺。</div>
 </section>
 
 <!-- ============ FBAO ============ -->
 <section class="slide">
   <div class="kicker">FBAO</div>
   <h2>異物梗塞的處置<small>詳見第 3 章</small></h2><div class="rule"></div>
-  <div class="cols c2" style="gap:40px">
-    <div class="fl">
-      <div class="fb">大力咳嗽 → 問「<b>你噎到了嗎？</b>」點頭 → 鼓勵咳嗽</div><div class="fa">▼ 聲音微弱或無聲</div>
-      <div class="fb r"><b>5 次背部拍擊 ⇄ 5 次腹部推擠</b>交替，啟動 EMS <span class="cor c1">1</span></div><div class="fa">▼ 失去反應</div>
-      <div class="fb r">躺平 → <b>開始壓胸</b>，啟動 EMS</div><div class="fa">▼</div>
-      <div class="fb t">吹氣前看口腔，<b>看得到才取</b> <span class="cor c1">1</span></div>
+  <div class="cols c64" style="gap:36px">
+    <div>
+      <div class="fb" style="text-align:center">懷疑異物梗塞：問「<b>你噎到了嗎？</b>」</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px">
+        <div class="fl"><div class="fa">▼ 輕微：大力咳嗽、能說話</div><div class="fb t"><b>鼓勵咳嗽</b><br>持續觀察</div><div class="fa">▼ 變成無聲咳嗽</div><div class="fb" style="border-style:dashed">→ 轉到右側</div></div>
+        <div class="fl"><div class="fa">▼ 嚴重：無聲咳嗽、不能說話</div><div class="fb r"><b>5 次背部拍擊 ⇄ 5 次腹部推擠</b>交替，啟動 EMS <span class="cor c1">1</span></div><div class="fa">▼ 失去反應</div><div class="fb r">躺平 → <b>開始壓胸</b>，啟動 EMS</div><div class="fa">▼</div><div class="fb t">吹氣前看口腔，<b>看得到才取</b> <span class="cor c1">1</span></div></div>
+      </div>
     </div>
     <div>
       <div class="card amber"><h3>特殊情況</h3><p><b>瀕產孕婦</b>或無法環抱者 → 改用<b>胸部推擠</b> <span class="cor c1">1</span></p></div>
@@ -269,92 +256,131 @@ table.tight td,table.tight th{font-size:19px}
     </div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.65</div>
-  <div class="notes">第 3 章已詳細講過，這裡只複習流程。院內多一個工具：直接喉鏡加 Magill forceps。</div>
+  <div class="notes">先分輕微與嚴重：輕微鼓勵咳嗽，嚴重才背擊加腹部推擠。失去反應就躺平開始 CPR，每次吹氣前看口腔，看得到才取。院內多一個工具：直接喉鏡加 Magill forceps。</div>
 </section>
 
 <!-- ============ OPEN AIRWAY ============ -->
 <section class="slide">
-  <div class="kicker">Opening the airway</div>
+  <div class="kicker">Opening the airway · Suction</div>
   <h2>打開呼吸道：壓額提下顎 vs 下顎推擠</h2><div class="rule"></div>
   <div class="cols c2" style="gap:36px">
     <div class="card navy"><h3>壓額－提下顎法 head tilt–chin lift</h3>
-      <p><b>非頸椎創傷</b>病人 <span class="cor c1">1</span></p>
-      <p class="lbl" style="margin-top:14px">一般民眾教育：<b>不論是否創傷</b>，一律教這招 → 簡單易執行</p></div>
+      <figure class="ph" style="height:230px"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2hQ_JECBbG_EryZ8EDjB6Ax4CIrhJ11subxsNoT_5cfuu9E1bkT0nSXc&amp;s=10" alt="壓額提下顎法"></figure>
+      <p style="margin-top:10px"><b>非頸椎創傷</b> <span class="cor c1">1</span>；一般民眾不論是否創傷都教這招</p></div>
     <div class="card red"><h3>下顎推擠法 jaw thrust</h3>
-      <p><b>懷疑頸椎損傷</b>（昏迷、鎖骨以上鈍傷）由受訓者執行，避免過度伸展頸部 <span class="cor c1">1</span></p>
-      <p class="lbl" style="margin-top:14px">頸椎固定：<b>徒手固定</b>比頸圈更能兼顧暢通與通氣</p></div>
+      <figure class="ph" style="height:230px"><img src="https://www.firstaidweb.com/wp-content/uploads/2025/02/Jaw-thrust-e1742741981703.png" alt="下顎推擠法"></figure>
+      <p style="margin-top:10px"><b>懷疑頸椎損傷</b>，受訓者執行，避免過度伸展 <span class="cor c1">1</span>；頸椎以<b>徒手固定</b></p></div>
   </div>
-  <div class="card teal" style="margin-top:24px"><h3>失去咳嗽反射 → 輔助呼吸道</h3><p>置入口咽或鼻咽呼吸道，維持上呼吸道通暢、協助通氣與給氧 <span class="cor c2b">2b</span></p></div>
+  <div class="callout red" style="margin-top:20px"><span class="h">抽吸</span>從<b>口角</b>或鼻孔放入，<b>勿從嘴巴正中間進去</b>（刺激懸雍垂、誘發嘔吐）。</div>
   <div class="src">ACLS 精華第七版 第 4 章 p.65–66</div>
-  <div class="notes">下顎推擠如果打不開，還是要以呼吸道為優先，改壓額提下顎。示範時讓學員兩種都做，感受下顎推擠需要兩手、常需要第二人扣面罩。</div>
-</section>
-
-<!-- ============ SUCTION ============ -->
-<section class="slide">
-  <div class="kicker">Suction</div>
-  <h2>抽吸分泌物</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card navy"><h3>設備</h3>
-      <div style="display:flex;gap:40px;margin-top:6px"><div><div class="stat" style="font-size:60px">&gt;40<small> L/min</small></div><p class="lbl">管端氣流</p></div><div><div class="stat" style="font-size:60px">&gt;300<small> mmHg</small></div><p class="lbl">夾住管子時的吸力</p></div></div>
-      <p class="lbl" style="margin-top:14px">大孔徑、不凹折；備多種尺寸無菌抽吸管、不會破的收集瓶</p></div>
-    <div class="card red"><h3>操作</h3>
-      <ul class="dots sm"><li>量長度：經口 <b>嘴角 → 耳垂</b>；經鼻 <b>鼻尖 → 耳垂</b></li><li>從口角或鼻孔輕柔放入，<b>邊拔邊旋轉、間歇抽吸</b></li><li>每次 <b>≤ 15 秒</b>；下一次前給 100% 氧氣 <b>30 秒</b></li><li>勿從口中央放入（刺激懸雍垂）</li></ul></div>
-  </div>
-  <div class="callout red" style="margin-top:24px"><span class="h">大量嘔吐物</span>光抽不夠 → 頭轉向側邊、<b>手指挖出</b>，再用<b>粗管</b>抽吸。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.66、76</div>
-  <div class="notes">抽吸前先給氧，但呼吸道不通時效果有限，重點還是快速抽乾淨。可以拿 Yankauer 與細抽痰管給學員比較。</div>
+  <div class="notes">下顎推擠如果打不開，還是以呼吸道為優先，改壓額提下顎。抽吸補充：管端氣流 &gt; 40 L/min、吸力 &gt; 300 mmHg；每次 ≤ 15 秒，下一次前給 100% 氧氣 30 秒；大量嘔吐物要頭轉側邊、手指挖出，再用粗管抽。</div>
 </section>
 
 <!-- ============ OPA vs NPA ============ -->
 <section class="slide">
   <div class="kicker">Adjunct airways</div>
   <h2>口咽 vs 鼻咽呼吸道<small>適當使用甚至可避免插管</small></h2><div class="rule"></div>
-  <table class="tight">
-    <tr><th style="width:15%"></th><th>口咽呼吸道 OPA</th><th>鼻咽呼吸道 NPA</th></tr>
-    <tr><td><b>時機</b></td><td><b>完全昏迷</b>、無咳嗽或嘔吐反射</td><td><b>半昏迷</b>、仍有反射（酒醉、中風、中毒、外傷）；牙關緊閉也可用</td></tr>
-    <tr><td><b>尺寸</b></td><td><b>嘴角 → 同側耳垂</b>，置放前比長度不可省</td><td><b>鼻尖 → 耳垂</b></td></tr>
-    <tr><td><b>放法</b></td><td>反向放入，碰咽後壁轉 <b>180°</b> 推入；或壓舌板正向放入</td><td>先潤滑，斜面朝鼻中隔，往口咽方向輕推</td></tr>
-    <tr><td><b>併發症</b></td><td>太長壓會厭、太短推舌根 → 更阻塞；有反射者嘔吐、支氣管痙攣</td><td><b>鼻出血（30%）</b>；喉痙攣、作嘔；太長傷會厭／聲帶、迷走 → 心搏過緩</td></tr>
-    <tr><td><b>注意</b></td><td>CPR 中 BVM 搭配 OPA，通氣較好</td><td>顏面創傷、疑<b>顱底骨折</b>、凝血異常 → 改用 OPA <span class="cor c2a">2a</span>（曾有置入顱內案例）</td></tr>
-  </table>
+  <div class="cols c2" style="gap:30px">
+    <div class="card navy"><h3>口咽呼吸道 OPA</h3>
+      <figure class="ph" style="height:180px"><img src="https://www.openhouseproducts.com/wp-content/uploads/2024/05/30-00224.jpg" alt="口咽呼吸道"></figure>
+      <p style="margin-top:8px">時機：完全昏迷、<b class="hl">無嘔吐或咳嗽反射</b></p>
+      <ul class="dots sm"><li>尺寸：<b>嘴角 → 同側耳垂</b>，先比再放</li><li>反向放入，碰咽後壁轉 <b>180°</b></li><li>太長壓會厭、太短推舌根；有反射 → 嘔吐</li></ul></div>
+    <div class="card teal"><h3>鼻咽呼吸道 NPA</h3>
+      <figure class="ph" style="height:180px"><img src="https://www.uscimaging.com/wp-content/uploads/2026/01/IMG-20220418-WA0021u.jpg" alt="鼻咽呼吸道"></figure>
+      <p style="margin-top:8px">時機：半昏迷、<b>仍有反射</b>；牙關緊閉也可</p>
+      <ul class="dots sm"><li>尺寸：<b>鼻尖 → 耳垂</b>；先潤滑，斜面朝鼻中隔</li><li>鼻出血（30%）、喉痙攣、心搏過緩</li><li>顏面創傷、<b>疑顱底骨折</b>、凝血異常 → 用 OPA <span class="cor c2a">2a</span></li></ul></div>
+  </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.66–67</div>
-  <div class="notes">實作時讓學員先比長度再放。OPA 太短反而把舌頭往後推，這點很多人不知道。NPA 是半昏迷病人的好朋友，酒醉、癲癇發作後都很好用。</div>
+  <div class="notes">OPA 只能用在沒有嘔吐或咳嗽反射的病人，否則會誘發嘔吐、支氣管痙攣。實作時讓學員先比長度再放。NPA 是半昏迷病人的好朋友，酒醉、癲癇發作後都很好用；曾有案例報告 NPA 置入顱內，所以疑顱底骨折避免。CPR 中 BVM 搭配 OPA 通氣較好。</div>
 </section>
 
 <!-- ============ ADVANCED AIRWAY INDICATIONS ============ -->
 <section class="slide">
   <div class="kicker">Advanced airways</div>
-  <h2>進階呼吸道：ET 與 SGA</h2><div class="rule"></div>
+  <h2>什麼時候建立進階呼吸道</h2><div class="rule"></div>
   <div class="cols c2" style="gap:36px">
-    <div>
-      <div class="card navy"><h3>種類</h3><p><b>氣管內管 ET</b></p><p style="margin-top:6px"><b>聲門上呼吸道 SGA</b>：LMA、食道氣管合併管 ETC、喉管</p>
-        <p class="lbl" style="margin-top:12px">院外：ET、SGA 皆可；院內：受過訓練者用 ET 或 SGA 皆合宜 <span class="cor c2a">2a</span></p></div>
-      <div class="callout red" style="margin-top:22px"><span class="h">強調</span>插管<b>不是</b>處理呼吸窘迫的第一步；準備不足貿然插管，常是病況惡化的主因。</div>
-    </div>
     <div class="card teal"><h3>建立時機</h3>
-      <ul class="dots sm"><li>呼吸停止或意識混亂，無法自主維持呼吸道</li><li>其他方法無法確保呼吸道開放</li><li>需要預防吸入</li><li>非侵入性給氧仍無法維持血氧</li><li>顱內壓升高需過度換氣治療</li></ul></div>
+      <ul class="dots sm"><li>呼吸停止或意識混亂，無法自主維持呼吸道</li><li>其他方法無法確保呼吸道開放</li><li>需要預防吸入</li><li>非侵入性給氧仍無法維持血氧</li><li>顱內壓升高需過度換氣治療</li></ul>
+      <div class="callout red" style="margin-top:14px"><span class="h">強調</span>插管<b>不是</b>處理呼吸窘迫的第一步；準備不足貿然插管，常是病況惡化的主因。</div></div>
+    <div>
+      <p style="font-size:24px;font-weight:700;color:var(--navy);margin-bottom:10px">選項</p>
+      <div class="fl">
+        <div class="fb t"><b>聲門上呼吸道 SGA</b>：LMA、i-gel　<span class="lbl" style="margin:0">不需看聲帶、不需停壓胸</span></div>
+        <div class="fb"><b>氣管內管 ETT</b>　<span class="lbl" style="margin:0">確定性呼吸道</span></div>
+        <div class="fb y"><b>原有氣切管路</b>　<span class="lbl" style="margin:0">有氣切的病人直接由氣切管通氣</span></div>
+        <div class="fb r"><b>外科呼吸道</b>：環甲膜針刺、切開　<span class="lbl" style="margin:0">插不上、通不了氣</span></div>
+      </div>
+      <p class="lbl" style="margin-top:14px">院外：ET、SGA 皆可；院內：受過訓練者用 ET 或 SGA 皆合宜 <span class="cor c2a">2a</span></p>
+    </div>
   </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.67</div>
-  <div class="notes">呼應道力氣：BVM 能做好的話，不用急著插管。插管是一個有準備的決定，不是反射動作。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.67、84</div>
+  <div class="notes">呼應道力氣：BVM 能做好的話，不用急著插管。插管是一個有準備的決定，不是反射動作。有氣切的病人，先用原有的氣切管路通氣（口或面罩對造口 2b）。</div>
+</section>
+
+<!-- ============ SGA ============ -->
+<section class="slide">
+  <div class="kicker">Supraglottic airway</div>
+  <h2>聲門上呼吸道 SGA：LMA 與 i-gel</h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:1fr 1fr 0.9fr;gap:22px">
+    <div class="card teal"><h3>喉頭面罩 LMA</h3>
+      <figure class="ph" style="height:150px"><img src="https://activelifemed.com/wp-content/uploads/2024/07/lma.png" alt="LMA"></figure>
+      <table class="tight" style="margin-top:8px">
+        <tr><th>尺寸</th><th>對象</th></tr>
+        <tr><td><b>3</b></td><td>瘦一點</td></tr>
+        <tr><td><b>4</b></td><td>一般成人（50–70 kg）</td></tr>
+        <tr><td><b>5</b></td><td>胖一點</td></tr>
+      </table>
+      <p style="margin-top:8px">氣囊打氣 <b>(size − 1) × 10 mL</b></p></div>
+    <div class="card navy"><h3>i-gel</h3>
+      <figure class="ph" style="height:150px"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrwcm6qYZE5i3hbxzvlwwUj59W5QmeaTGaoZwNx_I0zhwB2MW7kEVQeXk&amp;s=10" alt="i-gel"></figure>
+      <p style="margin-top:8px"><b>不用打氣</b>（凝膠軟罩）</p>
+      <figure class="ph" style="height:170px;margin-top:6px"><img src="https://i0.wp.com/openairway.org/wp-content/uploads/2015/06/image1.jpg?ssl=1" alt="i-gel 尺寸表"><figcaption>i-gel 尺寸表</figcaption></figure></div>
+    <div>
+      <div class="card teal"><h3>適用</h3><ul class="dots sm"><li><b>不需看到聲帶</b>，訓練後 EMT 可執行</li><li><b>頸椎受傷</b>不能動脖子</li><li><b>困難插管</b>時的通氣與給氧</li><li>CPR 中放置<b>不需中斷壓胸</b></li></ul></div>
+      <div class="card red" style="margin-top:16px"><h3>注意</h3><ul class="dots sm"><li>口咽損傷、聲帶水腫</li><li>通氣量大、壓力高、放太久 → <b>胃內容物逆流</b></li><li>不能完全防止吸入</li></ul></div>
+    </div>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.83</div>
+  <div class="notes">臨床最常見的 SGA 是 LMA 與 i-gel，食道氣管合併管與喉管現在少用，不介紹。LMA 尺寸以體重抓：一般成人 4 號，胖一點 5 號，瘦一點 3 號；氣囊最多打 (size−1)×10 mL。i-gel 是凝膠軟罩，不需打氣，依尺寸表選號。LMA Fastrach 可經 LMA 再插 ET。</div>
+</section>
+
+<!-- ============ SGA STEPS ============ -->
+<section class="slide">
+  <div class="kicker">SGA insertion</div>
+  <h2>SGA 放置流程</h2><div class="rule"></div>
+  <div class="cols c2" style="gap:36px">
+    <div class="fl">
+      <div class="fb"><b>1 選尺寸</b>：LMA、i-gel 依體重</div><div class="fa">▼</div>
+      <div class="fb"><b>2 準備</b>：LMA 先<b>抽光氣囊</b>；背面潤滑（i-gel 薄塗）</div><div class="fa">▼</div>
+      <div class="fb"><b>3 擺位</b>：嗅吸姿勢；頸椎傷維持中立</div><div class="fa">▼</div>
+      <div class="fb t"><b>4 置入</b>：像握筆，前端<b>貼硬顎</b>，沿弧度往後下推到有阻力</div><div class="fa">▼</div>
+      <div class="fb y"><b>5 固定位置</b>：LMA 打氣 (size−1)×10 mL；i-gel <b>不打氣</b></div><div class="fa">▼</div>
+      <div class="fb r"><b>6 確認</b>：接 BVM → 胸廓起伏、聽診、<b>波形 ETCO₂</b></div><div class="fa">▼</div>
+      <div class="fb"><b>7 固定</b>：膠帶或固定帶</div>
+    </div>
+    <div>
+      <div class="card navy"><h3>CPR 中</h3><p>放置<b>不需中斷壓胸</b>；放好後持續壓胸，<b>每 6 秒 1 口</b></p></div>
+      <div class="card amber" style="margin-top:20px"><h3>常見問題</h3><ul class="dots sm"><li>漏氣：尺寸不對、位置太淺、通氣壓力太高</li><li>舌頭被推到後方 → 用手或壓舌板協助</li><li>通氣不好 → 拔出、BVM 通氣後再放</li></ul></div>
+      <div class="card teal" style="margin-top:20px"><h3>確認位置</h3><p>SGA 有效通氣時，CPR 與 ROSC 後都應看到<b>連續 ETCO₂ 波形</b></p></div>
+    </div>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.68、83</div>
+  <div class="notes">實作重點：前端緊貼硬顎往後滑，不要往舌頭方向戳。LMA 打氣後會略往外浮一點，屬正常。放好後一樣要用波形 ETCO₂ 確認並持續監測。</div>
 </section>
 
 <!-- ============ AIRWAY STRATEGY IN CPR ============ -->
 <section class="slide">
   <div class="kicker">Airway strategy during CPR</div>
   <h2>CPR 中怎麼選呼吸道策略</h2><div class="rule"></div>
-  <table class="tight">
+  <table class="tight" style="margin-top:10px">
     <tr><th>建議</th><th style="width:110px">等級</th></tr>
     <tr><td>依病況與插管能力，<b>BVM 或進階呼吸道</b>皆可</td><td><span class="cor c2b">2b</span></td></tr>
     <tr><td>放置進階呼吸道會中斷壓胸 → <b>延後插管</b>，直到初步 CPR 與電擊無效或 ROSC 後</td><td><span class="cor c1">1</span></td></tr>
     <tr><td>訓練有限的 EMS：院外 CPR 以 <b>SGA 替代 ETI</b>，不需中斷壓胸</td><td><span class="cor c2a">2a</span></td></tr>
     <tr><td>各救護系統應<b>追蹤 ETI 成功率</b>，決定用 ETI、SGA 或單純 BVM</td><td><span class="cor c2a">2a</span></td></tr>
   </table>
-  <div class="cols c2" style="gap:30px;margin-top:22px">
-    <div class="card amber"><h3>ETI 成功率低時</h3><p>院外 ETI 成功率約 <b>52–69%</b> → 用 SGA 出院存活與神經預後較好</p><p class="lbl">SGA 較快、可能提高 ROSC；對最終存活的優勢尚未確立</p></div>
-    <div class="card red"><h3>插管時壓胸只停 &lt; 10 秒</h3><p>喉鏡已放進口腔、管子備好，<b>才喊停</b>；看到聲帶送管，立刻恢復壓胸</p></div>
-  </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.68；2025 AHA Part 9 Adult ALS</div>
-  <div class="notes">2025 AHA 的立場：選 SGA 還是 ETI，看在地成功率與訓練；確認仍以連續波形二氧化碳監測為準。講師可以問學員：你們醫院第一次插管成功率是多少？有沒有在追蹤？</div>
+  <div class="notes">2025 AHA 的立場：選 SGA 還是 ETI，看在地成功率與訓練；確認仍以連續波形二氧化碳監測為準。院外 ETI 成功率約 52–69% 時，SGA 的出院存活與神經預後較好。插管時壓胸只停 &lt; 10 秒。講師可以問學員：你們醫院第一次插管成功率是多少？有沒有在追蹤？</div>
 </section>
 
 <!-- ============ DIVIDER 04 ============ -->
@@ -368,60 +394,39 @@ table.tight td,table.tight th{font-size:19px}
   <h2>什麼時候要幫病人呼吸</h2><div class="rule"></div>
   <div class="cols c2" style="gap:36px">
     <div class="card amber"><h3>前兆：呼吸動力快不夠了</h3><div class="stat" style="font-size:64px;color:var(--amber)">&gt; 30<small> 次／分</small></div><p class="lbl">或使用<b>輔助呼吸肌</b></p><p class="lbl">預期待會需要 BVM → <b>可儘早給</b></p></div>
-    <div class="card red"><h3>現在就要通氣</h3><div class="stat" style="font-size:64px">&lt; 8–10<small> 次／分</small></div><p class="lbl">或臉頰靠近<b>感覺不到氣流</b></p><p class="lbl">→ 立即支持呼吸動力（Ambu bagging）</p></div>
+    <div class="card red"><h3>現在就要通氣</h3><div class="stat" style="font-size:64px">&lt; 8–10<small> 次／分</small></div><p class="lbl">或臉頰靠近<b>感覺不到氣流</b></p><p class="lbl">→ 立即支持呼吸動力（ambu bagging）</p></div>
   </div>
-  <div class="card navy" style="margin-top:24px"><h3>其他通氣途徑</h3>
-    <p>嘴巴無法密合（創傷、姿勢、結構異常）→ <b>口對鼻</b> <span class="cor c2a">2a</span>　　氣切造口 → <b>口或面罩對造口</b> <span class="cor c2b">2b</span></p></div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.68–69</div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.69</div>
   <div class="notes">BVM 做不好，病人得到的氧氣比正確的口對口還少。插管失敗本身不一定立刻危險，同時 BVM 也做不好才會致命。所以這一站要花最多時間練 BVM。</div>
 </section>
 
 <!-- ============ IDEAL BVM ============ -->
 <section class="slide">
   <div class="kicker">Bag-valve-mask</div>
-  <h2>理想的 BVM</h2><div class="rule"></div>
-  <div class="cols c64" style="gap:36px">
-    <div class="card navy"><ol class="steps">
-      <li>可自動充氣、易清理消毒</li><li>可提供 <b>15 L/min</b> 流速</li><li><b>無壓力釋放瓣</b></li><li>加上<b>氧氣儲留袋</b>，提高氧濃度</li><li>有不吸入呼出氣體的活塞</li><li>有大人、小孩尺寸</li></ol></div>
-    <div class="card red"><h3>壓力釋放閥</h3>
-      <p>常見設定</p>
-      <div style="display:flex;gap:30px;margin-top:6px"><div><div class="stat" style="font-size:56px">60</div><p class="lbl">成人 cmH₂O</p></div><div><div class="stat" style="font-size:56px;color:var(--navy)">40</div><p class="lbl">小孩 cmH₂O</p></div></div>
-      <p style="margin-top:14px">目的是減少氣壓傷，但 <b class="hl">CPR 時應關閉</b>，以免潮氣量不足</p></div>
-  </div>
+  <h2>BVM 的構造<small>俗稱 Ambu（商品名）</small></h2><div class="rule"></div>
+  <figure class="ph empty" style="height:600px;margin-top:6px"><div class="slot">Ambu 構造圖（待補）</div></figure>
   <div class="src">ACLS 精華第七版 第 4 章 p.69–70</div>
-  <div class="notes">實作前讓學員檢查自己單位的甦醒球：有沒有接儲氧袋、有沒有壓力釋放閥、在哪裡關。</div>
+  <div class="notes">構造圖待補。講解時可帶到：面罩、病人端單向閥（不吸入呼出氣體）、自動充氣球體、氧氣接頭（15 L/min）、儲氧袋（提高氧濃度到接近 100%）、壓力釋放閥（成人常設 60 cmH₂O，CPR 時應關閉）。</div>
 </section>
 
 <!-- ============ BVM TECHNIQUE ============ -->
 <section class="slide">
   <div class="kicker">BVM technique</div>
   <h2>甦醒球的使用方法</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:40px">
+  <div class="cols" style="grid-template-columns:1fr 0.8fr 0.8fr;gap:26px">
     <ol class="steps">
-      <li>頭後墊毛巾，擺<b>嗅吸姿勢</b> sniffing position</li>
-      <li>接氧氣，流量 <b>15 L/min</b>，儲氣袋充飽 → 接近 100% 氧氣</li>
-      <li>站病人頭端，選適當面罩，<b>尖端朝額頭</b></li>
+      <li>頭後墊毛巾，擺<b>嗅吸姿勢</b></li>
+      <li>接氧氣 <b>15 L/min</b>，儲氣袋充飽</li>
+      <li>站頭端，面罩<b>尖端朝額頭</b></li>
       <li><b>C-E 手勢</b>單手扣緊，另一手擠球</li>
-      <li><b>二人操作更理想</b>：一人雙手密合面罩，一人擠球</li>
+      <li><b>二人操作更理想</b>：一人雙手密合面罩，一人擠球 <span class="cor c2a">2a</span></li>
     </ol>
-    <div>
-      <svg viewBox="0 0 520 430" style="width:78%;height:auto;display:block;margin:0 auto" aria-label="C-E 手勢示意">
-        <text x="260" y="22" text-anchor="middle" font-size="19" fill="#6b6658">額頭（施救者站這側）</text>
-        <ellipse cx="260" cy="225" rx="140" ry="185" fill="#f4efe4" stroke="#14284b" stroke-width="3"/>
-        <path d="M260 120 L345 330 Q260 362 175 330 Z" fill="#dfe8f5" stroke="#14284b" stroke-width="4" stroke-linejoin="round"/>
-        <text x="260" y="105" text-anchor="middle" font-size="17" fill="#14284b">尖端</text>
-        <path d="M200 300 Q165 190 255 150 Q320 140 330 200" fill="none" stroke="#d6283f" stroke-width="15" stroke-linecap="round"/>
-        <text x="150" y="215" text-anchor="middle" font-size="44" font-weight="900" fill="#d6283f">C</text>
-        <path d="M180 360 Q260 395 340 360 M195 380 Q260 410 325 380" fill="none" stroke="#0f7c74" stroke-width="11" stroke-linecap="round"/>
-        <path d="M210 398 Q260 418 310 398" fill="none" stroke="#0f7c74" stroke-width="11" stroke-linecap="round"/>
-        <text x="380" y="400" font-size="44" font-weight="900" fill="#0f7c74">E</text>
-      </svg>
-      <p style="font-size:21px;margin-top:8px"><b style="color:var(--red)">C</b>：拇指＋食指下壓面罩、蓋緊口鼻<br><b style="color:var(--teal)">E</b>：其餘三指扣<b>下顎骨</b>、往上抬</p>
-    </div>
+    <figure class="ph" style="height:440px"><img src="https://images.squarespace-cdn.com/content/v1/51af14e4e4b08dce860cec82/1574928415183-RKB19BSXBLBQOW072D3E/CE+Top+Logo.png" alt="C-E 手勢"><figcaption><b>C-E 手勢</b>：拇指＋食指成 C 壓面罩；三指成 E 扣下顎骨上抬</figcaption></figure>
+    <figure class="ph empty" style="height:440px"><div class="slot">雙人 BVM 圖片待補</div><figcaption><b>雙人法</b>：雙手 C-E 密合，另一人擠球</figcaption></figure>
   </div>
-  <div class="callout red" style="margin-top:10px"><span class="h">陷阱</span>緊張時不自覺<b>捏太快、太大</b> → 胃脹氣、逆流、回心血量 ↓、ROSC 機會 ↓</div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.70</div>
-  <div class="notes">C-E 手勢的 E 三指要扣在下顎骨上，不要壓到頸部軟組織，否則反而壓迫呼吸道。示範兩人法：扣面罩的人用雙手 C-E（或拇指魚際法），另一人雙手擠球。</div>
+  <div class="callout red" style="margin-top:16px"><span class="h">陷阱</span>緊張時不自覺<b>捏太快、太大</b> → 胃脹氣、逆流、回心血量 ↓、ROSC 機會 ↓</div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.68、70</div>
+  <div class="notes">C-E 手勢的 E 三指要扣在下顎骨上，不要壓到頸部軟組織，否則反而壓迫呼吸道。示範兩人法：扣面罩的人用雙手 C-E，另一人雙手擠球。</div>
 </section>
 
 <!-- ============ BVM THEN WHAT ============ -->
@@ -435,6 +440,176 @@ table.tight td,table.tight th{font-size:19px}
   </div>
   <div class="callout" style="margin-top:28px"><span class="h">情境</span>嗎啡過量呼吸 6 次／分：打開呼吸道 → BVM → naloxone → 醒了，不用插管。</div>
   <div class="src">ACLS 精華第七版 第 4 章 p.70</div>
+</section>
+
+<!-- ============ DIVIDER 05 ============ -->
+<section class="slide divider">
+  <div class="big"><div class="no">05</div><h2>氣：氧氣濃度的評估及處置</h2></div>
+</section>
+
+<!-- ============ SpO2 TARGETS ============ -->
+<section class="slide">
+  <div class="kicker">SpO₂ targets</div>
+  <h2>SpO₂ 幾分才夠？</h2><div class="rule"></div>
+  <div class="cols c2" style="gap:36px">
+    <div class="card navy"><h3>判讀</h3>
+      <div style="display:flex;gap:40px;margin-top:8px"><div><div class="stat" style="font-size:60px;color:var(--amber)">≤ 94<small>%</small></div><p class="lbl">不夠</p></div><div><div class="stat" style="font-size:60px">&lt; 90<small>%</small></div><p class="lbl">定義為缺氧</p></div></div></div>
+    <div class="card teal"><h3>不同病人的目標</h3>
+      <table class="tight" style="margin-top:4px">
+        <tr><th>病人</th><th>目標 SpO₂</th></tr>
+        <tr><td>ACS</td><td>&lt; 90% 才給氧，維持 <b>90–98%</b></td></tr>
+        <tr><td>COPD</td><td><b>88–92%</b>，避免過度氧合</td></tr>
+        <tr><td>ROSC 後</td><td><b>90–98%</b> <span class="tag new">NEW 2025</span></td></tr>
+      </table></div>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.71</div>
+  <div class="notes">COPD 病人有明顯呼吸窘迫或低血氧時，可暫時給較高濃度氧氣並密切監測，不要因為怕 CO₂ 滯留就不給氧。</div>
+</section>
+
+<!-- ============ O2 DEVICES ============ -->
+<section class="slide">
+  <div class="kicker">Oxygen delivery devices</div>
+  <h2>四種給氧裝置：流速與 FiO₂</h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:1fr 300px;gap:30px">
+    <div class="fio">
+      <div></div><div class="ax"><span style="left:0%">20%</span><span style="left:25%">40%</span><span style="left:50%">60%</span><span style="left:75%">80%</span><span style="left:100%">100%</span></div>
+      <div class="nm">鼻導管<small>1–6 L/min</small></div><div class="trk"><div class="seg" style="left:5%;width:25%;background:var(--teal)">24–44%</div><div class="tn" style="left:32%">每 +1 L 約 +4%；<b>&gt; 6 L/min 不再上升</b>，鼻乾、流鼻血</div></div>
+      <div class="nm">簡單面罩<small>6–10 L/min</small></div><div class="trk"><div class="seg" style="left:18.75%;width:31.25%;background:var(--navy)">35–60%</div><div class="tn" style="left:52%"><b>&lt; 6 L/min</b> → CO₂ 滯留</div></div>
+      <div class="nm">Venturi 面罩<small>4–8 → 10–12 L/min</small></div><div class="trk"><div class="seg" style="left:5%;width:37.5%;background:var(--amber)">24–50%</div><div class="tn" style="left:45%"><b>COPD</b>：FiO₂ <b>精準穩定</b></div></div>
+      <div class="nm">非再呼吸面罩 NRM<small>10–15 L/min</small></div><div class="trk"><div class="tn" style="left:2%;width:46%;text-align:right">6 L ≈ 60%，每 +1 L 約 +10%；<b>儲氣袋不可塌陷</b></div><div class="seg" style="left:50%;width:50%;background:linear-gradient(90deg,#e7a3ad,var(--red))">60% → 95–100%</div></div>
+    </div>
+    <figure class="ph" style="height:400px"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Adult_with_air_entrainment_%28Venturi%29_mask.png" alt="Venturi 面罩"><figcaption><b>Venturi 面罩</b>：噴嘴決定 FiO₂；好處是 COPD 病人氧濃度穩定，不抑制呼吸驅動力</figcaption></figure>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.71–72</div>
+  <div class="notes">用色條比較 FiO₂ 範圍，每種裝置的重點直接寫在色條旁。Venturi 是 4–8 L/min 給 24–40%，10–12 L/min 給 40–50%，特點是精準穩定，適合 COPD 合併 CO₂ 過高。NRM 正常使用吸入氧濃度可達 94% 以上，10–15 L/min 約 95–100%。</div>
+</section>
+
+<!-- ============ DEVICE SELECTION ============ -->
+<section class="slide">
+  <div class="kicker">Choosing a device</div>
+  <h2>怎麼選裝置</h2><div class="rule"></div>
+  <table class="tight">
+    <tr><th style="width:22%">裝置</th><th style="width:30%">適用</th><th>注意</th></tr>
+    <tr><td><b>鼻導管</b></td><td>輕微窘迫（SpO₂ 94–100%）</td><td><b>張口呼吸者不適合</b>（吸氣經口不經鼻）</td></tr>
+    <tr><td><b>簡單面罩</b></td><td>SpO₂ 90–93%</td><td>流速 <b>&lt; 6 L/min 易 CO₂ 滯留</b> → 嗜睡、換氣不足</td></tr>
+    <tr><td><b>NRM</b></td><td>需高濃度：<b>一氧化碳中毒</b>、SpO₂ 過低</td><td>單向閥＋吐氣閥，避免再吸入呼出氣體</td></tr>
+    <tr><td><b>Venturi</b></td><td><b>COPD</b> 合併 CO₂ 過高</td><td>噴嘴高速氣流夾帶空氣；噴嘴越小、夾帶空氣越多、FiO₂ 越低 → 避免抑制呼吸驅動力</td></tr>
+  </table>
+  <div class="src">ACLS 精華第七版 第 4 章 p.71–72</div>
+  <div class="notes">情境題：火場救出的病人 SpO₂ 99%，要不要給氧？一氧化碳中毒時 SpO₂ 會假性正常，要給 NRM。</div>
+</section>
+
+<!-- ============ DIVIDER 06 ============ -->
+<section class="slide divider">
+  <div class="big"><div class="no">06</div><h2>RSI 與氣管內管插管</h2></div>
+</section>
+
+<!-- ============ FIGURE 4-1 ============ -->
+<section class="slide">
+  <div class="kicker">Figure 4-1</div>
+  <h2>RSI（Rapid Sequence Intubation）快速誘導插管<small>使病人失去意識＋肌肉鬆弛</small></h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:1fr 0.75fr;gap:36px">
+    <div class="fl" style="gap:4px">
+      <div class="fb" style="padding:6px 16px;font-size:19px">準備插管設備、擺位、IV／monitor、<b>穿戴 PPE</b></div><div class="fa">▼</div>
+      <div class="fb" style="padding:6px 16px;font-size:19px">給 100% 氧氣、抽吸</div><div class="fa">▼</div>
+      <div class="fb" style="padding:6px 16px;font-size:19px">考慮 premedication：<b>LOAD</b></div><div class="fa">▼</div>
+      <div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇鎮靜劑</b></div><div class="fa">▼</div>
+      <div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇肌肉鬆弛劑</b>：SCH 或 rocuronium</div><div class="fa">▼</div>
+      <div class="fb" style="padding:6px 16px;font-size:19px">環狀軟骨按壓 &amp; BVM 通氣</div><div class="fa">▼</div>
+      <div class="fb r" style="padding:6px 16px;font-size:19px"><b>氣管內管置入</b>　→ 失敗：尋求替代通氣途徑或其他專家</div><div class="fa">▼</div>
+      <div class="fb t" style="padding:6px 16px;font-size:19px">身體檢查及儀器監測</div><div class="fa">▼</div>
+      <div class="fb" style="padding:6px 16px;font-size:19px">固定氣管內管 → 拍 CXR 調整位置</div>
+    </div>
+    <div>
+      <div class="card navy"><h3>又稱</h3><p>藥物輔助插管 DAI（drug-assisted intubation）</p></div>
+      <div class="card teal" style="margin-top:18px"><h3>好處</h3><ul class="dots sm"><li>吸入性肺炎、缺氧 ↓</li><li>交感激發的腦壓、血壓上升 ↓</li><li>插管較容易</li><li>病人抵抗與不適 ↓</li></ul></div>
+      <p class="lbl" style="margin-top:12px">鎮靜劑與肌肉鬆弛劑的選擇見後面藥物頁</p>
+    </div>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 圖 4-1（p.73）、p.77</div>
+  <div class="notes">依原圖單一直式流程繪製。環狀軟骨按壓在原圖中保留，但 2025 年心臟停止時不建議常規使用；非心臟停止 RSI 是否使用依院內規範。非心臟停止、無禁忌症的病人，插管都應考慮 RSI，但不經評估濫用藥物也很危險。</div>
+</section>
+
+<!-- ============ RSI WHY / CONTRA ============ -->
+<section class="slide">
+  <div class="kicker">RSI · Indications</div>
+  <h2>什麼時候適合、什麼時候不適合 RSI</h2><div class="rule"></div>
+  <div class="cols c2" style="gap:36px">
+    <div class="card teal"><h3>適合</h3><p><b>非心臟停止</b>、無禁忌症、需要插管的病人</p>
+      <p class="lbl" style="margin-top:12px">已近心肺停止 → 不需 RSI</p></div>
+    <div class="card red"><h3>不宜 RSI</h3><ul class="dots sm"><li>評估為<b>困難插管</b>：顏面骨折變形、咽喉水腫或腫瘤、口內大量活動性出血</li><li><b>BVM 可能無法達到良好 SpO₂</b></li></ul></div>
+  </div>
+  <div class="cols c2" style="gap:36px;margin-top:22px">
+    <div class="card navy"><h3><span class="mn">3-3-2</span>困難插管</h3><p>張口 &lt; 3 指、下巴到舌骨 &lt; 3 指、舌骨到甲狀軟骨 &lt; 2 指</p><p class="lbl">Mallampati 需病人配合，急重症較不實用</p></div>
+    <div class="card amber"><h3>失敗計畫</h3><p>BVM 維持通氣 → 再試；自評無法完成 → <b>儘早找麻醉科</b>，請耳鼻喉科待命氣切</p></div>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.77</div>
+</section>
+
+<!-- ============ PREP ============ -->
+<section class="slide">
+  <div class="kicker">Preparation</div>
+  <h2>準備：人與物</h2><div class="rule"></div>
+  <div class="cols c2" style="gap:30px">
+    <div class="card navy"><h3>人：評估病人</h3>
+      <table class="tight" style="margin-top:4px">
+        <tr><td style="width:70px"><span class="mn">AMPLE</span></td><td>過敏、用藥、過去史、上一餐、發生經過</td></tr>
+        <tr><td><b>頸</b></td><td>疼痛、腫瘤、血腫、創傷、氣管偏移</td></tr>
+        <tr><td><b>臉</b></td><td>張口、下顎、灼傷、水腫、舌大小、皮下氣腫</td></tr>
+        <tr><td><b>牙</b></td><td>鬆動、活動假牙</td></tr>
+        <tr><td><b>全身</b></td><td>大面積燒傷、壓碎傷、洗腎管路、IICP</td></tr>
+      </table>
+      <p class="lbl">團隊：PPE 全程（N95、護目、手套、防水隔離衣）</p></div>
+    <div class="card red"><h3>物：<span class="mn">口訣</span>SOAP-ME</h3>
+      <table class="tight" style="margin-top:4px">
+        <tr><td style="width:50px"><b>S</b></td><td>Suction 抽吸</td></tr>
+        <tr><td><b>O</b></td><td>O₂ 氧氣</td></tr>
+        <tr><td><b>A</b></td><td>Airways 呼吸道器材</td></tr>
+        <tr><td><b>P</b></td><td>Premedication 藥物</td></tr>
+        <tr><td><b>M</b></td><td>Monitor 監視器</td></tr>
+        <tr><td><b>E</b></td><td>ETCO₂</td></tr>
+      </table>
+      <p class="lbl">儘早建立 IV；疑高傳染性呼吸道病原 → 優先<b>影像式喉鏡</b></p></div>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.72–74、77–78</div>
+  <div class="notes">評估結果會影響藥物選擇，例如大面積燒傷、壓碎傷、洗腎病人要小心 succinylcholine 的高血鉀。</div>
+</section>
+
+<!-- ============ STEPS 1-6 ============ -->
+<section class="slide">
+  <div class="kicker">Oral intubation · 1</div>
+  <h2>插管動作與陷阱（一）：準備到給藥</h2><div class="rule"></div>
+  <table class="tight">
+    <tr><th style="width:12%">步驟</th><th style="width:44%">動作與細節</th><th>Pitfall</th></tr>
+    <tr><td><b>擺位</b></td><td>頭後墊毛巾，<b>嗅吸姿勢</b></td><td>—</td></tr>
+    <tr><td><b>預給氧</b></td><td>打開呼吸道、抽痰；<b>有自發呼吸用 NRM 給 100%</b>；呼吸動力不足才 BVM</td><td>用 BVM 對抗自主呼吸 → <b>誘發嘔吐</b></td></tr>
+    <tr><td><b>前導藥物</b></td><td>視狀況給 <b>LOAD</b>，推完等 <b>3 分鐘</b></td><td>不是每個人都要給</td></tr>
+    <tr><td><b>誘導</b></td><td>先鎮靜、再肌鬆；BVM 通氣到 <b>SpO₂ ≥ 95%</b> 再插</td><td>一段時間仍無法 ≥ 90% → <b>不要猶豫，直接插</b></td></tr>
+    <tr><td><b>備物</b></td><td>葉片 0–4 號（約嘴角到耳垂）；ET 內徑<b>男 7.5–8.0、女 7.0–7.5 mm</b>；10 mL 測氣囊後抽扁、潤滑</td><td>葉片燈不亮；氣囊破</td></tr>
+    <tr><td><b>通條</b></td><td>前端在管尖<b>內 1–2 cm</b>，彎成適當曲度</td><td><b>通條凸出管尖</b> → 氣道傷害</td></tr>
+  </table>
+  <div class="src">ACLS 精華第七版 第 4 章 p.72–74</div>
+  <div class="notes">預給氧這步常被忽略：病人還有自發呼吸時，用 NRM 預給氧，不要硬擠 BVM。</div>
+</section>
+
+<!-- ============ STEPS 7-12 ============ -->
+<section class="slide">
+  <div class="kicker">Oral intubation · 2</div>
+  <h2>插管動作與陷阱（二）：置入到固定</h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:1fr 340px;gap:26px">
+    <table class="tight">
+      <tr><th style="width:13%">步驟</th><th style="width:47%">動作與細節</th><th>Pitfall</th></tr>
+      <tr><td><b>置鏡</b></td><td>右手撐嘴；左手握喉鏡由<b>右嘴角</b>放入、舌推左；葉片尖端放入 <b>vallecula</b></td><td>舌頭沒推開，擋住視野</td></tr>
+      <tr><td><b>挑起</b></td><td>用臂力往前上方約 <b>45°</b> 舉起</td><td><b>以上門牙當支點撬</b> → 斷牙、看不到</td></tr>
+      <tr><td><b>送管</b></td><td>右嘴角送入，直視過聲帶，氣囊沒入聲帶下；深度約 <b>21 cm</b>（19–23）</td><td>視線離開聲帶</td></tr>
+      <tr><td><b>氣囊</b></td><td>打 8–10 mL，壓力 <b>25–35 cmH₂O</b></td><td>&gt; 40 cmH₂O → 黏膜壓瘡</td></tr>
+      <tr><td><b>時間</b></td><td><b>20 秒</b>內；不成 → BVM 30–60 秒再試；CPR 中停壓 <b>&lt; 10 秒</b></td><td>一直試、不給氧</td></tr>
+      <tr><td><b>固定</b></td><td>膠帶＋防咬器；CXR 管尖在 <b>carina 上 2–3 cm</b></td><td>躁動推入 → 單肺通氣</td></tr>
+    </table>
+    <figure class="ph" style="height:560px"><img src="https://i0.wp.com/airwayjedi.com/wp-content/uploads/2018/10/Adult-airway-anatomy-cross-section.png?resize=528%2C567&amp;ssl=1" alt="呼吸道解剖"><figcaption>葉片尖端放在 <b>vallecula</b>（會厭谿：舌根與會厭之間）</figcaption></figure>
+  </div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.74–75</div>
+  <div class="notes">喉鏡是「舉」不是「撬」，以門牙為支點會斷牙又看不到。聲帶看不到時請助手做 BURP（下一頁），並拉開右嘴角。CPR 中插管：喉鏡已放進口腔、管子備好，才喊停壓胸。</div>
 </section>
 
 <!-- ============ CRICOID vs BURP ============ -->
@@ -457,90 +632,37 @@ table.tight td,table.tight th{font-size:19px}
   <div class="notes">環狀軟骨按壓壓的是環狀軟骨、目的是防逆流；BURP 壓的是甲狀軟骨、目的是看聲帶。2025 年明確不建議心臟停止時常規做環狀軟骨按壓。</div>
 </section>
 
-<!-- ============ DIVIDER 05 ============ -->
-<section class="slide divider">
-  <div class="big"><div class="no">05</div><h2>氣：氧氣濃度的評估及處置</h2><p>先排除道與力，再評估氧氣供需</p></div>
-</section>
-
-<!-- ============ SpO2 TARGETS ============ -->
+<!-- ============ LOAD ============ -->
 <section class="slide">
-  <div class="kicker">SpO₂ targets</div>
-  <h2>SpO₂ 幾分才夠？</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card navy"><h3>判讀</h3>
-      <div style="display:flex;gap:40px;margin-top:8px"><div><div class="stat" style="font-size:60px;color:var(--amber)">≤ 94<small>%</small></div><p class="lbl">不夠</p></div><div><div class="stat" style="font-size:60px">&lt; 90<small>%</small></div><p class="lbl">定義為缺氧</p></div></div></div>
-    <div class="card teal"><h3>不同病人的目標</h3>
-      <table class="tight" style="margin-top:4px">
-        <tr><th>病人</th><th>目標 SpO₂</th></tr>
-        <tr><td>ACS</td><td>&lt; 90% 才給氧，維持 <b>90–98%</b></td></tr>
-        <tr><td>COPD</td><td><b>88–92%</b>，避免過度氧合</td></tr>
-        <tr><td>ROSC 後</td><td><b>90–98%</b> <span class="tag new">NEW 2025</span></td></tr>
-      </table></div>
-  </div>
-  <div class="callout" style="margin-top:26px"><span class="h">ACS 給氧</span>鼻導管 2–6 L/min 起始；病人戴面罩焦慮可改鼻導管；達不到目標再改簡單面罩 6–10 L/min。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.71</div>
-  <div class="notes">COPD 病人有明顯呼吸窘迫或低血氧時，可暫時給較高濃度氧氣並密切監測，不要因為怕 CO₂ 滯留就不給氧。</div>
-</section>
-
-<!-- ============ O2 DEVICES ============ -->
-<section class="slide">
-  <div class="kicker">Oxygen delivery devices</div>
-  <h2>四種給氧裝置：流速與 FiO₂</h2><div class="rule"></div>
-  <div class="fio">
-    <div></div><div class="ax"><span style="left:0%">20%</span><span style="left:25%">40%</span><span style="left:50%">60%</span><span style="left:75%">80%</span><span style="left:100%">100%</span></div>
-    <div class="nm">鼻導管<small>1–6 L/min</small></div><div class="trk"><div class="seg" style="left:5%;width:25%;background:var(--teal)">24–44%</div></div>
-    <div class="nm">簡單面罩<small>6–10 L/min</small></div><div class="trk"><div class="seg" style="left:18.75%;width:31.25%;background:var(--navy)">35–60%</div></div>
-    <div class="nm">Venturi 面罩<small>4–8 → 10–12 L/min</small></div><div class="trk"><div class="seg" style="left:5%;width:37.5%;background:var(--amber)">24–50%（精準）</div></div>
-    <div class="nm">非再呼吸面罩 NRM<small>10–15 L/min</small></div><div class="trk"><div class="seg" style="left:50%;width:50%;background:linear-gradient(90deg,#e7a3ad,var(--red))">60%（6 L）→ 95–100%（10–15 L）</div></div>
-  </div>
-  <div class="cols c2" style="gap:30px;margin-top:22px">
-    <div class="card teal"><p>鼻導管：每 +1 L/min，FiO₂ 約 +4%；<b>超過 6 L/min 不再上升</b>，反而鼻乾、流鼻血</p></div>
-    <div class="card red"><p>NRM：6 L/min 約 60%，每 +1 L/min 約 +10%；<b>儲氣袋吸氣時不可塌陷</b></p></div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.71–72</div>
-  <div class="notes">這張用色條比較 FiO₂ 範圍。Venturi 是 4–8 L/min 給 24–40%，10–12 L/min 給 40–50%，特點是精準穩定。NRM 正常使用吸入氧濃度可達 94% 以上，10–15 L/min 約 95–100%。</div>
-</section>
-
-<!-- ============ DEVICE SELECTION ============ -->
-<section class="slide">
-  <div class="kicker">Choosing a device</div>
-  <h2>怎麼選裝置</h2><div class="rule"></div>
+  <div class="kicker">Premedication</div>
+  <h2><span class="mn">口訣</span>前導藥物 LOAD<small>不是每人都要，依臨床狀況選</small></h2><div class="rule"></div>
   <table class="tight">
-    <tr><th style="width:22%">裝置</th><th style="width:30%">適用</th><th>注意</th></tr>
-    <tr><td><b>鼻導管</b></td><td>輕微窘迫（SpO₂ 94–100%）</td><td><b>張口呼吸者不適合</b>（吸氣經口不經鼻）</td></tr>
-    <tr><td><b>簡單面罩</b></td><td>SpO₂ 90–93%</td><td>流速 <b>&lt; 6 L/min 易 CO₂ 滯留</b> → 嗜睡、換氣不足</td></tr>
-    <tr><td><b>NRM</b></td><td>需高濃度：<b>一氧化碳中毒</b>、SpO₂ 過低</td><td>單向閥＋吐氣閥，避免再吸入呼出氣體</td></tr>
-    <tr><td><b>Venturi</b></td><td><b>COPD</b> 合併 CO₂ 過高</td><td>噴嘴高速氣流夾帶空氣；噴嘴越小、夾帶空氣越多、FiO₂ 越低 → 避免抑制呼吸驅動力</td></tr>
+    <tr><th style="width:17%">藥物</th><th style="width:30%">適應症</th><th style="width:28%">好處</th><th>劑量</th></tr>
+    <tr><td><b>L</b>idocaine</td><td><b>頭部外傷、中風</b>（怕腦壓升高）</td><td>局部麻醉，減緩插管引起的腦壓上升</td><td>1.5 mg/kg IV；30–60 秒起效</td></tr>
+    <tr><td><b>O</b>piate（fentanyl）</td><td>怕血壓、腦壓上升</td><td>減少兒茶酚胺反應；較少 histamine、降壓</td><td>1–3 µg/kg IV；60 秒起效<br><span class="lbl">快推或 &gt; 15 µg/kg：胸壁僵直</span></td></tr>
+    <tr><td><b>A</b>tropine</td><td>&lt; 1 歲、接受 SCH 的小孩、第二劑 SCH、插管時心搏過緩</td><td>減少分泌、拮抗迷走</td><td>0.01 mg/kg IV（最低 0.1 mg）</td></tr>
+    <tr><td><b>D</b>efasciculating</td><td>預防 SCH 肌肉顫動（強壯青少年）</td><td>減少肌肉痠痛</td><td>SCH 前 2–3 分鐘給 10% 劑量非去極化劑</td></tr>
   </table>
-  <div class="src">ACLS 精華第七版 第 4 章 p.71–72</div>
-  <div class="notes">情境題：火場救出的病人 SpO₂ 99%，要不要給氧？一氧化碳中毒時 SpO₂ 會假性正常，要給 NRM。</div>
+  <div class="callout" style="margin-top:20px"><span class="h">現況</span>Defasciculating agent <b>現在少用</b>；推完前導藥物等約 3 分鐘再誘導。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 表 4-1、p.78–79</div>
 </section>
 
-<!-- ============ DIVIDER 06 ============ -->
-<section class="slide divider">
-  <div class="big"><div class="no">06</div><h2>氣管內管插管術</h2><p>經口插管：最適合初學者與一般狀況</p></div>
-</section>
-
-<!-- ============ FIGURE 4-1 ============ -->
+<!-- ============ SEDATIVES ============ -->
 <section class="slide">
-  <div class="kicker">Figure 4-1</div>
-  <h2>氣管內管插管流程</h2><div class="rule"></div>
-  <div class="cols" style="grid-template-columns:1fr 1fr;gap:36px">
-    <div class="fl" style="gap:4px">
-      <div class="fb" style="padding:6px 16px;font-size:19px">準備插管設備、擺位、IV／monitor、<b>穿戴 PPE</b></div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">給 100% 氧氣、抽吸</div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">考慮 premedication：<b>LOAD</b></div><div class="fa">▼</div>
-      <div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇鎮靜劑</b> → 右表</div><div class="fa">▼</div>
-      <div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇肌肉鬆弛劑</b>：SCH 或 rocuronium</div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">環狀軟骨按壓 &amp; BVM 通氣</div><div class="fa">▼</div>
-      <div class="fb r" style="padding:6px 16px;font-size:19px"><b>氣管內管置入</b>　→ 失敗：尋求替代通氣途徑或其他專家</div><div class="fa">▼</div>
-      <div class="fb t" style="padding:6px 16px;font-size:19px">身體檢查及儀器監測</div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">固定氣管內管 → 拍 CXR 調整位置</div>
-    </div>
-    <div class="card amber"><h3>依狀況選鎮靜劑</h3>
+  <div class="kicker">Induction agents</div>
+  <h2>鎮靜誘導藥物：怎麼選、給多少</h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:1fr 360px;gap:24px">
+    <table class="tight">
+      <tr><th style="width:15%">藥物</th><th style="width:19%">劑量 IV</th><th style="width:15%">起效／作用</th><th style="width:25%">優點／適用</th><th>缺點／避免</th></tr>
+      <tr><td><b>Thiamylal</b><br><span class="lbl" style="font-size:16px">巴比妥</span></td><td>3–5 mg/kg（需泡製）</td><td>20–40 秒／5–10 分</td><td>護腦、降腦壓 → <b>頭傷 IICP</b></td><td>心臟抑制、<b>低血壓</b>；低血容減量或不用</td></tr>
+      <tr><td><b>Ketamine</b></td><td>2 mg/kg</td><td>30–60 秒／15 分</td><td>保留呼吸驅動；擴支氣管 → <b>氣喘、休克</b></td><td>腦壓、眼壓、分泌物 ↑；成人解離反應</td></tr>
+      <tr><td><b>Midazolam</b></td><td><b>0.1–0.3 mg/kg</b></td><td>2 分／60–120 分</td><td>急救車常備</td><td>劑量範圍廣；老人、瘦弱、低血容先 <b>2.5 mg</b> 緩推</td></tr>
+      <tr><td><b>Etomidate</b></td><td>0.2–0.4 mg/kg</td><td>60 秒／3–5 分</td><td><b>血流動力影響極小</b>、降腦壓</td><td>暫時抑制 cortisol；肌陣攣</td></tr>
+      <tr><td><b>Propofol</b></td><td><b>1–2 mg/kg</b></td><td>20–40 秒／3–5 分</td><td>甦醒快</td><td>血壓降約 15%、注射痛</td></tr>
+    </table>
+    <div class="card amber"><h3>依狀況選</h3>
       <table class="tight" style="margin-top:4px">
-        <tr><th>狀況</th><th>選擇</th></tr>
-        <tr><td>血壓正常</td><td>thiamylal／midazolam／etomidate／propofol</td></tr>
+        <tr><td>血壓正常</td><td>都可</td></tr>
         <tr><td>輕度低血壓</td><td>midazolam／ketamine／etomidate</td></tr>
         <tr><td>嚴重低血壓</td><td><b>etomidate／ketamine</b></td></tr>
         <tr><td>IICP、血壓正常</td><td>thiamylal／propofol／etomidate</td></tr>
@@ -548,77 +670,52 @@ table.tight td,table.tight th{font-size:19px}
         <tr><td>氣喘重積</td><td><b>ketamine</b>／propofol</td></tr>
       </table></div>
   </div>
-  <div class="src">ACLS 精華第七版 第 4 章 圖 4-1（p.73）</div>
-  <div class="notes">依原圖單一直式流程繪製，右側為原圖旁的鎮靜劑選擇。環狀軟骨按壓在原圖中保留，但提醒 2025 年心臟停止時不建議常規使用；非心臟停止 RSI 是否使用依院內規範。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 圖 4-1、表 4-1、p.79–80</div>
+  <div class="notes">劑量依教科書表 4-1，propofol 與 midazolam 依講師修正（propofol 1–2 mg/kg、midazolam 0.1–0.3 mg/kg）。記法：低血壓找 etomidate 或 ketamine；氣喘找 ketamine；腦壓高找 etomidate 或巴比妥。Propofol 注射痛可先從同一條靜脈給 lidocaine 0.5–1 mg/kg。Ketamine 禁用：&lt; 3 個月、IICP、眼傷或青光眼、冠心病、高血壓、精神病。</div>
 </section>
 
-<!-- ============ PREP ============ -->
+<!-- ============ NMBA ============ -->
 <section class="slide">
-  <div class="kicker">Preparation</div>
-  <h2>準備：SOAP-ME 與防護</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card navy"><h3><span class="mn">口訣</span>SOAP-ME</h3>
-      <table class="tight" style="margin-top:4px">
-        <tr><td style="width:60px"><b>S</b></td><td>Suction 抽吸</td></tr>
-        <tr><td><b>O</b></td><td>O₂ 氧氣</td></tr>
-        <tr><td><b>A</b></td><td>Airways 呼吸道器材</td></tr>
-        <tr><td><b>P</b></td><td>Premedication 前導藥物</td></tr>
-        <tr><td><b>M</b></td><td>Monitor equipment 監視器</td></tr>
-        <tr><td><b>E</b></td><td>ETCO₂</td></tr>
-      </table>
-      <p class="lbl">儘早建立 IV 管路</p></div>
+  <div class="kicker">Neuromuscular blockers</div>
+  <h2>肌肉鬆弛劑：SCH vs Rocuronium</h2><div class="rule"></div>
+  <div class="cols c2" style="gap:30px">
+    <div class="card red"><h3>Succinylcholine（去極化）</h3>
+      <p><b>1–2 mg/kg IV</b>（2–4 mg/kg IM）；<b>&lt; 30–60 秒</b>起效，作用 3–5 分</p>
+      <table class="tight" style="margin-top:8px">
+        <tr><th>副作用</th><th>禁忌症（表 4-2）</th></tr>
+        <tr><td>肌肉顫動、痠痛、橫紋肌溶解</td><td>中風、脊髓損傷</td></tr>
+        <tr><td><b>高血鉀</b></td><td>神經肌肉疾病</td></tr>
+        <tr><td>眼壓、胃內壓、腦壓 ↑</td><td>腦壓增高、眼球開放傷、青光眼</td></tr>
+        <tr><td>惡性高熱、心搏過緩</td><td>惡性高熱病史、cholinesterase 不足</td></tr>
+        <tr><td></td><td>大面積挫傷或燒燙傷、<b>高血鉀、腎衰竭</b></td></tr>
+      </table></div>
     <div>
-      <div class="card red"><h3>疑似高傳染性呼吸道病原</h3><p>優先使用<b>影像式喉鏡</b>（較傳統直接喉鏡安全）</p></div>
-      <div class="card teal" style="margin-top:22px"><h3>PPE 全程配戴</h3><ul class="dots sm"><li>N95 或動力過濾式呼吸器</li><li>護目、手套</li><li>防水隔離衣</li></ul></div>
+      <div class="card navy"><h3>Rocuronium（非去極化）</h3><p><b>0.9–1.2 mg/kg IV</b>；<b>&lt; 1 分</b>起效，作用約 <b>40 分</b></p><p class="lbl">插管劑量下起效接近 SCH、副作用較少；肝腎功能異常作用可能延長</p></div>
+      <div class="card" style="margin-top:16px"><h3>Vecuronium</h3><p>0.1–0.2 mg/kg IV；2–3 分起效，作用 30–60 分</p></div>
+      <div class="card amber" style="margin-top:16px"><h3>SCH 高血鉀高風險期</h3><ul class="dots sm"><li>燒傷、肌肉受傷：受傷後 <b>3–60 天</b></li><li>上運動神經元疾病：<b>1 週–6 個月</b></li></ul></div>
     </div>
   </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.72–74</div>
+  <div class="src">ACLS 精華第七版 第 4 章 表 4-1、表 4-2、p.81–82</div>
+  <div class="notes">「大家常常忽略 SCH 的禁忌症」——腎衰竭高血鉀的洗腎病人是急診最常見的陷阱，這時改用 rocuronium。</div>
 </section>
 
-<!-- ============ STEPS 1-6 ============ -->
+<!-- ============ TABLE 4-1 ============ -->
 <section class="slide">
-  <div class="kicker">Oral intubation · 1–6</div>
-  <h2>經口插管步驟（一）</h2><div class="rule"></div>
-  <ol class="steps">
-    <li>準備器材與藥物（SOAP-ME）、PPE</li>
-    <li>擺<b>嗅吸姿勢</b></li>
-    <li>打開呼吸道、抽痰、可放輔助呼吸道；<b>有自發呼吸用 NRM 給 100% 氧</b>，勿用 BVM 對抗呼吸（易嘔吐）；動力不足才 BVM</li>
-    <li>視狀況給前導藥物 <b>LOAD</b>，等 <b>3 分鐘</b></li>
-    <li><b>RSI</b>：先鎮靜再給肌肉鬆弛劑 → BVM 通氣到 <b>SpO₂ ≥ 95%</b> 再插；一段時間後仍無法 ≥ 90%，不須猶豫直接插管</li>
-    <li>助手備物：檢查葉片燈光；葉片 0–4 號（約嘴角到耳垂）；ET 內徑<b>男 7.5–8.0、女 7.0–7.5 mm</b>；10 mL 針筒測氣囊；<b>通條</b>距管尖 1–2 cm 內，勿凸出</li>
-  </ol>
-  <div class="src">ACLS 精華第七版 第 4 章 p.72–74</div>
-  <div class="notes">第 3 步常被忽略：病人還有自發呼吸時，用 NRM 預給氧，不要硬擠 BVM。</div>
-</section>
-
-<!-- ============ STEPS 7-12 ============ -->
-<section class="slide">
-  <div class="kicker">Oral intubation · 7–11</div>
-  <h2>經口插管步驟（二）</h2><div class="rule"></div>
-  <ol class="steps from7">
-    <li>右手撐開嘴；左手握喉鏡從<b>右嘴角</b>放入、舌推左；葉片入<b>會厭谿 vallecula</b>，往前上約 <b>45°</b> 舉起，<b>勿以上門牙為支點</b></li>
-    <li>直視管子通過聲帶；固定深度約 <b>21 cm</b>（19–23）於嘴角；氣囊打 8–10 mL，壓力 <b>25–35 cmH₂O</b>（&gt; 40 易壓瘡）</li>
-    <li><b>20 秒</b>內插不上 → BVM 30–60 秒再試；CPR 中<b>暫停壓胸 &lt; 10 秒</b>（提高 CCF）；助手拉嘴角、做 BURP</li>
-    <li>抓緊管子拔通條 → 初步確認（下一頁）；上腹有咕嚕聲、胸部無起伏 → <b>立即拔管</b>，小心嘔吐嗆入</li>
-    <li>膠帶＋防咬器固定 → CXR：管尖在 <b>carina 上 2–3 cm</b>，並看氣胸、縱膈腔氣腫、皮下氣腫</li>
-  </ol>
-  <div class="src">ACLS 精華第七版 第 4 章 p.74–75</div>
-  <div class="notes">喉鏡是「舉」不是「撬」，以門牙為支點會斷牙又看不到。聲帶看不到時請助手做 BURP。</div>
-</section>
-
-<!-- ============ DOPE ============ -->
-<section class="slide">
-  <div class="kicker">Deterioration after intubation</div>
-  <h2><span class="mn">口訣</span>插管後氧合變差：DOPE</h2><div class="rule"></div>
-  <div class="dope">
-    <div class="card red"><div class="L">D</div><div class="w">Displacement</div><div class="z">管路滑脫</div><p>進食道、單側支氣管</p></div>
-    <div class="card navy"><div class="L" style="color:var(--navy)">O</div><div class="w">Obstruction</div><div class="z">管腔或迴路阻塞</div><p>痰、血、扭折、咬管</p></div>
-    <div class="card amber"><div class="L" style="color:var(--amber)">P</div><div class="w">Pneumothorax</div><div class="z">氣胸</div><p>張力性氣胸</p></div>
-    <div class="card teal"><div class="L" style="color:var(--teal)">E</div><div class="w">Equipment failure</div><div class="z">通氣設備失效</div><p>氧氣源、呼吸器、管路</p></div>
+  <div class="kicker">Duration of action</div>
+  <h2>作用時間比較久的藥</h2><div class="rule"></div>
+  <div class="tl-bars">
+    <div class="fio" style="grid-template-columns:230px 1fr">
+      <div></div><div class="ax"><span style="left:0%">0</span><span style="left:25%">30 分</span><span style="left:50%">60 分</span><span style="left:75%">90 分</span><span style="left:100%">120 分</span></div>
+      <div class="nm">Midazolam</div><div class="trk"><div class="seg" style="left:50%;width:50%;background:var(--red)">60–120 分</div></div>
+      <div class="nm">Rocuronium</div><div class="trk"><div class="seg" style="left:0;width:33.3%;background:var(--red)">約 40 分</div></div>
+      <div class="nm">Vecuronium</div><div class="trk"><div class="seg" style="left:25%;width:25%;background:var(--amber)">30–60 分</div></div>
+      <div class="nm">Fentanyl</div><div class="trk"><div class="seg" style="left:25%;width:25%;background:var(--amber)">30–60 分</div></div>
+      <div class="nm" style="color:var(--muted)">其他誘導藥、SCH</div><div class="trk"><div class="seg" style="left:0;width:12.5%;background:#a9b2c3">≤ 15 分</div></div>
+    </div>
   </div>
-  <div class="callout" style="margin-top:28px"><span class="h">實務</span>先脫離呼吸器改 BVM 手動通氣，同時看波形 ETCO₂，逐一排除。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.75</div>
-  <div class="notes">適用於所有進階呼吸道，包括 SGA。原文 DOPE 四項；有些教材加上 S（stacked breaths／auto-PEEP），可作補充。</div>
+  <div class="callout red" style="margin-top:26px"><span class="h">臨床意義</span>Etomidate、propofol、SCH 幾分鐘就退；用了 <b>rocuronium</b> 要記得插管後<b>持續鎮靜</b>，避免病人清醒卻不能動。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 表 4-1（p.78）</div>
+  <div class="notes">劑量與時間依表 4-1。Ketamine 約 15 分、thiamylal 5–10 分、etomidate 與 propofol 3–5 分、SCH 3–5 分。重點：短效鎮靜加長效肌鬆，插管後一定要接續鎮靜止痛。</div>
 </section>
 
 <!-- ============ CONFIRM POSITION ============ -->
@@ -672,179 +769,47 @@ table.tight td,table.tight th{font-size:19px}
     <div class="card amber"><h3>自動輸送呼吸機 ATV</h3><p>2020：已放進階呼吸道後可用於運送<br><b>2025：未列入建議</b></p>
       <p class="lbl">優點：減少人工誤差、減少中斷；限制：氧氣電力、設定、成本</p></div>
   </div>
-  <div class="callout ok" style="margin-top:26px"><span class="h">結論</span>確認與監測管位：<b>連續波形二氧化碳監測＋臨床評估</b>。</div>
   <div class="src">ACLS 精華第七版 第 4 章 p.82–83、85；2025 AHA Part 9 Adult ALS</div>
 </section>
 
-<!-- ============ DIVIDER 07 ============ -->
-<section class="slide divider">
-  <div class="big"><div class="no">07</div><h2>快速誘導插管 RSI</h2><p>非心臟停止、無禁忌症，插管都應考慮 RSI</p></div>
-</section>
-
-<!-- ============ RSI WHY / CONTRA ============ -->
+<!-- ============ DOPE ============ -->
 <section class="slide">
-  <div class="kicker">RSI · Drug-assisted intubation</div>
-  <h2>RSI 的好處與禁忌</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card teal"><h3>好處</h3><ol class="steps"><li>吸入性肺炎、缺氧 ↓</li><li>交感激發的腦壓、血壓上升 ↓</li><li>插管較容易</li><li>病人抵抗與不適 ↓</li></ol>
-      <p class="lbl">但不經評估濫用藥物也很危險</p></div>
-    <div>
-      <div class="card red"><h3>不宜 RSI</h3><ul class="dots sm"><li>評估為<b>困難插管</b>（顏面骨折、咽喉水腫或腫瘤、口內大量出血）</li><li><b>BVM 可能無法達到良好 SpO₂</b></li><li>已近心肺停止（不需 RSI）</li></ul></div>
-      <div class="card navy" style="margin-top:20px"><h3><span class="mn">3-3-2</span>困難插管</h3><p>張口 &lt; 3 指、下巴到舌骨 &lt; 3 指、舌骨到甲狀軟骨 &lt; 2 指</p><p class="lbl">Mallampati 需病人配合，急重症較不實用</p></div>
-    </div>
+  <div class="kicker">Deterioration after intubation</div>
+  <h2><span class="mn">口訣</span>插管後氧合變差：DOPE</h2><div class="rule"></div>
+  <div class="dope">
+    <div class="card red"><div class="L">D</div><div class="w">Displacement</div><div class="z">管路滑脫</div><p>進食道、單側支氣管</p></div>
+    <div class="card navy"><div class="L" style="color:var(--navy)">O</div><div class="w">Obstruction</div><div class="z">管腔或迴路阻塞</div><p>痰、血、扭折、咬管</p></div>
+    <div class="card amber"><div class="L" style="color:var(--amber)">P</div><div class="w">Pneumothorax</div><div class="z">氣胸</div><p>張力性氣胸</p></div>
+    <div class="card teal"><div class="L" style="color:var(--teal)">E</div><div class="w">Equipment failure</div><div class="z">通氣設備失效</div><p>氧氣源、呼吸器、管路</p></div>
   </div>
-  <div class="callout" style="margin-top:20px"><span class="h">失敗計畫</span>BVM 維持通氣 → 再試；自評無法完成 → 儘早找麻醉科，請耳鼻喉科待命氣切。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.77</div>
-</section>
-
-<!-- ============ RSI ASSESSMENT ============ -->
-<section class="slide">
-  <div class="kicker">RSI · Preparation</div>
-  <h2>初步評估：病史與身體</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card navy"><h3><span class="mn">口訣</span>AMPLE</h3>
-      <table class="tight" style="margin-top:4px">
-        <tr><td style="width:60px"><b>A</b></td><td>過敏史 Allergy</td></tr>
-        <tr><td><b>M</b></td><td>用藥史 Medication</td></tr>
-        <tr><td><b>P</b></td><td>過去史 Past history</td></tr>
-        <tr><td><b>L</b></td><td>上一餐時間 Last meal</td></tr>
-        <tr><td><b>E</b></td><td>之前發生了何事 Events</td></tr>
-      </table></div>
-    <div class="card teal"><h3>呼吸道與身體評估</h3>
-      <ul class="dots sm"><li><b>頸部</b>：疼痛、腫瘤、血腫、創傷、氣管偏移</li><li><b>臉部</b>：張口、下顎、灼傷、水腫、舌大小、皮下氣腫</li><li><b>牙齒</b>：鬆動、活動假牙</li><li><b>全身</b>：大面積燒傷、壓碎傷、腔室症候群、洗腎管路、IICP</li></ul>
-      <p class="lbl">這些都會影響藥物選擇（例如 SCH 高血鉀）</p></div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.77–78</div>
-</section>
-
-<!-- ============ LOAD ============ -->
-<section class="slide">
-  <div class="kicker">Premedication</div>
-  <h2><span class="mn">口訣</span>前導藥物 LOAD<small>不是每人都要，依臨床狀況選</small></h2><div class="rule"></div>
-  <div class="cols" style="grid-template-columns:repeat(4,1fr);gap:20px">
-    <div class="card navy"><div class="big3" style="color:var(--navy)">L</div><h3>Lidocaine</h3><p>局部麻醉，減緩插管引起的<b>腦壓上升</b></p><p class="lbl">頭部外傷、中風</p></div>
-    <div class="card teal"><div class="big3" style="color:var(--teal)">O</div><h3>Opiate</h3><p><b>Fentanyl</b>：減少兒茶酚胺反應</p><p class="lbl">快速或 &gt; 15 mcg/kg：胸壁僵直</p></div>
-    <div class="card amber"><div class="big3" style="color:var(--amber)">A</div><h3>Atropine</h3><p>減少分泌、拮抗迷走</p><p class="lbl">&lt; 1 歲、接受 SCH 的小孩、第二劑 SCH、插管時心搏過緩</p></div>
-    <div class="card red"><div class="big3">D</div><h3>Defasciculating</h3><p>SCH 前 2–3 分鐘給 <b>10%</b> 劑量非去極化劑</p><p class="lbl">防肌肉顫動（強壯青少年）</p></div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.78–79</div>
-</section>
-
-<!-- ============ SEDATIVES ============ -->
-<section class="slide">
-  <div class="kicker">Induction agents</div>
-  <h2>鎮靜誘導藥物比較</h2><div class="rule"></div>
-  <table class="tight">
-    <tr><th style="width:16%">藥物</th><th style="width:36%">優點／適用</th><th>缺點／避免</th></tr>
-    <tr><td><b>Thiopental</b>（巴比妥）</td><td>保護腦部、降腦壓 → <b>頭傷合併 IICP 首選</b></td><td>心臟抑制、<b>低血壓</b>（低血容時減量或不用）；porphyria、氣喘小心</td></tr>
-    <tr><td><b>Ketamine</b></td><td>保留呼吸驅動與反射；支氣管擴張 → <b>氣喘</b>、<b>休克／低血容</b></td><td>腦壓、眼壓、分泌物 ↑；成人解離反應；&lt; 3 個月、IICP、眼傷、冠心病禁用</td></tr>
-    <tr><td><b>Midazolam</b></td><td>起效快、短效，急救車常備</td><td>劑量範圍廣；老人、瘦弱、低血容 → 先 <b>2.5 mg</b> 緩推</td></tr>
-    <tr><td><b>Etomidate</b></td><td><b>血流動力影響極小</b>、降腦壓 → 腦傷首選</td><td>暫時抑制 cortisol；咳嗽、打嗝、局部癲癇</td></tr>
-    <tr><td><b>Propofol</b></td><td>快速進入與重新分布，甦醒快</td><td>血壓降約 <b>15%</b>、注射痛（先給 lidocaine 0.5–1 mg/kg）</td></tr>
-  </table>
-  <div class="src">ACLS 精華第七版 第 4 章 p.79–80</div>
-  <div class="notes">台灣常用 thiamylal（與 thiopental 同類）。記法：低血壓找 etomidate 或 ketamine；氣喘找 ketamine；腦壓高找 etomidate 或巴比妥。</div>
-</section>
-
-<!-- ============ TABLE 4-1 ============ -->
-<section class="slide">
-  <div class="kicker">Table 4-1</div>
-  <h2>常用 RSI 藥物劑量</h2><div class="rule"></div>
-  <table class="tight">
-    <tr><th style="width:16%">類別</th><th style="width:18%">藥物</th><th>劑量</th><th style="width:26%">起效／作用時間</th></tr>
-    <tr><td rowspan="3">前導藥物</td><td>Atropine</td><td>0.01 mg/kg IV（最低 0.1 mg）</td><td>—</td></tr>
-    <tr><td>Lidocaine</td><td>1.5 mg/kg IV</td><td>30–60 秒</td></tr>
-    <tr><td>Fentanyl</td><td>1–3 µg/kg IV</td><td>60 秒／30–60 分</td></tr>
-    <tr><td rowspan="5">鎮靜誘導</td><td>Ketamine</td><td>2 mg/kg IV</td><td>30–60 秒／15 分</td></tr>
-    <tr><td>Midazolam</td><td>0.07–0.3 mg/kg IV</td><td>2 分／60–120 分</td></tr>
-    <tr><td>Thiamylal</td><td>3–5 mg/kg IV（需泡製）</td><td>20–40 秒／5–10 分</td></tr>
-    <tr><td>Etomidate</td><td>0.2–0.4 mg/kg IV</td><td>60 秒／3–5 分</td></tr>
-    <tr><td>Propofol</td><td>2–3 mg/kg IV</td><td>20–40 秒／3–5 分</td></tr>
-    <tr><td>去極化</td><td>Succinylcholine</td><td>1–2 mg/kg IV；2–4 mg/kg IM</td><td>&lt; 30–60 秒／3–5 分</td></tr>
-    <tr><td rowspan="2">非去極化</td><td>Vecuronium</td><td>0.1–0.2 mg/kg IV</td><td>2–3 分／30–60 分</td></tr>
-    <tr><td>Rocuronium</td><td>0.9–1.2 mg/kg IV</td><td>&lt; 1 分／40 分</td></tr>
-  </table>
-  <div class="src">ACLS 精華第七版 第 4 章 表 4-1（p.78）</div>
-  <div class="notes">劑量依教科書表 4-1，實際使用依院內處方集。</div>
-</section>
-
-<!-- ============ NMBA ============ -->
-<section class="slide">
-  <div class="kicker">Neuromuscular blockers</div>
-  <h2>肌肉鬆弛劑：SCH vs Rocuronium</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:30px">
-    <div class="card red"><h3>Succinylcholine（去極化）</h3>
-      <p>作用超快、超短 → 廣受歡迎</p>
-      <table class="tight" style="margin-top:8px">
-        <tr><th>副作用</th><th>禁忌症（表 4-2）</th></tr>
-        <tr><td>肌肉顫動、痠痛、橫紋肌溶解</td><td>中風、脊髓損傷</td></tr>
-        <tr><td><b>高血鉀</b></td><td>神經肌肉疾病</td></tr>
-        <tr><td>眼壓、胃內壓、腦壓 ↑</td><td>腦壓增高、眼球開放傷、青光眼</td></tr>
-        <tr><td>惡性高熱、心搏過緩</td><td>惡性高熱病史、cholinesterase 不足</td></tr>
-        <tr><td></td><td>大面積挫傷或燒燙傷、<b>高血鉀、腎衰竭</b></td></tr>
-      </table></div>
-    <div>
-      <div class="card navy"><h3>Rocuronium（非去極化）</h3><p>插管劑量下<b>起效接近 SCH</b>、副作用較少</p><p class="lbl">肝腎功能異常仍可快速起效，但作用時間可能延長</p></div>
-      <div class="card amber" style="margin-top:20px"><h3>SCH 高血鉀高風險期</h3><ul class="dots sm"><li>燒傷、肌肉受傷：受傷後 <b>3–60 天</b></li><li>上運動神經元疾病：發病後 <b>1 週–6 個月</b></li><li>&gt; 48 小時的創傷或燒傷</li></ul></div>
-    </div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 表 4-2、p.81–82</div>
-  <div class="notes">「大家常常忽略 SCH 的禁忌症」——腎衰竭高血鉀的洗腎病人是急診最常見的陷阱，這時改用 rocuronium。</div>
+  <div class="callout" style="margin-top:28px"><span class="h">實務</span>先脫離呼吸器改 BVM 手動通氣，同時看波形 ETCO₂，逐一排除。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 p.75</div>
+  <div class="notes">適用於所有進階呼吸道，包括 SGA。原文 DOPE 四項；有些教材加上 S（stacked breaths／auto-PEEP），可作補充。</div>
 </section>
 
 <!-- ============ DIVIDER 08 ============ -->
 <section class="slide divider">
-  <div class="big"><div class="no">08</div><h2>其他進階呼吸道與外科呼吸道</h2><p>插不上、通不了氣時的退路</p></div>
-</section>
-
-<!-- ============ LMA / ETC ============ -->
-<section class="slide">
-  <div class="kicker">Supraglottic airways</div>
-  <h2>LMA 與食道氣管合併管</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div class="card teal"><h3>喉頭面罩 LMA</h3>
-      <ul class="dots sm"><li>抽光氣囊、背面潤滑 → 前端貼<b>硬顎</b>，畫圓弧推到後喉部 → 充氣</li><li><b>不需看到聲帶</b>，EMT-2／EMT-P 院外可執行</li><li>適合：<b>頸椎受傷</b>不能動脖子、<b>困難插管</b></li><li>LMA Fastrach 可經 LMA 再插 ET</li></ul>
-      <p class="lbl">副作用：口咽損傷、聲帶水腫；通氣量大、壓力高、放太久 → 逆流</p></div>
-    <div class="card navy"><h3>食道氣管合併管 ETC</h3>
-      <ul class="dots sm"><li>雙管路：口咽氣囊＋遠端氣囊</li><li>盲插，大多進<b>食道</b> → 兩氣囊充氣，側孔對聲門通氣</li><li>若進氣管 → 由末端開口通氣</li></ul>
-      <p class="lbl">缺點：咽喉、食道可能受傷</p></div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.83–84</div>
+  <div class="big"><div class="no">07</div><h2>其他進階呼吸道與外科呼吸道</h2><p>插不上、通不了氣時的退路</p></div>
 </section>
 
 <!-- ============ CRIC ============ -->
 <section class="slide">
   <div class="kicker">Surgical airway</div>
   <h2>插管失敗、BVM 也拉不上來</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
+  <div class="cols c2" style="gap:30px">
     <div class="card red"><h3>環甲膜針刺術（緩兵之計）</h3>
-      <ol class="steps"><li>摸 Adam's apple 往腳側 → 凹陷處</li><li><b>12–14 G</b> 靜脈導管接空針，正中 <b>45°</b> 朝腳側刺入</li><li>回抽負壓消失 → 推軟管、抽硬管</li><li>噴射通氣 50 psi，<b>吹 1 秒、停 4 秒</b>；或接 3 mL 針筒＋7.5 ET 接頭＋BVM</li></ol>
-      <p class="lbl">易 CO₂ 滯留，氧氣約撐<b>半小時</b> → 趕快找麻醉科（影像導引、軟式內視鏡）</p></div>
-    <div class="card navy"><h3>環甲狀軟骨膜切開術</h3><p>急診醫師面對困難呼吸道（尤其<b>創傷</b>）一定要會</p>
-      <p class="lbl" style="margin-top:12px">步驟參考 ATLS 或 ETTC；市售穿刺組合包傷口小、可快速完成</p></div>
+      <div class="cols" style="grid-template-columns:1fr 250px;gap:16px">
+        <ol class="steps"><li>Adam's apple 往腳側摸到凹陷</li><li><b>12–14 G</b> 導管接空針，正中 <b>45°</b> 朝腳側刺入</li><li>負壓消失 → 推軟管、抽硬管</li></ol>
+        <figure class="ph" style="height:250px"><img src="https://images.squarespace-cdn.com/content/v1/536a936ae4b09724c1063b54/1415366590839-NJDRFUPZ5GVVH7WBBRS2/image-asset.jpeg" alt="針筒接頭作法"></figure>
+      </div>
+      <div class="callout red" style="margin-top:8px"><span class="h">另類作法（拿針筒）</span>軟管接 <b>3 mL 針筒</b>（拔掉推柄）→ 塞入 <b>7.5 ET 的接頭</b> → 接 BVM 通氣</div>
+      <p class="lbl">易 CO₂ 滯留，氧氣約撐<b>半小時</b> → 趕快找麻醉科</p></div>
+    <div class="card navy"><h3>環甲膜切開術 cricothyroidotomy</h3>
+      <figure class="ph" style="height:290px"><img src="https://traumaicu.org/wp-content/uploads/2024/09/Cricothyroidotomy.jpg" alt="環甲膜切開術"></figure>
+      <ul class="dots sm" style="margin-top:10px"><li>放 <b>6 號 ET</b>，送到 cuff 進入氣管即可</li><li>或 <b>6.0 低壓帶囊氣切管</b></li><li>病人原有氣切管：<b>記得先檢查</b>能不能用</li></ul></div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.84</div>
-  <div class="notes">CICO（can't intubate, can't oxygenate）情境。可以搭配假人或豬氣管練習。</div>
-</section>
-
-<!-- ============ 2025 OPIOID ============ -->
-<section class="slide">
-  <div class="kicker">2025 update · Opioid toxicity</div>
-  <h2>嗎啡類中毒：用道力氣處理<span class="tag new" style="margin-left:14px;vertical-align:6px">NEW 2025</span></h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
-    <div>
-      <div class="card amber"><h3>機轉與表現</h3><p>中樞性呼吸抑制 → 低氧 → 缺氧性心臟停止</p>
-        <ul class="dots sm"><li>最早警訊：<b>呼吸 &lt; 8–10 次／分</b></li><li>打鼾、間歇呼吸、張口呼吸</li><li>嗜睡 → 反應遲鈍 → 昏迷</li></ul></div>
-      <div class="card red" style="margin-top:20px"><h3>心臟停止</h3><p>立即 EMS＋高品質 CPR <b>30:2</b>，可給 naloxone <span class="cor c1">1</span></p><p class="lbl">等藥效時<b>不得延誤 CPR</b>；CPR 中給 naloxone／nalmefene <span class="cor c2a">2a</span></p></div>
-    </div>
-    <div class="dlq" style="grid-template-columns:1fr;row-gap:12px">
-      <div class="step" style="margin:0;padding:14px 20px"><div style="display:flex;gap:18px;align-items:center"><div class="ch" style="font-size:60px">道</div><p>壓額提下顎 <span class="cor c1">1</span>，必要時口咽呼吸道；清除異物</p></div></div>
-      <div class="step t" style="margin:0;padding:14px 20px"><div style="display:flex;gap:18px;align-items:center"><div class="ch" style="font-size:60px">力</div><p>BVM 正壓通氣 <span class="cor c1">1</span>，胸部起伏（約 5–7 mL/kg）；進階呼吸道每分鐘 10 次 <span class="cor c2a">2a</span></p></div></div>
-      <div class="step y" style="margin:0;padding:14px 20px"><div style="display:flex;gap:18px;align-items:center"><div class="ch" style="font-size:60px">氣</div><p>立即給 <b>100% 氧氣</b></p></div></div>
-    </div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 p.85；2025 AHA Part 10 Special Circumstances</div>
-  <div class="notes">這是呼吸窘迫站最經典的情境。有脈搏、呼吸抑制：先道力氣＋naloxone，多數不需插管。沒有脈搏：照心臟停止流程，naloxone 不能取代 CPR。</div>
+  <div class="notes">CICO（can't intubate, can't oxygenate）情境。針刺的標準作法是接 50 psi 高壓氧氣、吹 1 秒停 4 秒，但多數單位沒有這個設備，另類作法是 3 mL 針筒去推柄、塞 7.5 號氣管內管接頭再接 BVM。急診醫師遇到困難呼吸道，尤其創傷病人，一定要會環甲膜切開；步驟參考 ATLS 或 ETTC。可以搭配假人或豬氣管練習。</div>
 </section>
 
 <!-- ============ SUMMARY ============ -->
@@ -852,12 +817,12 @@ table.tight td,table.tight th{font-size:19px}
   <div class="kicker">Summary</div>
   <h2>一頁看完</h2><div class="rule"></div>
   <div class="cols c3" style="gap:22px">
-    <div class="card red"><h3>CPR 中</h3><ul class="dots sm"><li>壓胸優先，30:2，每口 1 秒</li><li>最高可行 FiO₂ <span class="cor c2b">2b</span></li><li>進階呼吸道：每 6 秒 1 口</li><li>避免過度換氣</li></ul></div>
-    <div class="card navy"><h3>道</h3><ul class="dots sm"><li>壓額提下顎；頸傷用下顎推擠 <span class="cor c1">1</span></li><li>OPA 昏迷、NPA 半昏迷</li><li>抽吸 ≤ 15 秒</li></ul></div>
-    <div class="card teal"><h3>力</h3><ul class="dots sm"><li>&lt; 8–10 次／分 → 通氣</li><li>二人 BVM <span class="cor c2a">2a</span>、C-E 手勢</li><li>不常規環狀軟骨按壓</li></ul></div>
-    <div class="card amber"><h3>氣</h3><ul class="dots sm"><li>ROSC 後 SpO₂ 90–98%</li><li>COPD 88–92%</li><li>鼻導管 ≤ 6 L/min；NRM 10–15</li></ul></div>
-    <div class="card red"><h3>插管</h3><ul class="dots sm"><li>不是第一步；壓胸停 &lt; 10 秒</li><li>波形 ETCO₂ 確認 <span class="cor c1">1</span></li><li>變差想 DOPE</li></ul></div>
-    <div class="card navy"><h3>RSI</h3><ul class="dots sm"><li>SOAP-ME、LOAD、3-3-2</li><li>低血壓：etomidate／ketamine</li><li>高血鉀風險避 SCH</li></ul></div>
+    <div class="card red"><h3>CPR 中</h3><ul class="dots sm"><li>壓胸優先，30:2，每口 1 秒</li><li>能給 100% 就給 <span class="cor c2b">2b</span></li><li>進階呼吸道：每 6 秒 1 口</li><li>正壓通氣，不靠被動給氧</li></ul></div>
+    <div class="card navy"><h3>道</h3><ul class="dots sm"><li>輕微異物鼓勵咳；嚴重背擊＋腹推</li><li>壓額提下顎；頸傷下顎推擠 <span class="cor c1">1</span></li><li>OPA 無反射、NPA 半昏迷</li><li>SGA：LMA、i-gel</li></ul></div>
+    <div class="card teal"><h3>力</h3><ul class="dots sm"><li>&lt; 8–10 次／分 → 通氣</li><li>雙人 BVM <span class="cor c2a">2a</span>、C-E 手勢</li><li>不常規環狀軟骨按壓</li></ul></div>
+    <div class="card amber"><h3>氣</h3><ul class="dots sm"><li>ROSC 後 SpO₂ 90–98%</li><li>COPD 88–92%，Venturi</li><li>鼻導管 ≤ 6 L/min；NRM 10–15</li></ul></div>
+    <div class="card red"><h3>RSI 與插管</h3><ul class="dots sm"><li>人／物準備：AMPLE、SOAP-ME</li><li>低血壓：etomidate／ketamine</li><li>高血鉀風險避 SCH；roc 後持續鎮靜</li></ul></div>
+    <div class="card navy"><h3>確認與外科呼吸道</h3><ul class="dots sm"><li>波形 ETCO₂ 確認 <span class="cor c1">1</span></li><li>變差想 DOPE</li><li>CICO：針刺（針筒接頭）、切開（6 號 ET）</li></ul></div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章</div>
 </section>
