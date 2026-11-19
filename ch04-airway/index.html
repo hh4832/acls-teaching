@@ -62,6 +62,9 @@ body.m .fio{grid-template-columns:150px 1fr}
 body.m .fio .trk{height:auto;background:linear-gradient(#efece4,#efece4) top/100% 50px no-repeat;padding-top:50px}
 body.m .fio .seg{bottom:auto;height:50px}
 body.m .fio .tn{position:static;display:block;left:auto!important;width:auto!important;text-align:left!important;padding:6px 2px 0;font-size:16px}
+.p6{display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:center}
+.p6 .pt{font:700 14px/1.15 var(--mono);color:var(--red);text-align:right}
+.p6s{padding-left:160px}
 .ph .cr{font:500 13px var(--mono);color:#a29c8e;margin-top:3px;line-height:1.3;word-break:break-all}
 .ph figcaption{font-size:17px;line-height:1.4;color:var(--muted);margin-top:6px}
 .ph.empty .slot{flex:1;min-height:0;border:3px dashed #c9c3b5;border-radius:12px;display:flex;align-items:center;justify-content:center;font:700 22px var(--font);color:#a29c8e;background:#faf8f2}
@@ -524,20 +527,20 @@ body.m .fio .tn{position:static;display:block;left:auto!important;width:auto!imp
   <h2>RSI（Rapid Sequence Intubation）快速誘導插管<small>使病人失去意識＋肌肉鬆弛</small></h2><div class="rule"></div>
   <div class="cols" style="grid-template-columns:1fr 0.75fr;gap:36px">
     <div class="fl" style="gap:4px">
-      <div class="fb" style="padding:6px 16px;font-size:19px">準備插管設備、擺位、IV／monitor、<b>穿戴 PPE</b></div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">給 100% 氧氣、抽吸</div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">考慮 premedication：<b>LOAD</b></div><div class="fa">▼</div>
-      <div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇鎮靜劑</b></div><div class="fa">▼</div>
-      <div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇肌肉鬆弛劑</b>：SCH 或 rocuronium</div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">環狀軟骨按壓 &amp; BVM 通氣</div><div class="fa">▼</div>
-      <div class="fb r" style="padding:6px 16px;font-size:19px"><b>氣管內管置入</b>　→ 失敗：尋求替代通氣途徑或其他專家</div><div class="fa">▼</div>
-      <div class="fb t" style="padding:6px 16px;font-size:19px">身體檢查及儀器監測</div><div class="fa">▼</div>
-      <div class="fb" style="padding:6px 16px;font-size:19px">固定氣管內管 → 拍 CXR 調整位置</div>
+      <div class="p6"><span class="pt">Preparation</span><div class="fb" style="padding:6px 16px;font-size:19px">準備插管設備、擺位、IV／monitor、<b>穿戴 PPE</b></div></div><div class="fa p6s">▼</div>
+      <div class="p6"><span class="pt">Preoxygenation</span><div class="fb" style="padding:6px 16px;font-size:19px">給 100% 氧氣、抽吸</div></div><div class="fa p6s">▼</div>
+      <div class="p6"><span class="pt">Pre-treatment</span><div class="fb" style="padding:6px 16px;font-size:19px">考慮 premedication：<b>LOAD</b></div></div><div class="fa p6s">▼</div>
+      <div class="p6"><span class="pt">Paralysis &amp; induction</span><div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇鎮靜劑</b></div></div><div class="fa p6s">▼</div>
+      <div class="p6s"><div class="fb y" style="padding:6px 16px;font-size:19px"><b>選擇肌肉鬆弛劑</b>：SCH 或 rocuronium</div></div><div class="fa p6s">▼</div>
+      <div class="p6s"><div class="fb" style="padding:6px 16px;font-size:19px">環狀軟骨按壓 &amp; BVM 通氣</div></div><div class="fa p6s">▼</div>
+      <div class="p6"><span class="pt">Placement &amp; proof</span><div class="fb r" style="padding:6px 16px;font-size:19px"><b>氣管內管置入</b>　→ 失敗：尋求替代通氣途徑或其他專家</div></div><div class="fa p6s">▼</div>
+      <div class="p6s"><div class="fb t" style="padding:6px 16px;font-size:19px">身體檢查及儀器監測</div></div><div class="fa p6s">▼</div>
+      <div class="p6"><span class="pt">Post-intubation</span><div class="fb" style="padding:6px 16px;font-size:19px">固定氣管內管 → 拍 CXR 調整位置</div></div>
     </div>
     <div>
-      <div class="card navy"><h3>又稱</h3><p>藥物輔助插管 DAI（drug-assisted intubation）</p></div>
-      <div class="card teal" style="margin-top:18px"><h3>好處</h3><ul class="dots sm"><li>吸入性肺炎、缺氧 ↓</li><li>交感激發的腦壓、血壓上升 ↓</li><li>插管較容易</li><li>病人抵抗與不適 ↓</li></ul></div>
-      <p class="lbl" style="margin-top:12px">鎮靜劑與肌肉鬆弛劑的選擇見後面藥物頁</p>
+      <div class="card red"><h3><span class="mn">口訣</span>6P</h3><ol class="steps" style="margin-top:4px"><li><b>P</b>reparation 準備</li><li><b>P</b>reoxygenation 預給氧</li><li><b>P</b>re-treatment 前導藥物</li><li><b>P</b>aralysis &amp; induction 鎮靜＋肌鬆</li><li><b>P</b>lacement &amp; proof 置入與確認</li><li><b>P</b>ost-intubation management 插管後照護</li></ol></div>
+      <div class="card teal" style="margin-top:14px"><h3>好處</h3><p style="font-size:19px">吸入性肺炎、缺氧 ↓；腦壓、血壓上升 ↓；插管較容易；病人不適 ↓</p></div>
+      <p class="lbl" style="margin-top:8px">又稱藥物輔助插管 DAI</p>
     </div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 圖 4-1（p.73）、p.77</div>
@@ -593,7 +596,7 @@ body.m .fio .tn{position:static;display:block;left:auto!important;width:auto!imp
 <!-- ============ PREP ============ -->
 <section class="slide">
   <div class="kicker">Preparation</div>
-  <h2>準備：人與物</h2><div class="rule"></div>
+  <h2>Preparation：人、物、擺位</h2><div class="rule"></div>
   <div class="cols c2" style="gap:30px">
     <div class="card navy"><h3>人：評估病人</h3>
       <table class="tight" style="margin-top:4px">
@@ -615,31 +618,90 @@ body.m .fio .tn{position:static;display:block;left:auto!important;width:auto!imp
       </table>
       <p class="lbl">儘早建立 IV；疑高傳染性呼吸道病原 → 優先<b>影像式喉鏡</b></p></div>
   </div>
+  <table class="tight" style="margin-top:14px">
+    <tr><th style="width:12%">步驟</th><th style="width:50%">動作與細節</th><th>Pitfall</th></tr>
+    <tr><td><b>擺位</b></td><td>頭後墊毛巾，<b>嗅吸姿勢</b></td><td>—</td></tr>
+    <tr><td><b>預給氧</b></td><td><b>有自發呼吸用 NRM 給 100%</b>；呼吸動力不足才 BVM</td><td>BVM 對抗自主呼吸 → <b>誘發嘔吐</b></td></tr>
+    <tr><td><b>備物</b></td><td>葉片 0–4 號（約嘴角到耳垂）；ET <b>男 7.5–8.0、女 7.0–7.5</b>；10 mL 測氣囊</td><td>葉片燈不亮、氣囊破</td></tr>
+    <tr><td><b>通條</b></td><td>前端在管尖<b>內 1–2 cm</b>，彎成適當曲度</td><td><b>凸出管尖</b> → 氣道傷害</td></tr>
+  </table>
   <div class="src">ACLS 精華第七版 第 4 章 p.72–74、77–78</div>
   <div class="notes">評估結果會影響藥物選擇，例如大面積燒傷、壓碎傷、洗腎病人要小心 succinylcholine 的高血鉀。</div>
 </section>
 
-<!-- ============ STEPS 1-6 ============ -->
+<!-- ============ LOAD ============ -->
 <section class="slide">
-  <div class="kicker">Oral intubation · 1</div>
-  <h2>插管動作與陷阱（一）：準備到給藥</h2><div class="rule"></div>
+  <div class="kicker">Premedication</div>
+  <h2><span class="mn">口訣</span>前導藥物 LOAD<small>不是每人都要，依臨床狀況選</small></h2><div class="rule"></div>
   <table class="tight">
-    <tr><th style="width:12%">步驟</th><th style="width:44%">動作與細節</th><th>Pitfall</th></tr>
-    <tr><td><b>擺位</b></td><td>頭後墊毛巾，<b>嗅吸姿勢</b></td><td>—</td></tr>
-    <tr><td><b>預給氧</b></td><td>打開呼吸道、抽痰；<b>有自發呼吸用 NRM 給 100%</b>；呼吸動力不足才 BVM</td><td>用 BVM 對抗自主呼吸 → <b>誘發嘔吐</b></td></tr>
-    <tr><td><b>前導藥物</b></td><td>視狀況給 <b>LOAD</b>，推完等 <b>3 分鐘</b></td><td>不是每個人都要給</td></tr>
-    <tr><td><b>誘導</b></td><td>先鎮靜、再肌鬆；BVM 通氣到 <b>SpO₂ ≥ 95%</b> 再插</td><td>一段時間仍無法 ≥ 90% → <b>不要猶豫，直接插</b></td></tr>
-    <tr><td><b>備物</b></td><td>葉片 0–4 號（約嘴角到耳垂）；ET 內徑<b>男 7.5–8.0、女 7.0–7.5 mm</b>；10 mL 測氣囊後抽扁、潤滑</td><td>葉片燈不亮；氣囊破</td></tr>
-    <tr><td><b>通條</b></td><td>前端在管尖<b>內 1–2 cm</b>，彎成適當曲度</td><td><b>通條凸出管尖</b> → 氣道傷害</td></tr>
+    <tr><th style="width:17%">藥物</th><th style="width:30%">適應症</th><th style="width:28%">好處</th><th>劑量</th></tr>
+    <tr><td><b>L</b>idocaine</td><td><b>頭部外傷、中風</b>（怕腦壓升高）</td><td>局部麻醉，減緩插管引起的腦壓上升</td><td>1.5 mg/kg IV；30–60 秒起效</td></tr>
+    <tr><td><b>O</b>piate（fentanyl）</td><td>怕血壓、腦壓上升</td><td>減少兒茶酚胺反應；較少 histamine、降壓</td><td>1–3 µg/kg IV；60 秒起效<br><span class="lbl">快推或 &gt; 15 µg/kg：胸壁僵直</span></td></tr>
+    <tr><td><b>A</b>tropine</td><td>&lt; 1 歲、接受 SCH 的小孩、第二劑 SCH、插管時心搏過緩</td><td>減少分泌、拮抗迷走</td><td>0.01 mg/kg IV（最低 0.1 mg）</td></tr>
+    <tr><td><b>D</b>efasciculating</td><td>預防 SCH 肌肉顫動（強壯青少年）</td><td>減少肌肉痠痛</td><td>SCH 前 2–3 分鐘給 10% 劑量非去極化劑</td></tr>
   </table>
-  <div class="src">ACLS 精華第七版 第 4 章 p.72–74</div>
-  <div class="notes">預給氧這步常被忽略：病人還有自發呼吸時，用 NRM 預給氧，不要硬擠 BVM。</div>
+  <div class="callout" style="margin-top:20px"><span class="h">Pre-treatment</span>視狀況給，<b>推完等 3 分鐘</b>再誘導；不是每個人都要給。Defasciculating agent <b>現在少用</b>。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 表 4-1、p.78–79</div>
+</section>
+
+<!-- ============ SEDATIVES ============ -->
+<section class="slide">
+  <div class="kicker">Induction agents</div>
+  <h2>鎮靜誘導藥物：怎麼選、給多少</h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:1fr 430px;gap:24px">
+    <table class="tight">
+      <tr><th style="width:15%">藥物</th><th style="width:19%">劑量 IV</th><th style="width:15%">起效<br>作用</th><th style="width:25%">優點<br>適用</th><th>缺點<br>避免</th></tr>
+      <tr><td><b>Thiopental</b><br><span class="lbl" style="font-size:16px">巴比妥</span></td><td>3–5 mg/kg</td><td>20–40 秒<br>5–10 分</td><td>護腦、降腦壓 → <b>頭傷 IICP</b></td><td>心臟抑制、<b>低血壓</b>；低血容減量或不用</td></tr>
+      <tr><td><b>Ketamine</b></td><td>2 mg/kg</td><td>30–60 秒<br>15 分</td><td>保留呼吸驅動；擴支氣管 → <b>氣喘、休克</b></td><td>腦壓、眼壓、分泌物 ↑；成人解離反應</td></tr>
+      <tr><td><b>Midazolam</b></td><td><b>0.1–0.3 mg/kg</b></td><td>2 分<br>60–120 分</td><td>急救車常備</td><td>劑量範圍廣；老人、瘦弱、低血容先 <b>2.5 mg</b> 緩推</td></tr>
+      <tr><td><b>Etomidate</b></td><td>0.2–0.4 mg/kg</td><td>60 秒<br>3–5 分</td><td><b>血流動力影響極小</b>、降腦壓</td><td>暫時抑制 cortisol；肌陣攣</td></tr>
+      <tr><td><b>Propofol</b></td><td><b>1–2 mg/kg</b></td><td>20–40 秒<br>3–5 分</td><td>甦醒快</td><td>血壓降約 15%、注射痛</td></tr>
+    </table>
+    <div class="card amber"><h3>依狀況選</h3>
+      <table class="tight" style="margin-top:4px">
+        <tr><td>血壓正常</td><td>都可</td></tr>
+        <tr><td>輕度低血壓</td><td>midazolam<br>ketamine<br>etomidate</td></tr>
+        <tr><td>嚴重低血壓</td><td><b>etomidate<br>ketamine</b></td></tr>
+        <tr><td>IICP、血壓正常</td><td>thiopental<br>propofol<br>etomidate</td></tr>
+        <tr><td>IICP、低血壓</td><td><b>etomidate</b></td></tr>
+        <tr><td>氣喘重積</td><td><b>ketamine</b><br>propofol</td></tr>
+      </table></div>
+  </div>
+  <div class="callout" style="margin-top:14px;padding:10px 20px;font-size:20px"><span class="h">Paralysis &amp; induction</span>先鎮靜、再肌鬆 → BVM 通氣到 <b>SpO₂ ≥ 95%</b> 再插；一段時間仍無法 ≥ 90% → <b>不要猶豫，直接插</b>。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 圖 4-1、表 4-1、p.79–80</div>
+  <div class="notes">劑量依教科書表 4-1，propofol 與 midazolam 依講師修正（propofol 1–2 mg/kg、midazolam 0.1–0.3 mg/kg）。記法：低血壓找 etomidate 或 ketamine；氣喘找 ketamine；腦壓高找 etomidate 或巴比妥。Propofol 注射痛可先從同一條靜脈給 lidocaine 0.5–1 mg/kg。Ketamine 禁用：&lt; 3 個月、IICP、眼傷或青光眼、冠心病、高血壓、精神病。</div>
+</section>
+
+<!-- ============ NMBA ============ -->
+<section class="slide">
+  <div class="kicker">Neuromuscular blockers</div>
+  <h2>肌肉鬆弛劑：SCH vs Rocuronium</h2><div class="rule"></div>
+  <div class="cols c2" style="gap:30px">
+    <div class="card red"><h3>Succinylcholine（去極化）</h3>
+      <p><b>1–2 mg/kg IV</b>（2–4 mg/kg IM）；<b>&lt; 30–60 秒</b>起效，作用 3–5 分</p>
+      <table class="tight" style="margin-top:8px">
+        <tr><th>副作用</th><th>禁忌症（表 4-2）</th></tr>
+        <tr><td>肌肉顫動、痠痛、橫紋肌溶解</td><td>中風、脊髓損傷</td></tr>
+        <tr><td><b>高血鉀</b></td><td>神經肌肉疾病</td></tr>
+        <tr><td>眼壓、胃內壓、腦壓 ↑</td><td>腦壓增高、眼球開放傷、青光眼</td></tr>
+        <tr><td>惡性高熱、心搏過緩</td><td>惡性高熱病史、cholinesterase 不足</td></tr>
+        <tr><td></td><td>大面積挫傷或燒燙傷、<b>高血鉀、腎衰竭</b></td></tr>
+      </table></div>
+    <div>
+      <div class="card navy"><h3>Rocuronium（非去極化）</h3><p><b>0.9–1.2 mg/kg IV</b>；<b>&lt; 1 分</b>起效，作用約 <b>40 分</b></p><p class="lbl">起效接近 SCH、副作用較少；肝腎異常作用延長</p></div>
+      <div class="card" style="margin-top:12px"><h3>Vecuronium</h3><p>0.1–0.2 mg/kg IV；2–3 分起效，作用 30–60 分</p></div>
+      <div class="card amber" style="margin-top:12px"><h3>SCH 高血鉀高風險期</h3><ul class="dots sm"><li>燒傷、肌肉受傷：受傷後 <b>3–60 天</b></li><li>上運動神經元疾病：<b>1 週–6 個月</b></li></ul></div>
+    </div>
+  </div>
+  <div class="callout red" style="margin-top:12px;padding:10px 20px;font-size:20px"><span class="h">注意作用時間</span>Rocuronium 約 <b>40 分</b>（SCH 3–5 分）→ 插管後要<b>持續鎮靜</b>；若<b>插管困難</b>，病人短時間<b>無法恢復自主呼吸</b>，更麻煩。</div>
+  <div class="src">ACLS 精華第七版 第 4 章 表 4-1、表 4-2、p.81–82</div>
+  <div class="notes">「大家常常忽略 SCH 的禁忌症」——腎衰竭高血鉀的洗腎病人是急診最常見的陷阱，這時改用 rocuronium。</div>
 </section>
 
 <!-- ============ STEPS 7-12 ============ -->
 <section class="slide">
-  <div class="kicker">Oral intubation · 2</div>
-  <h2>插管動作與陷阱（二）：置入到固定</h2><div class="rule"></div>
+  <div class="kicker">Oral intubation</div>
+  <h2>Placement：插管動作與陷阱</h2><div class="rule"></div>
   <div class="cols" style="grid-template-columns:1fr 340px;gap:26px">
     <table class="tight">
       <tr><th style="width:13%">步驟</th><th style="width:47%">動作與細節</th><th>Pitfall</th></tr>
@@ -674,74 +736,6 @@ body.m .fio .tn{position:static;display:block;left:auto!important;width:auto!imp
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.70–71；2025 AHA Part 9 Adult ALS</div>
   <div class="notes">環狀軟骨按壓壓的是環狀軟骨、目的是防逆流；BURP 壓的是甲狀軟骨、目的是看聲帶。2025 年明確不建議心臟停止時常規做環狀軟骨按壓。</div>
-</section>
-
-<!-- ============ LOAD ============ -->
-<section class="slide">
-  <div class="kicker">Premedication</div>
-  <h2><span class="mn">口訣</span>前導藥物 LOAD<small>不是每人都要，依臨床狀況選</small></h2><div class="rule"></div>
-  <table class="tight">
-    <tr><th style="width:17%">藥物</th><th style="width:30%">適應症</th><th style="width:28%">好處</th><th>劑量</th></tr>
-    <tr><td><b>L</b>idocaine</td><td><b>頭部外傷、中風</b>（怕腦壓升高）</td><td>局部麻醉，減緩插管引起的腦壓上升</td><td>1.5 mg/kg IV；30–60 秒起效</td></tr>
-    <tr><td><b>O</b>piate（fentanyl）</td><td>怕血壓、腦壓上升</td><td>減少兒茶酚胺反應；較少 histamine、降壓</td><td>1–3 µg/kg IV；60 秒起效<br><span class="lbl">快推或 &gt; 15 µg/kg：胸壁僵直</span></td></tr>
-    <tr><td><b>A</b>tropine</td><td>&lt; 1 歲、接受 SCH 的小孩、第二劑 SCH、插管時心搏過緩</td><td>減少分泌、拮抗迷走</td><td>0.01 mg/kg IV（最低 0.1 mg）</td></tr>
-    <tr><td><b>D</b>efasciculating</td><td>預防 SCH 肌肉顫動（強壯青少年）</td><td>減少肌肉痠痛</td><td>SCH 前 2–3 分鐘給 10% 劑量非去極化劑</td></tr>
-  </table>
-  <div class="callout" style="margin-top:20px"><span class="h">現況</span>Defasciculating agent <b>現在少用</b>；推完前導藥物等約 3 分鐘再誘導。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 表 4-1、p.78–79</div>
-</section>
-
-<!-- ============ SEDATIVES ============ -->
-<section class="slide">
-  <div class="kicker">Induction agents</div>
-  <h2>鎮靜誘導藥物：怎麼選、給多少</h2><div class="rule"></div>
-  <div class="cols" style="grid-template-columns:1fr 430px;gap:24px">
-    <table class="tight">
-      <tr><th style="width:15%">藥物</th><th style="width:19%">劑量 IV</th><th style="width:15%">起效<br>作用</th><th style="width:25%">優點<br>適用</th><th>缺點<br>避免</th></tr>
-      <tr><td><b>Thiopental</b><br><span class="lbl" style="font-size:16px">巴比妥</span></td><td>3–5 mg/kg</td><td>20–40 秒<br>5–10 分</td><td>護腦、降腦壓 → <b>頭傷 IICP</b></td><td>心臟抑制、<b>低血壓</b>；低血容減量或不用</td></tr>
-      <tr><td><b>Ketamine</b></td><td>2 mg/kg</td><td>30–60 秒<br>15 分</td><td>保留呼吸驅動；擴支氣管 → <b>氣喘、休克</b></td><td>腦壓、眼壓、分泌物 ↑；成人解離反應</td></tr>
-      <tr><td><b>Midazolam</b></td><td><b>0.1–0.3 mg/kg</b></td><td>2 分<br>60–120 分</td><td>急救車常備</td><td>劑量範圍廣；老人、瘦弱、低血容先 <b>2.5 mg</b> 緩推</td></tr>
-      <tr><td><b>Etomidate</b></td><td>0.2–0.4 mg/kg</td><td>60 秒<br>3–5 分</td><td><b>血流動力影響極小</b>、降腦壓</td><td>暫時抑制 cortisol；肌陣攣</td></tr>
-      <tr><td><b>Propofol</b></td><td><b>1–2 mg/kg</b></td><td>20–40 秒<br>3–5 分</td><td>甦醒快</td><td>血壓降約 15%、注射痛</td></tr>
-    </table>
-    <div class="card amber"><h3>依狀況選</h3>
-      <table class="tight" style="margin-top:4px">
-        <tr><td>血壓正常</td><td>都可</td></tr>
-        <tr><td>輕度低血壓</td><td>midazolam<br>ketamine<br>etomidate</td></tr>
-        <tr><td>嚴重低血壓</td><td><b>etomidate<br>ketamine</b></td></tr>
-        <tr><td>IICP、血壓正常</td><td>thiopental<br>propofol<br>etomidate</td></tr>
-        <tr><td>IICP、低血壓</td><td><b>etomidate</b></td></tr>
-        <tr><td>氣喘重積</td><td><b>ketamine</b><br>propofol</td></tr>
-      </table></div>
-  </div>
-  <div class="src">ACLS 精華第七版 第 4 章 圖 4-1、表 4-1、p.79–80</div>
-  <div class="notes">劑量依教科書表 4-1，propofol 與 midazolam 依講師修正（propofol 1–2 mg/kg、midazolam 0.1–0.3 mg/kg）。記法：低血壓找 etomidate 或 ketamine；氣喘找 ketamine；腦壓高找 etomidate 或巴比妥。Propofol 注射痛可先從同一條靜脈給 lidocaine 0.5–1 mg/kg。Ketamine 禁用：&lt; 3 個月、IICP、眼傷或青光眼、冠心病、高血壓、精神病。</div>
-</section>
-
-<!-- ============ NMBA ============ -->
-<section class="slide">
-  <div class="kicker">Neuromuscular blockers</div>
-  <h2>肌肉鬆弛劑：SCH vs Rocuronium</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:30px">
-    <div class="card red"><h3>Succinylcholine（去極化）</h3>
-      <p><b>1–2 mg/kg IV</b>（2–4 mg/kg IM）；<b>&lt; 30–60 秒</b>起效，作用 3–5 分</p>
-      <table class="tight" style="margin-top:8px">
-        <tr><th>副作用</th><th>禁忌症（表 4-2）</th></tr>
-        <tr><td>肌肉顫動、痠痛、橫紋肌溶解</td><td>中風、脊髓損傷</td></tr>
-        <tr><td><b>高血鉀</b></td><td>神經肌肉疾病</td></tr>
-        <tr><td>眼壓、胃內壓、腦壓 ↑</td><td>腦壓增高、眼球開放傷、青光眼</td></tr>
-        <tr><td>惡性高熱、心搏過緩</td><td>惡性高熱病史、cholinesterase 不足</td></tr>
-        <tr><td></td><td>大面積挫傷或燒燙傷、<b>高血鉀、腎衰竭</b></td></tr>
-      </table></div>
-    <div>
-      <div class="card navy"><h3>Rocuronium（非去極化）</h3><p><b>0.9–1.2 mg/kg IV</b>；<b>&lt; 1 分</b>起效，作用約 <b>40 分</b></p><p class="lbl">起效接近 SCH、副作用較少；肝腎異常作用延長</p></div>
-      <div class="card" style="margin-top:12px"><h3>Vecuronium</h3><p>0.1–0.2 mg/kg IV；2–3 分起效，作用 30–60 分</p></div>
-      <div class="card amber" style="margin-top:12px"><h3>SCH 高血鉀高風險期</h3><ul class="dots sm"><li>燒傷、肌肉受傷：受傷後 <b>3–60 天</b></li><li>上運動神經元疾病：<b>1 週–6 個月</b></li></ul></div>
-    </div>
-  </div>
-  <div class="callout red" style="margin-top:12px;padding:10px 20px;font-size:20px"><span class="h">注意作用時間</span>Rocuronium 約 <b>40 分</b>（SCH 3–5 分）→ 插管後要<b>持續鎮靜</b>；若<b>插管困難</b>，病人短時間<b>無法恢復自主呼吸</b>，更麻煩。</div>
-  <div class="src">ACLS 精華第七版 第 4 章 表 4-1、表 4-2、p.81–82</div>
-  <div class="notes">「大家常常忽略 SCH 的禁忌症」——腎衰竭高血鉀的洗腎病人是急診最常見的陷阱，這時改用 rocuronium。</div>
 </section>
 
 <!-- ============ CONFIRM POSITION ============ -->
