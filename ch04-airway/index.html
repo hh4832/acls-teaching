@@ -55,6 +55,9 @@ body.m .dope{grid-template-columns:1fr 1fr}
 table.tight td,table.tight th{font-size:19px}
 .ph{margin:0;display:flex;flex-direction:column;height:200px}
 .ph img{flex:1;min-height:0;width:100%;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px}
+table.tight.big td,table.tight.big th{font-size:24px;padding-top:13px;padding-bottom:13px}
+table.tight.xbig td,table.tight.xbig th{font-size:29px;padding:22px 20px}
+table.tight.xbig .cor{font-size:22px}
 .ph .cr{font:500 13px var(--mono);color:#a29c8e;margin-top:3px;line-height:1.3;word-break:break-all}
 .ph figcaption{font-size:17px;line-height:1.4;color:var(--muted);margin-top:6px}
 .ph.empty .slot{flex:1;min-height:0;border:3px dashed #c9c3b5;border-radius:12px;display:flex;align-items:center;justify-content:center;font:700 22px var(--font);color:#a29c8e;background:#faf8f2}
@@ -172,9 +175,9 @@ table.tight td,table.tight th{font-size:19px}
 <section class="slide">
   <div class="kicker">Positive-pressure vs passive oxygen · Barrier devices</div>
   <h2>正壓通氣才是主力；院前用口袋面罩</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
+  <div class="cols" style="grid-template-columns:1fr 2fr;gap:30px">
     <div>
-      <div class="cols c2" style="gap:16px">
+      <div class="cols c2" style="gap:12px">
         <div class="card red" style="text-align:center"><h3>正壓通氣</h3><div class="stat" style="font-size:52px">主要</div><p class="lbl">口對口、口袋面罩、BVM</p></div>
         <div class="card navy" style="text-align:center"><h3>被動給氧</h3><div class="stat" style="font-size:52px;color:var(--muted)">不夠</div><p class="lbl">只掛面罩＋壓胸</p></div>
       </div>
@@ -183,9 +186,9 @@ table.tight td,table.tight th{font-size:19px}
         <p class="lbl">能兼顧有效通氣與壓胸（30:2）者，<b>預後顯著較好</b></p></div>
     </div>
     <div class="card teal"><h3>院前：屏障裝置</h3>
-      <div class="cols c2" style="gap:16px;margin-top:6px">
-        <figure class="ph"><img src="https://s3.us-east-2.amazonaws.com/medictests-storage-production/images/ckeditor/529/content_pocket_mask.png" alt="口袋面罩" style="object-fit:contain"><div class="cr">圖片來源：s3.us-east-2.amazonaws.com</div><figcaption><b>口袋面罩</b> pocket mask<br>通氣較佳，<b>有就優先用</b></figcaption></figure>
-        <figure class="ph"><img src="https://www.defibshop.com.au/wp-content/uploads/2023/10/face-shield_3-scaled.jpg" alt="CPR face shield"><div class="cr">圖片來源：www.defibshop.com.au</div><figcaption><b>面膜式防護片</b> face shield<br>通氣較差</figcaption></figure>
+      <div class="cols c2" style="gap:22px;margin-top:6px">
+        <figure class="ph" style="height:440px"><img src="https://s3.us-east-2.amazonaws.com/medictests-storage-production/images/ckeditor/529/content_pocket_mask.png" alt="口袋面罩" style="object-fit:contain"><div class="cr">圖片來源：s3.us-east-2.amazonaws.com</div><figcaption><b>口袋面罩</b> pocket mask<br>通氣較佳，<b>有就優先用</b></figcaption></figure>
+        <figure class="ph" style="height:440px"><img src="https://www.defibshop.com.au/wp-content/uploads/2023/10/face-shield_3-scaled.jpg" alt="CPR face shield"><div class="cr">圖片來源：www.defibshop.com.au</div><figcaption><b>面膜式防護片</b> face shield<br>通氣較差</figcaption></figure>
       </div>
       <p class="lbl" style="margin-top:10px">一般民眾：口袋面罩、防護片、直接口對口皆可接受<br>EMS：確實打開呼吸道＋口袋面罩給氧，<b>可能改善存活</b></p></div>
   </div>
@@ -266,10 +269,10 @@ table.tight td,table.tight th{font-size:19px}
   <h2>打開呼吸道：壓額提下顎 vs 下顎推擠</h2><div class="rule"></div>
   <div class="cols c2" style="gap:36px">
     <div class="card navy"><h3>壓額－提下顎法 head tilt–chin lift</h3>
-      <figure class="ph" style="height:230px"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2hQ_JECBbG_EryZ8EDjB6Ax4CIrhJ11subxsNoT_5cfuu9E1bkT0nSXc&amp;s=10" alt="壓額提下顎法"><div class="cr">圖片來源：Google 圖片搜尋（原始來源待查）</div></figure>
+      <figure class="ph" style="height:230px"><img src="https://www.firstaidweb.com/wp-content/uploads/2025/02/Jaw-thrust-e1742741981703.png" alt="壓額提下顎法"><div class="cr">圖片來源：www.firstaidweb.com</div></figure>
       <p style="margin-top:10px"><b>非頸椎創傷</b> <span class="cor c1">1</span>；一般民眾不論是否創傷都教這招</p></div>
     <div class="card red"><h3>下顎推擠法 jaw thrust</h3>
-      <figure class="ph" style="height:230px"><img src="https://www.firstaidweb.com/wp-content/uploads/2025/02/Jaw-thrust-e1742741981703.png" alt="下顎推擠法"><div class="cr">圖片來源：www.firstaidweb.com</div></figure>
+      <figure class="ph empty" style="height:230px"><div class="slot">jaw thrust 圖片待補</div></figure>
       <p style="margin-top:10px"><b>懷疑頸椎損傷</b>，受訓者執行，避免過度伸展 <span class="cor c1">1</span>；頸椎以<b>徒手固定</b></p></div>
   </div>
   <div class="callout red" style="margin-top:20px"><span class="h">抽吸</span>從<b>口角</b>或鼻孔放入，<b>勿從嘴巴正中間進去</b>（刺激懸雍垂、誘發嘔吐）。</div>
@@ -379,7 +382,7 @@ table.tight td,table.tight th{font-size:19px}
 <section class="slide">
   <div class="kicker">Airway strategy during CPR</div>
   <h2>CPR 中怎麼選呼吸道策略</h2><div class="rule"></div>
-  <table class="tight" style="margin-top:10px">
+  <table class="tight xbig" style="margin-top:30px">
     <tr><th>建議</th><th style="width:110px">等級</th></tr>
     <tr><td>依病況與插管能力，<b>BVM 或進階呼吸道</b>皆可</td><td><span class="cor c2b">2b</span></td></tr>
     <tr><td>放置進階呼吸道會中斷壓胸 → <b>延後插管</b>，直到初步 CPR 與電擊無效或 ROSC 後</td><td><span class="cor c1">1</span></td></tr>
@@ -411,7 +414,7 @@ table.tight td,table.tight th{font-size:19px}
 <section class="slide">
   <div class="kicker">Bag-valve-mask</div>
   <h2>BVM 的構造<small>俗稱 Ambu（商品名）</small></h2><div class="rule"></div>
-  <figure class="ph" style="height:640px;margin-top:6px"><img src="assets/bvm-structure.jpg" alt="BVM 構造圖" style="border:none;padding:0;background:none"><div class="cr">圖片來源：講師提供</div></figure>
+  <figure class="ph" style="height:640px;margin-top:6px"><img src="assets/bvm-structure.jpg" alt="BVM 構造圖" style="border:none;padding:0;background:none"><div class="cr">圖片來源：AI 繪製，講師提供</div></figure>
   <div class="src">ACLS 精華第七版 第 4 章 p.69–70</div>
   <div class="notes">講解時可帶到：面罩、病人端單向閥（不吸入呼出氣體）、自動充氣球體、氧氣接頭（15 L/min）、儲氧袋（提高氧濃度到接近 100%）、壓力釋放閥（成人常設 60 cmH₂O，CPR 時應關閉）。</div>
 </section>
@@ -428,8 +431,8 @@ table.tight td,table.tight th{font-size:19px}
       <li><b>C-E 手勢</b>單手扣緊，另一手擠球</li>
       <li><b>二人操作更理想</b>：一人雙手密合面罩，一人擠球 <span class="cor c2a">2a</span></li>
     </ol>
-    <figure class="ph" style="height:440px"><img src="assets/bvm-ce-grip.jpg" alt="C-E 手勢" style="border:none;padding:0;background:none"><div class="cr">圖片來源：AI 生成（ChatGPT）</div><figcaption><b>C-E 手勢</b>：拇指＋食指成 C 壓面罩；三指成 E 扣下顎骨上抬</figcaption></figure>
-    <figure class="ph" style="height:440px"><img src="assets/bvm-two-person.jpg" alt="雙人 BVM" style="border:none;padding:0;background:none"><div class="cr">圖片來源：AI 生成（ChatGPT）</div><figcaption><b>雙人法</b>：雙手 C-E 密合，另一人擠球</figcaption></figure>
+    <figure class="ph" style="height:480px"><img src="assets/bvm-ce-grip.jpg" alt="C-E 手勢" style="border:none;padding:0;background:none;flex:none;height:380px"><div class="cr">圖片來源：AI 繪製，講師提供</div><figcaption><b>C-E 手勢</b>：拇指＋食指成 C 壓面罩；三指成 E 扣下顎骨上抬</figcaption></figure>
+    <figure class="ph" style="height:480px"><img src="assets/bvm-two-person.jpg" alt="雙人 BVM" style="border:none;padding:0;background:none;flex:none;height:380px"><div class="cr">圖片來源：AI 繪製，講師提供</div><figcaption><b>雙人法</b>：雙手 C-E 密合，另一人擠球</figcaption></figure>
   </div>
   <div class="callout red" style="margin-top:16px"><span class="h">陷阱</span>緊張時不自覺<b>捏太快、太大</b> → 胃脹氣、逆流、回心血量 ↓、ROSC 機會 ↓</div>
   <div class="src">ACLS 精華第七版 第 4 章 p.68、70</div>
@@ -458,11 +461,11 @@ table.tight td,table.tight th{font-size:19px}
 <section class="slide">
   <div class="kicker">SpO₂ targets</div>
   <h2>SpO₂ 幾分才夠？</h2><div class="rule"></div>
-  <div class="cols c2" style="gap:36px">
+  <div class="cols" style="grid-template-columns:0.8fr 1.2fr;gap:36px;align-items:start">
     <div class="card navy"><h3>判讀</h3>
       <div style="display:flex;gap:40px;margin-top:8px"><div><div class="stat" style="font-size:60px;color:var(--amber)">≤ 94<small>%</small></div><p class="lbl">不夠</p></div><div><div class="stat" style="font-size:60px">&lt; 90<small>%</small></div><p class="lbl">定義為缺氧</p></div></div></div>
     <div class="card teal"><h3>不同病人的目標</h3>
-      <table class="tight" style="margin-top:4px">
+      <table class="tight big" style="margin-top:8px">
         <tr><th>病人</th><th>目標 SpO₂</th></tr>
         <tr><td>ACS</td><td>&lt; 90% 才給氧，維持 <b>90–98%</b></td></tr>
         <tr><td>COPD</td><td><b>88–92%</b>，避免過度氧合</td></tr>
@@ -485,7 +488,7 @@ table.tight td,table.tight th{font-size:19px}
       <div class="nm">Venturi 面罩<small>4–8 → 10–12 L/min</small></div><div class="trk"><div class="seg" style="left:5%;width:37.5%;background:var(--amber)">24–50%</div><div class="tn" style="left:45%"><b>COPD</b>：FiO₂ <b>精準穩定</b></div></div>
       <div class="nm">非再呼吸面罩 NRM<small>10–15 L/min</small></div><div class="trk"><div class="tn" style="left:2%;width:46%;text-align:right">6 L ≈ 60%，每 +1 L 約 +10%；<b>儲氣袋不可塌陷</b></div><div class="seg" style="left:50%;width:50%;background:linear-gradient(90deg,#e7a3ad,var(--red))">60% → 95–100%</div></div>
     </div>
-    <figure class="ph" style="height:400px"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Adult_with_air_entrainment_%28Venturi%29_mask.png" alt="Venturi 面罩"><div class="cr">圖片來源：upload.wikimedia.org</div><figcaption><b>Venturi 面罩</b>：噴嘴決定 FiO₂；好處是 COPD 病人氧濃度穩定，不抑制呼吸驅動力</figcaption></figure>
+    <figure class="ph" style="height:auto"><img style="flex:none;aspect-ratio:282/330;object-fit:cover;object-position:center top" src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Adult_with_air_entrainment_%28Venturi%29_mask.png" alt="Venturi 面罩"><div class="cr">圖片來源：upload.wikimedia.org</div><figcaption><b>Venturi 面罩</b>：噴嘴決定 FiO₂；好處是 COPD 病人氧濃度穩定，不抑制呼吸驅動力</figcaption></figure>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.71–72</div>
   <div class="notes">用色條比較 FiO₂ 範圍，每種裝置的重點直接寫在色條旁。Venturi 是 4–8 L/min 給 24–40%，10–12 L/min 給 40–50%，特點是精準穩定，適合 COPD 合併 CO₂ 過高。NRM 正常使用吸入氧濃度可達 94% 以上，10–15 L/min 約 95–100%。</div>
@@ -495,7 +498,7 @@ table.tight td,table.tight th{font-size:19px}
 <section class="slide">
   <div class="kicker">Choosing a device</div>
   <h2>怎麼選裝置</h2><div class="rule"></div>
-  <table class="tight">
+  <table class="tight big" style="margin-top:14px">
     <tr><th style="width:22%">裝置</th><th style="width:30%">適用</th><th>注意</th></tr>
     <tr><td><b>鼻導管</b></td><td>輕微窘迫（SpO₂ 94–100%）</td><td><b>張口呼吸者不適合</b>（吸氣經口不經鼻）</td></tr>
     <tr><td><b>簡單面罩</b></td><td>SpO₂ 90–93%</td><td>流速 <b>&lt; 6 L/min 易 CO₂ 滯留</b> → 嗜睡、換氣不足</td></tr>
@@ -551,6 +554,36 @@ table.tight td,table.tight th{font-size:19px}
     <div class="card amber"><h3>失敗計畫</h3><p>BVM 維持通氣 → 再試；自評無法完成 → <b>儘早找麻醉科</b>，請耳鼻喉科待命氣切</p></div>
   </div>
   <div class="src">ACLS 精華第七版 第 4 章 p.77</div>
+</section>
+
+<!-- ============ LEMON HEAVEN ============ -->
+<section class="slide">
+  <div class="kicker">Difficult airway assessment</div>
+  <h2>困難呼吸道評估：LEMON 與 HEAVEN</h2><div class="rule"></div>
+  <div class="cols" style="grid-template-columns:0.8fr 1.6fr;gap:26px">
+    <div class="card navy"><h3><span class="mn">LEMON</span>解剖評估</h3>
+      <table class="tight big" style="margin-top:6px">
+        <tr><td style="width:44px"><b class="red">L</b></td><td><b>L</b>ook externally<br><span class="lbl" style="font-size:17px">外觀：顏面創傷、鬍鬚、短頸、肥胖</span></td></tr>
+        <tr><td><b class="red">E</b></td><td><b>E</b>valuate 3-3-2</td></tr>
+        <tr><td><b class="red">M</b></td><td><b>M</b>allampati</td></tr>
+        <tr><td><b class="red">O</b></td><td><b>O</b>bstruction 阻塞</td></tr>
+        <tr><td><b class="red">N</b></td><td><b>N</b>eck mobility 頸部活動</td></tr>
+      </table>
+      <p class="lbl">需病人配合（張口、Mallampati），急救時常做不到</p></div>
+    <div class="card red"><h3><span class="mn">HEAVEN</span>急救情境：解剖＋生理</h3>
+      <table class="tight" style="margin-top:6px">
+        <tr><th style="width:24%">項目</th><th style="width:38%">定義</th><th>喉鏡選擇</th></tr>
+        <tr><td><b class="red">H</b>ypoxemia</td><td>喉鏡時 SpO₂ ≤ 93%</td><td>單純：DL 較快；解剖困難：VL 可能較快</td></tr>
+        <tr><td><b class="red">E</b>xtremes of size</td><td>≤ 8 歲兒童或肥胖</td><td>極大：VL（外→內）；極小：DL 直葉片</td></tr>
+        <tr><td><b class="red">A</b>natomic challenge</td><td>創傷、腫塊、腫脹、異物</td><td>VL（外→內）；血多用 DL</td></tr>
+        <tr><td><b class="red">V</b>omit／blood／fluid</td><td>咽部有大量液體</td><td>DL，用力挑起</td></tr>
+        <tr><td><b class="red">E</b>xsanguination</td><td>疑貧血，會加速缺氧</td><td>DL 較快；解剖困難用 VL</td></tr>
+        <tr><td><b class="red">N</b>eck mobility</td><td>頸部活動受限、神經損傷</td><td>較輕柔的 VL</td></tr>
+      </table></div>
+  </div>
+  <div class="callout red" style="margin-top:16px"><span class="h">緊急插管</span>病人常無法配合 LEMON；要考慮 <b>HEAVEN</b>，因為它包含<b>生理性困難</b>（缺氧、失血）——解剖看起來好插，病人也可能很快掉 SpO₂ 或血壓。</div>
+  <div class="src">LEMON：Osmosis from Elsevier；HEAVEN：Davis DP, Olvera DJ, et al. Air Med J 2017；喉鏡選擇依 Air Methods HEAVEN 圖卡；定義依 MDCalc</div>
+  <div class="notes">DL = direct laryngoscopy 直接喉鏡；VL = video laryngoscopy 影像喉鏡。「外→內」指先用 VL 從外看清楚再進入；若沒先認出困難，就用 DL 從內往外處理。HEAVEN 由 Air Methods 的 Davis 與 Olvera 推導，是給緊急插管人員用的困難呼吸道預測工具，NPV 高但整體表現中等。</div>
 </section>
 
 <!-- ============ PREP ============ -->
@@ -661,7 +694,7 @@ table.tight td,table.tight th{font-size:19px}
   <div class="cols" style="grid-template-columns:1fr 430px;gap:24px">
     <table class="tight">
       <tr><th style="width:15%">藥物</th><th style="width:19%">劑量 IV</th><th style="width:15%">起效<br>作用</th><th style="width:25%">優點<br>適用</th><th>缺點<br>避免</th></tr>
-      <tr><td><b>Thiamylal</b><br><span class="lbl" style="font-size:16px">巴比妥</span></td><td>3–5 mg/kg（需泡製）</td><td>20–40 秒<br>5–10 分</td><td>護腦、降腦壓 → <b>頭傷 IICP</b></td><td>心臟抑制、<b>低血壓</b>；低血容減量或不用</td></tr>
+      <tr><td><b>Thiopental</b><br><span class="lbl" style="font-size:16px">巴比妥</span></td><td>3–5 mg/kg</td><td>20–40 秒<br>5–10 分</td><td>護腦、降腦壓 → <b>頭傷 IICP</b></td><td>心臟抑制、<b>低血壓</b>；低血容減量或不用</td></tr>
       <tr><td><b>Ketamine</b></td><td>2 mg/kg</td><td>30–60 秒<br>15 分</td><td>保留呼吸驅動；擴支氣管 → <b>氣喘、休克</b></td><td>腦壓、眼壓、分泌物 ↑；成人解離反應</td></tr>
       <tr><td><b>Midazolam</b></td><td><b>0.1–0.3 mg/kg</b></td><td>2 分<br>60–120 分</td><td>急救車常備</td><td>劑量範圍廣；老人、瘦弱、低血容先 <b>2.5 mg</b> 緩推</td></tr>
       <tr><td><b>Etomidate</b></td><td>0.2–0.4 mg/kg</td><td>60 秒<br>3–5 分</td><td><b>血流動力影響極小</b>、降腦壓</td><td>暫時抑制 cortisol；肌陣攣</td></tr>
@@ -672,7 +705,7 @@ table.tight td,table.tight th{font-size:19px}
         <tr><td>血壓正常</td><td>都可</td></tr>
         <tr><td>輕度低血壓</td><td>midazolam<br>ketamine<br>etomidate</td></tr>
         <tr><td>嚴重低血壓</td><td><b>etomidate<br>ketamine</b></td></tr>
-        <tr><td>IICP、血壓正常</td><td>thiamylal<br>propofol<br>etomidate</td></tr>
+        <tr><td>IICP、血壓正常</td><td>thiopental<br>propofol<br>etomidate</td></tr>
         <tr><td>IICP、低血壓</td><td><b>etomidate</b></td></tr>
         <tr><td>氣喘重積</td><td><b>ketamine</b><br>propofol</td></tr>
       </table></div>
