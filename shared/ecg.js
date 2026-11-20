@@ -114,7 +114,7 @@ Strip.prototype.draw=function(now,stat){
   g.lineWidth=1;
   for(let i=0,x=0;x<=W;i++,x=i*mm){g.strokeStyle=i%5?th.sm:th.lg;g.beginPath();g.moveTo(x+.5,0);g.lineTo(x+.5,H);g.stroke()}
   for(let i=-60;i<=60;i++){const y=base+i*mm;if(y<0||y>H)continue;g.strokeStyle=i%5?th.sm:th.lg;g.beginPath();g.moveTo(0,y+.5);g.lineTo(W,y+.5);g.stroke()}
-  const Tw=this.sec;let cur=W;
+  const Tw=this.sec;let cur=W;if(stat)this.k=0;
   if(!stat){if(this.t0===null)this.t0=now;const el=(now-this.t0)/1000;this.k=Math.floor(el/Tw);cur=(el%Tw)*pps}
   const y=t=>base-this.val(t)*gain*mm;
   g.lineJoin="round";g.lineCap="round";g.strokeStyle=th.tr;g.lineWidth=2.4;
@@ -129,14 +129,27 @@ Strip.prototype.draw=function(now,stat){
   if(gain<9.5){g.textAlign="right";g.fillStyle=th.tx2;g.font="700 14px 'JetBrains Mono',monospace";g.fillText((gain).toFixed(1)+" mm/mV",W-12,H-10)}
   if(c.label){g.textAlign="left";g.fillStyle=th.tx;g.font="700 18px 'Noto Sans TC','Noto Sans CJK TC',sans-serif";g.fillText(c.label,54,26)}
 };
-function init(){document.querySelectorAll("canvas.ecg").forEach(c=>{if(!c.__s){c.__s=new Strip(c);strips.push(c.__s)}})}
+/* play / pause: every strip starts paused (static strip); the button starts the monitor sweep */
+const css=document.createElement("style");
+css.textContent=".ecgw{position:relative;display:block}.ecgplay{position:absolute;left:10px;bottom:10px;width:44px;height:44px;border-radius:50%;border:2px solid rgba(61,255,143,.75);background:rgba(10,19,34,.82);color:#3dff8f;font:700 18px/40px system-ui,sans-serif;text-align:center;cursor:pointer;padding:0;z-index:2;transition:transform .12s}.ecgplay:hover{transform:scale(1.1)}.ecgplay.paper{border-color:#b3122e;background:rgba(255,250,250,.9);color:#b3122e}.ecgplay.sm{width:34px;height:34px;font-size:14px;line-height:30px;left:6px;bottom:6px}@media print{.ecgplay{display:none}}";
+document.head.appendChild(css);
+function setPlay(st,on){st.playing=on;st.t0=null;if(st.btn){st.btn.textContent=on?"❚❚":"▶";st.btn.title=on?"暫停":"播放";st.btn.setAttribute("aria-label",st.btn.title)}}
+function init(){document.querySelectorAll("canvas.ecg").forEach(c=>{if(c.__s)return;const st=new Strip(c);c.__s=st;strips.push(st);st.playing=false;
+  if(c.dataset.static!==undefined)return;
+  const w=document.createElement("span");w.className="ecgw";c.parentNode.insertBefore(w,c);w.appendChild(c);
+  const b=document.createElement("button");b.type="button";b.className="ecgplay"+(c.dataset.theme==="paper"?" paper":"")+(st.h<130?" sm":"");w.appendChild(b);st.btn=b;setPlay(st,false);
+  b.addEventListener("click",e=>{e.preventDefault();e.stopPropagation();setPlay(st,!st.playing)});
+  ["pointerdown","touchstart","touchend"].forEach(t=>b.addEventListener(t,e=>e.stopPropagation(),{passive:true}));
+})}
 let printing=false;
 function loop(now){
-  if(!printing)strips.forEach(s=>{if(s.c.offsetParent)s.draw(now,s.c.dataset.static!==undefined)});
+  if(!printing)strips.forEach(s=>{if(s.c.offsetParent)s.draw(now,!s.playing)});
   requestAnimationFrame(loop);
 }
 addEventListener("beforeprint",()=>{printing=true;strips.forEach(s=>{const sl=s.c.closest(".slide"),pd=sl&&sl.style.display;if(sl)sl.style.display="block";s.w=0;s.draw(0,true);if(sl)sl.style.display=pd})});
 addEventListener("afterprint",()=>{printing=false;strips.forEach(s=>s.w=0)});
+/* E: play / pause every strip on the current slide */
+addEventListener("keydown",e=>{if(e.key!=="e"&&e.key!=="E")return;const vis=strips.filter(s=>s.btn&&s.c.offsetParent);if(!vis.length)return;const on=vis.some(s=>!s.playing);vis.forEach(s=>setPlay(s,on))});
 init();requestAnimationFrame(loop);
 function set(c,r,hr){const s=c.__s;if(!s)return;s.key=r;s.d=data(r);if(hr!==undefined)c.dataset.hr=hr;s.t0=null}
 /* rhythm switcher buttons: <a class="rbtn" data-for="canvasId" data-r="vf_coarse" data-hr="---" href="#">VF</a> */
@@ -147,5 +160,5 @@ document.addEventListener("click",e=>{const b=e.target.closest(".rbtn");if(!b)re
   c.dataset.r=b.dataset.r;set(c,b.dataset.r,b.dataset.hr||"");
   b.parentNode.querySelectorAll(".rbtn").forEach(x=>x.classList.toggle("on",x===b));
 },true);
-window.ECG={init,set,rhythms:Object.keys(R)};
+window.ECG={init,set,play:(c,on)=>c.__s&&setPlay(c.__s,on!==false),rhythms:Object.keys(R)};
 })();
