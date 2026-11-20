@@ -8,6 +8,8 @@ ACLS 講師教學用的 HTML 投影片，依教科書章節整理，逐項對照
 |---|---|---|
 | 第 3 章 成人基本救命術（BLS） | [`ch03-bls/`](ch03-bls/) | https://hh4832.github.io/acls-teaching/ch03-bls/ |
 | 第 4 章 呼吸道、呼吸動力的處置及氧氣治療 | [`ch04-airway/`](ch04-airway/) | https://hh4832.github.io/acls-teaching/ch04-airway/ |
+| 第 5 章 重要危急心電圖判讀 | [`ch05-ecg/`](ch05-ecg/) | https://hh4832.github.io/acls-teaching/ch05-ecg/ |
+| 第 6 章 心臟停止之治療 | [`ch06-cardiac-arrest/`](ch06-cardiac-arrest/) | https://hh4832.github.io/acls-teaching/ch06-cardiac-arrest/ |
 | 第 9 章 急性冠狀動脈症候群（ACS） | [`ch09-acs/`](ch09-acs/) | https://hh4832.github.io/acls-teaching/ch09-acs/ |
 | 第 11 章 急性腦中風 | [`ch11-stroke/`](ch11-stroke/) | https://hh4832.github.io/acls-teaching/ch11-stroke/ |
 
@@ -19,6 +21,7 @@ shared/
   deck.css          共用版型：1600×900 舞台、字型與色彩、卡片、表格、講者備註、手機閱讀版、列印
   deck.js           共用功能：翻頁、全螢幕、備註、猜猜看（點擊揭曉、A 全部揭曉）、目錄跳頁、滑動、列印
   flow.js           SVG 流程圖繪製工具（flow(id, nodes, edges)）
+  ecg.js            動態心電圖：<canvas class="ecg" data-r="vt">，監視器式掃描動畫（第 5、6 章使用）
 chNN-topic/
   index.html        該章投影片；只放內容與該章專用樣式
   assets/           該章圖片
