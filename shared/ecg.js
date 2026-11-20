@@ -56,9 +56,9 @@ const R={
   af_svr:()=>afib(1.3,.25,10.4,11),
   vt:()=>regular(1/3,24,(a,t,rr)=>W(a,t,rr,{amp:1.05})),
   vt_slow:()=>regular(.4,20,(a,t,rr)=>W(a,t,rr,{amp:1})),
-  vf_coarse:()=>{const a=arr(8);fib(a,.28,3.5,7.5,6,21);wander(a,.05,2);return a},
+  vf_coarse:()=>{const a=arr(8);fib(a,.22,3.5,7.5,6,21);wander(a,.05,2);return a},
   vf_fine:()=>{const a=arr(8);fib(a,.06,4,8,6,31);wander(a,.03,3);noise(a,.02,4);return a},
-  tdp:()=>{const L=8,a=arr(L);for(let i=0;i<a.length;i++){const t=i/FS,env=Math.sin(Math.PI*t/2),c=Math.sin(2*Math.PI*4.25*t);a[i]+=1.1*env*(c+.25*Math.sin(4*Math.PI*4.25*t+.6))}return a},
+  tdp:()=>{const L=8,a=arr(L);for(let i=0;i<a.length;i++){const t=i/FS,env=Math.sin(Math.PI*t/2),c=Math.sin(2*Math.PI*4.25*t);a[i]+=.9*env*(c+.25*Math.sin(4*Math.PI*4.25*t+.6))}return a},
   asystole:()=>{const a=arr(8);wander(a,.03,9);noise(a,.012,10);return a},
   pea:()=>regular(1,8,(a,t,rr)=>{P(a,t,{amp:.08});N(a,t+.18,rr,{amp:.55,tAmp:.12})}),
   ivr:()=>regular(1.7,4,(a,t,rr)=>W(a,t,rr,{amp:1.1})),
@@ -80,7 +80,11 @@ const R={
 function flutter(a){const fw=.2,n=Math.round(a.length/FS/fw);for(let i=0;i<a.length;i++){const ph=((i/FS)/fw)%1;a[i]+=-.22*(ph<.75?(.5-ph/.75):(-.5+(ph-.75)/.25))}}
 function afib(mean,spread,L,seed){const a=arr(L),rrs=irregular(mean,spread,L,seed);let t=0;rrs.forEach(rr=>{N(a,t,rr,{tAmp:.22});t+=rr});fib(a,.035,5,8,5,seed+1);noise(a,.015,seed+2);return a}
 
-const cache={};
+const cache={},rng_={};
+function range(k){ // robust min/max (ignores single-sample pacer spikes)
+  if(!rng_[k]){const d=data(k),n=d.length,m=new Float32Array(n);
+    for(let i=0;i<n;i++){const w=[d[(i-2+n)%n],d[(i-1+n)%n],d[i],d[(i+1)%n],d[(i+2)%n]].sort((x,y)=>x-y);m[i]=w[2]} // median-5 drops pacer spikes
+    let lo=1e9,hi=-1e9;for(let i=0;i<n;i++){if(m[i]<lo)lo=m[i];if(m[i]>hi)hi=m[i]}const pad=(hi-lo)*.06;rng_[k]=[lo-pad,hi+pad]}return rng_[k]}
 function data(k){if(!cache[k]){const a=(R[k]||R.nsr)();if(k!=="asystole"&&!k.startsWith("vf"))noise(a,.008,k.length*13);cache[k]=a}return cache[k]}
 
 const THEME={
@@ -101,14 +105,18 @@ Strip.prototype.size=function(){
 Strip.prototype.val=function(t){const a=this.d,L=a.length,i=((Math.floor(t*FS))%L+L)%L;return a[i]};
 Strip.prototype.draw=function(now,stat){
   if(!this.size())return;
-  const g=this.ctx,W=this.w,H=this.h,th=this.th,mm=W/(this.sec*25),base=H*.58,pps=25*mm;
+  const g=this.ctx,W=this.w,H=this.h,th=this.th,mm=W/(this.sec*25),pps=25*mm;
+  /* auto-fit: keep 10 mm/mV when the trace fits; otherwise reduce gain so nothing is cut off */
+  const [lo,hi]=range(this.key),top=this.c.dataset.lead===" "&&!this.c.dataset.hr&&!this.c.dataset.label?8:38,bot=8,avail=H-top-bot;
+  const span=Math.max(.3,hi-lo);let gain=10;if(span*10*mm>avail)gain=avail/(span*mm);
+  const base=top+(avail-span*gain*mm)/2+hi*gain*mm;this.gain=gain;
   g.fillStyle=th.bg;g.fillRect(0,0,W,H);
   g.lineWidth=1;
   for(let i=0,x=0;x<=W;i++,x=i*mm){g.strokeStyle=i%5?th.sm:th.lg;g.beginPath();g.moveTo(x+.5,0);g.lineTo(x+.5,H);g.stroke()}
   for(let i=-60;i<=60;i++){const y=base+i*mm;if(y<0||y>H)continue;g.strokeStyle=i%5?th.sm:th.lg;g.beginPath();g.moveTo(0,y+.5);g.lineTo(W,y+.5);g.stroke()}
   const Tw=this.sec;let cur=W;
   if(!stat){if(this.t0===null)this.t0=now;const el=(now-this.t0)/1000;this.k=Math.floor(el/Tw);cur=(el%Tw)*pps}
-  const y=t=>base-this.val(t)*10*mm;
+  const y=t=>base-this.val(t)*gain*mm;
   g.lineJoin="round";g.lineCap="round";g.strokeStyle=th.tr;g.lineWidth=2.4;
   if(th.glow){g.shadowColor=th.glow;g.shadowBlur=6}
   const seg=(x0,x1,k)=>{if(x1<=x0)return;g.beginPath();for(let x=x0;x<=x1;x+=.75){const t=k*Tw+x/pps;x===x0?g.moveTo(x,y(t)):g.lineTo(x,y(t))}g.stroke()};
@@ -118,6 +126,7 @@ Strip.prototype.draw=function(now,stat){
   g.shadowBlur=0;
   const c=this.c.dataset;g.font="700 18px 'JetBrains Mono',monospace";g.fillStyle=th.tx2;g.textAlign="left";g.fillText(c.lead||"II",14,26);
   if(c.hr){g.textAlign="right";g.fillStyle=th.tx;g.font="700 15px 'JetBrains Mono',monospace";g.fillText("HR",W-92,26);g.font="700 30px 'JetBrains Mono',monospace";g.fillText(c.hr,W-14,32)}
+  if(gain<9.5){g.textAlign="right";g.fillStyle=th.tx2;g.font="700 14px 'JetBrains Mono',monospace";g.fillText((gain).toFixed(1)+" mm/mV",W-12,H-10)}
   if(c.label){g.textAlign="left";g.fillStyle=th.tx;g.font="700 18px 'Noto Sans TC','Noto Sans CJK TC',sans-serif";g.fillText(c.label,54,26)}
 };
 function init(){document.querySelectorAll("canvas.ecg").forEach(c=>{if(!c.__s){c.__s=new Strip(c);strips.push(c.__s)}})}
