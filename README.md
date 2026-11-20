@@ -45,3 +45,16 @@ chNN-topic/
 三章原本各自在 `hh4832/ACLS_teaching_BLS`、`hh4832/acs-teaching`、`hh4832/stroke-teaching`，以 `git subtree` 匯入並保留完整 commit 紀錄。舊網址會自動轉到這裡。
 
 > 本投影片供教學使用。實際處置依最新指引、藥品仿單與院內規範。
+
+## 部署（Vercel 展示版）
+
+公開網站由 Vercel 從本 repo（private）自動部署，只發布**展示版**：
+
+- `npm run build`（`build.mjs`）把 `index.html`、`chNN-*/`、`shared/` 打包到 `dist/`：去除講者備註與 HTML 註解、壓縮混淆 JS / CSS、停用列印、加上版權列。
+- README、`build.mjs`、`.md` 講師提醒、git 紀錄都不會出現在網站上。
+- 設定在 `vercel.json`（build 指令、輸出資料夾、安全標頭）。
+- 本機預覽展示版：`npm install && npm run build`，再開 `dist/index.html`。
+
+講者備註只在原始檔（本 repo）裡；上課時用本機或 GitHub 上的原始 `index.html` 開啟即可按 N 看備註。
+
+版權：見 [LICENSE](LICENSE)，保留所有權利。
