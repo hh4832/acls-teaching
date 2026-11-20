@@ -51,6 +51,7 @@ const R={
   psvt:()=>regular(1/3,24,(a,t,rr)=>N(a,t,rr,{tAmp:.22})),
   afl41:()=>{const a=regular(.8,10,(a,t,rr)=>N(a,t+.07,rr,{tAmp:.0001,noT:true}));flutter(a);return a},
   afl21:()=>{const a=regular(.4,20,(a,t,rr)=>N(a,t+.07,rr,{noT:true}));flutter(a);return a},
+  afl_var:()=>{const fw=.2,seq=[2,4,2,3,4,2,3,4,2,4],L=fw*seq.reduce((x,y)=>x+y,0),a=arr(L);let k=0;seq.forEach(n=>{N(a,k*fw+.07,n*fw,{noT:n<3,tAmp:.15});k+=n});flutter(a);return a},
   af_rvr:()=>afib(.46,.3,8,3),
   af_mvr:()=>afib(.75,.35,9,5),
   af_svr:()=>afib(1.3,.25,10.4,11),
