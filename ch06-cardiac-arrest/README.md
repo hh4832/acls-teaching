@@ -1,0 +1,25 @@
+# 第 6 章 心臟停止之治療
+
+ACLS 精華〈第 6 章 心臟停止之治療〉（胡勝川、楊久滕）教學投影片，37 頁。
+
+**線上播放：** https://hh4832.github.io/acls-teaching/ch06-cardiac-arrest/
+
+## 架構
+
+概念（四種心臟停止心律，動態心電圖）→ 流程（圖 6-1、6-2 重繪、高品質 CPR、BLS→ACLS）→ VF/pVT（電擊-CPR-檢查時間軸、電擊位置與口令、能量與電擊前後 CPR、頑固性 VF、ROSC）→ PEA/Asystole（CPR-檢查、窄寬 PEA、5H5T、POCUS）→ 藥物與途徑（給藥途徑、epinephrine、其他藥物、ETCO₂ 與終止急救）→ 小站教學（八步驟、六個角色、迴路式溝通、組長九件事、GAS）→ **Megacode 模擬監視器**（講師按鈕切換 VF / pVT / PEA / Asystole / ROSC）→ 情境練習、教材 vs 2025、Take-home。
+
+## 與 2025 AHA 核對的重點
+
+| 主題 | 教材 | 2025 AHA |
+|---|---|---|
+| IV 途徑 | IIa | 1 |
+| IO 途徑 | IIb | 2a |
+| 氣管內給藥 | IIb | 不建議 |
+| 可電擊心律的 epinephrine | IIb | 2a |
+| 常規鎂 | TdP 時考慮 | 3: No Benefit（TdP 屬病因治療） |
+| 換向量、DSED | — | 2b，效用未確立 |
+| POCUS | 可指引 PEA | 2b，效用未確立 |
+
+**請講師核對：** 肺栓塞致心臟停止的血栓溶解建議等級（本頁沿用教材 IIa），請以 2025 AHA Part 10 確認。
+
+> 心電圖為教學示意動畫。本投影片供教學使用，劑量請依藥品仿單與院內規範確認。
