@@ -103,7 +103,8 @@ Strip.prototype.size=function(){
   return true
 };
 Strip.prototype.val=function(t){const a=this.d,L=a.length,i=((Math.floor(t*FS))%L+L)%L;return a[i]};
-Strip.prototype.draw=function(now,stat){
+Strip.prototype.draw=function(mode,el){ /* mode: "static" full strip (print) · "hidden" grid only · "live" sweep frozen or running at elapsed el (s) */
+  const stat=mode==="static",hid=mode==="hidden";
   if(!this.size())return;
   const g=this.ctx,W=this.w,H=this.h,th=this.th,mm=W/(this.sec*25),pps=25*mm;
   /* auto-fit: keep 10 mm/mV when the trace fits; otherwise reduce gain so nothing is cut off */
@@ -114,28 +115,36 @@ Strip.prototype.draw=function(now,stat){
   g.lineWidth=1;
   for(let i=0,x=0;x<=W;i++,x=i*mm){g.strokeStyle=i%5?th.sm:th.lg;g.beginPath();g.moveTo(x+.5,0);g.lineTo(x+.5,H);g.stroke()}
   for(let i=-60;i<=60;i++){const y=base+i*mm;if(y<0||y>H)continue;g.strokeStyle=i%5?th.sm:th.lg;g.beginPath();g.moveTo(0,y+.5);g.lineTo(W,y+.5);g.stroke()}
-  const Tw=this.sec;let cur=W;if(stat)this.k=0;
-  if(!stat){if(this.t0===null)this.t0=now;const el=(now-this.t0)/1000;this.k=Math.floor(el/Tw);cur=(el%Tw)*pps}
+  const Tw=this.sec;let cur=W;this.k=0;
+  if(mode==="live"){this.k=Math.floor(el/Tw);cur=(el%Tw)*pps}
   const y=t=>base-this.val(t)*gain*mm;
   g.lineJoin="round";g.lineCap="round";g.strokeStyle=th.tr;g.lineWidth=2.4;
   if(th.glow){g.shadowColor=th.glow;g.shadowBlur=6}
   const seg=(x0,x1,k)=>{if(x1<=x0)return;g.beginPath();for(let x=x0;x<=x1;x+=.75){const t=k*Tw+x/pps;x===x0?g.moveTo(x,y(t)):g.lineTo(x,y(t))}g.stroke()};
-  seg(0,cur,this.k);
-  if(!stat){seg(Math.min(W,cur+26),W,this.k-1);
+  if(!hid)seg(0,cur,this.k);
+  if(mode==="live"){if(this.k>0)seg(Math.min(W,cur+26),W,this.k-1);
     g.shadowBlur=0;g.fillStyle=th.tr;g.beginPath();g.arc(cur,y(this.k*Tw+cur/pps),3.6,0,7);g.fill()}
   g.shadowBlur=0;
   const c=this.c.dataset;g.font="700 18px 'JetBrains Mono',monospace";g.fillStyle=th.tx2;g.textAlign="left";g.fillText(c.lead||"II",14,26);
+  if(hid)return;
   if(c.hr){g.textAlign="right";g.fillStyle=th.tx;g.font="700 15px 'JetBrains Mono',monospace";g.fillText("HR",W-92,26);g.font="700 30px 'JetBrains Mono',monospace";g.fillText(c.hr,W-14,32)}
-  if(gain<9.5){g.textAlign="right";g.fillStyle=th.tx2;g.font="700 14px 'JetBrains Mono',monospace";g.fillText((gain).toFixed(1)+" mm/mV",W-12,H-10)}
+  if(gain<9.5&&c.autoplay===undefined){g.textAlign="right";g.fillStyle=th.tx2;g.font="700 14px 'JetBrains Mono',monospace";g.fillText((gain).toFixed(1)+" mm/mV",W-12,H-10)}
   if(c.label){g.textAlign="left";g.fillStyle=th.tx;g.font="700 18px 'Noto Sans TC','Noto Sans CJK TC',sans-serif";g.fillText(c.label,54,26)}
 };
 /* play / pause: every strip starts paused (static strip); the button starts the monitor sweep */
 const css=document.createElement("style");
-css.textContent=".ecgw{position:relative;display:block}.ecgplay{position:absolute;left:10px;bottom:10px;width:44px;height:44px;border-radius:50%;border:2px solid rgba(61,255,143,.75);background:rgba(10,19,34,.82);color:#3dff8f;font:700 18px/40px system-ui,sans-serif;text-align:center;cursor:pointer;padding:0;z-index:2;transition:transform .12s}.ecgplay:hover{transform:scale(1.1)}.ecgplay.paper{border-color:#b3122e;background:rgba(255,250,250,.9);color:#b3122e}.ecgplay.sm{width:34px;height:34px;font-size:14px;line-height:30px;left:6px;bottom:6px}@media print{.ecgplay{display:none}}";
+css.textContent=".ecgw{position:relative;display:block}.ecgplay{position:absolute;left:10px;bottom:10px;width:44px;height:44px;border-radius:50%;border:2px solid rgba(61,255,143,.75);background:rgba(10,19,34,.82);color:#3dff8f;font:700 18px/40px system-ui,sans-serif;text-align:center;cursor:pointer;padding:0;z-index:2;transition:transform .12s}.ecgplay:hover{transform:scale(1.1)}.ecgplay.paper{border-color:#b3122e;background:rgba(255,250,250,.9);color:#b3122e}.ecgplay.sm{width:34px;height:34px;font-size:14px;line-height:30px;left:6px;bottom:6px}.ecgplay.idle{left:50%;top:50%;bottom:auto;transform:translate(-50%,-62%);width:auto;height:auto;padding:10px 26px;border-radius:999px;font:700 22px/1.2 'Noto Sans TC',system-ui,sans-serif}.ecgplay.idle:hover{transform:translate(-50%,-62%) scale(1.06)}.ecgplay.idle.sm{padding:5px 16px;font-size:16px;transform:translate(-50%,-50%)}@media print{.ecgplay{display:none}}";
 document.head.appendChild(css);
-function setPlay(st,on){st.playing=on;st.t0=null;if(st.btn){st.btn.textContent=on?"❚❚":"▶";st.btn.title=on?"暫停":"播放";st.btn.setAttribute("aria-label",st.btn.title)}}
-function init(){document.querySelectorAll("canvas.ecg").forEach(c=>{if(c.__s)return;const st=new Strip(c);c.__s=st;strips.push(st);st.playing=false;
+function now_(){return performance.now()/1000}
+function elapsed(st){return st.acc+(st.playing&&st.t0!==null?now_()-st.t0:0)}
+function setPlay(st,on){
+  if(on&&!st.playing){st.started=true;st.t0=now_()}
+  if(!on&&st.playing){st.acc=elapsed(st);st.t0=null}
+  st.playing=on;
+  if(st.btn){st.btn.classList.toggle("idle",!st.started);st.btn.textContent=on?"❚❚":(st.started?"▶":"▶ 播放");st.btn.title=on?"暫停":"播放";st.btn.setAttribute("aria-label",st.btn.title)}}
+function init(){document.querySelectorAll("canvas.ecg").forEach(c=>{if(c.__s)return;const st=new Strip(c);c.__s=st;strips.push(st);st.playing=false;st.started=false;st.acc=0;st.t0=null;
   if(c.dataset.static!==undefined)return;
+  if(c.dataset.autoplay!==undefined){setPlay(st,true);return}
   const w=document.createElement("span");w.className="ecgw";c.parentNode.insertBefore(w,c);w.appendChild(c);
   const b=document.createElement("button");b.type="button";b.className="ecgplay"+(c.dataset.theme==="paper"?" paper":"")+(st.h<130?" sm":"");w.appendChild(b);st.btn=b;setPlay(st,false);
   b.addEventListener("click",e=>{e.preventDefault();e.stopPropagation();setPlay(st,!st.playing)});
@@ -143,15 +152,15 @@ function init(){document.querySelectorAll("canvas.ecg").forEach(c=>{if(c.__s)ret
 })}
 let printing=false;
 function loop(now){
-  if(!printing)strips.forEach(s=>{if(s.c.offsetParent)s.draw(now,!s.playing)});
+  if(!printing)strips.forEach(s=>{if(s.c.offsetParent)s.draw(s.c.dataset.static!==undefined?"static":s.started?"live":"hidden",elapsed(s))});
   requestAnimationFrame(loop);
 }
-addEventListener("beforeprint",()=>{printing=true;strips.forEach(s=>{const sl=s.c.closest(".slide"),pd=sl&&sl.style.display;if(sl)sl.style.display="block";s.w=0;s.draw(0,true);if(sl)sl.style.display=pd})});
+addEventListener("beforeprint",()=>{printing=true;strips.forEach(s=>{const sl=s.c.closest(".slide"),pd=sl&&sl.style.display;if(sl)sl.style.display="block";s.w=0;s.draw("static",0);if(sl)sl.style.display=pd})});
 addEventListener("afterprint",()=>{printing=false;strips.forEach(s=>s.w=0)});
 /* E: play / pause every strip on the current slide */
 addEventListener("keydown",e=>{if(e.key!=="e"&&e.key!=="E")return;const vis=strips.filter(s=>s.btn&&s.c.offsetParent);if(!vis.length)return;const on=vis.some(s=>!s.playing);vis.forEach(s=>setPlay(s,on))});
 init();requestAnimationFrame(loop);
-function set(c,r,hr){const s=c.__s;if(!s)return;s.key=r;s.d=data(r);if(hr!==undefined)c.dataset.hr=hr;s.t0=null}
+function set(c,r,hr){const s=c.__s;if(!s)return;s.key=r;s.d=data(r);if(hr!==undefined)c.dataset.hr=hr;s.acc=0;if(s.playing)s.t0=now_()}
 /* rhythm switcher buttons: <a class="rbtn" data-for="canvasId" data-r="vf_coarse" data-hr="---" href="#">VF</a> */
 document.addEventListener("click",e=>{const b=e.target.closest(".rbtn");if(!b)return;e.preventDefault();e.stopPropagation();
   const c=document.getElementById(b.dataset.for);if(!c)return;
