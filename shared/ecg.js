@@ -63,6 +63,8 @@ const R={
   pea:()=>regular(1,8,(a,t,rr)=>{P(a,t,{amp:.08});N(a,t+.12,rr,{amp:.55,tAmp:.12})}),
   ivr:()=>regular(1.7,4,(a,t,rr)=>W(a,t,rr,{amp:1.1})),
   aivr:()=>regular(.75,10,(a,t,rr)=>W(a,t,rr,{amp:1.1})),
+  npjt:()=>regular(.57,14,(a,t,rr)=>{N(a,t,rr,{tAmp:.24});P(a,t+.1,{inv:true,amp:.09,sd:.018})}),
+  jet:()=>{const L=8.4,a=arr(L);for(let t=0;t<L-1e-6;t+=.42)N(a,t+.05,.42,{tAmp:.2});for(let t=0;t<L-1e-6;t+=.7)P(a,t+.3);return a},
   junc:()=>regular(1.2,6,(a,t,rr)=>{N(a,t,rr);P(a,t+.1,{inv:true,amp:.08,sd:.018})}),
   avb1:()=>regular(.86,9,(a,t,rr)=>{P(a,t);N(a,t+.26,rr)}),
   wenck:()=>{const pp=.75,L=9,a=arr(L),pr=[.12,.22,.3];for(let c=0;c<3;c++)for(let j=0;j<4;j++){const t=c*3+j*pp;P(a,t);if(j<3)N(a,t+pr[j],pp)}return a},
