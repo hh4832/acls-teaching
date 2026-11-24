@@ -42,30 +42,40 @@ function irregular(mean,spread,L,seed){ // RR list summing exactly to L
 }
 
 const R={
-  nsr:()=>regular(.8,10,(a,t,rr)=>{P(a,t,{});N(a,t+.115,rr)}),
-  sb:()=>regular(1.25,6,(a,t,rr)=>{P(a,t);N(a,t+.115,rr)}),
-  st:()=>regular(.48,16,(a,t,rr)=>{P(a,t);N(a,t+.11,rr)}),
-  at:()=>regular(.4,20,(a,t,rr)=>{P(a,t,{amp:.12,inv:true,sd:.018});N(a,t+.115,rr,{tAmp:.22})}),
+  nsr:()=>regular(.8,10,(a,t,rr)=>{P(a,t,{});N(a,t+.105,rr)}),
+  sb:()=>regular(1.25,6,(a,t,rr)=>{P(a,t);N(a,t+.105,rr)}),
+  st:()=>regular(.48,16,(a,t,rr)=>{P(a,t);N(a,t+.1,rr)}),
+  at:()=>regular(.48,16,(a,t,rr)=>{P(a,t+.02,{amp:.13,inv:true,sd:.017});N(a,t+.13,rr,{tAmp:.2})}),
   mat:()=>{const L=8,a=arr(L),rrs=irregular(.55,.28,L,7);let t=0;const sh=[{},{inv:true,amp:.1},{notch:true,amp:.09},{amp:.22,sd:.018},{inv:true,amp:.14,sd:.03}];
     rrs.forEach((rr,i)=>{P(a,t,sh[i%5]);N(a,t+.1+.03*(i%3),rr);t+=rr});return a},
-  psvt:()=>regular(1/3,24,(a,t,rr)=>N(a,t,rr,{tAmp:.22})),
+  psvt:()=>regular(1/3,24,(a,t,rr)=>{N(a,t,rr,{tAmp:.22});P(a,t+.1,{inv:true,amp:.07,sd:.012})}),
   afl41:()=>{const a=regular(.8,10,(a,t,rr)=>N(a,t+.07,rr,{tAmp:.0001,noT:true}));flutter(a);return a},
   afl21:()=>{const a=regular(.4,20,(a,t,rr)=>N(a,t+.07,rr,{noT:true}));flutter(a);return a},
-  afl_var:()=>{const fw=.2,seq=[2,4,2,3,4,2,3,4,2,4],L=fw*seq.reduce((x,y)=>x+y,0),a=arr(L);let k=0;seq.forEach(n=>{N(a,k*fw+.07,n*fw,{noT:n<3,tAmp:.15});k+=n});flutter(a);return a},
+  afl_var:()=>{const fw=.2,seq=[2,3,5,2,4,3,6,2,3,4],L=fw*seq.reduce((x,y)=>x+y,0),a=arr(L);let k=0;seq.forEach(n=>{N(a,k*fw+.07,n*fw,{noT:n<3,tAmp:.15});k+=n});flutter(a);return a},
   af_rvr:()=>afib(.46,.3,8,3),
   af_mvr:()=>afib(.75,.35,9,5),
   af_svr:()=>afib(1.3,.25,10.4,11),
   vt:()=>regular(1/3,24,(a,t,rr)=>W(a,t,rr,{amp:1.05})),
+  vt_neg:()=>{const L=8,a=arr(L);for(let i=0;i<24;i++)W(a,i/3,1/3,{amp:.85,neg:true});for(let t=.2;t<L-1e-6;t+=.8)P(a,t,{amp:.2,sd:.02});return a},
+  tdp_sls:()=>{const L=10,a=arr(L);const lq={tAmp:.42};
+    // sinus with long QT, PVC (short), compensatory pause (long), sinus beat with longer QT, R-on-T PVC (short) -> TdP run
+    P(a,0);N(a,.12,1.1,{tAmp:.42});G(a,0,.12+.52,.07,.18);
+    P(a,1.1);N(a,1.22,1.1,{tAmp:.42});G(a,0,1.22+.52,.07,.18);
+    W(a,1.85,.6,{amp:1});                  // short: PVC
+    P(a,3.05);N(a,3.17,1.4,{tAmp:.5});G(a,0,3.17+.6,.08,.25); // long pause -> long QT
+    const s0=3.95;                          // short: R-on-T
+    for(let i=0;i<a.length;i++){const t=i/FS-s0;if(t<0||t>4.2)continue;const env=Math.sin(Math.PI*Math.min(t,4)/2)*Math.min(1,t/.3)*(t>4?Math.max(0,1-(t-4)/.2):1);a[i]+=.95*env*Math.sin(2*Math.PI*4.3*t)}
+    P(a,8.6);N(a,8.72,1.2,{tAmp:.42});return a},
   vt_slow:()=>regular(.4,20,(a,t,rr)=>W(a,t,rr,{amp:1})),
-  vf_coarse:()=>{const a=arr(8);fib(a,.22,3.5,7.5,6,21);wander(a,.05,2);return a},
-  vf_fine:()=>{const a=arr(8);fib(a,.06,4,8,6,31);wander(a,.03,3);noise(a,.02,4);return a},
+  vf_coarse:()=>{const a=arr(8);fib(a,.2,2.2,9.5,11,21);fib(a,.08,9,14,5,22);wander(a,.08,2);noise(a,.05,23);return a},
+  vf_fine:()=>{const a=arr(8);fib(a,.035,4,9,7,31);wander(a,.025,3);noise(a,.015,4);return a},
   tdp:()=>{const L=8,a=arr(L);for(let i=0;i<a.length;i++){const t=i/FS,env=Math.sin(Math.PI*t/2),c=Math.sin(2*Math.PI*4.25*t);a[i]+=.9*env*(c+.25*Math.sin(4*Math.PI*4.25*t+.6))}return a},
   asystole:()=>{const a=arr(8);wander(a,.03,9);noise(a,.012,10);return a},
   pea:()=>regular(1,8,(a,t,rr)=>{P(a,t,{amp:.08});N(a,t+.12,rr,{amp:.55,tAmp:.12})}),
-  ivr:()=>regular(1.7,4,(a,t,rr)=>W(a,t,rr,{amp:1.1})),
+  ivr:()=>regular(1.7,4,(a,t,rr)=>W(a,t,rr,{amp:1.05,neg:true})),
   aivr:()=>regular(.75,10,(a,t,rr)=>W(a,t,rr,{amp:1.1})),
   npjt:()=>regular(.57,14,(a,t,rr)=>{N(a,t,rr,{tAmp:.24});P(a,t+.1,{inv:true,amp:.09,sd:.018})}),
-  jet:()=>{const L=8.4,a=arr(L);for(let t=0;t<L-1e-6;t+=.42)N(a,t+.05,.42,{tAmp:.2});for(let t=0;t<L-1e-6;t+=.7)P(a,t+.3);return a},
+  jet:()=>{const L=8.6,a=arr(L);for(let t=0;t<L-1e-6;t+=.4)N(a,t+.05,.4,{tAmp:.18});for(let t=0;t<L-1e-6;t+=.86)P(a,t+.33,{amp:.13});return a},
   junc:()=>regular(1.2,6,(a,t,rr)=>{N(a,t,rr);P(a,t+.1,{inv:true,amp:.08,sd:.018})}),
   avb1:()=>regular(.86,9,(a,t,rr)=>{P(a,t);N(a,t+.26,rr)}),
   wenck:()=>{const pp=.75,L=9,a=arr(L),pr=[.12,.22,.3];for(let c=0;c<3;c++)for(let j=0;j<4;j++){const t=c*3+j*pp;P(a,t);if(j<3)N(a,t+pr[j],pp)}return a},
