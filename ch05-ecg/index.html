@@ -13,7 +13,7 @@
 .ecgbox{border-radius:12px;overflow:hidden;box-shadow:0 2px 0 rgba(0,0,0,.04);border:1px solid #1e2a40}
 .ecgbox canvas{display:block}
 .card .ecgbox{border-radius:8px}
-.title .ekg-live{position:absolute;left:0;right:0;top:600px;opacity:.95}
+.title .ekg-live{position:absolute;left:0;right:0;top:470px;opacity:.95}
 .title .ekg-live .ecgbox{border:0;border-radius:0}
 .toc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .toc-item{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:baseline;background:var(--paper);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:14px;padding:18px 22px;color:var(--ink);text-decoration:none;transition:border-color .15s}
@@ -22,6 +22,11 @@
 .toc-t{font-weight:900;font-size:25px;color:var(--navy)}
 .toc-d{color:var(--muted);font-size:18px;line-height:1.45;margin-top:4px}
 .reveal:not(.shown) .ans{visibility:hidden}
+.q4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
+.q4 .q{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--red);border-radius:14px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;min-height:220px}
+.q4 .q span{font:700 46px var(--mono);color:var(--red);line-height:1}
+.q4 .q b{font-size:30px;color:var(--navy)}.q4 .q em{font-style:normal;font-size:19px;color:var(--muted);line-height:1.45}
+body.m .q4{grid-template-columns:1fr 1fr}
 .btn{display:inline-block;background:var(--red);color:#fff;font:700 24px var(--font);padding:12px 28px;border-radius:10px;text-decoration:none}
 .btn.ghost{background:var(--paper);color:var(--navy);border:2px solid var(--navy)}
 .tq{display:grid;grid-template-columns:140px 1fr 1fr;gap:12px;align-items:stretch}
@@ -43,41 +48,32 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
   <div class="inner">
     <div class="kicker">ACLS Instructor · Chapter 5</div>
     <h1>重要危急心電圖判讀<br><span style="font-size:58px;font-weight:500;color:#c8d3ea">Life-threatening Arrhythmias</span></h1>
-    <p class="sub">快或慢、寬或窄、P 波有無、P 與 QRS 的關係<br>以動態心電圖逐一辨識，並對照 2025 AHA ACLS 指引</p>
     <p class="sub" style="margin-top:28px;font-size:30px;color:#fff;font-weight:700">講師：台北市立聯合醫院陽明院區　急診主治醫師 懷顥</p>
   </div>
-  <div class="meta">原著章節：黃獻皋、顏湧章〈第 5 章 重要危急心電圖判讀〉｜教學投影片整理與指引核對<br>操作：← → 翻頁 · F 全螢幕 · N 講者備註 · E 播放 / 暫停心電圖 · A 揭曉全部答案</div>
-  <div class="notes">開場：本章只教「會要命」的心律。所有心電圖都是依原書圖 5-1 至 5-19 的特徵重新合成的動態示意圖，速度 25 mm/s、10 mm/mV，可以直接在螢幕上數格子。監視器上的 HR 是示意心率。</div>
+  <div class="meta">原著章節：黃獻皋、顏湧章〈第 5 章 重要危急心電圖判讀〉｜教學投影片整理<br>對照 2025 AHA ACLS 指引<br>操作：← → 翻頁 · F 全螢幕 · N 講者備註 · E 播放 / 暫停心電圖 · A 揭曉全部答案</div>
+  <div class="notes">開場：本章只教「會要命」的心律怎麼認。所有心電圖都是依原書圖 5-1 至 5-19 的特徵重新合成的動態示意圖，速度 25 mm/s、10 mm/mV，可以直接在螢幕上數格子。監視器上的 HR 是示意心率。</div>
 </section>
 <!-- ============ TOC ============ -->
 <section class="slide">
   <div class="kicker">Contents · 目錄</div><h2>目錄</h2><div class="rule"></div>
-  <div class="toc"><a class="toc-item" data-key="Chapter 一 · Basics" href="#"><span class="toc-no"></span><span class="toc-t">一｜基礎</span><span class="toc-d">傳導系統、心電圖紙、間期與 QTc、命名、判讀四步驟</span></a><a class="toc-item" data-key="Chapter 二 · Tachycardia" href="#"><span class="toc-no"></span><span class="toc-t">二｜心搏過速 Tachycardia</span><span class="toc-d">分類樹 → VF、VT、TdP、寬 QRS 有 P、ST／AT、MAT、AFL、PSVT、AF</span></a><a class="toc-item" data-key="Chapter 三 · Bradycardia" href="#"><span class="toc-no"></span><span class="toc-t">三｜心搏過緩 Bradycardia</span><span class="toc-d">分類樹 → Asystole、IVR、三度（寬）、交界心律、SB、一度、二度 I／II、三度（窄）</span></a><a class="toc-item" data-key="Chapter 四 · Others" href="#"><span class="toc-no"></span><span class="toc-t">四｜其他</span><span class="toc-d">AIVR、節律器心律</span></a><a class="toc-item" data-key="Quiz · 猜猜看 1" href="#"><span class="toc-no"></span><span class="toc-t">五｜測驗</span><span class="toc-d">猜猜看 6 題、隨機監視器搶答</span></a><a class="toc-item" data-key="Instructor Checklist" href="#"><span class="toc-no"></span><span class="toc-t">總結</span><span class="toc-d">教材 vs 現行共識、Take-home、參考資料</span></a></div>
-  <p style="margin-top:30px;font-size:22px" class="muted">圖例：<span class="cor c1">Class 1</span> 建議 <span class="cor c2a">2a</span> 合理 <span class="cor c2b">2b</span> 可考慮 <span class="cor c3">3</span> 無益 / 有害　<span class="tag ok">✓ 已核實</span> <span class="tag warn">⚠ 需補充</span>　點選章節可直接跳頁</p>
+  <div class="toc"><a class="toc-item" data-key="Chapter 一 · Basics" href="#"><span class="toc-no"></span><span class="toc-t">一｜基礎</span><span class="toc-d">節律點、心電圖紙、間期與 QTc、命名、判讀第一步：快或慢</span></a><a class="toc-item" data-key="Chapter 二 · Tachycardia" href="#"><span class="toc-no"></span><span class="toc-t">二｜心搏過速 Tachycardia</span><span class="toc-d">分類樹 → VF、VT、TdP、寬 QRS 有 P（補充）、ST／AT、MAT、AFL、PSVT、交界性心搏過速、AF</span></a><a class="toc-item" data-key="Chapter 三 · Bradycardia" href="#"><span class="toc-no"></span><span class="toc-t">三｜心搏過緩 Bradycardia</span><span class="toc-d">分類樹 → SB、一度、二度 I／II、三度、三度（寬）vs 高血鉀；Megacode：Asystole、IVR；補充：交界心律</span></a><a class="toc-item" data-key="Chapter 四 · Others" href="#"><span class="toc-no"></span><span class="toc-t">四｜其他</span><span class="toc-d">APC vs VPC、AIVR、節律器心律</span></a><a class="toc-item" data-key="Quiz · 猜猜看 1" href="#"><span class="toc-no"></span><span class="toc-t">五｜測驗</span><span class="toc-d">猜猜看 6 題、隨機監視器搶答</span></a><a class="toc-item" data-key="Instructor Checklist" href="#"><span class="toc-no"></span><span class="toc-t">總結</span><span class="toc-d">教材 vs 現行共識、Take-home、參考資料</span></a></div>
+  <p style="margin-top:30px;font-size:22px" class="muted">每種心律都依「<b>特徵 → 臨床意義 → 處置</b>」介紹；處置只簡寫，詳見第 6、7 章。點選章節可直接跳頁</p>
 </section>
 <!-- ============ GOALS ============ -->
 <section class="slide">
   <div class="kicker">Learning Goals</div>
-  <h2>本章目標：三秒內說出「會不會要命」</h2><div class="rule"></div>
-  <div class="cols c64">
-    <div>
-      <ul class="dots">
-        <li>只教<b>危及生命</b>的心律不整：分成 <b>快</b>（tachycardia）與 <b>慢</b>（bradycardia）兩大類</li>
-        <li>不背圖形，背<span class="hl">四個問題</span>：快或慢？QRS 寬或窄？有沒有 P？P 與 QRS 有沒有關係？</li>
-        <li>四個問題答完，就能推出激發點在<b>竇房結、心房、房室結還是心室</b></li>
-        <li>心搏過速、心搏過緩各用<b>一棵分類樹</b>收斂；處置流程在心臟停止（第 6 章）與心搏過速／過緩課程</li>
-      </ul>
-    </div>
-    <div class="card red" style="align-self:start">
-      <h3>看監視器時，先問病人</h3>
-      <ul class="dots sm">
-        <li>有沒有意識、呼吸、脈搏？</li>
-        <li>有沒有低血壓、休克、胸痛、急性心衰竭、意識改變？</li>
-        <li>沒有脈搏 → 心臟停止流程；有脈搏但不穩定 → 先電／先藥</li>
-      </ul>
-    </div>
+  <h2>本章目標：依照流程辨認基本心電圖</h2><div class="rule"></div>
+  <div class="q4">
+    <div class="q"><span>1</span><b>快或慢？</b><em>&gt; 100 快 · &lt; 60 慢</em></div>
+    <div class="q"><span>2</span><b>QRS 寬或窄？</b><em>以 3 小格（0.12 s）為界</em></div>
+    <div class="q"><span>3</span><b>有沒有 P 波？</b><em>形狀正常、鋸齒、倒立、看不到</em></div>
+    <div class="q"><span>4</span><b>P 與 QRS 的關係？</b><em>1：1？PR 固定、漸長、各跳各的？</em></div>
   </div>
-  <div class="callout ok" style="margin-top:28px"><span class="h">✓ 本投影片的心電圖</span>全部以動畫呈現，像監視器一樣由左往右掃描；速度 25 mm/s、增益 10 mm/mV，可以直接數格子。列印時自動輸出靜態圖。</div><div class="notes">提醒學員：心電圖永遠要配合病人。監視器上的 VT 若病人清醒講話，走的是有脈搏心搏過速流程；看起來像 asystole 的，也可能是導線脫落。</div>
+  <ul class="dots sm" style="margin-top:26px">
+    <li>只教<b>危及生命</b>的心律不整：分成 <b>快</b>與 <b>慢</b>兩大類，各用<b>一棵分類樹</b>收斂；<b>長什麼樣子會認</b>最重要</li>
+    <li>每種心律：<b>特徵 → 臨床意義 → 處置</b>（處置詳見第 6 章心臟停止、第 7 章有症狀的心搏過速／過緩）</li>
+  </ul>
+  <div class="callout ok" style="margin-top:30px"><span class="h">✓ 本投影片的心電圖</span>全部以動畫呈現，按 ▶ 或鍵盤 E 開始掃描；速度 25 mm/s、增益 10 mm/mV，可以直接數格子。高度不夠時會自動降低增益並在右下角標示。</div><div class="notes">提醒學員：心電圖永遠要配合病人。監視器上的 VT 若病人清醒講話，走的是有脈搏心搏過速流程；看起來像 asystole 的，也可能是導線脫落。</div>
 </section>
 <!-- ============ DIVIDER 01 ============ -->
 <section class="slide divider">
@@ -89,18 +85,18 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
   <div class="kicker">Conduction System</div>
   <h2>心臟的節律點與自發速率</h2><div class="rule"></div>
   <div class="cols c2" style="align-items:center">
-    <svg viewBox="0 0 640 520" style="width:100%">
+    <svg viewBox="0 0 660 560" style="width:100%">
       <path d="M320 40 C 160 40 70 150 90 280 C 110 410 250 500 330 500 C 430 500 570 400 570 260 C 570 140 470 40 320 40Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="3"/>
       <path d="M100 220 H560" stroke="#d9a7b0" stroke-width="2" stroke-dasharray="8 6"/>
       <text x="120" y="150" font-size="22" fill="#8a4b55">心房</text><text x="120" y="320" font-size="22" fill="#8a4b55">心室</text>
       <circle cx="210" cy="110" r="22" fill="#b3122e"/><text x="240" y="100" font-size="22" font-weight="700" fill="#14284b">竇房結 SA node</text>
       <path d="M210 110 Q 270 160 320 215" stroke="#b3122e" stroke-width="5" fill="none"/>
       <circle cx="320" cy="215" r="18" fill="#a86a00"/><text x="345" y="200" font-size="22" font-weight="700" fill="#14284b">房室結 AV node</text>
-      <path d="M320 233 V 290" stroke="#0f6e6e" stroke-width="8"/><text x="335" y="270" font-size="20" fill="#0f6e6e">希氏束 His</text>
+      <path d="M320 233 V 290" stroke="#0f6e6e" stroke-width="8"/><text x="334" y="268" font-size="20" font-weight="700" fill="#0f6e6e">希氏束 His</text>
       <path d="M320 290 Q 250 340 230 440 M320 290 Q 400 340 440 440" stroke="#0f6e6e" stroke-width="6" fill="none"/>
-      <text x="360" y="345" font-size="20" fill="#0f6e6e">束支</text>
+      <rect x="446" y="330" width="62" height="30" rx="6" fill="#fff"/><text x="452" y="352" font-size="20" font-weight="700" fill="#0f6e6e">束支</text>
       <path d="M230 440 q -30 20 -50 0 M230 440 q 20 30 50 20 M440 440 q 30 20 50 -5 M440 440 q -20 30 -50 25" stroke="#14284b" stroke-width="3" fill="none"/>
-      <text x="250" y="490" font-size="20" fill="#14284b">浦金氏纖維 Purkinje</text>
+      <text x="330" y="540" text-anchor="middle" font-size="20" font-weight="700" fill="#14284b">浦金氏纖維 Purkinje</text>
     </svg>
     <div>
       <table>
@@ -111,7 +107,7 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
       </table>
       <ul class="dots sm" style="margin-top:18px">
         <li>正常速率 60–100；<b>&gt; 100</b> 心搏過速（頻脈）、<b>&lt; 60</b> 心搏過緩（緩脈）</li>
-        <li>越往下游，速率越慢、QRS 越寬 → <b>寬又慢</b>的逸搏代表上游都失守了</li>
+        <li>越往下游，速率越慢、QRS 越寬 → <b>寬又慢</b>的脈搏代表上游都失守了</li>
       </ul>
     </div>
   </div><div class="notes">用「接力賽」比喻：竇房結跑第一棒，失守時房室結 40–60 接手，再失守由心室 <40 接手。所以看到寬又慢的 IVR，代表竇房結和房室結都沒有在工作。</div>
@@ -120,44 +116,42 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
 <section class="slide">
   <div class="kicker">ECG Paper · 圖 5-1、5-2</div>
   <h2>心電圖紙與正常波形 <small>25 mm/s · 10 mm/mV</small></h2><div class="rule" style="margin-bottom:16px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="nsr" data-h="230" data-sec="6" data-hr="75" data-label="正常竇性心律" data-theme="paper"></canvas></div>
-  <div class="cols c46" style="margin-top:18px;gap:24px;align-items:start">
-    <svg viewBox="0 0 560 250" style="width:100%;background:#fffafa;border:1px solid #e3a1a1;border-radius:12px">
-      <defs><pattern id="sm5" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#f5d2d2"/></pattern><pattern id="lg5" width="70" height="70" patternUnits="userSpaceOnUse"><rect width="70" height="70" fill="url(#sm5)"/><path d="M70 0H0V70" fill="none" stroke="#e3a1a1" stroke-width="1.5"/></pattern></defs>
-      <rect width="560" height="250" fill="url(#lg5)"/>
-      <path d="M0 170 H40 q20 -30 40 0 H140 l8 10 14 -120 14 140 8 -30 H230 q30 -50 60 -2 q10 2 30 2 H560" fill="none" stroke="#14284b" stroke-width="3.5" stroke-linejoin="round"/>
-      <text x="52" y="128" font-size="22" font-weight="700" fill="#b3122e">P</text><text x="150" y="40" font-size="22" font-weight="700" fill="#b3122e">QRS</text><text x="250" y="105" font-size="22" font-weight="700" fill="#b3122e">T</text>
-      <path d="M40 215 H140" stroke="#0f6e6e" stroke-width="3" marker-start="url(#ar)" /><text x="48" y="240" font-size="17" fill="#0f6e6e">PR 0.12–0.20 s</text>
-      <path d="M140 200 H186" stroke="#a86a00" stroke-width="3"/><text x="150" y="196" font-size="15" fill="#a86a00">≤ 0.12</text>
-      <rect x="420" y="14" width="70" height="70" fill="none" stroke="#b3122e" stroke-width="2.5"/><text x="396" y="105" font-size="16" fill="#b3122e">1 大格 = 0.2 s</text>
-      <rect x="500" y="14" width="14" height="14" fill="none" stroke="#b3122e" stroke-width="2"/><text x="470" y="128" font-size="16" fill="#b3122e">1 小格 = 0.04 s</text>
-    </svg>
+  <div class="ecgbox"><canvas class="ecg" data-r="nsr" data-h="250" data-sec="6" data-hr="75" data-label="正常竇性心律" data-theme="paper"></canvas></div>
+  <div class="cols c2" style="margin-top:20px;gap:28px;align-items:start">
     <ul class="dots sm">
+      <li><b>1 小格</b> = 0.04 s、0.1 mV；<b>1 大格</b>（5 小格）= 0.2 s</li>
       <li><b>P 波</b>＝心房去極化；竇性 P 在 II 導程<b>正向</b></li>
       <li><b>QRS</b>＝心室去極化；正常 <b>≤ 3 小格（0.12 s）</b>，超過即為「寬」</li>
-      <li><b>PR 間期</b>：0.12–0.20 s（≤ 1 大格）；&gt; 1 大格＝房室傳導延遲</li>
-      <li>P：QRS 正常 <b>1：1</b></li>
-      <li>心率速算：<span class="mono red">300 ÷ RR 大格數</span>；不規則時數 6 秒內 QRS × 10</li>
+      <li><b>PR 間期</b>：約 4 小格，0.12–0.20 s（≤ 1 大格）；P：QRS 正常 <b>1：1</b></li>
     </ul>
-  </div><div class="notes">帶學員實際數：這條 6 秒長條上有幾個 QRS？乘以 10 就是心率。再用 300÷大格數驗算。這頁用白底紅格的心電圖紙版面，後面各頁改用監視器版面，格子大小相同。</div>
+    <div class="card red" style="padding:18px 22px"><h3>心率速算</h3><ul class="dots sm">
+      <li><span class="mono red">300 ÷ RR 間的大格數</span></li>
+      <li>為什麼是 300：1 大格 0.2 秒 → 5 大格 = 1 秒 → 1 分鐘 = 5 × 60 = <b>300 大格</b></li>
+      <li>不規則時：數 <b>6 秒</b>（約 30 大格）內的 QRS × 10</li></ul></div>
+  </div><div class="notes">帶學員實際數：這條 6 秒長條上有幾個 QRS？乘以 10 就是心率。再用 300÷大格數驗算：RR 間 4 大格 → 75。這頁用白底紅格的心電圖紙版面，後面各頁改用監視器版面，格子大小相同。</div>
 </section>
 <!-- ============ INTERVALS ============ -->
 <section class="slide">
-  <div class="kicker">Intervals</div>
-  <h2>間期與線段：量什麼、從哪量到哪</h2><div class="rule"></div>
-  <div class="cols c46" style="gap:28px;align-items:center">
-    <svg viewBox="0 0 600 330" style="width:100%;background:#fffafa;border:1px solid #e3a1a1;border-radius:12px">
+  <div class="kicker">Waves &amp; Intervals</div>
+  <h2>波形、間期與線段：量什麼、從哪量到哪</h2><div class="rule"></div>
+  <div class="cols c2" style="gap:28px;align-items:center">
+    <svg viewBox="0 0 630 380" style="width:100%;background:#fffafa;border:1px solid #e3a1a1;border-radius:12px">
       <defs><pattern id="sm6" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#f5d2d2"/></pattern><pattern id="lg6" width="70" height="70" patternUnits="userSpaceOnUse"><rect width="70" height="70" fill="url(#sm6)"/><path d="M70 0H0V70" fill="none" stroke="#e3a1a1" stroke-width="1.5"/></pattern></defs>
-      <rect width="600" height="330" fill="url(#lg6)"/>
-      <path d="M0 200 H50 q22 -34 44 0 H150 l8 12 16 -150 16 168 10 -30 H260 q36 -60 72 -2 q12 2 40 2 H600" fill="none" stroke="#14284b" stroke-width="3.5" stroke-linejoin="round"/>
-      <circle cx="200" cy="200" r="7" fill="#b3122e"/><text x="186" y="236" font-size="17" font-weight="700" fill="#b3122e">J 點</text>
-      <path d="M200 192 H260" stroke="#a86a00" stroke-width="5"/><text x="205" y="180" font-size="16" fill="#a86a00">ST 段</text>
-      <g font-size="17" font-weight="700"><path d="M50 260 H150" stroke="#0f6e6e" stroke-width="3"/><path d="M50 252 v16 M150 252 v16" stroke="#0f6e6e" stroke-width="3"/><text x="72" y="286" fill="#0f6e6e">PR</text>
-      <path d="M150 290 H200" stroke="#b3122e" stroke-width="3"/><path d="M150 282 v16 M200 282 v16" stroke="#b3122e" stroke-width="3"/><text x="150" y="316" fill="#b3122e">QRS</text>
-      <path d="M150 34 H340" stroke="#14284b" stroke-width="3"/><path d="M150 26 v16 M340 26 v16" stroke="#14284b" stroke-width="3"/><text x="230" y="24" fill="#14284b">QT</text></g>
+      <rect width="630" height="380" fill="url(#lg6)"/>
+      <path d="M0 224 H98 q14 -30 28 0 H154 l6 9 12 -142 12 158 8 -25 H238 q40 -64 80 -2 q10 2 26 2 H630" fill="none" stroke="#14284b" stroke-width="3.5" stroke-linejoin="round"/>
+      <g font-size="21" font-weight="700" fill="#b3122e"><text x="104" y="180">P</text><text x="150" y="76">QRS</text><text x="268" y="150">T</text></g>
+      <circle cx="192" cy="224" r="6" fill="#b3122e"/><text x="174" y="268" font-size="17" font-weight="700" fill="#b3122e">J 點</text>
+      <path d="M192 216 H238" stroke="#a86a00" stroke-width="5"/><text x="200" y="206" font-size="16" font-weight="700" fill="#a86a00">ST 段</text>
+      <g font-size="16" font-weight="700">
+        <path d="M98 300 H154" stroke="#0f6e6e" stroke-width="3"/><path d="M98 292 v16 M154 292 v16" stroke="#0f6e6e" stroke-width="3"/><text x="70" y="328" fill="#0f6e6e">PR ≈ 4 小格（0.16 s）</text>
+        <path d="M154 346 H192" stroke="#b3122e" stroke-width="3"/><path d="M154 338 v16 M192 338 v16" stroke="#b3122e" stroke-width="3"/><text x="200" y="352" fill="#b3122e">QRS ≤ 3 小格</text>
+        <path d="M154 34 H344" stroke="#14284b" stroke-width="3"/><path d="M154 26 v16 M344 26 v16" stroke="#14284b" stroke-width="3"/><text x="236" y="24" fill="#14284b">QT</text>
+      </g>
+      <rect x="490" y="28" width="70" height="70" fill="none" stroke="#b3122e" stroke-width="2.5"/><text x="472" y="120" font-size="15" fill="#b3122e">1 大格 = 0.2 s</text>
+      <rect x="574" y="28" width="14" height="14" fill="none" stroke="#b3122e" stroke-width="2"/><text x="472" y="142" font-size="15" fill="#b3122e">1 小格 = 0.04 s</text>
     </svg>
     <table class="tight">
-      <tr><th style="width:26%">項目</th><th>從哪量到哪</th><th style="width:24%">正常</th></tr>
+      <tr><th style="width:24%">項目</th><th>從哪量到哪</th><th style="width:24%">正常</th></tr>
       <tr><td><b>PR 間期</b></td><td>P 波開始 → QRS 開始</td><td class="dose">0.12–0.20 s</td></tr>
       <tr><td><b>QRS 間期</b></td><td>Q 波開始 → S 波結束</td><td class="dose">≤ 0.12 s</td></tr>
       <tr><td><b>QT 間期</b></td><td>Q 波開始 → T 波結束</td><td>隨心率變化</td></tr>
@@ -165,25 +159,24 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
       <tr><td><b>ST 段</b></td><td>S 波結束（<b>J 點</b>）→ T 波開始</td><td>平坦、在基線</td></tr>
     </table>
   </div>
-  <div class="callout ok" style="margin-top:24px"><span class="h">為什麼要量</span>PR 決定房室阻斷的分級；QRS 決定寬窄；QTc 延長要提防 TdP；ST 段變化見第 9 章 ACS。</div><div class="notes">改編自講師的 Tachycardia 教學投影片。QT 會隨心率變短，所以要校正成 QTc；心率很快或很慢時 Bazett 公式會高估或低估。</div>
+  <div class="callout ok" style="margin-top:24px"><span class="h">為什麼要量</span>PR 決定房室阻斷的分級；QRS 決定寬窄；QTc 延長要提防 TdP；ST 段變化見第 9 章 ACS。</div><div class="notes">QT 會隨心率變短，所以要校正成 QTc；心率很快或很慢時 Bazett 公式會高估或低估。</div>
 </section>
 <!-- ============ NAMING ============ -->
 <section class="slide">
   <div class="kicker">Naming</div>
   <h2>心律的名字＝激發處 ＋ 速率</h2><div class="rule"></div>
   <div class="cols c3" style="gap:22px">
-    <div class="card navy"><h3>竇性 Sinus</h3><ul class="dots sm"><li>竇性心律 60–100</li><li>竇性心搏過速 Sinus tachycardia &gt; 100</li><li>竇性心搏過緩 Sinus bradycardia &lt; 60</li></ul></div>
+    <div class="card navy"><h3>竇性 Sinus</h3><ul class="dots sm"><li>竇性心律</li><li>竇性心搏過速 Sinus tachycardia</li><li>竇性心搏過緩 Sinus bradycardia</li></ul></div>
     <div class="card amber"><h3>心房 / 房室結</h3><ul class="dots sm"><li>心房心搏過速、心房撲動、心房顫動</li><li>陣發性心室上性心搏過速 PSVT</li><li>房室交界心律 Junctional rhythm</li></ul></div>
-    <div class="card red"><h3>心室 Ventricular</h3><ul class="dots sm"><li>心室心搏過速 VT、心室顫動 VF</li><li>自發性心室心律 IVR &lt; 40</li><li>加速型心室心律 AIVR 60–100</li></ul></div>
+    <div class="card red"><h3>心室 Ventricular</h3><ul class="dots sm"><li>心室心搏過速 VT、心室顫動 VF</li><li>自發性心室心律 IVR</li><li>加速型心室心律 AIVR</li></ul></div>
   </div>
-  <div class="callout " style="margin-top:30px"><span class="h">⚠ 縮寫提醒</span>原書以 <b>AF</b> 代表心房撲動、<b>Af</b> 代表心房顫動。目前國際通用 <b>AFL</b>＝atrial flutter、<b>AF</b>＝atrial fibrillation，口頭交班時建議講全名，避免混淆。</div><div class="notes">名字本身就告訴你激發點。考學員：『心室頻脈』激發點在哪？QRS 應該寬還是窄？</div>
+  <div class="callout " style="margin-top:30px"><span class="h">⚠ 縮寫提醒</span>原書以 <b>AF</b> 代表心房撲動、<b>Af</b> 代表心房顫動。目前國際通用 <b>AFL</b>＝atrial flutter、<b>AF</b>＝atrial fibrillation，口頭交班時建議講全名，避免混淆。</div><div class="notes">名字本身就告訴你激發點。考學員：『心室頻脈』QRS 應該寬還是窄？</div>
 </section>
-<!-- ============ FOUR STEPS ============ -->
+<!-- ============ STEP 1 ============ -->
 <section class="slide">
-  <div class="kicker">Four Questions</div>
-  <h2>判讀四步驟</h2><div class="rule" style="margin-bottom:18px"></div>
-  <svg class="flow" id="f5a" viewBox="0 0 1440 545"></svg>
-  <div class="callout red" style="margin-top:0"><span class="h">口訣</span><b>快慢 → 寬窄 → 有無 P → P 與 QRS 的關係</b>。窄 QRS＝電流從房室結以上正常往下傳；寬 QRS＝源自心室，或上方來的電流傳導異常（束支阻滯、變異傳導、高血鉀）。</div><div class="notes">這四步驟就是整章的骨架。第一步把心律分到兩棵樹：心搏過速（第二部分）與心搏過緩（第三部分），各有一張分類樹。</div>
+  <div class="kicker">Step 1</div>
+  <h2>判讀第一步：快或慢</h2><div class="rule" style="margin-bottom:18px"></div>
+  <svg class="flow" id="f5a" viewBox="0 0 1440 520"></svg><div class="notes">第一步只問快或慢，決定接哪一棵分類樹：快的接心搏過速分類樹（第二部分），慢的接心搏過緩分類樹（第三部分）。兩棵樹的問題順序不同，不要混在一起。</div>
 </section>
 <!-- ============ DIVIDER 02 ============ -->
 <section class="slide divider">
@@ -196,181 +189,171 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
   <h2>心跳多快算心搏過速？ <small>&gt; 100 還是 &gt; 150</small></h2><div class="rule"></div>
   <div class="cols c2" style="gap:24px">
     <div class="card navy"><h3><span class="stat" style="font-size:64px">&gt; 100</span> <small class="muted">/min</small></h3><ul class="dots sm"><li>臨床定義：心率 &gt; 100 /min 即為心搏過速</li><li>多數是<b>代償</b>：發燒、疼痛、脫水、出血、缺氧</li><li>處理原因，而不是處理心率</li></ul></div>
-    <div class="card red"><h3><span class="stat" style="font-size:64px">&gt; 150</span> <small class="muted">/min</small></h3><ul class="dots sm"><li>ACLS 流程中，心率 &gt; 150 較可能因<b>心律本身太快</b>造成灌流不足</li><li>心室充填時間不夠 → 心輸出下降</li><li>此時心律本身才是病因（處置見心搏過速課程）</li></ul></div>
+    <div class="card red"><h3><span class="stat" style="font-size:64px">&gt; 150</span> <small class="muted">/min</small></h3><ul class="dots sm"><li>ACLS 流程中，心率 &gt; 150 較可能因<b>心律本身太快</b>造成灌流不足</li><li>心室充填時間不夠 → 心輸出下降</li><li>此時心律本身才是病因（第 7 章）</li></ul></div>
   </div>
-  <div class="ecgbox"><canvas class="ecg" data-r="st" data-h="130" data-sec="6" data-hr="125" data-label="125：通常是結果"></canvas></div><div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="psvt" data-h="130" data-sec="6" data-hr="180" data-label="180：心律本身可能就是病因"></canvas></div><div class="notes">改編自講師的 Tachycardia 教學投影片。心率 100–150 要先問：為什麼快？心率 > 150 且有症狀，才要問：是不是心律本身造成的？AHA 心搏過速流程也以「通常 ≥ 150」作為心律不整造成症狀的參考。</div>
+  <div class="ecgbox"><canvas class="ecg" data-r="st" data-h="130" data-sec="6" data-hr="125" data-label="125：通常是結果"></canvas></div><div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="psvt" data-h="130" data-sec="6" data-hr="180" data-label="180：心律本身可能就是病因"></canvas></div><div class="notes">心率 100–150 要先問：為什麼快？心率 > 150 且有症狀，才要問：是不是心律本身造成的？</div>
 </section>
 <!-- ============ TACHY TREE ============ -->
 <section class="slide">
   <div class="kicker">Tachycardia · Classification</div>
-  <h2>心搏過速分類樹 <small>ACLS 適用 · 改編自講師 Tachycardia 投影片</small></h2><div class="rule" style="margin-bottom:10px"></div>
+  <h2>心搏過速分類樹 <small>ACLS 適用</small></h2><div class="rule" style="margin-bottom:10px"></div>
   <svg class="flow" id="f5t" viewBox="0 0 1440 540"></svg>
-  <div class="callout " style="margin-top:4px;font-size:20px"><span class="h">本節另外介紹</span><b>AT</b>（P 規則但形狀不同）、<b>MAT</b>（≥ 3 種 P、不規則）、<b>寬 QRS 有 P</b>（SVT 併變異傳導 / BBB）——分不出寬 QRS 的來源時，先當 VT。</div><div class="notes">改編自講師的 Tachycardia 投影片「簡易心搏過速分類」。後面每一頁的心律都是這棵樹上的一片葉子：先問 QRS 寬窄，寬的問規則，窄的問有沒有 P。</div>
+  <div class="callout " style="margin-top:4px;font-size:20px"><span class="h">本節另外介紹</span><b>AT</b>（P 規則但形狀不同）、<b>MAT</b>（≥ 3 種 P、不規則）、<b>交界性心搏過速</b>（窄、無 P 或逆行 P、可房室分離）、<b>寬 QRS 有 P</b>（補充）——分不出寬 QRS 的來源時，先當 VT。</div><div class="notes">後面每一頁的心律都是這棵樹上的一片葉子：先問 QRS 寬窄，寬的問規則，窄的問有沒有 P。</div>
 </section>
 <!-- ============ 心室顫動 VF ============ -->
 <section class="slide">
   <div class="kicker">Wide · No P · 圖 5-3</div>
   <h2>心室顫動 VF <small>Ventricular fibrillation</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="vf_coarse" data-h="165" data-sec="6" data-hr="---" data-label="粗 VF coarse"></canvas></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="vf_coarse" data-h="170" data-sec="6" data-hr="---" data-label="粗 VF coarse"></canvas></div>
   <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="vf_fine" data-h="110" data-sec="6" data-hr="---" data-label="細 VF fine"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card red"><h3>特徵</h3><ul class="dots sm"><li>雜亂無章、大小不一的波形</li><li><b>看不到</b> P、QRS、T</li><li>沒有可數的心率</li></ul></div><div class="card navy"><h3>臨床意義</h3><ul class="dots sm"><li>心室只在顫抖，<b>沒有心輸出</b></li><li>粗 VF 預後較好；拖久會變細 VF</li><li><b>可電擊心律</b>，越早電擊越有機會</li></ul></div><div class="card amber"><h3>陷阱</h3><ul class="dots sm"><li>細 VF 可能看起來像一直線</li><li>看到一直線：<b>換導程</b>或電擊板轉 90°、調高增益</li><li>確認是細 VF 還是 asystole</li></ul></div></div>
-  <div class="callout red" style="margin-top:16px"><span class="h">處置 → 第 6 章</span>VF 就是心臟停止：<b>高品質 CPR ＋ 立即去顫</b>，不必摸脈搏猶豫。</div>
-  <div class="notes">粗細 VF 一起看。問學員：如果下面這條細 VF 調到最小增益，看起來像什麼？——像 asystole。這就是為什麼一直線要換導程確認。</div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>雜亂無章、大小不一的波形</li><li><b>看不到</b> P、QRS、T，沒有可數的心率</li><li>粗 VF 振幅大；細 VF 振幅小，像一直線</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>心室只在顫抖，<b>沒有心輸出</b>＝心臟停止</li><li>拖越久越細，預後越差</li><li>細 VF 要和 asystole 區分（換導程、調增益）</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li><b>可電擊心律</b></li><li>高品質 CPR ＋ <b>立即去顫</b></li><li>→ 第 6 章</li></ul></div></div>
+  <div class="notes">粗細 VF 一起看。和 VT 對照：VT 的 QRS 一個一個長得一樣、規則；VF 完全沒有規律。</div>
 </section>
 <!-- ============ 心室心搏過速 VT ============ -->
 <section class="slide">
   <div class="kicker">Wide · No P · 圖 5-4</div>
   <h2>心室心搏過速 VT <small>Monomorphic VT</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="vt" data-h="260" data-sec="6" data-hr="180" data-label="單型性 VT"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card red"><h3>特徵</h3><ul class="dots sm"><li><b>寬 QRS</b>（&gt; 3 小格）、規則</li><li>心率約 100–220</li><li>無明顯 P 波</li></ul></div><div class="card navy"><h3>單型 vs 多型</h3><ul class="dots sm"><li><b>單型</b>：每個 QRS 形狀相同，臨床最常見</li><li><b>多型</b>：兩種以上型態</li><li>一般說「VT」多指單型性</li></ul></div><div class="card amber"><h3>先摸脈搏</h3><ul class="dots sm"><li>同一張 VT，處置取決於<b>有沒有脈搏</b></li><li><b>無脈搏 VT</b>：心臟停止的可電擊心律（第 6 章）</li><li>有脈搏：心搏過速課程</li></ul></div></div>
-  <div class="notes">同一個心電圖，接下來走哪個流程取決於有沒有脈搏。</div>
+  <div class="ecgbox"><canvas class="ecg" data-r="vt" data-h="150" data-sec="6" data-hr="180" data-label="單型性 VT：QRS 朝上"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="vt_neg" data-h="150" data-sec="6" data-hr="165" data-label="單型性 VT：小 r、大 S、T 波朝上；P 波各跳各的（房室分離）"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li><b>寬 QRS</b>（&gt; 3 小格）、規則，約 100–220</li><li>QRS 主波可朝上或朝下，每個長得一樣（單型）</li><li>「無 P 波」準確說是<b>房室分離</b>：P 與 QRS 無關，常被埋住</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>多源自心室：缺血、心肌病變、電解質異常</li><li>可有脈搏，也可無脈搏</li><li>隨時可能惡化成 VF</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>先<b>摸脈搏</b></li><li>無脈搏：可電擊的心臟停止心律 → 第 6 章</li><li>有脈搏：→ 第 7 章</li></ul></div></div>
+  <div class="notes">下面那條是 QRS 主波朝下的型態：小 r、大 S，T 波朝上（與 QRS 方向相反）。仔細看：P 波以自己的速率穿過寬 QRS，有時落在 QRS 或 T 裡，這就是房室分離，是 VT 的重要線索。</div>
 </section>
 <!-- ============ 尖端扭轉型 VT（TdP） ============ -->
 <section class="slide">
   <div class="kicker">Wide · No P · 圖 5-5</div>
   <h2>尖端扭轉型 VT（TdP） <small>Torsades de pointes</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="tdp" data-h="220" data-sec="8" data-hr="240" data-label="Torsades de pointes"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card red"><h3>特徵</h3><ul class="dots sm"><li>寬 QRS、不規則、無 P</li><li>QRS 振幅忽大忽小、方向繞著基線<b>扭轉</b>，像<b>紡錘</b>反覆出現</li><li>TdP 是多型性 VT 的一種，但<b>多型性 VT 不一定是 TdP</b></li></ul></div><div class="card navy"><h3>成因</h3><ul class="dots sm"><li><b>QT 延長</b>：某些抗心律不整藥、抗精神病藥、抗生素</li><li>低血鉀、低血鎂</li><li>先天長 QT 症候群</li></ul></div><div class="card amber"><h3>怎麼認</h3><ul class="dots sm"><li>看<b>振幅包絡線</b>：由小變大再變小，像紡錘</li><li>QRS 尖端在基線上下<b>翻轉</b></li><li>發作前的竇性心律常可量到 <b>QT 延長</b></li></ul></div></div>
-  <div class="callout red" style="margin-top:16px"><span class="h">為什麼一定要認得</span>TdP 的成因與治療和單型 VT 不同（處置見心搏過速課程）；多型性 VT 視為不穩定。</div>
-  <div class="notes">TdP 用動畫看最清楚：每兩秒振幅由小變大再變小，方向翻轉。強調：多型性 VT 不能同步整流，因為機器抓不到 R 波。</div>
+  <div class="ecgbox"><canvas class="ecg" data-r="tdp" data-h="175" data-sec="8" data-hr="240" data-label="Torsades de pointes"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="tdp_sls" data-h="160" data-sec="10" data-hr="---" data-label="起始：短—長—短（PVC → 長停頓 → R-on-T）"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>寬 QRS、不規則、無 P（多型性 VT）</li><li>振幅忽大忽小、繞著基線<b>翻轉</b>，像紡錘</li><li>常由<b>短—長—短</b>序列起始，發作前 QT 延長</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>與 <b>QT 延長</b>有關：藥物、低鉀、低鎂、先天長 QT</li><li>TdP 是多型性 VT 的一種，但<b>多型性 VT 不一定是 TdP</b></li><li>可自行停止，也可惡化成 VF</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>多型性 VT 視為<b>不穩定</b>；無脈搏 → 去顫</li><li>停用延長 QT 的藥、矯正電解質</li><li>→ 第 6、7 章</li></ul></div></div>
+  <div class="notes">下面那條示範典型起始：竇性心律 QT 延長 → 一個早期收縮（短）→ 代償性長停頓（長）→ 下一個竇性搏動 QT 更長 → 早期收縮打在 T 波上（短）→ TdP。</div>
 </section>
 <!-- ============ WIDE WITH P ============ -->
 <section class="slide">
-  <div class="kicker">Wide · With P</div>
-  <h2>寬 QRS、有 P：心室上來源的「寬」心搏過速</h2><div class="rule"></div>
+  <div class="kicker">Wide · With P · <span class="tag warn" style="font-size:15px;letter-spacing:0">超出 ACLS 範圍</span></div>
+  <h2>寬 QRS 心搏過速：先看 QRS 是否規則 <small>補充</small></h2><div class="rule"></div>
   <div class="cols c2" style="gap:24px">
-    <div class="card navy"><h3>P 波規則</h3><ul class="dots sm"><li>PSVT 併束支傳導阻滯（BBB）</li><li>WPW 併變異傳導（aberrant conduction）</li></ul></div>
-    <div class="card amber"><h3>P 波不規則</h3><ul class="dots sm"><li>心房顫動併變異傳導或 BBB</li><li>RR 間距不規則的寬 QRS → 小心 <b>AF ＋ WPW</b></li></ul></div>
+    <div class="card navy"><h3>QRS 規則</h3><ul class="dots sm"><li>PSVT 併束支傳導阻滯（BBB）</li><li>WPW 併變異傳導（aberrant conduction）</li><li>和 VT 最難分</li></ul></div>
+    <div class="card amber"><h3>QRS 不規則</h3><ul class="dots sm"><li>心房顫動併變異傳導或 BBB</li><li><b>AF ＋ WPW</b>：寬、極快（可 &gt; 250）、QRS 寬度一直變</li></ul></div>
   </div>
-  <div class="callout red" style="margin-top:24px"><span class="h">口訣</span><b>無法分辨寬 QRS 的來源時，一律先當 VT 處理</b>——比較危險的要優先處理。</div>
+  <div class="callout red" style="margin-top:22px"><span class="h">口訣</span><b>無法分辨寬 QRS 的來源時，一律先當 VT 處理</b>——比較危險的要優先處理。</div>
   <div class="cols c3" style="gap:18px;margin-top:20px">
-    <div class="card"><h3>傾向 VT</h3><ul class="dots sm"><li>年紀大、有心臟病、心肌梗塞病史</li><li>房室分離：P 與 QRS 各跳各的</li><li>融合波、捕獲波</li></ul></div>
-    <div class="card"><h3>傾向 SVT 併變異傳導</h3><ul class="dots sm"><li>以前的心電圖就有相同 BBB</li><li>QRS 型態像典型 RBBB / LBBB</li><li>每個 QRS 前都有固定的 P</li></ul></div>
-    <div class="card"><h3>小心 AF ＋ WPW</h3><ul class="dots sm"><li>寬、<b>不規則</b>、很快（可 &gt; 250）</li><li>QRS 寬度一直變</li><li>認出來最重要</li></ul></div>
-  </div><div class="notes">寬 QRS 有 P 的心律在 ACLS 考試很少單獨出現，重點是口訣：分不出來就當 VT。下方的鑑別線索只是輔助，不要因為猜是 SVT 而延誤。</div>
+    <div class="card"><h3>傾向 VT</h3><ul class="dots sm"><li>年紀大、有心臟病、心肌梗塞病史</li><li>房室分離、融合波、捕獲波</li></ul></div>
+    <div class="card"><h3>傾向 SVT 併變異傳導</h3><ul class="dots sm"><li>以前的心電圖就有相同 BBB</li><li>QRS 像典型 RBBB / LBBB</li></ul></div>
+    <div class="card"><h3>AF ＋ WPW</h3><ul class="dots sm"><li>台灣沒有可用的 IV 藥物（procainamide）</li><li><b>一律電擊</b>（同步整流）</li></ul></div>
+  </div><div class="notes">這頁超出 ACLS 考試範圍，當作補充。重點是口訣：分不出來就當 VT。AF＋WPW 在台灣沒有 IV procainamide 可用，一律電擊。</div>
 </section>
 <!-- ============ 竇性心搏過速 ST ／ 心房心搏過速 AT ============ -->
 <section class="slide">
   <div class="kicker">Narrow · With P · 圖 5-6</div>
-  <h2>竇性心搏過速 ST ／ 心房心搏過速 AT</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="st" data-h="165" data-sec="6" data-hr="125" data-label="竇性心搏過速"></canvas></div>
-  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="at" data-h="165" data-sec="6" data-hr="150" data-label="心房心搏過速"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>竇性心搏過速</h3><ul class="dots sm"><li>激發點：竇房結</li><li>P 波形狀正常、規則、每個都一樣</li><li><b>是結果不是病因</b>：發燒、疼痛、出血、缺氧、休克</li></ul></div><div class="card amber"><h3>心房心搏過速</h3><ul class="dots sm"><li>激發點：心房內<b>固定一點</b></li><li>P 規則、形狀一致，但和竇性 P 不同（此例倒立）</li><li>速率通常較快、起止突然</li></ul></div><div class="card red"><h3>怎麼分</h3><ul class="dots sm"><li>ST <b>逐漸</b>加快、逐漸變慢；AT / PSVT 突然開始、突然結束</li><li>ST 心率很少 &gt; 150，超過 150 要想其他心律</li><li>比較 P 波和病人平常的竇性 P</li></ul></div></div>
-  <div class="notes">ST 是急診最常見的心搏過速：它是結果，不是病因。</div>
+  <h2>竇性心搏過速 ST ／ 心房心搏過速 AT <small>AT＝atrial ectopic tachycardia</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="st" data-h="160" data-sec="6" data-hr="125" data-label="竇性心搏過速"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="at" data-h="160" data-sec="6" data-hr="125" data-label="心房心搏過速：P 規則但倒立，和 T 波分開"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>QRS 窄、規則，每個 QRS 前都有 P</li><li><b>ST</b>：P 形狀正常，PR 正常</li><li><b>AT</b>：心房內單一異位點，P 規則但形狀與竇性不同（此例倒立）</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li><b>ST 是結果</b>：發燒、疼痛、脫水、出血、缺氧、休克</li><li><b>AT</b> 可因<b>藥物</b>（毛地黃中毒、交感神經刺激劑）、<b>電解質</b>異常（低鉀、低鎂）</li><li>AT 也見於結構性心臟病、COPD</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>ST：治療原因，不處理心率</li><li>AT：停用可疑藥物、矯正電解質</li><li>其他 → 第 7 章</li></ul></div></div>
+  <div class="notes">ST 是急診最常見的心搏過速：它是結果，不是病因。AT 的 P 波清楚、在 QRS 前，只是形狀不同；這裡的 AT 指 atrial ectopic tachycardia。</div>
 </section>
 <!-- ============ 多發性心房心搏過速 MAT ============ -->
 <section class="slide">
   <div class="kicker">Narrow · With P</div>
   <h2>多發性心房心搏過速 MAT <small>Multifocal atrial tachycardia</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="mat" data-h="250" data-sec="8" data-hr="110" data-label="MAT"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>心房內<b>許多不同點</b>輪流激發</li><li>P 波形狀至少三種、不規則</li><li>QRS 窄、型態相同，但 RR 不規則</li></ul></div><div class="card amber"><h3>鑑別</h3><ul class="dots sm"><li>和 AF 都「不規則」</li><li>MAT <b>看得到</b>每個 QRS 前的 P</li><li>AF 只有細碎顫動波</li></ul></div><div class="card red"><h3>臨床</h3><ul class="dots sm"><li>常見於 COPD 急性惡化、肺炎、低血氧</li><li>常被誤判為 AF</li><li>找 P 波就是關鍵</li></ul></div></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="mat" data-h="240" data-sec="8" data-hr="110" data-label="MAT"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>P 波形狀<b>至少三種</b>，PR 長短不一</li><li>QRS 窄，但 RR <b>不規則</b></li><li>心率 &gt; 100</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>心房內許多點輪流激發</li><li>常見於 <b>COPD 急性惡化</b>、肺炎、低血氧、電解質異常</li><li>常被誤判為 AF：MAT 看得到每個 QRS 前的 P</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li><b>治療潛在病因</b>：肺部疾病、缺氧、電解質</li><li>電擊無效</li><li>→ 第 7 章</li></ul></div></div>
   <div class="notes">請學員指出三種不同形狀的 P 波。</div>
 </section>
 <!-- ============ 心房撲動 AFL ============ -->
 <section class="slide">
   <div class="kicker">Narrow · With P · 圖 5-7</div>
-  <h2>心房撲動 AFL <small>Atrial flutter</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="afl41" data-h="165" data-sec="6" data-hr="75" data-label="4：1 傳導"></canvas></div>
-  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="afl21" data-h="165" data-sec="6" data-hr="150" data-label="2：1 傳導"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>心房速率 <b>250–350</b></li><li>P 波呈<b>鋸齒狀</b>（像小鳥撲翅），II、III、aVF 最明顯</li><li>多以 2：1、4：1 傳導；傳導比例變動時 RR 可不規則</li></ul></div><div class="card red"><h3>2：1 最容易漏掉</h3><ul class="dots sm"><li>鋸齒被 QRS 和 T 蓋住</li><li>心率剛好約 <b>150</b>、規則、窄 → 要想到 AFL</li><li>比較上下兩條：同樣的鋸齒波</li></ul></div><div class="card amber"><h3>讓鋸齒現形</h3><ul class="dots sm"><li>刺激迷走神經（頸動脈竇按摩、Valsalva）</li><li>或 adenosine 暫時減慢房室傳導</li><li>傳導比例變大，鋸齒就露出來</li></ul></div></div>
-  <div class="notes">上下兩條的心房速率都是 300。下面 2：1 時，每兩個鋸齒有一個藏在 QRS 裡，學員常判成 PSVT 或 ST。</div>
+  <h2>心房撲動 AFL <small>Atrial flutter · 可規則，也可不規則</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="afl41" data-h="112" data-sec="6" data-hr="75" data-label="規則：固定 4：1 傳導"></canvas></div>
+  <div style="height:7px"></div><div class="ecgbox"><canvas class="ecg" data-r="afl21" data-h="112" data-sec="6" data-hr="150" data-label="規則：固定 2：1 傳導"></canvas></div>
+  <div style="height:7px"></div><div class="ecgbox"><canvas class="ecg" data-r="afl_var" data-h="112" data-sec="7" data-hr="90" data-label="不規則：可變傳導（RR 不規則）"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>心房 <b>250–350</b>，鋸齒波（II、III、aVF）</li><li><b>規則</b>：固定 2：1、4：1；<b>不規則</b>：可變傳導</li><li>不規則時 RR 是鋸齒間距的整數倍</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>2：1 最常見也最易漏：心率約 <b>150</b>，誤判 PSVT</li><li>不規則 AFL 易誤判 AF：基線是<b>規律鋸齒</b></li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>速率控制、整流 → 第 7 章</li><li>迷走神經刺激、adenosine 讓鋸齒露出（診斷）</li></ul></div></div>
+  <div class="notes">三條的心房速率都是 300。前兩條傳導比例固定，所以 RR 規則；第三條傳導比例在 2：1 到 6：1 之間變動，所以 RR 不規則，但每個 RR 都剛好是整數個鋸齒的長度。</div>
 </section>
 <!-- ============ 陣發性心室上性心搏過速 PSVT ============ -->
 <section class="slide">
   <div class="kicker">Narrow · No P · 圖 5-8</div>
   <h2>陣發性心室上性心搏過速 PSVT</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="psvt" data-h="260" data-sec="6" data-hr="180" data-label="PSVT"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>包含 <b>AVNRT、AVRT</b>：房室結或副傳導路徑的<b>迴路</b></li><li>心率約 160–240（常見 140–260），RR 非常規則</li><li>窄 QRS；P 看不到，或在 QRS 前後但形狀異常</li></ul></div><div class="card amber"><h3>病人</h3><ul class="dots sm"><li>突然開始、突然結束</li><li>心悸，常無結構性心臟病</li><li>年輕人常見</li></ul></div><div class="card red"><h3>鑑別</h3><ul class="dots sm"><li>vs <b>ST</b>：ST 看得到正常 P、心率漸變</li><li>vs <b>AFL 2：1</b>：心率剛好約 150，找鋸齒</li><li>vs <b>AF</b>：PSVT 的 RR 完全規則</li></ul></div></div>
-  <div class="notes">這裡只要認得：規則、窄、很快、看不到 P。處置在心搏過速課程。</div>
+  <div class="ecgbox"><canvas class="ecg" data-r="psvt" data-h="240" data-sec="6" data-hr="180" data-label="PSVT：QRS 後面的小凹陷是逆行 P"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>窄 QRS、<b>非常規則</b>，約 160–240</li><li>P 看不到（埋在 QRS 裡），或在 QRS <b>後面</b>＝<b>逆行 P</b>（retrograde P）</li><li>突然開始、突然結束</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>房室結（AVNRT）或副傳導路徑（AVRT）的<b>迴路</b></li><li>年輕、心悸，常無結構性心臟病</li><li>需和 ST、AFL 2：1 鑑別</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>迷走神經刺激、adenosine</li><li>不穩定 → 同步整流</li><li>→ 第 7 章</li></ul></div></div>
+  <div class="notes">逆行 P 是電流從房室結往回傳到心房，所以在 II 導程倒立、緊貼在 QRS 後面，看起來像 QRS 尾巴多一個小凹陷。</div>
 </section>
-<!-- ============ AF ============ -->
+<!-- ============ 交界性心搏過速 Junctional tachycardia ============ -->
+<section class="slide">
+  <div class="kicker">Narrow · No P / Retrograde P</div>
+  <h2>交界性心搏過速 Junctional tachycardia <small>非陣發性 vs 陣發性（JET）</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="npjt" data-h="230" data-sec="6" data-hr="105" data-label="交界性心搏過速：逆行 P 緊貼 QRS 後"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>窄 QRS；P 無、逆行，或<b>房室分離</b>（V &gt; A）</li><li>60–100 加速型交界心律；<b>&gt; 100</b> 交界性心搏過速</li><li>NPJT 漸起漸停；JET 可陣發</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li><b>毛地黃中毒</b>、急性下壁 MI、心臟術後、心肌炎</li><li>JET 成人少見，兒童先天或心臟術後較多</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>對 <b>adenosine 反應不好</b>（多半只暫時變慢）</li><li>治療病因：停毛地黃、矯正電解質</li><li>→ 第 7 章</li></ul></div></div>
+  <div class="notes">心電圖示範非陣發性交界性心搏過速：窄 QRS、規則，逆行 P 倒立緊貼在 QRS 後面。依速率命名參考 LITFL；成因參考 MSD Manual；JET 特徵參考 Alasti 2020（J Arrhythm）。</div>
+</section>
+<!-- ============ 心房顫動 AF ============ -->
 <section class="slide">
   <div class="kicker">Narrow · No P · 圖 5-9</div>
-  <h2>心房顫動 AF <small>「不規則的不規則」</small></h2><div class="rule" style="margin-bottom:14px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="af_rvr" data-h="150" data-sec="6" data-hr="130" data-label="AF with RVR  &gt; 100"></canvas></div><div style="height:8px"></div><div class="ecgbox"><canvas class="ecg" data-r="af_mvr" data-h="150" data-sec="6" data-hr="80" data-label="AF with MVR  60–100"></canvas></div><div style="height:8px"></div><div class="ecgbox"><canvas class="ecg" data-r="af_svr" data-h="150" data-sec="6" data-hr="46" data-label="AF with SVR  &lt; 60"></canvas></div>
-  <div class="cols c2" style="gap:20px;margin-top:14px">
-    <div class="callout ok" style="font-size:20px"><span class="h">判讀</span>激發點散佈整個心房、不規則顫動 → <b>看不到 P</b>，只有細碎顫動波；QRS 不規則地出現 → <b>RR 間距不規則</b>。</div>
-    <div class="callout" style="font-size:20px"><span class="h">鑑別</span>vs <b>MAT</b>：MAT 看得到多種 P；vs <b>AFL 可變傳導</b>：AFL 有規律鋸齒；寬又不規則又很快 → 想到 <b>AF ＋ WPW</b>。</div>
-  </div><div class="notes">三條都是 AF，只差心室反應速率。請學員找 P 波——找不到；量 RR——每個都不一樣。</div>
+  <h2>心房顫動 AF <small>「不規則的不規則」</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="af_rvr" data-h="160" data-sec="6" data-hr="130" data-label="AF with RVR（ACLS 常考）"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="af_mvr" data-h="105" data-sec="6" data-hr="80" data-label="補充：AF with MVR 60–100"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="af_svr" data-h="105" data-sec="6" data-hr="46" data-label="補充：AF with SVR &lt; 60"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>RR 間距<b>毫無規律</b>（不規則的不規則）</li><li>看不到 P，只有細碎顫動波</li><li>依心室速率：<b>RVR &gt; 100</b>（常考）、MVR、SVR</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>最常見的持續性心律不整</li><li>心房血栓 → 中風風險</li><li>RVR 可造成低血壓、心衰竭、胸痛</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>RVR：速率控制或同步整流 → 第 7 章</li><li>寬、不規則、極快 → 想到 AF ＋ WPW</li></ul></div></div>
+  <div class="notes">ACLS 一般考的是 AF with RVR；MVR、SVR 屬補充。請學員找 P 波——找不到；量 RR——每個都不一樣。</div>
 </section>
 <!-- ============ DIVIDER 03 ============ -->
 <section class="slide divider">
   <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 三 · Bradycardia</div>
-  <div class="big"><div class="no">03</div><h2>心搏過緩 Bradycardia</h2><p>心率 &lt; 60 /min：先看有沒有 QRS、再看寬窄與 P</p></div>
+  <div class="big"><div class="no">03</div><h2>心搏過緩 Bradycardia</h2><p>心率 &lt; 60 /min：看 P 與 QRS 的關係</p></div>
 </section>
 <!-- ============ BRADY TREE ============ -->
 <section class="slide">
   <div class="kicker">Bradycardia · Classification</div>
-  <h2>心搏過緩分類樹</h2><div class="rule" style="margin-bottom:10px"></div>
-  <svg class="flow" id="f5br" viewBox="0 0 1440 545"></svg>
-  <div class="callout " style="margin-top:4px;font-size:20px"><span class="h">窄 QRS 有 P 的關鍵</span>每個 P 後面都有 QRS 嗎？PR 固定、漸長還是無關？——<b>量 PR、找掉拍</b>就能分出 SB、一度、二度 I／II、三度。</div><div class="notes">和心搏過速分類樹對照。心搏過緩先問有沒有 QRS（asystole），再問寬窄；窄 QRS 有 P 時，重點是 PR 間期與有沒有掉拍。定義上 < 60 為心搏過緩；ACLS 處置流程以通常 < 50 且有症狀為對象，處置見心搏過緩課程。</div>
+  <h2>心搏過緩分類樹 <small>以 ACLS 會考的為準</small></h2><div class="rule" style="margin-bottom:10px"></div>
+  <svg class="flow" id="f5br" viewBox="0 0 1440 530"></svg><div class="notes">心搏過緩的重點是 P 與 QRS 的關係。先看 QRS 規不規則：規則的再看 P 與 QRS 有沒有關係——有關係是 SB 或一度，沒關係（各跳各的）是三度；不規則代表有 P 卻掉了 QRS，看掉拍前的 PR——漸行漸遠是二度 I 型，固定後突然消失是二度 II 型。Megacode 的心臟停止心律另外一格：Asystole、IVR（常見的 PEA）；交界心律（junctional brady）、AF with SVR 屬補充，Megacode 不考。</div>
 </section>
-<!-- ============ 心室停止 Asystole ============ -->
-<section class="slide">
-  <div class="kicker">No QRS · 圖 5-10</div>
-  <h2>心室停止 Asystole</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="asystole" data-h="170" data-sec="6" data-hr="0" data-label="Asystole"></canvas></div>
-  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="vf_fine" data-h="140" data-sec="6" data-hr="---" data-label="細 VF：增益調低時很像一直線"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>近乎一直線，<b>沒有任何電活動</b></li><li>沒有 P、沒有 QRS</li><li>代表心肌完全沒有收縮</li></ul></div><div class="card red"><h3>一直線三確認</h3><ul class="dots sm"><li>導線、貼片有沒有<b>脫落</b></li><li><b>換導程</b>（或電擊板轉 90°）</li><li><b>增益</b>調到最大，排除細 VF</li></ul></div><div class="card amber"><h3>別漏掉</h3><ul class="dots sm"><li>一直線中偶爾出現 <b>P 波</b>：心室停止（P-wave asystole）</li><li>零星寬 QRS：瀕死的逸搏</li><li>屬心臟停止的不可電擊心律（第 6 章）</li></ul></div></div>
-  <div class="notes">兩條並排比較，強調為什麼一直線一定要確認。</div>
-</section>
-<!-- ============ 自發性心室心律 IVR ============ -->
-<section class="slide">
-  <div class="kicker">Wide · No P · 圖 5-11</div>
-  <h2>自發性心室心律 IVR <small>Idioventricular rhythm</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="ivr" data-h="260" data-sec="6" data-hr="35" data-label="IVR"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>由心室跳出：<b>規則寬 QRS</b></li><li>心率 <b>&lt; 40</b></li><li>沒有 P 波</li></ul></div><div class="card red"><h3>意義</h3><ul class="dots sm"><li>竇房結和房室結都失守的<b>最後一道逸搏</b></li><li>常見於瀕死心臟、心臟停止前後</li><li>常伴隨低血壓或無脈搏（PEA）</li></ul></div><div class="card amber"><h3>鑑別</h3><ul class="dots sm"><li>vs <b>AIVR</b>：速率 60–100</li><li>vs <b>三度阻斷（寬）</b>：後者看得到獨立的 P</li><li>摸不到脈搏時就是 <b>PEA</b></li></ul></div></div>
-  <div class="notes">IVR 是常見的 PEA 心電圖。</div>
-</section>
-<!-- ============ 三度房室阻斷（寬） vs 竇性心搏過緩併 BBB ============ -->
-<section class="slide">
-  <div class="kicker">Wide · With P · 圖 5-12</div>
-  <h2>三度房室阻斷（寬） vs 竇性心搏過緩併 BBB</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="avb3w" data-h="190" data-sec="7" data-hr="35" data-label="三度房室阻斷，寬 QRS"></canvas></div>
-  <div style="height:12px"></div><div class="ecgbox"><canvas class="ecg" data-r="sb_bbb" data-h="190" data-sec="7" data-hr="46" data-label="竇性心搏過緩併完全 BBB"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card red"><h3>三度房室阻斷</h3><ul class="dots sm"><li>P 與 QRS <b>各跳各的</b>，兩者都規則</li><li>P 速率 &gt; QRS 速率</li><li>寬 QRS → 阻斷在 His 以下，<b>預後差</b></li></ul></div><div class="card navy"><h3>SB 併完全 BBB</h3><ul class="dots sm"><li>每個 QRS 前都有 P，<b>PR 固定</b></li><li>P 與 QRS 有關係，只是傳導慢又寬</li><li>嚴重竇性心搏過緩合併束支阻滯</li></ul></div><div class="card amber"><h3>高血鉀</h3><ul class="dots sm"><li>嚴重高血鉀會讓 <b>QRS 變寬</b>、P 波被抑制</li><li>可有或無 P</li><li>寬又慢的心律，記得抽血鉀</li></ul></div></div>
-  <div class="notes">請學員拿紙尺量上面那條的 PR：每次都不一樣，代表沒有關係。</div>
-</section>
-<!-- ============ JUNCTIONAL ============ -->
-<section class="slide">
-  <div class="kicker">Narrow · No P · 圖 5-13</div>
-  <h2>房室交界心律 Junctional rhythm</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="junc" data-h="220" data-sec="7" data-hr="50" data-label="Junctional rhythm"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>源自房室結附近，心率 <b>40–60</b></li><li>QRS 窄、大多規律</li><li>P 埋在 QRS 裡看不到；偶爾在 QRS 前後出現，且<b>倒立</b></li></ul></div><div class="card amber"><h3>意義</h3><ul class="dots sm"><li>竇房結失守時的逸搏心律</li><li>常見於下壁 MI、毛地黃、β-blocker / 鈣離子阻斷劑</li><li>也可見於迷走神經張力高</li></ul></div><div class="card red"><h3>對照：高血鉀 sine wave</h3><canvas class="ecg" data-r="hyperk" data-h="110" data-sec="4" data-lead=" "></canvas><p style="font-size:18px;margin-top:6px">QRS 極寬、與 T 融合成正弦波 → 立即給鈣</p></div>
-  </div><div class="notes">這一頁的小圖是補充：嚴重高血鉀。原書在寬 QRS 有 P 那節以初記提到高血鉀會讓 QRS 變寬、P 被抑制。</div>
-</section>
-<!-- ============ 竇性心搏過緩 SB ／ 一度房室阻斷 ============ -->
+<!-- ============ 竇性心搏過緩 SB ============ -->
 <section class="slide">
   <div class="kicker">Narrow · With P · 圖 5-14</div>
-  <h2>竇性心搏過緩 SB ／ 一度房室阻斷</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="sb" data-h="190" data-sec="7" data-hr="48" data-label="竇性心搏過緩"></canvas></div>
-  <div style="height:12px"></div><div class="ecgbox"><canvas class="ecg" data-r="avb1" data-h="190" data-sec="7" data-hr="70" data-label="一度房室阻斷"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>竇性心搏過緩</h3><ul class="dots sm"><li>P、QRS、T 都和正常竇性一樣</li><li>只有速率 <b>&lt; 60</b></li><li>運動員、睡眠時可為正常</li></ul></div><div class="card amber"><h3>一度房室阻斷</h3><ul class="dots sm"><li>每個 P 後都有 QRS，<b>PR &gt; 0.20 s（&gt; 1 大格）</b></li><li>PR 固定、QRS 規則 → <b>脈搏規則</b></li><li>低風險，本身多不需治療</li></ul></div><div class="card red"><h3>⚠ 教材更正</h3><ul class="dots sm"><li>原書寫一度阻斷「速率較慢（&lt; 60）」</li><li>一度阻斷的定義<b>只看 PR</b>，心率可以正常</li><li>此例心率 70，PR 0.32 s</li></ul></div></div>
-  <div class="notes">下面那條心率 70，但 PR 超過一大格。請學員在螢幕上量。</div>
+  <h2>竇性心搏過緩 SB <small>Sinus bradycardia</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="sb" data-h="240" data-sec="7" data-hr="48" data-label="竇性心搏過緩"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>P、QRS、T 都和正常竇性一樣</li><li>每個 P 後都有 QRS，PR 正常</li><li>速率 <b>&lt; 60</b></li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>運動員、睡眠時可為正常</li><li>藥物（β-blocker、CCB）、下壁 MI、缺氧、迷走神經、甲狀腺低下、顱內壓升高</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>無症狀：不需處理</li><li>有症狀：→ 第 7 章</li></ul></div></div>
+  <div class="notes">SB 是心搏過緩分類樹的起點：QRS 規則、P 與 QRS 有關係、PR 正常。</div>
 </section>
-<!-- ============ 二度房室阻斷第 I 型 Wenckebach ============ -->
+<!-- ============ 一度房室阻斷 1st degree AV block ============ -->
+<section class="slide">
+  <div class="kicker">Narrow · With P · 圖 5-14</div>
+  <h2>一度房室阻斷 1st degree AV block</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="avb1" data-h="240" data-sec="7" data-hr="70" data-label="一度房室阻斷：PR 約 0.30 s"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>每個 P 後都有 QRS</li><li><b>PR &gt; 0.20 s（&gt; 1 大格）且固定</b></li><li>QRS 規則；心率可以正常</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>房室結傳導變慢</li><li><b>低風險</b></li><li>藥物、迷走神經、下壁 MI</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>本身不需治療</li><li>找原因、避免加重傳導阻滯的藥物</li></ul></div></div>
+  <div class="notes">此例心率 70，但 PR 超過一大格。原書寫一度阻斷「速率較慢（< 60）」，但定義只看 PR。</div>
+</section>
+<!-- ============ 二度房室阻斷第 I 型：漸行漸遠 ============ -->
 <section class="slide">
   <div class="kicker">Narrow · With P · 圖 5-15</div>
-  <h2>二度房室阻斷第 I 型 Wenckebach <small>Mobitz I</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="wenck" data-h="260" data-sec="7" data-hr="60" data-label="二度 I 型"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>PR <b>逐漸延長</b></li><li>直到某個 P 後面<b>突然少了 QRS</b></li><li>然後重新開始（Wenckebach 現象）</li></ul></div><div class="card amber"><h3>脈搏</h3><ul class="dots sm"><li>因為 QRS 不規則出現 → <b>脈搏不規則</b></li><li>成群出現（group beating）</li><li>阻斷多在房室結</li></ul></div><div class="card red"><h3>風險</h3><ul class="dots sm"><li><b>低風險</b>心搏過緩</li><li>常見於下壁 MI、迷走神經張力高、藥物</li><li>阻斷位置高，較少進展</li></ul></div></div>
+  <h2>二度房室阻斷第 I 型：漸行漸遠 <small>Wenckebach / Mobitz I</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="wenck" data-h="240" data-sec="7" data-hr="60" data-label="二度 I 型"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>PR <b>逐漸延長</b>（漸行漸遠）</li><li>直到某個 P 後面<b>突然少了 QRS</b>，再重新開始</li><li>QRS 成群出現 → <b>不規則</b></li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>阻斷多在房室結</li><li><b>低風險</b></li><li>下壁 MI、迷走神經、藥物</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>無症狀：觀察</li><li>有症狀：→ 第 7 章</li></ul></div></div>
   <div class="notes">跟著掃描線看：第一個 PR 短、第二個長一點、第三個更長，第四個 P 後面沒有 QRS。</div>
 </section>
-<!-- ============ 二度房室阻斷第 II 型 ============ -->
+<!-- ============ 二度房室阻斷第 II 型：突然消失 ============ -->
 <section class="slide">
   <div class="kicker">Narrow · With P · 圖 5-16</div>
-  <h2>二度房室阻斷第 II 型 <small>Mobitz II</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="mobitz2" data-h="260" data-sec="7" data-hr="60" data-label="二度 II 型"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>PR <b>固定不變</b></li><li>P 波後的 QRS <b>突然消失</b></li><li>QRS 不規則出現 → 脈搏不規則</li></ul></div><div class="card red"><h3>風險</h3><ul class="dots sm"><li><b>高風險</b>：阻斷多在 His 以下</li><li>可能突然進展為三度阻斷</li><li>需立即會診心臟科、準備節律器</li></ul></div><div class="card amber"><h3>和第 I 型怎麼分</h3><ul class="dots sm"><li>掉 QRS <b>之前</b>的 PR 有沒有越來越長</li><li>有 → I 型；沒有 → II 型</li><li>QRS 寬的二度阻斷更要當 II 型</li></ul></div></div>
-  <div class="notes">和上一頁對照。兩條的 P 速率一樣、掉拍位置一樣，唯一差別是 PR 有沒有延長。</div>
+  <h2>二度房室阻斷第 II 型：突然消失 <small>Mobitz II</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="mobitz2" data-h="240" data-sec="7" data-hr="60" data-label="二度 II 型"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>PR <b>固定不變</b></li><li>P 後的 QRS <b>突然消失</b></li><li>QRS 不規則</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>阻斷多在 His 以下</li><li><b>高風險</b>：可能突然進展為三度</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>會診心臟科、準備節律器</li><li>→ 第 7 章</li></ul></div></div>
+  <div class="notes">和上一頁對照：P 速率一樣、掉拍位置一樣，唯一差別是掉拍前的 PR 有沒有越來越長。</div>
 </section>
-<!-- ============ 三度房室阻斷（窄） ============ -->
+<!-- ============ 三度房室阻斷：各跳各的 ============ -->
 <section class="slide">
   <div class="kicker">Narrow · With P · 圖 5-17</div>
-  <h2>三度房室阻斷（窄） <small>Complete heart block</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="avb3n" data-h="260" data-sec="7" data-hr="40" data-label="三度房室阻斷，窄 QRS"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>心房、心室<b>各跳各的</b>，兩者無關</li><li>P 規則、QRS 也規則（約 40–60）</li><li>P 速率 &gt; QRS 速率</li></ul></div><div class="card amber"><h3>窄 vs 寬</h3><ul class="dots sm"><li><b>窄 QRS</b>：逸搏點在房室交界，位置較高，預後較好</li><li><b>寬 QRS</b>：His 以下，預後較差</li><li>QRS 規則 → 脈搏規則</li></ul></div><div class="card red"><h3>風險</h3><ul class="dots sm"><li><b>高風險</b>心搏過緩</li><li>立即會診心臟科</li><li>寬 QRS 的三度阻斷風險更高</li></ul></div></div>
+  <h2>三度房室阻斷：各跳各的 <small>Complete heart block</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="avb3n" data-h="240" data-sec="7" data-hr="40" data-label="三度房室阻斷（窄 QRS）"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>心房、心室<b>各跳各的</b>，兩者無關</li><li>P 規則、QRS 也規則，P 速率 &gt; QRS 速率</li><li>窄 QRS：逸搏點在房室交界（40–60）</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li><b>高風險</b>心搏過緩</li><li>窄 QRS 預後比寬 QRS 好</li><li>下壁 MI 可見</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>會診心臟科、準備經皮節律器</li><li>→ 第 7 章</li></ul></div></div>
   <div class="notes">看 P 波像走路一樣穿過 QRS，有時藏在 QRS 或 T 裡。</div>
+</section>
+<!-- ============ 三度房室阻斷（寬）vs 高血鉀 ============ -->
+<section class="slide">
+  <div class="kicker">Wide · 圖 5-12</div>
+  <h2>三度房室阻斷（寬）vs 高血鉀</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="avb3w" data-h="155" data-sec="7" data-hr="35" data-label="三度房室阻斷，寬 QRS"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="hyperk" data-h="155" data-sec="6" data-hr="68" data-label="高血鉀（V2）：P 低平、PR 延長、寬 QRS 深 S、T 波高尖" data-lead="V2"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li><b>三度（寬）</b>：P 與 QRS 各跳各的，寬又慢（&lt; 40）</li><li><b>高血鉀</b>：T 波高尖、P 扁平、<b>PR 延長</b>、QRS 變寬；嚴重時成正弦波</li><li>高血鉀<b>不一定慢</b>：寬 QRS ＋ PR 延長就要想到</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>三度（寬）：阻斷在 His 以下，<b>預後差</b></li><li>高血鉀：洗腎、腎衰竭、藥物；隨時可能心臟停止</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>三度（寬）：節律器 → 第 7 章</li><li>高血鉀：鈣、降鉀 → 第 12 章</li></ul></div></div>
+  <div class="notes">三度（寬）用小 r、大 S、T 波朝上的心室逸搏。高血鉀不一定是慢的：看到寬 QRS、PR 延長、T 波高尖，就要想到高血鉀並抽血。</div>
 </section>
 <!-- ============ AVB SUMMARY ============ -->
 <section class="slide">
@@ -379,34 +362,72 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
   <table>
     <tr><th style="width:22%">房室阻斷</th><th style="width:26%">PR</th><th style="width:24%">QRS 出現</th><th>風險</th></tr>
     <tr><td><b>一度</b></td><td>&gt; 0.20 s，固定</td><td><b>規則</b></td><td><span class="tag ok">低風險</span></td></tr>
-    <tr><td><b>二度 I 型</b></td><td>逐漸延長 → 掉 QRS</td><td><b class="red">不規則</b></td><td><span class="tag ok">低風險</span></td></tr>
-    <tr><td><b>二度 II 型</b></td><td>固定 → 突然掉 QRS</td><td><b class="red">不規則</b></td><td><span class="tag new">高風險</span></td></tr>
-    <tr><td><b>三度</b></td><td>完全無關</td><td><b>規則</b></td><td><span class="tag new">高風險</span></td></tr>
+    <tr><td><b>二度 I 型</b></td><td>漸行漸遠 → 掉 QRS</td><td><b class="red">不規則</b></td><td><span class="tag ok">低風險</span></td></tr>
+    <tr><td><b>二度 II 型</b></td><td>固定 → 突然消失</td><td><b class="red">不規則</b></td><td><span class="tag new">高風險</span></td></tr>
+    <tr><td><b>三度</b></td><td>各跳各的</td><td><b>規則</b></td><td><span class="tag new">高風險</span></td></tr>
   </table>
   <div class="cols c2" style="gap:22px;margin-top:24px">
     <div class="callout red" style=""><span class="h">訣竅 1：風險</span>一度、二度 I 型屬<b>低風險</b>；二度 II 型、三度屬<b>高風險</b>，需立即會診心臟專科醫師。</div><div class="callout ok" style=""><span class="h">訣竅 2：規則性</span>一度、三度的 QRS <b>規則</b>出現；兩種二度阻斷都會掉 QRS，所以 QRS <b>不規則</b>。</div>
   </div><div class="notes">用摸脈搏的角度幫學員記：脈搏不規則的房室阻斷，一定是二度。</div>
 </section>
+<!-- ============ 心室停止 Asystole ============ -->
+<section class="slide">
+  <div class="kicker">Megacode · Arrest · 圖 5-10</div>
+  <h2>心室停止 Asystole</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="asystole" data-h="165" data-sec="6" data-hr="0" data-label="Asystole"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="vf_fine" data-h="130" data-sec="6" data-hr="---" data-label="細 VF：增益調低時很像一直線"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>近乎一直線，<b>沒有 P、沒有 QRS</b></li><li>偶爾只剩 P 波（P-wave asystole）</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>心臟停止，預後最差</li><li>一直線先排除：<b>導線脫落、增益太低、細 VF</b>（換導程）</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li><b>不可電擊</b></li><li>高品質 CPR ＋ 儘早 epinephrine</li><li>→ 第 6 章</li></ul></div></div>
+  <div class="notes">兩條並排比較，強調為什麼一直線一定要確認。</div>
+</section>
+<!-- ============ 自發性心室心律 IVR ============ -->
+<section class="slide">
+  <div class="kicker">Megacode · PEA · 圖 5-11</div>
+  <h2>自發性心室心律 IVR <small>Idioventricular rhythm</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="ivr" data-h="240" data-sec="6" data-hr="35" data-label="IVR：小 r、大 S、T 波朝上"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>寬 QRS、規則、<b>&lt; 40</b></li><li>沒有 P 波</li><li>QRS 主波常朝下：小 r、大 S，T 波朝上</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>竇房結、房室結都失守的<b>最後一道逸搏</b></li><li>常見於瀕死心臟、PEA、高血鉀、藥物中毒</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>先摸脈搏：無脈搏 → PEA（第 6 章）</li><li>有脈搏 → 第 7 章，找原因</li></ul></div></div>
+  <div class="notes">IVR 是 Megacode 常見的 PEA 心電圖：小 r、大 S，T 波朝上。</div>
+</section>
+<!-- ============ 房室交界心律 Junctional rhythm ============ -->
+<section class="slide">
+  <div class="kicker">Supplement · Narrow · 圖 5-13</div>
+  <h2>房室交界心律 Junctional rhythm</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="junc" data-h="240" data-sec="7" data-hr="50" data-label="Junctional rhythm"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>窄 QRS、規則，心率 <b>40–60</b></li><li>P 看不到，或在 QRS 前後且<b>倒立</b>（逆行 P）</li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>竇房結失守時的逸搏心律</li><li>下壁 MI、毛地黃、β-blocker / CCB、迷走神經</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>無症狀：觀察、找原因</li><li>有症狀 → 第 7 章</li></ul></div></div>
+  <div class="notes">Megacode 不考，當補充。</div>
+</section>
 <!-- ============ DIVIDER 04 ============ -->
 <section class="slide divider">
   <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 四 · Others</div>
-  <div class="big"><div class="no">04</div><h2>其他</h2><p>AIVR 與節律器心律</p></div>
+  <div class="big"><div class="no">04</div><h2>其他</h2><p>期外收縮、AIVR、節律器心律</p></div>
+</section>
+<!-- ============ APC VPC ============ -->
+<section class="slide">
+  <div class="kicker">Premature Beats</div>
+  <h2>期外收縮：APC vs VPC <small>大部分規律，突然有一個提早出現</small></h2><div class="rule" style="margin-bottom:14px"></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="apc" data-h="150" data-sec="6.1" data-hr="75" data-label="APC：提早出現、P 形狀不同、窄 QRS → 不完全代償性間歇"></canvas></div><div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="vpc" data-h="150" data-sec="6.4" data-hr="75" data-label="VPC：提早出現、沒有 P、寬 QRS、T 波相反 → 完全代償性間歇"></canvas></div>
+  <table class="tight" style="margin-top:14px">
+    <tr><th style="width:18%"></th><th style="width:41%">心房期外收縮 APC（PAC）</th><th>心室期外收縮 VPC（PVC）</th></tr>
+    <tr><td><b>P 波</b></td><td>有，但<b>提早</b>出現、形狀和竇性不同</td><td><b>沒有</b>（竇性 P 常埋在 VPC 的 T 波裡）</td></tr>
+    <tr><td><b>QRS</b></td><td>窄，和平常一樣</td><td><b>寬</b>、怪，T 波方向與 QRS 相反</td></tr>
+    <tr><td><b>代償性間歇</b></td><td><b>不完全</b>：前後兩拍間距 &lt; 2 個 RR（竇房結被重設）</td><td><b>完全</b>：前後兩拍間距 = 2 個 RR（竇房結節奏沒被打亂）</td></tr>
+    <tr><td><b>臨床意義 / 處置</b></td><td>常見、多良性；咖啡因、壓力、肺病</td><td>多良性；頻繁或多源、R-on-T、合併缺血要注意 → 找原因（電解質、缺血）</td></tr>
+  </table><div class="notes">兩條都是竇性心律 75，突然有一拍提早。用尺量：APC 前一拍到後一拍的距離小於兩個正常 RR；VPC 剛好等於兩個 RR，這就是完全代償性間歇。</div>
 </section>
 <!-- ============ 加速型心室心律 AIVR ============ -->
 <section class="slide">
   <div class="kicker">Others · 圖 5-18</div>
   <h2>加速型心室心律 AIVR <small>Accelerated idioventricular rhythm</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="aivr" data-h="260" data-sec="6" data-hr="80" data-label="AIVR"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>形態像 IVR：寬 QRS、無明顯 P</li><li>但心率較快：<b>60–100</b></li><li>規則</li></ul></div><div class="card amber"><h3>臨床</h3><ul class="dots sm"><li>急性心肌梗塞後常見</li><li><b>再灌流</b>（PCI、溶栓）後的典型心律</li><li>通常短暫、自行停止</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li><b>良性，不須治療</b></li><li>不要當成 VT 電擊或給抗心律不整藥</li><li>壓掉它可能剩下更慢的心律</li></ul></div></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="aivr" data-h="240" data-sec="6" data-hr="80" data-label="AIVR"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>寬 QRS：大 R 直接接到 T 波，沒有 S 波</li><li>無明顯 P、規則，心率 <b>60–100</b></li><li>又稱 <b>slow VT</b></li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>急性心肌梗塞<b>再灌流</b>（PCI、溶栓）後的典型心律</li><li>通常短暫、自行停止</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li><b>良性，不須治療</b></li><li>不要當 VT 電擊或給抗心律不整藥</li></ul></div></div>
   <div class="notes">和 VT 的分別：速率。AIVR 60–100，VT > 100。</div>
 </section>
 <!-- ============ 節律器心律 ============ -->
 <section class="slide">
   <div class="kicker">Others · 圖 5-19</div>
   <h2>節律器心律 <small>Pacemaker rhythm</small></h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="ecgbox"><canvas class="ecg" data-r="pace_v" data-h="190" data-sec="6" data-hr="70" data-label="單腔：心室起搏"></canvas></div>
-  <div style="height:12px"></div><div class="ecgbox"><canvas class="ecg" data-r="pace_dual" data-h="190" data-sec="6" data-hr="70" data-label="雙腔：心房 + 心室起搏"></canvas></div>
-  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>單腔（心室）</h3><ul class="dots sm"><li>每個<b>寬 QRS 前</b>有一條垂直 spike</li><li>導線末端在右心室尖端</li><li>QRS 寬、類似 LBBB</li></ul></div><div class="card amber"><h3>雙腔</h3><ul class="dots sm"><li><b>P 和 QRS 前各有一個 spike</b></li><li>胸部 X 光：一條導線在心房、一條在右心室</li><li>心率通常在正常範圍</li></ul></div><div class="card red"><h3>急救時</h3><ul class="dots sm"><li>電擊板／貼片<b>避開</b>皮下節律器</li><li>Spike 後沒有 QRS → 不捕獲（failure to capture）</li><li>Spike 後有 QRS 但摸不到脈搏 → PEA</li></ul></div></div>
+  <div class="ecgbox"><canvas class="ecg" data-r="pace_v" data-h="170" data-sec="6" data-hr="70" data-label="單腔：心室起搏"></canvas></div>
+  <div style="height:10px"></div><div class="ecgbox"><canvas class="ecg" data-r="pace_dual" data-h="170" data-sec="6" data-hr="70" data-label="雙腔：心房 + 心室起搏"></canvas></div>
+  <div class="cols c3" style="gap:20px;margin-top:20px"><div class="card navy"><h3>特徵</h3><ul class="dots sm"><li>單腔：每個<b>寬 QRS 前</b>有垂直 spike</li><li>雙腔：<b>P 和 QRS 前各一個 spike</b></li></ul></div><div class="card amber"><h3>臨床意義</h3><ul class="dots sm"><li>Spike 後沒有 QRS → 不捕獲（failure to capture）</li><li>Spike 後有 QRS 但摸不到脈搏 → PEA</li></ul></div><div class="card red"><h3>處置</h3><ul class="dots sm"><li>電擊貼片<b>避開</b>皮下節律器</li><li>功能異常：會診心臟科、經皮節律器</li></ul></div></div>
   <div class="notes">spike 的高度依導程與機器濾波而異，有時很小，要仔細找。</div>
 </section>
 <!-- ============ QUIZ 1 ============ -->
@@ -426,7 +447,7 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
 <!-- ============ RANDOM MONITOR ============ -->
 <section class="slide">
   <div class="kicker">Quiz · 隨機監視器</div>
-  <h2>隨機監視器：講師按「下一題」，學員搶答 <small>全章 25 種心律</small></h2><div class="rule" style="margin-bottom:16px"></div>
+  <h2>搶答時間 <small>講師按「下一題」，學員搶答 · 全章 31 種心律</small></h2><div class="rule" style="margin-bottom:16px"></div>
   <div class="ecgbox"><canvas class="ecg" id="rqc" data-r="nsr" data-h="300" data-sec="7"></canvas></div>
   <div style="display:flex;gap:16px;align-items:center;margin-top:20px">
     <a href="#" class="btn" id="rqNext">▶ 下一題</a><a href="#" class="btn ghost" id="rqShow">揭曉答案</a>
@@ -471,9 +492,9 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
       <li><b>窄有 P</b>：鋸齒 → AFL；正常 P → ST</li>
       <li><b>窄無 P</b>：規則 → PSVT；不規則 → AF</li></ul></div>
     <div class="card teal"><h3>心搏過緩樹</h3><ul class="dots sm">
-      <li>無 QRS → Asystole；寬無 P → IVR</li>
-      <li>窄無 P：規則 → 交界心律；不規則 → AF 慢速反應</li>
-      <li>窄有 P：PR 正常 SB、&gt; 0.2 一度、漸長掉拍 二度 I、固定掉拍 二度 II、無關 三度</li></ul></div>
+      <li>QRS <b>規則</b>：P 與 QRS 有關 → PR 正常 SB、&gt; 0.2 一度；無關（各跳各的）→ 三度</li>
+      <li>QRS <b>不規則</b>：PR 漸行漸遠 → 二度 I；PR 固定突然消失 → 二度 II</li>
+      <li>Megacode：Asystole、IVR（PEA）；補充：交界心律、AF with SVR</li></ul></div>
   </div><div class="notes">最後回到開場：看心電圖之前先看病人。</div>
 </section>
 <!-- ============ REFERENCES ============ -->
@@ -484,6 +505,9 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
     <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">教材</span>黃獻皋、顏湧章。〈第 5 章 重要危急心電圖判讀〉。ACLS 精華。圖 5-1 至 5-19 依原圖特徵以動態合成心電圖重繪。</li>
     <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">指引</span>Wigginton JG, et al. Part 9: Adult Advanced Life Support. 2025 AHA Guidelines for CPR and ECC. <i>Circulation</i> 2025;152(16 Suppl 2). <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support" target="_blank" rel="noopener">連結 ↗</a></li>
     <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">講義</span>懷顥。Tachycardia（台北市立聯合醫院教學投影片）：心搏速度、間期定義、心搏過速分類樹改編自此。</li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">綜論</span>Alasti M, et al. Junctional ectopic tachycardia (JET). <i>J Arrhythm</i> 2020;36:837–844. <a href="https://doi.org/10.1002/joa3.12410" target="_blank" rel="noopener">連結 ↗</a></li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">參考</span>MSD Manual Professional. Ectopic Supraventricular Arrhythmias — Nonparoxysmal junctional tachycardia. <a href="https://www.msdmanuals.com/professional/cardiovascular-disorders/arrhythmias-and-conduction-disorders/ectopic-supraventricular-rhythms" target="_blank" rel="noopener">連結 ↗</a></li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">參考</span>LITFL. Accelerated Junctional Rhythm (AJR). <a href="https://litfl.com/accelerated-junctional-rhythm-ajr/" target="_blank" rel="noopener">連結 ↗</a></li>
     <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">摘要</span>AHA. Top Things to Know: 2025 AHA Guidelines for CPR and ECC. <a href="https://professional.heart.org/en/science-news/2025-aha-guidelines-for-cpr-and-ecc/top-things-to-know" target="_blank" rel="noopener">連結 ↗</a></li>
   </ul>
   <div class="callout " style="margin-top:20px;font-size:18px;padding:10px 18px"><span class="h">使用聲明</span>心電圖為依教科書特徵合成的教學示意圖，不是病人紀錄。本投影片供 ACLS 教學使用，實際處置依最新指引、藥品仿單與院內規範。</div>
@@ -498,7 +522,7 @@ body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
 
 <script src="../shared/flow.js"></script>
 <script>
-const RQ={"nsr": "正常竇性心律", "sb": "竇性心搏過緩", "st": "竇性心搏過速", "at": "心房心搏過速", "mat": "多發性心房心搏過速 MAT", "psvt": "PSVT", "afl41": "心房撲動 4：1", "afl21": "心房撲動 2：1", "af_rvr": "心房顫動 RVR", "af_svr": "心房顫動 SVR", "vt": "單型性 VT", "vf_coarse": "粗 VF", "vf_fine": "細 VF", "tdp": "Torsades de pointes", "asystole": "Asystole", "ivr": "IVR", "aivr": "AIVR", "junc": "房室交界心律", "avb1": "一度房室阻斷", "wenck": "二度 I 型（Wenckebach）", "mobitz2": "二度 II 型", "avb3n": "三度房室阻斷（窄）", "avb3w": "三度房室阻斷（寬）", "pace_v": "心室節律器心律", "pace_dual": "雙腔節律器心律"};
+const RQ={"nsr": "正常竇性心律", "sb": "竇性心搏過緩", "st": "竇性心搏過速", "at": "心房心搏過速", "mat": "多發性心房心搏過速 MAT", "psvt": "PSVT", "afl41": "心房撲動 4：1", "afl21": "心房撲動 2：1", "afl_var": "心房撲動 可變傳導（不規則）", "af_rvr": "心房顫動 RVR", "af_svr": "心房顫動 SVR", "vt": "單型性 VT", "vt_neg": "單型性 VT（QRS 朝下、房室分離）", "vf_coarse": "粗 VF", "vf_fine": "細 VF", "tdp": "Torsades de pointes", "asystole": "Asystole", "ivr": "IVR", "aivr": "AIVR", "junc": "房室交界心律", "apc": "心房期外收縮 APC", "vpc": "心室期外收縮 VPC", "npjt": "非陣發性交界性心搏過速", "jet": "交界性心搏過速 JET（房室分離）", "avb1": "一度房室阻斷", "wenck": "二度 I 型（Wenckebach）", "mobitz2": "二度 II 型", "avb3n": "三度房室阻斷（窄）", "avb3w": "三度房室阻斷（寬）", "pace_v": "心室節律器心律", "pace_dual": "雙腔節律器心律"};
 (function(){const c=document.getElementById('rqc'),ans=document.getElementById('rqAns'),ks=Object.keys(RQ);let cur='nsr';
 function stop(e){e.preventDefault();e.stopPropagation()}
 document.getElementById('rqNext').addEventListener('click',e=>{stop(e);let k;do{k=ks[Math.floor(Math.random()*ks.length)]}while(k===cur);cur=k;window.ECG&&ECG.set(c,k,'');ans.textContent=''});
@@ -506,22 +530,16 @@ document.getElementById('rqShow').addEventListener('click',e=>{stop(e);ans.textC
 </script>
 <script>
 flow("f5a",[
- {x:40,y:20,w:300,h:120,t:"① 快或慢？\n> 100 快｜< 60 慢",k:"navy",fs:24},
- {x:400,y:20,w:300,h:120,t:"② QRS 寬或窄？\n≤ 3 小格 窄｜> 3 小格 寬",k:"dec",fs:22},
- {x:760,y:20,w:300,h:120,t:"③ 有沒有 P 波？",k:"key",fs:24},
- {x:1120,y:20,w:300,h:120,t:"④ P 與 QRS 的關係\n1：1？PR 固定？",k:"end",fs:22},
- {x:40,y:220,w:300,h:150,t:"> 100 → 心搏過速樹\n< 60 → 心搏過緩樹\n（沒脈搏→心臟停止）",fs:20,b:false},
- {x:400,y:220,w:300,h:150,t:"窄：房室結以上\n寬：心室來源，或\n束支阻滯 / 變異傳導",fs:20,b:false},
- {x:760,y:220,w:300,h:150,t:"有 P：竇房結或心房\n無 P：房室結以下\n或心房顫動 / 撲動",fs:20,b:false},
- {x:1120,y:220,w:300,h:150,t:"P > QRS：房室阻斷\nPR 漸長：二度 I\n各跳各的：三度",fs:20,b:false},
- {x:200,y:440,w:1040,h:90,t:"推出激發點（竇房結 / 心房 / 房室結 / 心室）＋ 速率 ＝ 心律的名字",k:"note",fs:24}
+ {x:500,y:6,w:440,h:96,t:"看心率\n數 6 秒內 QRS × 10",k:"navy",fs:26},
+ {x:60,y:180,w:600,h:210,t:"> 100：快\n→ 心搏過速分類樹（第二部分）\n先看 QRS 寬窄\n寬：規則嗎？　窄：有 P 波嗎？",k:"end",fs:24},
+ {x:780,y:180,w:600,h:210,t:"< 60：慢\n→ 心搏過緩分類樹（第三部分）\n先看 QRS 規則嗎？\n再看 P 與 QRS 的關係",k:"key",fs:24},
+ {x:160,y:430,w:1120,h:76,t:"摸不到脈搏 → 心臟停止（VF / pVT / PEA / Asystole）→ 第 6 章",k:"note",fs:23}
 ],[
- {p:[[340,80],[400,80]]},{p:[[700,80],[760,80]]},{p:[[1060,80],[1120,80]]},
- {p:[[190,140],[190,220]]},{p:[[550,140],[550,220]]},{p:[[910,140],[910,220]]},{p:[[1270,140],[1270,220]]},
- {p:[[720,370],[720,440]]}
+ {p:[[720,102],[720,140],[360,140],[360,180]],l:"快",lx:375,ly:168,a:"start"},
+ {p:[[720,140],[1080,140],[1080,180]],l:"慢",lx:1095,ly:168,a:"start"}
 ]);
-flow("f5t",[{"x": 540, "y": 0, "w": 360, "h": 56, "t": "心搏過速性心律不整（> 100）", "k": "navy", "fs": 22}, {"x": 590, "y": 96, "w": 260, "h": 56, "t": "QRS 寬度？", "k": "dec", "fs": 23}, {"x": 230, "y": 200, "w": 220, "h": 56, "t": "規則？", "k": "dec", "fs": 22}, {"x": 990, "y": 200, "w": 220, "h": 56, "t": "有 P 波？", "k": "dec", "fs": 22}, {"x": 40, "y": 330, "w": 200, "h": 80, "t": "VT\n單型性", "k": "end", "fs": 22}, {"x": 360, "y": 310, "w": 220, "h": 56, "t": "紡錘狀？", "k": "dec", "fs": 22}, {"x": 250, "y": 440, "w": 200, "h": 90, "t": "TdP\n尖端扭轉", "k": "end", "fs": 21}, {"x": 480, "y": 440, "w": 200, "h": 90, "t": "VF\n雜亂無章", "k": "end", "fs": 21}, {"x": 770, "y": 310, "w": 240, "h": 56, "t": "P 波型態？", "k": "dec", "fs": 22}, {"x": 1170, "y": 310, "w": 220, "h": 56, "t": "規則？", "k": "dec", "fs": 22}, {"x": 720, "y": 440, "w": 160, "h": 90, "t": "AFL\n鋸齒狀", "k": "end", "fs": 21}, {"x": 900, "y": 440, "w": 160, "h": 90, "t": "ST\n正常 P", "k": "end", "fs": 21}, {"x": 1100, "y": 440, "w": 160, "h": 90, "t": "PSVT\n規則", "k": "end", "fs": 21}, {"x": 1275, "y": 440, "w": 160, "h": 90, "t": "AF\n不規則", "k": "end", "fs": 21}],[{"p": [[720.0, 56], [720.0, 96]]}, {"p": [[720.0, 152], [720.0, 168.8], [340.0, 168.8], [340.0, 200]], "l": "寬 > 0.12 s", "lx": 352.0, "ly": 192.4, "a": "start"}, {"p": [[720.0, 152], [720.0, 168.8], [1100.0, 168.8], [1100.0, 200]], "l": "窄 ≤ 0.12 s", "lx": 1112.0, "ly": 192.4, "a": "start"}, {"p": [[340.0, 256], [340.0, 281.9], [140.0, 281.9], [140.0, 330]], "l": "規則", "lx": 152.0, "ly": 313.95, "a": "start"}, {"p": [[340.0, 256], [340.0, 274.9], [470.0, 274.9], [470.0, 310]], "l": "不規則", "lx": 482.0, "ly": 300.45, "a": "start"}, {"p": [[470.0, 366], [470.0, 391.9], [350.0, 391.9], [350.0, 440]], "l": "是", "lx": 362.0, "ly": 423.95, "a": "start"}, {"p": [[470.0, 366], [470.0, 391.9], [580.0, 391.9], [580.0, 440]], "l": "否", "lx": 592.0, "ly": 423.95, "a": "start"}, {"p": [[1100.0, 256], [1100.0, 274.9], [890.0, 274.9], [890.0, 310]], "l": "是", "lx": 902.0, "ly": 300.45, "a": "start"}, {"p": [[1100.0, 256], [1100.0, 274.9], [1280.0, 274.9], [1280.0, 310]], "l": "否", "lx": 1292.0, "ly": 300.45, "a": "start"}, {"p": [[890.0, 366], [890.0, 391.9], [800.0, 391.9], [800.0, 440]], "l": "鋸齒狀", "lx": 812.0, "ly": 423.95, "a": "start"}, {"p": [[890.0, 366], [890.0, 391.9], [980.0, 391.9], [980.0, 440]], "l": "正常 P", "lx": 992.0, "ly": 423.95, "a": "start"}, {"p": [[1280.0, 366], [1280.0, 391.9], [1180.0, 391.9], [1180.0, 440]], "l": "規則", "lx": 1192.0, "ly": 423.95, "a": "start"}, {"p": [[1280.0, 366], [1280.0, 391.9], [1355.0, 391.9], [1355.0, 440]], "l": "不規則", "lx": 1367.0, "ly": 423.95, "a": "start"}]);
-flow("f5br",[{"x": 540, "y": 0, "w": 360, "h": 54, "t": "心搏過緩性心律（< 60）", "k": "navy", "fs": 22}, {"x": 600, "y": 84, "w": 240, "h": 52, "t": "有 QRS？", "k": "dec", "fs": 22}, {"x": 1000, "y": 84, "w": 240, "h": 52, "t": "Asystole", "k": "end", "fs": 22}, {"x": 600, "y": 166, "w": 240, "h": 52, "t": "QRS 寬度？", "k": "dec", "fs": 22}, {"x": 80, "y": 250, "w": 220, "h": 52, "t": "有 P 波？", "k": "dec", "fs": 21}, {"x": 890, "y": 250, "w": 220, "h": 52, "t": "有 P 波？", "k": "dec", "fs": 21}, {"x": 200, "y": 340, "w": 250, "h": 52, "t": "P 與 QRS 有關？", "k": "dec", "fs": 20}, {"x": 640, "y": 340, "w": 380, "h": 52, "t": "PR 間期與掉拍？", "k": "dec", "fs": 21}, {"x": 1190, "y": 340, "w": 210, "h": 52, "t": "規則？", "k": "dec", "fs": 21}, {"x": 10, "y": 440, "w": 140, "h": 100, "t": "IVR\n< 40\n無 P", "k": "end", "fs": 18}, {"x": 170, "y": 440, "w": 150, "h": 100, "t": "三度 AVB\n（寬）\n各跳各的", "k": "end", "fs": 18}, {"x": 335, "y": 440, "w": 150, "h": 100, "t": "SB 併\n完全 BBB\nPR 固定", "k": "end", "fs": 18}, {"x": 505, "y": 440, "w": 124, "h": 100, "t": "SB\nPR 正常", "k": "end", "fs": 18}, {"x": 638, "y": 440, "w": 124, "h": 100, "t": "一度\nPR > 0.2\n固定", "k": "end", "fs": 18}, {"x": 771, "y": 440, "w": 124, "h": 100, "t": "二度 I\nPR 漸長\n→ 掉拍", "k": "end", "fs": 18}, {"x": 904, "y": 440, "w": 124, "h": 100, "t": "二度 II\nPR 固定\n→ 掉拍", "k": "end", "fs": 18}, {"x": 1037, "y": 440, "w": 124, "h": 100, "t": "三度\nP、QRS\n無關", "k": "end", "fs": 18}, {"x": 1170, "y": 440, "w": 124, "h": 100, "t": "交界心律\n40–60", "k": "end", "fs": 18}, {"x": 1303, "y": 440, "w": 130, "h": 100, "t": "AF\n慢速反應", "k": "end", "fs": 18}],[{"p": [[720.0, 54], [720.0, 84]]}, {"p": [[840, 110.0], [1000, 110.0]], "l": "否", "lx": 920.0, "ly": 100.0, "a": "middle"}, {"p": [[720.0, 136], [720.0, 166]], "l": "是", "lx": 732.0, "ly": 164.25, "a": "start"}, {"p": [[720.0, 218], [720.0, 229.2], [190.0, 229.2], [190.0, 250]], "l": "寬", "lx": 202.0, "ly": 247.6, "a": "start"}, {"p": [[720.0, 218], [720.0, 229.2], [1000.0, 229.2], [1000.0, 250]], "l": "窄", "lx": 1012.0, "ly": 247.6, "a": "start"}, {"p": [[190.0, 302], [190.0, 350.3], [80.0, 350.3], [80.0, 440]], "l": "無", "lx": 92.0, "ly": 403.15, "a": "start"}, {"p": [[190.0, 302], [190.0, 315.3], [325.0, 315.3], [325.0, 340]], "l": "有", "lx": 337.0, "ly": 335.65, "a": "start"}, {"p": [[325.0, 392], [325.0, 408.8], [245.0, 408.8], [245.0, 440]], "l": "無", "lx": 257.0, "ly": 432.4, "a": "start"}, {"p": [[325.0, 392], [325.0, 408.8], [410.0, 408.8], [410.0, 440]], "l": "有", "lx": 422.0, "ly": 432.4, "a": "start"}, {"p": [[1000.0, 302], [1000.0, 315.3], [830.0, 315.3], [830.0, 340]], "l": "有", "lx": 842.0, "ly": 335.65, "a": "start"}, {"p": [[1000.0, 302], [1000.0, 315.3], [1295.0, 315.3], [1295.0, 340]], "l": "無", "lx": 1307.0, "ly": 335.65, "a": "start"}, {"p": [[830.0, 392], [830.0, 408.8], [567.0, 408.8], [567.0, 440]]}, {"p": [[830.0, 392], [830.0, 408.8], [700.0, 408.8], [700.0, 440]]}, {"p": [[830.0, 392], [830.0, 408.8], [833.0, 408.8], [833.0, 440]]}, {"p": [[830.0, 392], [830.0, 408.8], [966.0, 408.8], [966.0, 440]]}, {"p": [[830.0, 392], [830.0, 408.8], [1099.0, 408.8], [1099.0, 440]]}, {"p": [[1295.0, 392], [1295.0, 408.8], [1232.0, 408.8], [1232.0, 440]], "l": "規則", "lx": 1244.0, "ly": 432.4, "a": "start"}, {"p": [[1295.0, 392], [1295.0, 408.8], [1368.0, 408.8], [1368.0, 440]], "l": "不規則", "lx": 1380.0, "ly": 432.4, "a": "start"}]);
+flow("f5t",[{"x": 540, "y": 0, "w": 360, "h": 56, "t": "心搏過速性心律不整（> 100）", "k": "navy", "fs": 22}, {"x": 590, "y": 96, "w": 260, "h": 56, "t": "QRS 寬度？", "k": "dec", "fs": 23}, {"x": 230, "y": 200, "w": 220, "h": 56, "t": "規則？", "k": "dec", "fs": 22}, {"x": 990, "y": 200, "w": 220, "h": 56, "t": "有 P 波？", "k": "dec", "fs": 22}, {"x": 40, "y": 310, "w": 200, "h": 80, "t": "VT\n單型性", "k": "end", "fs": 22}, {"x": 360, "y": 310, "w": 220, "h": 56, "t": "紡錘狀？", "k": "dec", "fs": 22}, {"x": 250, "y": 440, "w": 200, "h": 90, "t": "TdP\n尖端扭轉", "k": "end", "fs": 21}, {"x": 480, "y": 440, "w": 200, "h": 90, "t": "VF\n雜亂無章", "k": "end", "fs": 21}, {"x": 770, "y": 310, "w": 240, "h": 56, "t": "P 波型態？", "k": "dec", "fs": 22}, {"x": 1170, "y": 310, "w": 220, "h": 56, "t": "規則？", "k": "dec", "fs": 22}, {"x": 700, "y": 440, "w": 190, "h": 90, "t": "AFL\n鋸齒狀\n規則或不規則", "k": "end", "fs": 17}, {"x": 900, "y": 440, "w": 160, "h": 90, "t": "ST\n正常 P", "k": "end", "fs": 21}, {"x": 1100, "y": 440, "w": 160, "h": 90, "t": "PSVT\n規則", "k": "end", "fs": 21}, {"x": 1275, "y": 440, "w": 160, "h": 90, "t": "AF\n不規則", "k": "end", "fs": 21}],[{"p": [[720.0, 56], [720.0, 96]]}, {"p": [[720.0, 152], [720.0, 168.8], [340.0, 168.8], [340.0, 200]], "l": "寬 > 0.12 s", "lx": 352.0, "ly": 192.4, "a": "start"}, {"p": [[720.0, 152], [720.0, 168.8], [1100.0, 168.8], [1100.0, 200]], "l": "窄 ≤ 0.12 s", "lx": 1112.0, "ly": 192.4, "a": "start"}, {"p": [[340.0, 256], [340.0, 274.9], [140.0, 274.9], [140.0, 310]], "l": "規則", "lx": 152.0, "ly": 300.45, "a": "start"}, {"p": [[340.0, 256], [340.0, 274.9], [470.0, 274.9], [470.0, 310]], "l": "不規則", "lx": 482.0, "ly": 300.45, "a": "start"}, {"p": [[470.0, 366], [470.0, 391.9], [350.0, 391.9], [350.0, 440]], "l": "是", "lx": 362.0, "ly": 423.95, "a": "start"}, {"p": [[470.0, 366], [470.0, 391.9], [580.0, 391.9], [580.0, 440]], "l": "否", "lx": 592.0, "ly": 423.95, "a": "start"}, {"p": [[1100.0, 256], [1100.0, 274.9], [890.0, 274.9], [890.0, 310]], "l": "是", "lx": 902.0, "ly": 300.45, "a": "start"}, {"p": [[1100.0, 256], [1100.0, 274.9], [1280.0, 274.9], [1280.0, 310]], "l": "否", "lx": 1292.0, "ly": 300.45, "a": "start"}, {"p": [[890.0, 366], [890.0, 391.9], [795.0, 391.9], [795.0, 440]], "l": "鋸齒狀", "lx": 807.0, "ly": 423.95, "a": "start"}, {"p": [[890.0, 366], [890.0, 391.9], [980.0, 391.9], [980.0, 440]], "l": "正常 P", "lx": 992.0, "ly": 423.95, "a": "start"}, {"p": [[1280.0, 366], [1280.0, 391.9], [1180.0, 391.9], [1180.0, 440]], "l": "規則", "lx": 1192.0, "ly": 423.95, "a": "start"}, {"p": [[1280.0, 366], [1280.0, 391.9], [1355.0, 391.9], [1355.0, 440]], "l": "不規則", "lx": 1367.0, "ly": 423.95, "a": "start"}]);
+flow("f5br",[{"x": 540, "y": 0, "w": 360, "h": 54, "t": "心搏過緩性心律（< 60）", "k": "navy", "fs": 22}, {"x": 590, "y": 86, "w": 260, "h": 54, "t": "QRS 規則嗎？", "k": "dec", "fs": 22}, {"x": 200, "y": 190, "w": 300, "h": 54, "t": "P 與 QRS 有關係？", "k": "dec", "fs": 21}, {"x": 940, "y": 190, "w": 300, "h": 54, "t": "掉拍前的 PR？", "k": "dec", "fs": 21}, {"x": 90, "y": 296, "w": 220, "h": 54, "t": "PR 間期？", "k": "dec", "fs": 21}, {"x": 400, "y": 296, "w": 220, "h": 96, "t": "三度 AVB\n各跳各的", "k": "end", "fs": 20}, {"x": 10, "y": 420, "w": 170, "h": 96, "t": "SB\nPR 正常", "k": "end", "fs": 20}, {"x": 210, "y": 420, "w": 190, "h": 96, "t": "一度 AVB\nPR > 0.2 固定", "k": "end", "fs": 19}, {"x": 800, "y": 296, "w": 250, "h": 96, "t": "二度 I 型\n漸行漸遠", "k": "end", "fs": 20}, {"x": 1120, "y": 296, "w": 250, "h": 96, "t": "二度 II 型\n突然消失", "k": "end", "fs": 20}, {"x": 480, "y": 432, "w": 470, "h": 88, "t": "Megacode 心臟停止心律\nAsystole ｜ IVR（常見 PEA）", "k": "key", "fs": 19}, {"x": 970, "y": 432, "w": 460, "h": 88, "t": "補充（Megacode 不考）\n交界心律（junctional brady）、AF with SVR", "k": "note", "fs": 18}],[{"p": [[720.0, 54], [720.0, 86]]}, {"p": [[720.0, 140], [720.0, 157.5], [350.0, 157.5], [350.0, 190]], "l": "規則", "lx": 362.0, "ly": 181.75, "a": "start"}, {"p": [[720.0, 140], [720.0, 157.5], [1090.0, 157.5], [1090.0, 190]], "l": "不規則（有 P、掉 QRS）", "lx": 1102.0, "ly": 181.75, "a": "start"}, {"p": [[350.0, 244], [350.0, 262.2], [200.0, 262.2], [200.0, 296]], "l": "有", "lx": 212.0, "ly": 287.1, "a": "start"}, {"p": [[350.0, 244], [350.0, 262.2], [510.0, 262.2], [510.0, 296]], "l": "無", "lx": 522.0, "ly": 287.1, "a": "start"}, {"p": [[200.0, 350], [200.0, 374.5], [95.0, 374.5], [95.0, 420]], "l": "正常", "lx": 107.0, "ly": 405.25, "a": "start"}, {"p": [[200.0, 350], [200.0, 374.5], [305.0, 374.5], [305.0, 420]], "l": "> 0.20 s", "lx": 317.0, "ly": 405.25, "a": "start"}, {"p": [[1090.0, 244], [1090.0, 262.2], [925.0, 262.2], [925.0, 296]], "l": "PR 漸長後掉", "lx": 937.0, "ly": 287.1, "a": "start"}, {"p": [[1090.0, 244], [1090.0, 262.2], [1245.0, 262.2], [1245.0, 296]], "l": "PR 固定突然掉", "lx": 1257.0, "ly": 287.1, "a": "start"}]);
 </script>
 <script src="../shared/deck.js"></script>
 <script src="../shared/ecg.js"></script>

@@ -25,7 +25,12 @@ function W(a,t,rr=.8,o={}){ // wide (ventricular) QRS + discordant T
   const qt=Math.min(.46,.42*Math.sqrt(rr));
   G(a,t,t+qt-.08,.06,-.38*k);
 }
-function SPIKE(a,t,amp=2.2){const i=Math.round(t*FS)%a.length;a[i]+=amp;a[(i+1)%a.length]-=amp*.3}
+let SPK=null;function SPIKE(a,t,amp=2.4){const i=Math.round(t*FS)%a.length;if(SPK)for(let k=0;k<4;k++)SPK.add((i+k)%a.length);for(let k=0;k<3;k++)a[(i+k)%a.length]+=amp;a[(i+3)%a.length]-=amp*.25}
+function WRS(a,t,rr=.8,o={}){ // wide rS complex: small r, deep S, upright (discordant) T
+  const k=o.amp??1;G(a,t,t+.03,.012,.22*k);G(a,t,t+.09,.032,-1.05*k);
+  const qt=Math.min(.46,.42*Math.sqrt(rr));G(a,t,t+qt-.07,.065,.42*k)}
+function WRT(a,t,rr=.8,o={}){ // wide monophasic R running straight into an inverted T (no S)
+  const k=o.amp??1;G(a,t,t+.07,.035,1.15*k);const qt=Math.min(.46,.42*Math.sqrt(rr));G(a,t,t+qt-.1,.075,-.45*k)}
 function wander(a,amp,seed){const L=a.length/FS,r=rng(seed),k1=Math.max(1,Math.round(L/4)),k2=k1+1,p1=r()*6.28,p2=r()*6.28;
   for(let i=0;i<a.length;i++){const t=i/FS;a[i]+=amp*(Math.sin(2*Math.PI*k1*t/L+p1)+.5*Math.sin(2*Math.PI*k2*t/L+p2))}}
 function noise(a,amp,seed){const r=rng(seed);let v=0;for(let i=0;i<a.length;i++){v=.6*v+.4*(r()-.5);a[i]+=amp*v}}
@@ -42,50 +47,66 @@ function irregular(mean,spread,L,seed){ // RR list summing exactly to L
 }
 
 const R={
-  nsr:()=>regular(.8,10,(a,t,rr)=>{P(a,t,{});N(a,t+.16,rr)}),
-  sb:()=>regular(1.25,6,(a,t,rr)=>{P(a,t);N(a,t+.16,rr)}),
-  st:()=>regular(.48,16,(a,t,rr)=>{P(a,t);N(a,t+.14,rr)}),
-  at:()=>regular(.4,20,(a,t,rr)=>{P(a,t,{amp:.12,inv:true,sd:.018});N(a,t+.13,rr,{tAmp:.22})}),
+  nsr:()=>regular(.8,10,(a,t,rr)=>{P(a,t,{});N(a,t+.105,rr)}),
+  sb:()=>regular(1.25,6,(a,t,rr)=>{P(a,t);N(a,t+.105,rr)}),
+  st:()=>regular(.48,16,(a,t,rr)=>{P(a,t);N(a,t+.1,rr)}),
+  at:()=>regular(.48,16,(a,t,rr)=>{P(a,t+.02,{amp:.13,inv:true,sd:.017});N(a,t+.13,rr,{tAmp:.2})}),
   mat:()=>{const L=8,a=arr(L),rrs=irregular(.55,.28,L,7);let t=0;const sh=[{},{inv:true,amp:.1},{notch:true,amp:.09},{amp:.22,sd:.018},{inv:true,amp:.14,sd:.03}];
-    rrs.forEach((rr,i)=>{P(a,t,sh[i%5]);N(a,t+.12+.04*(i%3),rr);t+=rr});return a},
-  psvt:()=>regular(1/3,24,(a,t,rr)=>N(a,t,rr,{tAmp:.22})),
+    rrs.forEach((rr,i)=>{P(a,t,sh[i%5]);N(a,t+.1+.03*(i%3),rr);t+=rr});return a},
+  psvt:()=>regular(1/3,24,(a,t,rr)=>{N(a,t,rr,{tAmp:.22});P(a,t+.1,{inv:true,amp:.07,sd:.012})}),
   afl41:()=>{const a=regular(.8,10,(a,t,rr)=>N(a,t+.07,rr,{tAmp:.0001,noT:true}));flutter(a);return a},
   afl21:()=>{const a=regular(.4,20,(a,t,rr)=>N(a,t+.07,rr,{noT:true}));flutter(a);return a},
+  afl_var:()=>{const fw=.2,seq=[2,3,5,2,4,3,6,2,3,4],L=fw*seq.reduce((x,y)=>x+y,0),a=arr(L);let k=0;seq.forEach(n=>{N(a,k*fw+.07,n*fw,{noT:n<3,tAmp:.15});k+=n});flutter(a);return a},
   af_rvr:()=>afib(.46,.3,8,3),
   af_mvr:()=>afib(.75,.35,9,5),
   af_svr:()=>afib(1.3,.25,10.4,11),
   vt:()=>regular(1/3,24,(a,t,rr)=>W(a,t,rr,{amp:1.05})),
+  vt_neg:()=>{const L=8,a=arr(L);for(let i=0;i<22;i++)WRS(a,i*8/22,8/22,{amp:.9});for(let t=.2;t<L-1e-6;t+=.8)P(a,t,{amp:.18,sd:.02});return a},
+  tdp_sls:()=>{const L=10,a=arr(L);const lq={tAmp:.42};
+    // sinus with long QT, PVC (short), compensatory pause (long), sinus beat with longer QT, R-on-T PVC (short) -> TdP run
+    P(a,0);N(a,.12,1.1,{tAmp:.42});G(a,0,.12+.52,.07,.18);
+    P(a,1.1);N(a,1.22,1.1,{tAmp:.42});G(a,0,1.22+.52,.07,.18);
+    W(a,1.85,.6,{amp:1});                  // short: PVC
+    P(a,3.05);N(a,3.17,1.4,{tAmp:.5});G(a,0,3.17+.6,.08,.25); // long pause -> long QT
+    const s0=3.95;                          // short: R-on-T
+    for(let i=0;i<a.length;i++){const t=i/FS-s0;if(t<0||t>4.2)continue;const env=Math.sin(Math.PI*Math.min(t,4)/2)*Math.min(1,t/.3)*(t>4?Math.max(0,1-(t-4)/.2):1);a[i]+=.95*env*Math.sin(2*Math.PI*4.3*t)}
+    P(a,8.6);N(a,8.72,1.2,{tAmp:.42});return a},
   vt_slow:()=>regular(.4,20,(a,t,rr)=>W(a,t,rr,{amp:1})),
-  vf_coarse:()=>{const a=arr(8);fib(a,.22,3.5,7.5,6,21);wander(a,.05,2);return a},
-  vf_fine:()=>{const a=arr(8);fib(a,.06,4,8,6,31);wander(a,.03,3);noise(a,.02,4);return a},
+  vf_coarse:()=>{const a=arr(8);fib(a,.2,2.2,9.5,11,21);fib(a,.08,9,14,5,22);wander(a,.08,2);noise(a,.05,23);return a},
+  vf_fine:()=>{const a=arr(8);fib(a,.035,4,9,7,31);wander(a,.025,3);noise(a,.015,4);return a},
   tdp:()=>{const L=8,a=arr(L);for(let i=0;i<a.length;i++){const t=i/FS,env=Math.sin(Math.PI*t/2),c=Math.sin(2*Math.PI*4.25*t);a[i]+=.9*env*(c+.25*Math.sin(4*Math.PI*4.25*t+.6))}return a},
   asystole:()=>{const a=arr(8);wander(a,.03,9);noise(a,.012,10);return a},
-  pea:()=>regular(1,8,(a,t,rr)=>{P(a,t,{amp:.08});N(a,t+.18,rr,{amp:.55,tAmp:.12})}),
-  ivr:()=>regular(1.7,4,(a,t,rr)=>W(a,t,rr,{amp:1.1})),
-  aivr:()=>regular(.75,10,(a,t,rr)=>W(a,t,rr,{amp:1.1})),
+  pea:()=>regular(1,8,(a,t,rr)=>{P(a,t,{amp:.08});N(a,t+.12,rr,{amp:.55,tAmp:.12})}),
+  ivr:()=>regular(1.7,4,(a,t,rr)=>WRS(a,t,rr)),
+  aivr:()=>regular(.75,10,(a,t,rr)=>WRT(a,t,rr)),
+  npjt:()=>regular(.57,14,(a,t,rr)=>{N(a,t,rr,{tAmp:.24});P(a,t+.1,{inv:true,amp:.09,sd:.018})}),
+  jet:()=>{const L=8.6,a=arr(L);for(let t=0;t<L-1e-6;t+=.4)N(a,t+.05,.4,{tAmp:.18});for(let t=0;t<L-1e-6;t+=.86)P(a,t+.33,{amp:.13});return a},
   junc:()=>regular(1.2,6,(a,t,rr)=>{N(a,t,rr);P(a,t+.1,{inv:true,amp:.08,sd:.018})}),
-  avb1:()=>regular(.86,9,(a,t,rr)=>{P(a,t);N(a,t+.32,rr)}),
-  wenck:()=>{const pp=.75,L=9,a=arr(L),pr=[.16,.27,.35];for(let c=0;c<3;c++)for(let j=0;j<4;j++){const t=c*3+j*pp;P(a,t);if(j<3)N(a,t+pr[j],pp)}return a},
-  mobitz2:()=>{const pp=.75,L=9,a=arr(L);for(let c=0;c<3;c++)for(let j=0;j<4;j++){const t=c*3+j*pp;P(a,t);if(j<3)N(a,t+.18,pp,{})}return a},
+  avb1:()=>regular(.86,9,(a,t,rr)=>{P(a,t);N(a,t+.26,rr)}),
+  wenck:()=>{const pp=.75,L=9,a=arr(L),pr=[.12,.22,.3];for(let c=0;c<3;c++)for(let j=0;j<4;j++){const t=c*3+j*pp;P(a,t);if(j<3)N(a,t+pr[j],pp)}return a},
+  mobitz2:()=>{const pp=.75,L=9,a=arr(L);for(let c=0;c<3;c++)for(let j=0;j<4;j++){const t=c*3+j*pp;P(a,t);if(j<3)N(a,t+.12,pp,{})}return a},
   avb3n:()=>{const L=18,a=arr(L);for(let t=0;t<L-1e-6;t+=.72)P(a,t+.1);for(let t=0;t<L-1e-6;t+=1.5)N(a,t+.4,1.5);return a},
-  avb3w:()=>{const L=6.8,a=arr(L);for(let t=0;t<L-1e-6;t+=.68)P(a,t+.05);for(let t=0;t<L-1e-6;t+=1.7)W(a,t+.5,1.7);return a},
-  sb_bbb:()=>regular(1.3,6,(a,t,rr)=>{P(a,t);W(a,t+.18,rr,{amp:.9})}),
+  avb3w:()=>{const L=6.8,a=arr(L);for(let t=0;t<L-1e-6;t+=.68)P(a,t+.05);for(let t=0;t<L-1e-6;t+=1.7)WRS(a,t+.5,1.7);return a},
+  sb_bbb:()=>regular(1.3,6,(a,t,rr)=>{P(a,t);W(a,t+.12,rr,{amp:.9})}),
   pace_v:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.02);W(a,t+.03,rr,{amp:.75,neg:true})}),
-  pace_dual:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.01,1.6);P(a,t+.03,{amp:.12});SPIKE(a,t+.19);W(a,t+.2,rr,{amp:.75,neg:true})}),
+  pace_dual:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.01);P(a,t+.03,{amp:.12});SPIKE(a,t+.19);W(a,t+.2,rr,{amp:.75,neg:true})}),
   af_fast:()=>afib(.34,.28,8,17),
-  psvt_conv:()=>{const L=10,a=arr(L);let t=0;for(let i=0;i<14;i++){N(a,t,1/3,{tAmp:.22});t+=1/3}t+=1.6;while(t<L-.8){P(a,t);N(a,t+.16,.85);t+=.85}return a},
+  psvt_conv:()=>{const L=10,a=arr(L);let t=0;for(let i=0;i<14;i++){N(a,t,1/3,{tAmp:.22});t+=1/3}t+=1.6;while(t<L-.8){P(a,t);N(a,t+.115,.85);t+=.85}return a},
   afl_reveal:()=>{const L=8,a=arr(L);for(let t=.07;t<L;t+=.4){if(t>3.6&&t<6.4)continue;N(a,t,.4,{noT:true})}flutter(a);return a},
-  hyperk:()=>regular(.75,10,(a,t,rr)=>{G(a,t,t+.08,.05,.9);G(a,t,t+.25,.07,-.7);G(a,t,t+.47,.07,.75)}),
+  hyperk:()=>regular(.88,9,(a,t,rr)=>{P(a,t+.05,{amp:.38,sd:.032});G(a,t,t+.33,.01,.2);G(a,t,t+.41,.022,-1.35);G(a,t,t+.465,.022,-.45);G(a,t,t+.66,.042,.95);G(a,t,t+.59,.03,.1)}),
+  hyperk_sine:()=>regular(.75,10,(a,t,rr)=>{G(a,t,t+.08,.05,.9);G(a,t,t+.25,.07,-.7);G(a,t,t+.47,.07,.75)}),
+  apc:()=>{const L=6.1,a=arr(L);[0,.8,1.6,2.9,3.7,4.5,5.3].forEach(t=>{P(a,t);N(a,t+.105,.8)});P(a,2.1,{inv:true,amp:.11,sd:.018});N(a,2.21,.6);return a},
+  vpc:()=>{const L=6.4,a=arr(L);[0,.8,1.6,3.2,4.0,4.8,5.6].forEach(t=>{P(a,t);N(a,t+.105,.8)});W(a,2.05,1,{amp:1.1});P(a,2.4);return a},
 };
 function flutter(a){const fw=.2,n=Math.round(a.length/FS/fw);for(let i=0;i<a.length;i++){const ph=((i/FS)/fw)%1;a[i]+=-.22*(ph<.75?(.5-ph/.75):(-.5+(ph-.75)/.25))}}
 function afib(mean,spread,L,seed){const a=arr(L),rrs=irregular(mean,spread,L,seed);let t=0;rrs.forEach(rr=>{N(a,t,rr,{tAmp:.22});t+=rr});fib(a,.035,5,8,5,seed+1);noise(a,.015,seed+2);return a}
 
-const cache={},rng_={};
+const cache={},rng_={},spk={};
 function range(k){ // robust min/max (ignores single-sample pacer spikes)
   if(!rng_[k]){const d=data(k),n=d.length,m=new Float32Array(n);
-    for(let i=0;i<n;i++){const w=[d[(i-2+n)%n],d[(i-1+n)%n],d[i],d[(i+1)%n],d[(i+2)%n]].sort((x,y)=>x-y);m[i]=w[2]} // median-5 drops pacer spikes
+    const sp=spk[k]||new Set();for(let i=0;i<n;i++)m[i]=sp.has(i)?d[(i-6+n)%n]:d[i]; // ignore pacer spikes // median-5 drops pacer spikes
     let lo=1e9,hi=-1e9;for(let i=0;i<n;i++){if(m[i]<lo)lo=m[i];if(m[i]>hi)hi=m[i]}const pad=(hi-lo)*.06;rng_[k]=[lo-pad,hi+pad]}return rng_[k]}
-function data(k){if(!cache[k]){const a=(R[k]||R.nsr)();if(k!=="asystole"&&!k.startsWith("vf"))noise(a,.008,k.length*13);cache[k]=a}return cache[k]}
+function data(k){if(!cache[k]){SPK=new Set();const a=(R[k]||R.nsr)();spk[k]=SPK;SPK=null;if(k!=="asystole"&&!k.startsWith("vf"))noise(a,.008,k.length*13);cache[k]=a}return cache[k]}
 
 const THEME={
   monitor:{bg:"#0a1322",sm:"rgba(80,220,140,.07)",lg:"rgba(80,220,140,.17)",tr:"#3dff8f",glow:"rgba(61,255,143,.55)",tx:"#3dff8f",tx2:"#7f93b5"},
