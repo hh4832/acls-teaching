@@ -29,6 +29,8 @@ let SPK=null;function SPIKE(a,t){if(SPK)SPK.push(t)} // pacer spikes are drawn a
 function WRS(a,t,rr=.8,o={}){ // wide rS complex: small r, deep S, upright (discordant) T
   const k=o.amp??1;G(a,t,t+.03,.012,.22*k);G(a,t,t+.09,.032,-1.05*k);
   const qt=Math.min(.46,.42*Math.sqrt(rr));G(a,t,t+qt-.07,.065,.42*k)}
+function QS(a,t,rr=.8,o={}){ // paced beat: narrow-ish QS (entirely negative) running straight into upright T
+  const k=o.amp??1;G(a,t,t+.05,.02,-1.1*k);G(a,t,t+.1,.018,-.2*k);const qt=Math.min(.44,.4*Math.sqrt(rr));G(a,t,t+qt-.08,.055,.42*k)}
 function WRT(a,t,rr=.8,o={}){ // wide monophasic R running straight into an inverted T (no S)
   const k=o.amp??1;G(a,t,t+.07,.035,1.15*k);const qt=Math.min(.46,.42*Math.sqrt(rr));G(a,t,t+qt-.1,.075,-.45*k)}
 function wander(a,amp,seed){const L=a.length/FS,r=rng(seed),k1=Math.max(1,Math.round(L/4)),k2=k1+1,p1=r()*6.28,p2=r()*6.28;
@@ -88,8 +90,8 @@ const R={
   avb3n:()=>{const L=18,a=arr(L);for(let t=0;t<L-1e-6;t+=.72)P(a,t+.1);for(let t=0;t<L-1e-6;t+=1.5)N(a,t+.4,1.5);return a},
   avb3w:()=>{const L=6.8,a=arr(L);for(let t=0;t<L-1e-6;t+=.68)P(a,t+.05);for(let t=0;t<L-1e-6;t+=1.7)WRS(a,t+.5,1.7);return a},
   sb_bbb:()=>regular(1.3,6,(a,t,rr)=>{P(a,t);W(a,t+.12,rr,{amp:.9})}),
-  pace_v:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.02);W(a,t+.02,rr,{amp:.75,neg:true})}),
-  pace_dual:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.01);P(a,t+.065,{amp:.12});SPIKE(a,t+.19);W(a,t+.19,rr,{amp:.75,neg:true})}),
+  pace_v:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.02);QS(a,t+.02,rr)}),
+  pace_dual:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.01);P(a,t+.065,{amp:.12});SPIKE(a,t+.19);QS(a,t+.19,rr)}),
   af_fast:()=>afib(.34,.28,8,17),
   psvt_conv:()=>{const L=10,a=arr(L);let t=0;for(let i=0;i<14;i++){N(a,t,1/3,{tAmp:.22});t+=1/3}t+=1.6;while(t<L-.8){P(a,t);N(a,t+.115,.85);t+=.85}return a},
   afl_reveal:()=>{const L=8,a=arr(L);for(let t=.07;t<L;t+=.4){if(t>3.6&&t<6.4)continue;N(a,t,.4,{noT:true})}flutter(a);return a},
