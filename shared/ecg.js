@@ -25,7 +25,7 @@ function W(a,t,rr=.8,o={}){ // wide (ventricular) QRS + discordant T
   const qt=Math.min(.46,.42*Math.sqrt(rr));
   G(a,t,t+qt-.08,.06,-.38*k);
 }
-let SPK=null;function SPIKE(a,t,amp=2.4){const i=Math.round(t*FS)%a.length;if(SPK)for(let k=0;k<4;k++)SPK.add((i+k)%a.length);for(let k=0;k<3;k++)a[(i+k)%a.length]+=amp;a[(i+3)%a.length]-=amp*.25}
+let SPK=null;function SPIKE(a,t){if(SPK)SPK.push(t)} // pacer spikes are drawn as straight vertical lines (see draw)
 function WRS(a,t,rr=.8,o={}){ // wide rS complex: small r, deep S, upright (discordant) T
   const k=o.amp??1;G(a,t,t+.03,.012,.22*k);G(a,t,t+.09,.032,-1.05*k);
   const qt=Math.min(.46,.42*Math.sqrt(rr));G(a,t,t+qt-.07,.065,.42*k)}
@@ -88,8 +88,8 @@ const R={
   avb3n:()=>{const L=18,a=arr(L);for(let t=0;t<L-1e-6;t+=.72)P(a,t+.1);for(let t=0;t<L-1e-6;t+=1.5)N(a,t+.4,1.5);return a},
   avb3w:()=>{const L=6.8,a=arr(L);for(let t=0;t<L-1e-6;t+=.68)P(a,t+.05);for(let t=0;t<L-1e-6;t+=1.7)WRS(a,t+.5,1.7);return a},
   sb_bbb:()=>regular(1.3,6,(a,t,rr)=>{P(a,t);W(a,t+.12,rr,{amp:.9})}),
-  pace_v:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.02);W(a,t+.03,rr,{amp:.75,neg:true})}),
-  pace_dual:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.01);P(a,t+.03,{amp:.12});SPIKE(a,t+.19);W(a,t+.2,rr,{amp:.75,neg:true})}),
+  pace_v:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.02);W(a,t+.02,rr,{amp:.75,neg:true})}),
+  pace_dual:()=>regular(.86,9,(a,t,rr)=>{SPIKE(a,t+.01);P(a,t+.065,{amp:.12});SPIKE(a,t+.19);W(a,t+.19,rr,{amp:.75,neg:true})}),
   af_fast:()=>afib(.34,.28,8,17),
   psvt_conv:()=>{const L=10,a=arr(L);let t=0;for(let i=0;i<14;i++){N(a,t,1/3,{tAmp:.22});t+=1/3}t+=1.6;while(t<L-.8){P(a,t);N(a,t+.115,.85);t+=.85}return a},
   afl_reveal:()=>{const L=8,a=arr(L);for(let t=.07;t<L;t+=.4){if(t>3.6&&t<6.4)continue;N(a,t,.4,{noT:true})}flutter(a);return a},
@@ -104,9 +104,9 @@ function afib(mean,spread,L,seed){const a=arr(L),rrs=irregular(mean,spread,L,see
 const cache={},rng_={},spk={};
 function range(k){ // robust min/max (ignores single-sample pacer spikes)
   if(!rng_[k]){const d=data(k),n=d.length,m=new Float32Array(n);
-    const sp=spk[k]||new Set();for(let i=0;i<n;i++)m[i]=sp.has(i)?d[(i-6+n)%n]:d[i]; // ignore pacer spikes // median-5 drops pacer spikes
+    for(let i=0;i<n;i++)m[i]=d[i]; // median-5 drops pacer spikes
     let lo=1e9,hi=-1e9;for(let i=0;i<n;i++){if(m[i]<lo)lo=m[i];if(m[i]>hi)hi=m[i]}const pad=(hi-lo)*.06;rng_[k]=[lo-pad,hi+pad]}return rng_[k]}
-function data(k){if(!cache[k]){SPK=new Set();const a=(R[k]||R.nsr)();spk[k]=SPK;SPK=null;if(k!=="asystole"&&!k.startsWith("vf"))noise(a,.008,k.length*13);cache[k]=a}return cache[k]}
+function data(k){if(!cache[k]){SPK=[];const a=(R[k]||R.nsr)();spk[k]=SPK;SPK=null;if(k!=="asystole"&&!k.startsWith("vf"))noise(a,.008,k.length*13);cache[k]=a}return cache[k]}
 
 const THEME={
   monitor:{bg:"#0a1322",sm:"rgba(80,220,140,.07)",lg:"rgba(80,220,140,.17)",tr:"#3dff8f",glow:"rgba(61,255,143,.55)",tx:"#3dff8f",tx2:"#7f93b5"},
@@ -141,7 +141,11 @@ Strip.prototype.draw=function(mode,el){ /* mode: "static" full strip (print) · 
   const y=t=>base-this.val(t)*gain*mm;
   g.lineJoin="round";g.lineCap="round";g.strokeStyle=th.tr;g.lineWidth=2.4;
   if(th.glow){g.shadowColor=th.glow;g.shadowBlur=6}
-  const seg=(x0,x1,k)=>{if(x1<=x0)return;g.beginPath();for(let x=x0;x<=x1;x+=.75){const t=k*Tw+x/pps;x===x0?g.moveTo(x,y(t)):g.lineTo(x,y(t))}g.stroke()};
+  const SP=spk[this.key]||[],L=this.d.length/FS;
+  const seg=(x0,x1,k)=>{if(x1<=x0)return;g.beginPath();for(let x=x0;x<=x1;x+=.75){const t=k*Tw+x/pps;x===x0?g.moveTo(x,y(t)):g.lineTo(x,y(t))}g.stroke();
+    if(SP.length){const t0=k*Tw+x0/pps,t1=k*Tw+x1/pps;g.save();g.lineWidth=2;g.shadowBlur=0;g.beginPath();
+      for(let n=Math.floor(t0/L)-1;n<=Math.ceil(t1/L);n++)for(const ts of SP){const tt=n*L+ts;if(tt<t0||tt>t1)continue;const x=(tt-k*Tw)*pps,yb=y(tt);g.moveTo(Math.round(x)+.5,yb);g.lineTo(Math.round(x)+.5,Math.max(6,yb-Math.min(H*.62,26*mm)))}
+      g.stroke();g.restore()}};
   if(!hid)seg(0,cur,this.k);
   if(mode==="live"){if(this.k>0)seg(Math.min(W,cur+26),W,this.k-1);
     g.shadowBlur=0;g.fillStyle=th.tr;g.beginPath();g.arc(cur,y(this.k*Tw+cur/pps),3.6,0,7);g.fill()}
