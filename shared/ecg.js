@@ -93,7 +93,7 @@ const R={
   af_fast:()=>afib(.34,.28,8,17),
   psvt_conv:()=>{const L=10,a=arr(L);let t=0;for(let i=0;i<14;i++){N(a,t,1/3,{tAmp:.22});t+=1/3}t+=1.6;while(t<L-.8){P(a,t);N(a,t+.115,.85);t+=.85}return a},
   afl_reveal:()=>{const L=8,a=arr(L);for(let t=.07;t<L;t+=.4){if(t>3.6&&t<6.4)continue;N(a,t,.4,{noT:true})}flutter(a);return a},
-  hyperk:()=>regular(.8,10,(a,t,rr)=>{P(a,t,{amp:.05,sd:.035});G(a,t,t+.34,.03,.75);G(a,t,t+.43,.035,-.35);G(a,t,t+.64,.026,.95)}),
+  hyperk:()=>regular(.76,10,(a,t,rr)=>{P(a,t,{amp:.05,sd:.04});G(a,t,t+.32,.012,.15);G(a,t,t+.4,.04,-1.3);G(a,t,t+.47,.025,-.35);G(a,t,t+.68,.05,.95);G(a,t,t+.6,.03,.15)}),
   hyperk_sine:()=>regular(.75,10,(a,t,rr)=>{G(a,t,t+.08,.05,.9);G(a,t,t+.25,.07,-.7);G(a,t,t+.47,.07,.75)}),
   apc:()=>{const L=6.1,a=arr(L);[0,.8,1.6,2.9,3.7,4.5,5.3].forEach(t=>{P(a,t);N(a,t+.105,.8)});P(a,2.1,{inv:true,amp:.11,sd:.018});N(a,2.21,.6);return a},
   vpc:()=>{const L=6.4,a=arr(L);[0,.8,1.6,3.2,4.0,4.8,5.6].forEach(t=>{P(a,t);N(a,t+.105,.8)});W(a,2.05,1,{amp:1.1});P(a,2.4);return a},
