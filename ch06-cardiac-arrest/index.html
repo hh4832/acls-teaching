@@ -24,6 +24,12 @@
 .k4 .k{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--red);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-height:210px}
 .k4 .k span{font:700 46px var(--mono);color:var(--red);line-height:1}.k4 .k b{font-size:29px;color:var(--navy)}.k4 .k em{font-style:normal;font-size:19px;color:var(--muted);line-height:1.45}
 body.m .k4{grid-template-columns:1fr 1fr}
+.chain{display:flex;align-items:stretch;gap:10px}
+.chain .cs{flex:1;background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--navy);border-radius:14px;padding:18px 16px;text-align:center;display:flex;flex-direction:column;gap:8px}
+.chain .cs.red{border-top-color:var(--red)}.chain .cs b{font:900 38px var(--mono);color:var(--navy)}.chain .cs.red b{color:var(--red)}
+.chain .cs span{font-size:20px;line-height:1.45;color:var(--ink)}.chain i{font-style:normal;align-self:center;font-size:34px;color:var(--muted)}
+.bridge{margin-top:18px;background:var(--navy);color:#fff;border-radius:12px;padding:16px 22px;font-size:24px}.bridge b{color:#ffd76a}
+body.m .chain{flex-direction:column}body.m .chain i{transform:rotate(90deg)}
 .lane{font:700 18px var(--mono);letter-spacing:.08em;color:#fff;padding:6px 14px;border-radius:8px 8px 0 0;display:inline-block}
 .lane.red{background:var(--red)}.lane.navy{background:var(--navy)}
 /* shock-cpr-check timeline */
@@ -86,7 +92,7 @@ body.m .tk,body.m .tb{height:56px}
 <!-- ============ TOC ============ -->
 <section class="slide">
   <div class="kicker">Contents · 目錄</div><h2>目錄</h2><div class="rule"></div>
-  <div class="toc"><a class="toc-item" data-key="Introduction · 概念" href="#"><span class="toc-no"></span><span class="toc-t">概念</span><span class="toc-d">系統 / 流程 / 團隊、四種心臟停止心律</span></a><a class="toc-item" data-key="Chapter 一 · Algorithm" href="#"><span class="toc-no"></span><span class="toc-t">一｜流程</span><span class="toc-d">圖 6-1 流程、環形圖、BLS → ACLS</span></a><a class="toc-item" data-key="Chapter 二 · Shockable" href="#"><span class="toc-no"></span><span class="toc-t">二｜可電擊心律</span><span class="toc-d">VF / pVT：電擊 → CPR → 檢查、藥物時間軸、頑固性 VF、ROSC</span></a><a class="toc-item" data-key="Chapter 三 · PEA / Asystole" href="#"><span class="toc-no"></span><span class="toc-t">三｜PEA / Asystole</span><span class="toc-d">CPR → 檢查、儘早 epinephrine、窄 / 寬 QRS PEA</span></a><a class="toc-item" data-key="Chapter 四 · High-Quality CPR" href="#"><span class="toc-no"></span><span class="toc-t">四｜高品質 CPR</span><span class="toc-d">深度、速度、回彈、中斷、通氣、生理監測</span></a><a class="toc-item" data-key="Chapter 五 · Defibrillation" href="#"><span class="toc-no"></span><span class="toc-t">五｜電擊</span><span class="toc-d">貼片位置與安全、能量、電擊前後 CPR</span></a><a class="toc-item" data-key="Chapter 六 · IV / IO & Drugs" href="#"><span class="toc-no"></span><span class="toc-t">六｜IV / IO 與藥物</span><span class="toc-d">給藥途徑、epinephrine、其他藥物</span></a><a class="toc-item" data-key="Chapter 七 · Airway" href="#"><span class="toc-no"></span><span class="toc-t">七｜呼吸道</span><span class="toc-d">BVM、進階呼吸道、ETCO₂ 與終止急救</span></a><a class="toc-item" data-key="Chapter 八 · Reversible Causes" href="#"><span class="toc-no"></span><span class="toc-t">八｜5H5T</span><span class="toc-d">可恢復原因、POCUS</span></a><a class="toc-item" data-key="Chapter 九 · Teaching Station" href="#"><span class="toc-no"></span><span class="toc-t">九｜小站教學</span><span class="toc-d">團隊角色、迴路式溝通、組長九件事、GAS、Megacode</span></a></div>
+  <div class="toc"><a class="toc-item" data-key="Introduction · 概念" href="#"><span class="toc-no"></span><span class="toc-t">概念</span><span class="toc-d">系統 / 流程 / 團隊、四種心臟停止心律</span></a><a class="toc-item" data-key="Chapter 一 · Algorithm" href="#"><span class="toc-no"></span><span class="toc-t">一｜流程</span><span class="toc-d">叫叫 CABD → 圖 6-1 流程、環形圖</span></a><a class="toc-item" data-key="Chapter 二 · Shockable" href="#"><span class="toc-no"></span><span class="toc-t">二｜可電擊心律</span><span class="toc-d">VF / pVT：電擊 → CPR → 檢查、藥物時間軸、頑固性 VF、ROSC</span></a><a class="toc-item" data-key="Chapter 三 · PEA / Asystole" href="#"><span class="toc-no"></span><span class="toc-t">三｜PEA / Asystole</span><span class="toc-d">CPR → 檢查、儘早 epinephrine、窄 / 寬 QRS PEA</span></a><a class="toc-item" data-key="Chapter 四 · High-Quality CPR" href="#"><span class="toc-no"></span><span class="toc-t">四｜高品質 CPR</span><span class="toc-d">深度、速度、回彈、中斷、通氣、生理監測</span></a><a class="toc-item" data-key="Chapter 五 · Defibrillation" href="#"><span class="toc-no"></span><span class="toc-t">五｜電擊</span><span class="toc-d">貼片位置與安全、能量、電擊前後 CPR</span></a><a class="toc-item" data-key="Chapter 六 · IV / IO & Drugs" href="#"><span class="toc-no"></span><span class="toc-t">六｜IV / IO 與藥物</span><span class="toc-d">給藥途徑、epinephrine、其他藥物</span></a><a class="toc-item" data-key="Chapter 七 · Airway" href="#"><span class="toc-no"></span><span class="toc-t">七｜呼吸道</span><span class="toc-d">BVM、進階呼吸道、ETCO₂ 與終止急救</span></a><a class="toc-item" data-key="Chapter 八 · Reversible Causes" href="#"><span class="toc-no"></span><span class="toc-t">八｜5H5T</span><span class="toc-d">可恢復原因、POCUS</span></a><a class="toc-item" data-key="Chapter 九 · Teaching Station" href="#"><span class="toc-no"></span><span class="toc-t">九｜小站教學</span><span class="toc-d">團隊角色、迴路式溝通、組長九件事、GAS、Megacode</span></a></div>
   <p style="margin-top:30px;font-size:22px" class="muted">圖例：<span class="cor c1">Class 1</span> 建議 <span class="cor c2a">2a</span> 合理 <span class="cor c2b">2b</span> 可考慮 <span class="cor c3">3</span> 無益 / 有害　<span class="tag ok">✓ 已核實</span> <span class="tag warn">⚠ 需更正</span> <span class="tag new">NEW 2025</span>　點選章節可直接跳頁</p>
 </section>
 <!-- ============ INTRO ============ -->
@@ -121,7 +127,27 @@ body.m .tk,body.m .tb{height:56px}
 <!-- ============ DIVIDER 01 ============ -->
 <section class="slide divider">
   <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 一 · Algorithm</div>
-  <div class="big"><div class="no">01</div><h2>成人心臟停止流程</h2><p>圖 6-1 流程圖 · 環形圖 · BLS → ACLS</p></div>
+  <div class="big"><div class="no">01</div><h2>成人心臟停止流程</h2><p>叫叫 CABD → 圖 6-1 流程圖 · 環形圖</p></div>
+</section>
+<!-- ============ BLS ACLS ============ -->
+<section class="slide">
+  <div class="kicker">BLS → ACLS</div>
+  <h2>從叫叫 CABD 接到流程圖</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="chain">
+    <div class="cs"><b>叫</b><span>拍肩呼叫<br>確認意識、呼吸</span></div><i>→</i>
+    <div class="cs"><b>叫</b><span>求救、啟動團隊<br>拿去顫器</span></div><i>→</i>
+    <div class="cs red"><b>C</b><span>立即<br>高品質壓胸</span></div><i>→</i>
+    <div class="cs"><b>A · B</b><span>打開呼吸道<br>BVM 通氣給氧</span></div><i>→</i>
+    <div class="cs red"><b>D</b><span>貼上監視器 / 去顫器<br>判讀心律</span></div>
+  </div>
+  <div class="bridge">＝ 流程圖 <b>①</b>「開始 CPR · BVM 通氣給氧 · 接監視器 / 去顫器」→ 接著問 <b>可電擊？</b></div>
+  <table class="tight" style="margin-top:20px">
+    <tr><th style="width:36%">到場順序</th><th>重點</th></tr>
+    <tr><td>第一位施救者</td><td>不論有無目擊，先開始<b>胸部按壓</b></td></tr>
+    <tr><td>第二位施救者</td><td>儘早取得電擊器、貼上貼片、檢查心律</td></tr>
+    <tr><td>看到有組織的心律</td><td>檢查脈搏；<b>不確定有脈搏 → 馬上壓胸</b></td></tr>
+    <tr><td>已有監視器</td><td>開始 CPR 前先判讀：VF / pVT 立刻電擊；PEA / Asystole 儘早 epinephrine</td></tr>
+  </table><div class="notes">BLS 的叫叫 CABD 做完，就是流程圖的第 ① 格：已經在壓胸、BVM 給氧、接上去顫器。下一步就是判讀心律、問可不可以電擊，從這裡分成上下兩排。</div>
 </section>
 <!-- ============ FIG 6-1 ============ -->
 <section class="slide">
@@ -174,23 +200,6 @@ body.m .tk,body.m .tb{height:56px}
       <div class="callout ok" style="margin-top:14px;font-size:19px"><span class="h">出口</span>出現 ROSC 徵象（ETCO₂ 突然上升、動脈波形、脈搏）→ <b>復甦後照護</b>（第 8 章）</div>
     </div>
   </div><div class="notes">依講師提供的環形圖重繪。環形圖適合當作團隊節奏：每 2 分鐘一圈，計時員負責報時。</div>
-</section>
-<!-- ============ BLS ACLS ============ -->
-<section class="slide">
-  <div class="kicker">BLS → ACLS</div>
-  <h2>從叫叫 CABD 到 5H5T</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="cols c3" style="gap:20px">
-    <div class="card navy"><h3>① BLS：叫叫 CABD</h3><ul class="dots sm"><li>意識不清 → 可能心臟停止</li><li>高品質 CPR ＋ 儘早去顫</li><li>ACLS 救回病人<b>最重要的基礎</b></li></ul></div>
-    <div class="card amber"><h3>② 初步評估 ABCDE</h3><ul class="dots sm"><li>Airway、Breathing、Circulation</li><li>Disability、Exposure</li><li>2015 年起 AHA 建議先分辨意識狀態</li></ul></div>
-    <div class="card red"><h3>③ 再次評估 SAMPLE ＋ 5H5T</h3><ul class="dots sm"><li>重點病史 SAMPLE</li><li>找出可恢復原因「5H &amp; 5T」</li><li>針對原因進一步處置</li></ul></div>
-  </div>
-  <table class="tight" style="margin-top:22px">
-    <tr><th style="width:50%">到場順序</th><th>重點</th></tr>
-    <tr><td>第一位施救者</td><td>不論有無目擊，先開始<b>胸部按壓</b></td></tr>
-    <tr><td>第二位施救者</td><td>儘早取得電擊器、貼上貼片、檢查心律</td></tr>
-    <tr><td>看到有組織的心律</td><td>檢查脈搏；<b>不確定有脈搏 → 馬上壓胸</b></td></tr>
-    <tr><td>已有監視器</td><td>開始 CPR 前先判讀：VF/pVT 立刻電擊；PEA/Asystole 儘早 epinephrine</td></tr>
-  </table><div class="notes">把 BLS 和 ACLS 接起來：BLS 做好，ACLS 才有意義。</div>
 </section>
 <!-- ============ DIVIDER 02 ============ -->
 <section class="slide divider">
