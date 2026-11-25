@@ -418,10 +418,36 @@ body.m .tk,body.m .tb{height:56px}
 <!-- ============ MEGACODE ============ -->
 <section class="slide">
   <div class="kicker">小站教學 · Megacode</div>
-  <h2>Megacode：講師按鈕切換心律</h2><div class="rule" style="margin-bottom:14px"></div>
-  <div class="ecgbox"><canvas class="ecg" id="mc" data-r="vf_coarse" data-hr="---" data-h="280" data-sec="7"></canvas></div>
-  <div class="rbar"><a href="#" class="rbtn on" data-for="mc" data-r="vf_coarse" data-hr="---">VF</a><a href="#" class="rbtn" data-for="mc" data-r="vf_fine" data-hr="---">細 VF</a><a href="#" class="rbtn" data-for="mc" data-r="vt" data-hr="180">pVT</a><a href="#" class="rbtn" data-for="mc" data-r="pea" data-hr="60">PEA</a><a href="#" class="rbtn" data-for="mc" data-r="ivr" data-hr="35">寬 PEA</a><a href="#" class="rbtn" data-for="mc" data-r="asystole" data-hr="0">Asystole</a><a href="#" class="rbtn" data-for="mc" data-r="tdp" data-hr="240">TdP</a><a href="#" class="rbtn" data-for="mc" data-r="nsr" data-hr="75">ROSC 竇性</a></div>
-  <div class="cols c3" style="gap:18px;margin-top:18px"><div class="card navy"><h3>情境建議</h3><ul class="dots sm"><li>病房 62 歲男性倒地，護理師開始 CPR</li><li>接上監視器：<b>VF</b> → 電擊</li><li>2 分鐘後：仍 VF → 電擊、epinephrine</li></ul></div><div class="card amber"><h3>講師切換</h3><ul class="dots sm"><li>第 3 次檢查：<b>PEA</b> → 問 5H5T</li><li>給 epinephrine 後：<b>Asystole</b> → 確認導程</li><li>最後：<b>ROSC</b> → 摸脈搏、復甦後照護</li></ul></div><div class="card red"><h3>觀察重點</h3><ul class="dots sm"><li>換手與電擊的中斷時間</li><li>Epinephrine 間隔是否 3–5 分鐘</li><li>迴路式溝通是否閉合</li></ul></div></div><div class="notes">點選按鈕即時切換心律，不會翻頁。可以配合計時器做完整 Megacode。</div>
+  <h2>Megacode：一張一張掀開</h2><div class="rule" style="margin-bottom:12px"></div>
+  <style>
+#mcw .mc-stgs{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:10px}
+#mcw .mc-stg{position:relative;min-height:400px;border-radius:14px;border:1px solid var(--line);background:var(--paper);overflow:hidden}
+#mcw .mc-cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--navy);color:#fff;cursor:pointer;z-index:2;transition:opacity .25s}
+#mcw .mc-cover b{font-size:26px;color:#fff}#mcw .mc-cover span{font-size:16px;opacity:.7}
+#mcw .mc-stg.open .mc-cover{opacity:0;pointer-events:none}
+#mcw .mc-body{padding:12px 12px 8px}#mcw h4{margin:0 0 8px;font-size:20px;color:var(--navy)}
+#mcw .mc-sc{font-size:17px;line-height:1.45;margin:0 0 8px}
+#mcw .mc-rhy{display:block;width:100%;margin:0 0 10px;padding:8px 6px;border-radius:10px;border:2px dashed var(--red);background:#fff5f6;color:var(--red);font:700 19px 'Noto Sans TC',sans-serif;cursor:pointer}
+#mcw .mc-rhy em{display:none;font-style:normal}
+#mcw .mc-rhy.on{border-style:solid;background:var(--red);color:#fff;font-size:0}#mcw .mc-rhy.on em{display:inline;font-size:20px}
+#mcw .mc-tasks{list-style:none;margin:0;padding:0}
+#mcw .mc-tasks li{display:block;font-size:16px;line-height:1.35;padding:5px 6px 5px 28px;margin-bottom:5px;border-radius:8px;background:#f3f1ec;position:relative}
+#mcw .mc-tasks li.mc-tk{cursor:pointer}#mcw .mc-tasks li.mc-tk:before{content:"☐";position:absolute;left:8px;top:5px;font-size:17px}
+#mcw .mc-tasks li.mc-tk.done{background:#e3f4ea;color:#2f6b46}#mcw .mc-tasks li.mc-tk.done:before{content:"☑"}
+#mcw .mc-tasks li.mc-hid{background:none;padding:0}#mcw .mc-tasks li.mc-hid .mc-rhy{margin:0;font-size:17px}#mcw .mc-tasks li.mc-hid .mc-rhy.on{font-size:0}#mcw .mc-tasks li.mc-hid .mc-rhy.on em{font-size:17px}
+  </style>
+  <div id="mcw">
+  <div class="ecgbox"><canvas class="ecg" id="mc" data-r="asystole" data-hr="---" data-h="150" data-sec="7"></canvas></div>
+  <div class="mc-stgs"><div class="mc-stg" data-i="0"><div class="mc-cover"><b>① 倒地</b><span>點擊掀開</span></div><div class="mc-body"><h4>① 倒地</h4><p class="mc-sc">急診室 62 歲男性，候診時<b>突然倒地</b>。開始評估。</p><ul class="mc-tasks"><li class="mc-tk">叫：拍肩呼叫，確認意識、呼吸</li><li class="mc-tk">叫：求救、啟動團隊、拿去顫器</li><li class="mc-tk">C：10 秒內摸脈搏，沒有 → 立刻壓胸</li><li class="mc-tk">A·B：BVM 通氣給氧</li><li class="mc-tk">D：貼上貼片 / 監視器，判讀心律</li></ul></div></div><div class="mc-stg" data-i="1"><div class="mc-cover"><b>② 第一次心律</b><span>點擊掀開</span></div><div class="mc-body"><h4>② 第一次心律</h4><button type="button" class="mc-rhy" data-r="vf_coarse" data-hr="---">心律？<em>VF</em></button><ul class="mc-tasks"><li class="mc-tk">充電時持續壓胸</li><li class="mc-tk">「大家都離開」→ <b>電擊</b></li><li class="mc-tk">電擊後<b>立刻 CPR 2 分鐘</b>，不摸脈搏</li></ul></div></div><div class="mc-stg" data-i="2"><div class="mc-cover"><b>③ 第二次心律</b><span>點擊掀開</span></div><div class="mc-body"><h4>③ 第二次心律</h4><button type="button" class="mc-rhy" data-r="vf_coarse" data-hr="---">心律？<em>VF</em></button><ul class="mc-tasks"><li class="mc-tk"><b>電擊</b> → 立刻 CPR</li><li class="mc-tk">建立 <b>IV</b>（不行 → IO）</li><li class="mc-tk"><b>Epinephrine 1 mg</b> IV</li><li class="mc-tk">考慮<b>進階呼吸道</b>＋波形 ETCO₂</li></ul></div></div><div class="mc-stg" data-i="3"><div class="mc-cover"><b>④ 第三次心律</b><span>點擊掀開</span></div><div class="mc-body"><h4>④ 第三次心律</h4><button type="button" class="mc-rhy" data-r="pea" data-hr="---">心律？<em>PEA</em></button><ul class="mc-tasks"><li class="mc-tk">摸脈搏：<b>沒有</b> → PEA</li><li class="mc-tk">不電擊，立刻 CPR</li><li class="mc-tk">Epinephrine 每 3–5 分鐘</li><li class="mc-tk">想 <b>5H5T</b></li></ul></div></div><div class="mc-stg" data-i="4"><div class="mc-cover"><b>⑤ 第四次心律</b><span>點擊掀開</span></div><div class="mc-body"><h4>⑤ 第四次心律</h4><button type="button" class="mc-rhy" data-r="nsr" data-hr="78">心律？<em>有脈搏：ROSC</em></button><ul class="mc-tasks"><li class="mc-tk">摸到脈搏、量血壓</li><li class="mc-hid"><button type="button" class="mc-rhy" data-r="stemi" data-hr="78">12 導程？<em>ST 上升（STEMI）</em></button></li><li class="mc-tk">ROSC 後照護：氧合、通氣、血壓、體溫控制（第 8 章）</li><li class="mc-tk">啟動心導管室 → <b>緊急 PCI</b></li></ul></div></div></div>
+  </div>
+  <script>
+  (function(){const w=document.getElementById("mcw"),c=document.getElementById("mc");
+  w.addEventListener("click",e=>{e.stopPropagation();
+    const cv=e.target.closest(".mc-cover");if(cv){cv.parentNode.classList.add("open");return}
+    const b=e.target.closest(".mc-rhy");if(b){b.classList.add("on");if(window.ECG){ECG.set(c,b.dataset.r,b.dataset.hr);ECG.play(c,true)}return}
+    const t=e.target.closest("li.mc-tk");if(t)t.classList.toggle("done")});
+  })();
+  </script><div class="notes">一張一張掀開：先讓組長說出這一階段要做什麼，再按「心律？」揭曉監視器；學員完成的項目可以點一下打勾。觀察重點：換手與電擊的中斷時間、epinephrine 間隔 3–5 分鐘、迴路式溝通是否閉合。最後一張的 12 導程按下去才會出現 ST 上升。</div>
 </section>
 <!-- ============ TAKE HOME ============ -->
 <section class="slide">
