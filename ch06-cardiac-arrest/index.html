@@ -20,6 +20,10 @@
 .toc-no{grid-row:1/3;font:700 38px var(--mono);color:var(--red);min-width:2.2ch}
 .toc-t{font-weight:900;font-size:25px;color:var(--navy)}
 .toc-d{color:var(--muted);font-size:18px;line-height:1.45;margin-top:4px}
+.k4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.k4 .k{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--red);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-height:210px}
+.k4 .k span{font:700 46px var(--mono);color:var(--red);line-height:1}.k4 .k b{font-size:29px;color:var(--navy)}.k4 .k em{font-style:normal;font-size:19px;color:var(--muted);line-height:1.45}
+body.m .k4{grid-template-columns:1fr 1fr}
 .lane{font:700 18px var(--mono);letter-spacing:.08em;color:#fff;padding:6px 14px;border-radius:8px 8px 0 0;display:inline-block}
 .lane.red{background:var(--red)}.lane.navy{background:var(--navy)}
 /* shock-cpr-check timeline */
@@ -73,34 +77,33 @@ body.m .tk,body.m .tb{height:56px}
   <div class="inner">
     <div class="kicker">ACLS Instructor · Chapter 6</div>
     <h1>心臟停止之治療<br><span style="font-size:58px;font-weight:500;color:#c8d3ea">Management of Cardiac Arrest</span></h1>
-    <p class="sub">VF / pVT 與 PEA / Asystole 兩條路、藥物與血管途徑、團隊急救<br>依 2025 AHA CPR &amp; ECC 指引逐項核對</p>
+    <p class="sub">VF / pVT 與 PEA / Asystole</p>
     <p class="sub" style="margin-top:28px;font-size:30px;color:#fff;font-weight:700">講師：台北市立聯合醫院陽明院區　急診主治醫師 懷顥</p>
   </div>
-  <div class="meta">原著章節：胡勝川、楊久滕〈第 6 章 心臟停止之治療〉｜教學投影片整理與指引核對<br>操作：← → 翻頁 · F 全螢幕 · N 講者備註 · E 播放 / 暫停心電圖 · A 揭曉全部答案</div>
+  <div class="meta">原著章節：胡勝川、楊久滕〈第 6 章 心臟停止之治療〉｜依 2025 AHA CPR &amp; ECC 指引逐項核對<br>操作：← → 翻頁 · F 全螢幕 · N 講者備註 · E 播放 / 暫停心電圖 · A 揭曉全部答案</div>
   <div class="notes">開場：本章以 2025 年成人心臟停止流程為主軸。心電圖為動態示意圖，可在 Megacode 模擬頁由講師切換心律。標示 ⚠ 的地方是教材與 2025 AHA 指引寫法不同、講課時要更正的地方。</div>
 </section>
 <!-- ============ TOC ============ -->
 <section class="slide">
   <div class="kicker">Contents · 目錄</div><h2>目錄</h2><div class="rule"></div>
-  <div class="toc"><a class="toc-item" data-key="Introduction · 概念" href="#"><span class="toc-no"></span><span class="toc-t">概念</span><span class="toc-d">成人心臟停止重點、四種心臟停止心律</span></a><a class="toc-item" data-key="Chapter 一 · Algorithm" href="#"><span class="toc-no"></span><span class="toc-t">一｜流程</span><span class="toc-d">圖 6-1 流程、圖 6-2 環形圖、高品質 CPR、BLS→ACLS</span></a><a class="toc-item" data-key="Chapter 二 · VF / pVT" href="#"><span class="toc-no"></span><span class="toc-t">二｜VF / pVT</span><span class="toc-d">電擊-CPR-檢查、電擊操作與能量、藥物時間軸、頑固性 VF、ROSC</span></a><a class="toc-item" data-key="Chapter 三 · PEA / Asystole" href="#"><span class="toc-no"></span><span class="toc-t">三｜PEA / Asystole</span><span class="toc-d">CPR-檢查、儘早 epinephrine、5H5T、POCUS</span></a><a class="toc-item" data-key="Chapter 四 · Drugs & Access" href="#"><span class="toc-no"></span><span class="toc-t">四｜藥物與途徑</span><span class="toc-d">血管途徑、升壓劑、其他藥物、ETCO₂ 與終止急救</span></a><a class="toc-item" data-key="Chapter 五 · Teaching Station" href="#"><span class="toc-no"></span><span class="toc-t">五｜小站教學</span><span class="toc-d">團隊角色、迴路式溝通、組長九件事、GAS、Megacode 模擬</span></a></div>
+  <div class="toc"><a class="toc-item" data-key="Introduction · 概念" href="#"><span class="toc-no"></span><span class="toc-t">概念</span><span class="toc-d">系統 / 流程 / 團隊、四種心臟停止心律</span></a><a class="toc-item" data-key="Chapter 一 · Algorithm" href="#"><span class="toc-no"></span><span class="toc-t">一｜流程</span><span class="toc-d">圖 6-1 流程、環形圖、BLS → ACLS</span></a><a class="toc-item" data-key="Chapter 二 · Shockable" href="#"><span class="toc-no"></span><span class="toc-t">二｜可電擊心律</span><span class="toc-d">VF / pVT：電擊 → CPR → 檢查、藥物時間軸、頑固性 VF、ROSC</span></a><a class="toc-item" data-key="Chapter 三 · PEA / Asystole" href="#"><span class="toc-no"></span><span class="toc-t">三｜PEA / Asystole</span><span class="toc-d">CPR → 檢查、儘早 epinephrine、窄 / 寬 QRS PEA</span></a><a class="toc-item" data-key="Chapter 四 · High-Quality CPR" href="#"><span class="toc-no"></span><span class="toc-t">四｜高品質 CPR</span><span class="toc-d">深度、速度、回彈、中斷、通氣、生理監測</span></a><a class="toc-item" data-key="Chapter 五 · Defibrillation" href="#"><span class="toc-no"></span><span class="toc-t">五｜電擊</span><span class="toc-d">貼片位置與安全、能量、電擊前後 CPR</span></a><a class="toc-item" data-key="Chapter 六 · IV / IO & Drugs" href="#"><span class="toc-no"></span><span class="toc-t">六｜IV / IO 與藥物</span><span class="toc-d">給藥途徑、epinephrine、其他藥物</span></a><a class="toc-item" data-key="Chapter 七 · Airway" href="#"><span class="toc-no"></span><span class="toc-t">七｜呼吸道</span><span class="toc-d">BVM、進階呼吸道、ETCO₂ 與終止急救</span></a><a class="toc-item" data-key="Chapter 八 · Reversible Causes" href="#"><span class="toc-no"></span><span class="toc-t">八｜5H5T</span><span class="toc-d">可恢復原因、POCUS</span></a><a class="toc-item" data-key="Chapter 九 · Teaching Station" href="#"><span class="toc-no"></span><span class="toc-t">九｜小站教學</span><span class="toc-d">團隊角色、迴路式溝通、組長九件事、GAS、Megacode</span></a></div>
   <p style="margin-top:30px;font-size:22px" class="muted">圖例：<span class="cor c1">Class 1</span> 建議 <span class="cor c2a">2a</span> 合理 <span class="cor c2b">2b</span> 可考慮 <span class="cor c3">3</span> 無益 / 有害　<span class="tag ok">✓ 已核實</span> <span class="tag warn">⚠ 需更正</span> <span class="tag new">NEW 2025</span>　點選章節可直接跳頁</p>
 </section>
 <!-- ============ INTRO ============ -->
 <section class="slide">
   <div class="kicker">Introduction · 概念</div>
-  <h2>成人心臟停止：救活靠整個系統</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="cols c64" style="gap:28px">
-    <div>
-      <ul class="dots">
-        <li>四個重點：<b>快速辨識</b>、<b>即時 CPR</b>、可電擊心律<b>儘早去顫</b>、ROSC 後<b>支持治療與病因治療</b></li>
-        <li>多數成人心臟停止是<b>心因性</b>：心肌梗塞、電傳導異常</li>
-        <li>非心因性也常見：呼吸衰竭、中毒、肺栓塞、溺水；國外<b>鴉片類過量</b>急速上升 → 病因治療很重要</li>
-        <li>多數 ACLS 處置能增加 ROSC，但<b>未證實增加存活出院</b>；能增加存活的是高品質 CPR、早期電擊、不可電擊心律的早期 epinephrine</li>
-      </ul>
-    </div>
-    <div class="card red" style="align-self:start"><h3>所以排優先順序</h3><ul class="dots sm"><li>① 高品質 CPR</li><li>② 可電擊 → 儘早電擊</li><li>③ 不可電擊 → 儘早 epinephrine</li><li>打點滴、給藥、放進階呼吸道<b>不能影響</b>前三項</li></ul></div>
+  <h2>成人心臟停止：系統 / 流程 / 團隊</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="k4">
+    <div class="k"><span>1</span><b>快速辨識</b><em>意識不清、沒有正常呼吸 → 啟動團隊</em></div>
+    <div class="k"><span>2</span><b>立即高品質 CPR</b><em>一切的基礎，貫穿全程</em></div>
+    <div class="k"><span>3</span><b>可電擊 → 儘早去顫</b><em>不可電擊 → 儘早 epinephrine</em></div>
+    <div class="k"><span>4</span><b>ROSC 後照護</b><em>支持治療 ＋ 病因治療</em></div>
   </div>
-  <div class="callout ok" style="margin-top:26px"><span class="h">✓ 2025 AHA</span>教材依 2025 年 CPR &amp; ECC 指導原則更新；流程圖（圖 6-1）與環形圖（圖 6-2）架構與 2025 AHA 成人心臟停止流程一致。</div><div class="notes">強調「其他處置往後放」：插管、打 IV 都不能讓壓胸中斷。</div>
+  <div class="callout red" style="margin-top:22px"><span class="h">優先順序</span>1 → 2 → 3 是能增加存活的處置；打點滴、給藥、放進階呼吸道<b>不能影響</b>前三項。</div>
+  <ul class="dots sm" style="margin-top:18px">
+    <li>多數成人心臟停止是<b>心因性</b>（心肌梗塞、電傳導異常）；非心因性如呼吸衰竭、中毒、肺栓塞、溺水，病因治療很重要</li>
+    <li>多數 ACLS 處置能增加 ROSC，但<b>未證實增加存活出院</b>；能增加存活的是高品質 CPR、早期電擊、不可電擊心律的早期 epinephrine</li>
+  </ul><div class="notes">系統：辨識與啟動；流程：圖 6-1 / 環形圖；團隊：本章最後的小站教學。強調「其他處置往後放」：插管、打 IV 都不能讓壓胸中斷。</div>
 </section>
 <!-- ============ FOUR RHYTHMS ============ -->
 <section class="slide">
@@ -118,66 +121,59 @@ body.m .tk,body.m .tb{height:56px}
 <!-- ============ DIVIDER 01 ============ -->
 <section class="slide divider">
   <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 一 · Algorithm</div>
-  <div class="big"><div class="no">01</div><h2>成人心臟停止流程</h2><p>圖 6-1 流程圖 · 圖 6-2 環形圖</p></div>
+  <div class="big"><div class="no">01</div><h2>成人心臟停止流程</h2><p>圖 6-1 流程圖 · 環形圖 · BLS → ACLS</p></div>
 </section>
 <!-- ============ FIG 6-1 ============ -->
 <section class="slide">
   <div class="kicker">Algorithm · 圖 6-1</div>
   <h2>成人心臟停止處置流程 <span class='tag new' style='font-size:16px'>2025</span></h2><div class="rule" style="margin-bottom:10px"></div>
-  <svg class="flow" id="f61" viewBox="0 0 1440 690"></svg><div class="notes">依教材圖 6-1（2025 年更新）重繪為左右兩列：上排可電擊、下排不可電擊。數字對應原圖方框編號。每一個「可電擊？」都是 2 分鐘 CPR 後的心律檢查。</div>
+  <svg class="flow" id="f61" viewBox="0 0 1440 695"></svg><div class="notes">依教材圖 6-1（2025 年更新）重繪為上下兩列：上排可電擊、下排不可電擊。數字對應原圖方框編號。每一個「可電擊？」都是 2 分鐘 CPR 後的心律檢查：上排 ⑤ 前的檢查若轉為不可電擊（否），接到 ⑩；下排檢查若轉為可電擊（是），接到 ⑤。</div>
 </section>
 <!-- ============ FIG 6-2 ============ -->
 <section class="slide">
   <div class="kicker">Algorithm · 圖 6-2</div>
-  <h2>成人心臟停止環形圖</h2><div class="rule" style="margin-bottom:10px"></div>
+  <h2>成人心臟停止環形圖</h2><div class="rule" style="margin-bottom:6px"></div>
   <div class="cols c64" style="gap:24px;align-items:center">
-    <svg viewBox="0 0 760 620" style="width:100%">
-      <defs><marker id="ca" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3122e"/></marker></defs>
-      <circle cx="400" cy="320" r="225" fill="none" stroke="#fbe9ec" stroke-width="64"/>
-      <path d="M 400 95 A 225 225 0 0 1 625 320" fill="none" stroke="#b3122e" stroke-width="12" marker-end="url(#ca)"/>
-      <path d="M 625 320 A 225 225 0 0 1 400 545" fill="none" stroke="#b3122e" stroke-width="12" marker-end="url(#ca)"/>
-      <path d="M 400 545 A 225 225 0 0 1 175 320" fill="none" stroke="#b3122e" stroke-width="12" marker-end="url(#ca)"/>
-      <path d="M 175 320 A 225 225 0 0 1 400 95" fill="none" stroke="#b3122e" stroke-width="12" marker-end="url(#ca)"/>
-      <circle cx="400" cy="320" r="120" fill="#14284b"/>
-      <text x="400" y="305" text-anchor="middle" font-size="30" font-weight="900" fill="#fff">持續 CPR</text>
-      <text x="400" y="345" text-anchor="middle" font-size="22" fill="#c8d3ea">監測 CPR 品質</text>
-      <g font-size="22" font-weight="700" fill="#14284b" text-anchor="middle">
-        <rect x="560" y="80" width="190" height="64" rx="12" fill="#fff4dc" stroke="#a86a00" stroke-width="2.5"/><text x="655" y="120">檢查心律</text>
-        <rect x="555" y="470" width="200" height="64" rx="12" fill="#fff" stroke="#b3122e" stroke-width="2.5"/><text x="655" y="500">可電擊時</text><text x="655" y="526" fill="#b3122e">電擊 ⚡</text>
-        <rect x="30" y="455" width="230" height="100" rx="12" fill="#e3f3f1" stroke="#0f6e6e" stroke-width="2.5"/><text x="145" y="490">每 2 分鐘</text><text x="145" y="520" font-weight="500" font-size="19">藥物 · 進階呼吸道</text><text x="145" y="544" font-weight="500" font-size="19">ETCO₂ · 可逆原因</text>
-        <rect x="20" y="70" width="250" height="100" rx="12" fill="#14284b"/><text x="145" y="110" fill="#fff">開始 CPR</text><text x="145" y="140" fill="#c8d3ea" font-weight="500" font-size="19">BVM 給氧 · 接去顫器</text>
-      </g>
-      <path d="M270 120 Q 330 110 360 112" stroke="#14284b" stroke-width="3" fill="none" marker-end="url(#ca)"/>
-      <text x="400" y="30" text-anchor="middle" font-size="20" fill="#5d6678">每圈 2 分鐘</text>
-    </svg>
+    <svg viewBox="0 0 960 960" style="height:690px;width:auto;display:block;margin:auto">
+  <defs><marker id="rga" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#14284b"/></marker></defs>
+  <ellipse cx="453.6" cy="584.3" rx="381.6" ry="330.3" fill="#fff" stroke="#6b7280" stroke-width="2"/>
+  <ellipse cx="458.9" cy="592.4" rx="259.2" ry="234.7" fill="#fff" stroke="#14284b" stroke-width="2.5"/>
+  <g transform="translate(214.6,380) rotate(-45)"><path d="M-40 -11 H12 V-23 L40 0 L12 23 V11 H-40Z" fill="#6b7280"/></g><g transform="translate(685,380) rotate(45)"><path d="M-40 -11 H12 V-23 L40 0 L12 23 V11 H-40Z" fill="#6b7280"/></g><g transform="translate(700,754) rotate(135)"><path d="M-40 -11 H12 V-23 L40 0 L12 23 V11 H-40Z" fill="#6b7280"/></g><g transform="translate(214.6,757) rotate(-135)"><path d="M-40 -11 H12 V-23 L40 0 L12 23 V11 H-40Z" fill="#6b7280"/></g>
+  <path d="M475 258 H836 V220 L930 296 L836 371 V333 H475Z" fill="#eef1f5" stroke="#6b7280" stroke-width="2"/>
+  <text x="667" y="252" text-anchor="middle" font-size="22" font-weight="700" fill="#14284b">恢復自發性循環（ROSC）</text>
+  <text x="707" y="307" text-anchor="middle" font-size="24" fill="#14284b">復甦後照護</text>
+  <line x1="460.8" y1="13" x2="460.8" y2="54" stroke="#14284b" stroke-width="2" marker-end="url(#rga)"/>
+  <rect x="271.7" y="55.7" width="379.2" height="136.3" rx="18" fill="#fff" stroke="#14284b" stroke-width="2.5"/>
+  <text x="461" y="92" text-anchor="middle" font-size="26" font-weight="900" fill="#14284b">開始 CPR</text>
+  <text x="461" y="130" text-anchor="middle" font-size="20" fill="#14284b">• 開始 BVM 通氣和給氧</text>
+  <text x="461" y="162" text-anchor="middle" font-size="20" fill="#14284b">• 接上監視器／去顫器</text>
+  <line x1="460.8" y1="192" x2="460.8" y2="250" stroke="#14284b" stroke-width="2" marker-end="url(#rga)"/>
+  <path d="M460.8 251.5 L538.6 310.5 L460.8 369.5 L383 310.5Z" fill="#fff4dc" stroke="#14284b" stroke-width="2.5"/>
+  <text x="460.8" y="318" text-anchor="middle" font-size="21" font-weight="900" fill="#14284b">檢查心律</text>
+  <rect x="521.3" y="309.1" width="170.9" height="82.6" rx="12" fill="#fff" stroke="#b3122e" stroke-width="2.5"/>
+  <text x="606.7" y="343" text-anchor="middle" font-size="20" font-weight="900" fill="#b3122e">如 VF/VT</text>
+  <text x="606.7" y="374" text-anchor="middle" font-size="20" font-weight="900" fill="#b3122e">予電擊 ⚡</text>
+  <line x1="254.4" y1="254.4" x2="328.3" y2="385.9" stroke="#14284b" stroke-width="1.5"/>
+  <text x="236" y="246" text-anchor="middle" font-size="21" fill="#14284b">2 分鐘</text>
+  <line x1="200.6" y1="574.1" x2="717.1" y2="574.1" stroke="#14284b" stroke-width="2"/>
+  <line x1="227.5" y1="679.7" x2="690.2" y2="679.7" stroke="#14284b" stroke-width="2"/>
+  <text x="459" y="431" text-anchor="middle" font-size="24" font-weight="900" fill="#14284b">藥物治療</text>
+  <g font-size="20" fill="#14284b" text-anchor="middle"><text x="459" y="466">建立 IV/IO 路徑</text><text x="459" y="496">每 3–5 分鐘予 Epinephrine</text><text x="459" y="526">頑固型 VF/VT 予 Amiodarone</text><text x="459" y="556">（或 Lidocaine）</text>
+  <text x="459" y="616">考慮進階呼吸道</text><text x="459" y="648">量化二氧化碳濃度監測</text></g>
+  <text x="459" y="744" text-anchor="middle" font-size="24" font-weight="900" fill="#14284b">治療可恢復原因</text>
+  <text x="133" y="548" text-anchor="middle" font-size="19" fill="#14284b">持續 CPR</text>
+  <text x="777" y="548" text-anchor="middle" font-size="19" fill="#14284b">持續 CPR</text>
+  <text x="461" y="876" text-anchor="middle" font-size="23" font-weight="900" fill="#14284b">監測 CPR 品質</text>
+</svg>
     <div>
       <ul class="dots sm">
         <li>一圈 = <b>2 分鐘 CPR</b> → 檢查心律 → 可電擊就電擊 → 立刻回到壓胸</li>
-        <li>藥物：建立 IV/IO、epinephrine <b>每 3–5 分鐘</b>；頑固 VF/pVT 給 amiodarone 或 lidocaine</li>
-        <li>考慮進階呼吸道、量化 ETCO₂</li>
-        <li>每一圈都想 <b>5H5T</b></li>
+        <li>內圈三件事：<b>藥物</b>、<b>進階呼吸道與 ETCO₂</b>、<b>治療可恢復原因</b></li>
+        <li>外圈全程：<b>持續 CPR、監測 CPR 品質</b></li>
       </ul>
       <div class="callout ok" style="margin-top:14px;font-size:19px"><span class="h">出口</span>出現 ROSC 徵象（ETCO₂ 突然上升、動脈波形、脈搏）→ <b>復甦後照護</b>（第 8 章）</div>
     </div>
-  </div><div class="notes">環形圖適合當作團隊節奏：每 2 分鐘一圈，計時員負責報時。</div>
-</section>
-<!-- ============ HQ CPR ============ -->
-<section class="slide">
-  <div class="kicker">High-Quality CPR</div>
-  <h2>高品質 CPR 是一切的基礎</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="cols c2" style="gap:24px">
-    <div class="card red"><h3>機械性參數</h3><ul class="dots sm">
-      <li>壓得夠深 <b>5–6 公分</b>、壓得夠快 <b>100–120 次/分</b></li>
-      <li>胸部<b>完全回彈</b>；避免<b>過度通氣</b></li>
-      <li>無進階呼吸道 <b>30：2</b>；有進階呼吸道每 <b>6 秒一口氣</b>（10 次/分），持續壓胸不暫停</li>
-      <li>每 2 分鐘換手，或疲勞時提早換</li></ul></div>
-    <div class="card teal"><h3>生理性參數</h3><ul class="dots sm">
-      <li>量化 ETCO₂：數值低或下降 → 改善 CPR 品質</li>
-      <li>動脈血壓或 ETCO₂ 監測 CPR 品質 <span class="cor c2b">2b</span></li>
-      <li>ETCO₂ 突然上升可偵測 ROSC <span class="cor c2b">2b</span></li>
-      <li>支持文字：ETCO₂ 至少 10 mmHg，理想 ≥ 20 mmHg</li></ul></div>
-  </div>
-  <div class="callout red" style="margin-top:22px"><span class="h">只有這些時候可以停止壓胸</span>分析心律、去顫電擊、檢查脈搏、壓胸換手、氣管插管。其餘處置都要<b>邊壓邊做</b>。</div><div class="notes">ETCO₂ 的目標值在 2025 AHA 是支持文字，不是正式建議。</div>
+  </div><div class="notes">依講師提供的環形圖重繪。環形圖適合當作團隊節奏：每 2 分鐘一圈，計時員負責報時。</div>
 </section>
 <!-- ============ BLS ACLS ============ -->
 <section class="slide">
@@ -198,8 +194,8 @@ body.m .tk,body.m .tb{height:56px}
 </section>
 <!-- ============ DIVIDER 02 ============ -->
 <section class="slide divider">
-  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 二 · VF / pVT</div>
-  <div class="big"><div class="no">02</div><h2>VF / pVT</h2><p>可電擊心律：電擊 → CPR → 檢查</p></div>
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 二 · Shockable</div>
+  <div class="big"><div class="no">02</div><h2>可電擊心律</h2><p>VF / pVT：電擊 → CPR → 檢查</p></div>
 </section>
 <!-- ============ SHOCK CPR CHECK ============ -->
 <section class="slide">
@@ -211,41 +207,6 @@ body.m .tk,body.m .tb{height:56px}
     <div class="tl-head"></div>
   </div>
   <div class="cols c3" style="gap:18px;margin-top:22px"><div class="card red"><h3>給藥時機</h3><ul class="dots sm"><li>第 <b>2</b> 次電擊無效後開始，每 2 分鐘 CPR 給一次藥</li><li>先 <b>epinephrine 1 mg</b>，下一輪換 <b>amiodarone 300 mg</b></li><li>之後 epinephrine、amiodarone 150 mg 輪流</li></ul></div><div class="card navy"><h3>Epinephrine 節奏</h3><ul class="dots sm"><li>每 3–5 分鐘，平均約 4 分鐘</li><li>＝<b>每隔一次</b> 2 分鐘 CPR 給一次</li><li>藥在壓胸中推，電擊前不用停</li></ul></div><div class="card amber"><h3>Lidocaine 可替代</h3><ul class="dots sm"><li>2018 年起加入</li><li>首劑 <b>1–1.5 mg/kg</b></li><li>之後 0.5–0.75 mg/kg，最大 3 mg/kg</li></ul></div></div><div class="notes">紅色播放線代表時間在走。讓學員跟著播放線喊出每一步：電擊、壓胸、給什麼藥。</div>
-</section>
-<!-- ============ DEFIB SAFETY ============ -->
-<section class="slide">
-  <div class="kicker">Defibrillation Safety</div>
-  <h2>電擊操作：位置、安全、口令</h2><div class="rule" style="margin-bottom:14px"></div>
-  <div class="cols c46" style="gap:24px;align-items:start">
-    <div class="pads"><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="40" y="40" width="30" height="40" rx="6" fill="#14284b"/><rect x="104" y="96" width="30" height="40" rx="6" fill="#14284b"/></svg><figcaption>右前—左外側</figcaption></figure><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="80" y="70" width="32" height="40" rx="6" fill="#14284b"/><rect x="62" y="64" width="40" height="52" rx="6" fill="none" stroke="#14284b" stroke-width="3" stroke-dasharray="5 4"/></svg><figcaption>前—後</figcaption></figure><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="80" y="70" width="32" height="40" rx="6" fill="#14284b"/><rect x="104" y="110" width="34" height="44" rx="6" fill="none" stroke="#14284b" stroke-width="3" stroke-dasharray="5 4"/></svg><figcaption>前—左肩胛下</figcaption></figure><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="80" y="70" width="32" height="40" rx="6" fill="#14284b"/><rect x="22" y="110" width="34" height="44" rx="6" fill="none" stroke="#14284b" stroke-width="3" stroke-dasharray="5 4"/></svg><figcaption>前—右肩胛下</figcaption></figure><p class="muted" style="font-size:16px;grid-column:1/-1">實線：胸前　虛線：背後</p></div>
-    <div>
-      <ul class="dots sm">
-        <li>先檢查胸前：<b>NTG 貼片</b>要撕掉（火花、燒傷）；皮下<b>節律器</b>避開即可</li>
-        <li>依電擊器上 <b>1、2、3</b> 步驟操作；電擊板要塗導電膠，以約 <b>25 磅</b>力量下壓</li>
-        <li>充電完成時大聲喊：<b class="red">「你離開、我離開、大家都離開」</b></li>
-        <li>電擊完<b>立刻壓胸</b>，組長或 CPR 教練喊「繼續壓胸」</li>
-      </ul>
-      <div class="callout " style="margin-top:16px;font-size:19px"><span class="h">2025 BLS 補充</span>貼片位置可以調整胸罩而不必脫除，減少女性病人電擊延誤。</div>
-    </div>
-  </div><div class="notes">貼片位置依教材列出四種。前—後位置也是頑固 VF 時「換向量」的做法。</div>
-</section>
-<!-- ============ ENERGY ============ -->
-<section class="slide">
-  <div class="kicker">Energy & CPR Around Shocks</div>
-  <h2>電擊能量與電擊前後 CPR</h2><div class="rule" style="margin-bottom:18px"></div>
-  <table class="tight">
-    <tr><th style="width:52%">建議</th><th style="width:14%">教材</th><th>2025 AHA</th></tr>
-    <tr><td>雙相波：用製造商建議能量（120–200 J）</td><td>—</td><td>不知道時用最大能量 <span class="cor c2b">2b</span></td></tr>
-    <tr><td>第二次與之後能量至少相同，可考慮更高</td><td><span class="cor c2b">IIb</span></td><td><span class="cor c2b">2b</span>（可升級的機型）</td></tr>
-    <tr><td>雙相波優於單相波；單相波（已停產）一律 360 J</td><td>—</td><td>雙相波 <span class="cor c2a">2a</span></td></tr>
-    <tr><td>單次電擊優於連續電擊（stacked shocks）</td><td>—</td><td><span class="cor c2a">2a</span></td></tr>
-    <tr><td>VF 終止後再復發：用先前成功的能量</td><td>✓</td><td>—</td></tr>
-    <tr class="gstart"><td>電擊器準備中持續 CPR，直到充電完成</td><td><span class="cor c1">I</span></td><td>—</td></tr>
-    <tr><td>無監視器：取得去顫器前先短暫 CPR</td><td><span class="cor c2a">IIa</span></td><td>—</td></tr>
-    <tr><td>目擊或有監視器的 VF/pVT：立即去顫</td><td><span class="cor c2a">IIa</span></td><td>—</td></tr>
-    <tr><td>壓胸期間<b>預先充電</b></td><td><span class="cor c2b">IIb</span></td><td>—</td></tr>
-    <tr><td>電擊後<b>立即壓胸</b>，不先檢查心律或脈搏</td><td><span class="cor c2b">IIb</span></td><td>—</td></tr>
-  </table><div class="notes">「—」表示 2025 AHA Part 9 沒有列為獨立編號建議，沿用先前的做法。</div>
 </section>
 <!-- ============ REFRACTORY ============ -->
 <section class="slide">
@@ -311,42 +272,73 @@ body.m .tk,body.m .tb{height:56px}
   </div>
   <div class="callout red" style="margin-top:16px"><span class="h">找原因最重要</span>問家屬與救護人員病史、找身體檢查的線索、看發病當時情境。找不到原因 → <b>先當低血容治療</b>，快速輸液。</div><div class="notes">病史線索：腎病 → 高血鉀；肝硬化 → 低血容；精神病史 → 藥物中毒。</div>
 </section>
-<!-- ============ 5H5T ============ -->
-<section class="slide">
-  <div class="kicker">Reversible Causes · 5H5T</div>
-  <h2>5H &amp; 5T：可恢復原因</h2><div class="rule" style="margin-bottom:14px"></div>
-  <table class="tight">
-    <tr><th style="width:24%">原因</th><th style="width:36%">線索</th><th>處置</th></tr>
-    <tr><td><b>Hypovolemia</b> 低血容</td><td>出血、脫水、肝硬化、窄 QRS 快速 PEA</td><td>晶體輸液；失血 → 輸血</td></tr>
-    <tr><td><b>Hypoxia</b> 缺氧</td><td>呼吸衰竭、溺水、呼吸道阻塞</td><td>進階呼吸道、適當給氧與通氣</td></tr>
-    <tr><td><b>Hydrogen ion</b> 酸中毒</td><td>糖尿病、腎衰竭、長時間停止</td><td>適當通氣；常規 NaHCO₃ <span class="cor c3">3 無益</span></td></tr>
-    <tr><td><b>Hyper- / Hypokalemia</b></td><td>洗腎、腎病史；寬 QRS、尖 T</td><td>高血鉀：鈣、NaHCO₃、insulin＋glucose</td></tr>
-    <tr><td><b>Hypothermia</b> 低體溫</td><td>環境暴露、溺水</td><td>回溫（第 12 章）</td></tr>
-    <tr class="gstart"><td><b>Tension pneumothorax</b></td><td>外傷、呼吸器、單側呼吸音消失</td><td>針刺減壓 → 胸管</td></tr>
-    <tr><td><b>Tamponade</b> 心包填塞</td><td>外傷、術後、頸靜脈怒張</td><td>心包膜穿刺</td></tr>
-    <tr><td><b>Toxins</b> 中毒</td><td>藥物史、精神病史、現場藥瓶</td><td>解毒劑、毒物諮詢</td></tr>
-    <tr><td><b>Thrombosis, pulmonary</b></td><td>DVT、術後、長期臥床</td><td>疑似 PE 致心臟停止：考慮血栓溶解 <span class="cor c2a">教材 IIa</span></td></tr>
-    <tr><td><b>Thrombosis, coronary</b></td><td>胸痛、STEMI、反覆 VF</td><td>緊急冠狀動脈攝影 / PCI</td></tr>
-  </table><div class="notes">表格整理自教材本文；處置欄的高血鉀、心包填塞為補充。肺栓塞血栓溶解的建議等級請以 2025 AHA Part 10（特殊狀況）核對，詳見第 12 章投影片。</div>
-</section>
-<!-- ============ POCUS ============ -->
-<section class="slide">
-  <div class="kicker">POCUS</div>
-  <h2>床邊超音波：有幫助，但不能中斷壓胸</h2><div class="rule" style="margin-bottom:18px"></div>
-  <div class="cols c2" style="gap:24px">
-    <div class="card teal"><h3>教材：可指引 PEA 診斷與處理</h3><ul class="dots sm">
-      <li>血管內容積狀態（心室容積）</li><li>心包填塞</li><li>腫塊病灶（腫瘤、血塊）</li><li>左心室收縮力、局部心壁運動</li></ul></div>
-    <div class="card amber"><h3>2025 AHA</h3><ul class="dots sm">
-      <li>用 POCUS 診斷可逆原因：效用尚未確立 <span class="cor c2b">2b</span></li>
-      <li>用心臟超音波<b>預測預後</b>：效用尚未確立 <span class="cor c2b">2b</span></li>
-      <li>有經驗者可考慮，<b>前提是不中斷 CPR</b></li></ul></div>
-  </div>
-  <div class="callout red" style="margin-top:24px"><span class="h">實務</span>探頭在壓胸時就位，利用心律檢查的 <b>10 秒內</b>錄影，回放判讀；不要為了看清楚而延長暫停。</div><div class="notes">研究顯示 POCUS 常讓暫停時間延長。指派專人、錄影回放。</div>
-</section>
 <!-- ============ DIVIDER 04 ============ -->
 <section class="slide divider">
-  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 四 · Drugs &amp; Access</div>
-  <div class="big"><div class="no">04</div><h2>藥物與途徑</h2><p>血管途徑 · 升壓劑 · 其他藥物 · ETCO₂</p></div>
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 四 · High-Quality CPR</div>
+  <div class="big"><div class="no">04</div><h2>高品質 CPR</h2><p>一切的基礎</p></div>
+</section>
+<!-- ============ HQ CPR ============ -->
+<section class="slide">
+  <div class="kicker">High-Quality CPR</div>
+  <h2>高品質 CPR 是一切的基礎</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card red"><h3>機械性參數</h3><ul class="dots sm">
+      <li>壓得夠深 <b>5–6 公分</b>、壓得夠快 <b>100–120 次/分</b></li>
+      <li>胸部<b>完全回彈</b>；避免<b>過度通氣</b></li>
+      <li>無進階呼吸道 <b>30：2</b>；有進階呼吸道每 <b>6 秒一口氣</b>（10 次/分），持續壓胸不暫停</li>
+      <li>每 2 分鐘換手，或疲勞時提早換</li></ul></div>
+    <div class="card teal"><h3>生理性參數</h3><ul class="dots sm">
+      <li>量化 ETCO₂：數值低或下降 → 改善 CPR 品質</li>
+      <li>動脈血壓或 ETCO₂ 監測 CPR 品質 <span class="cor c2b">2b</span></li>
+      <li>ETCO₂ 突然上升可偵測 ROSC <span class="cor c2b">2b</span></li>
+      <li>支持文字：ETCO₂ 至少 10 mmHg，理想 ≥ 20 mmHg</li></ul></div>
+  </div>
+  <div class="callout red" style="margin-top:22px"><span class="h">只有這些時候可以停止壓胸</span>分析心律、去顫電擊、檢查脈搏、壓胸換手、氣管插管。其餘處置都要<b>邊壓邊做</b>。</div><div class="notes">ETCO₂ 的目標值在 2025 AHA 是支持文字，不是正式建議。</div>
+</section>
+<!-- ============ DIVIDER 05 ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 五 · Defibrillation</div>
+  <div class="big"><div class="no">05</div><h2>電擊</h2><p>貼片位置與安全 · 能量 · 電擊前後 CPR</p></div>
+</section>
+<!-- ============ DEFIB SAFETY ============ -->
+<section class="slide">
+  <div class="kicker">Defibrillation Safety</div>
+  <h2>電擊操作：位置、安全、口令</h2><div class="rule" style="margin-bottom:14px"></div>
+  <div class="cols c46" style="gap:24px;align-items:start">
+    <div class="pads"><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="40" y="40" width="30" height="40" rx="6" fill="#14284b"/><rect x="104" y="96" width="30" height="40" rx="6" fill="#14284b"/></svg><figcaption>右前—左外側</figcaption></figure><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="80" y="70" width="32" height="40" rx="6" fill="#14284b"/><rect x="62" y="64" width="40" height="52" rx="6" fill="none" stroke="#14284b" stroke-width="3" stroke-dasharray="5 4"/></svg><figcaption>前—後</figcaption></figure><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="80" y="70" width="32" height="40" rx="6" fill="#14284b"/><rect x="104" y="110" width="34" height="44" rx="6" fill="none" stroke="#14284b" stroke-width="3" stroke-dasharray="5 4"/></svg><figcaption>前—左肩胛下</figcaption></figure><figure><svg viewBox="0 0 160 190"><path d="M40 20 Q80 4 120 20 L140 60 L132 180 H28 L20 60Z" fill="#fbe9ec" stroke="#b3122e" stroke-width="2"/><rect x="80" y="70" width="32" height="40" rx="6" fill="#14284b"/><rect x="22" y="110" width="34" height="44" rx="6" fill="none" stroke="#14284b" stroke-width="3" stroke-dasharray="5 4"/></svg><figcaption>前—右肩胛下</figcaption></figure><p class="muted" style="font-size:16px;grid-column:1/-1">實線：胸前　虛線：背後</p></div>
+    <div>
+      <ul class="dots sm">
+        <li>先檢查胸前：<b>NTG 貼片</b>要撕掉（火花、燒傷）；皮下<b>節律器</b>避開即可</li>
+        <li>依電擊器上 <b>1、2、3</b> 步驟操作；電擊板要塗導電膠，以約 <b>25 磅</b>力量下壓</li>
+        <li>充電完成時大聲喊：<b class="red">「你離開、我離開、大家都離開」</b></li>
+        <li>電擊完<b>立刻壓胸</b>，組長或 CPR 教練喊「繼續壓胸」</li>
+      </ul>
+      <div class="callout " style="margin-top:16px;font-size:19px"><span class="h">2025 BLS 補充</span>貼片位置可以調整胸罩而不必脫除，減少女性病人電擊延誤。</div>
+    </div>
+  </div><div class="notes">貼片位置依教材列出四種。前—後位置也是頑固 VF 時「換向量」的做法。</div>
+</section>
+<!-- ============ ENERGY ============ -->
+<section class="slide">
+  <div class="kicker">Energy & CPR Around Shocks</div>
+  <h2>電擊能量與電擊前後 CPR</h2><div class="rule" style="margin-bottom:18px"></div>
+  <table class="tight">
+    <tr><th style="width:52%">建議</th><th style="width:14%">教材</th><th>2025 AHA</th></tr>
+    <tr><td>雙相波：用製造商建議能量（120–200 J）</td><td>—</td><td>不知道時用最大能量 <span class="cor c2b">2b</span></td></tr>
+    <tr><td>第二次與之後能量至少相同，可考慮更高</td><td><span class="cor c2b">IIb</span></td><td><span class="cor c2b">2b</span>（可升級的機型）</td></tr>
+    <tr><td>雙相波優於單相波；單相波（已停產）一律 360 J</td><td>—</td><td>雙相波 <span class="cor c2a">2a</span></td></tr>
+    <tr><td>單次電擊優於連續電擊（stacked shocks）</td><td>—</td><td><span class="cor c2a">2a</span></td></tr>
+    <tr><td>VF 終止後再復發：用先前成功的能量</td><td>✓</td><td>—</td></tr>
+    <tr class="gstart"><td>電擊器準備中持續 CPR，直到充電完成</td><td><span class="cor c1">I</span></td><td>—</td></tr>
+    <tr><td>無監視器：取得去顫器前先短暫 CPR</td><td><span class="cor c2a">IIa</span></td><td>—</td></tr>
+    <tr><td>目擊或有監視器的 VF/pVT：立即去顫</td><td><span class="cor c2a">IIa</span></td><td>—</td></tr>
+    <tr><td>壓胸期間<b>預先充電</b></td><td><span class="cor c2b">IIb</span></td><td>—</td></tr>
+    <tr><td>電擊後<b>立即壓胸</b>，不先檢查心律或脈搏</td><td><span class="cor c2b">IIb</span></td><td>—</td></tr>
+  </table><div class="notes">「—」表示 2025 AHA Part 9 沒有列為獨立編號建議，沿用先前的做法。</div>
+</section>
+<!-- ============ DIVIDER 06 ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 六 · IV / IO &amp; Drugs</div>
+  <div class="big"><div class="no">06</div><h2>IV / IO 與藥物</h2><p>給藥途徑 · epinephrine · 其他藥物</p></div>
 </section>
 <!-- ============ ACCESS ============ -->
 <section class="slide">
@@ -400,6 +392,18 @@ body.m .tk,body.m .tb{height:56px}
     </div>
   </div><div class="notes">學員常把「不建議常規使用」聽成「不能用」。強調病因導向。</div>
 </section>
+<!-- ============ DIVIDER 07 ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 七 · Airway</div>
+  <div class="big"><div class="no">07</div><h2>呼吸道</h2><p>BVM · 進階呼吸道 · ETCO₂</p></div>
+</section>
+<!-- ============ AIRWAY ============ -->
+<section class="slide">
+  <div class="kicker">Airway</div>
+  <h2>呼吸道：先有效通氣，再考慮進階呼吸道</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c3" style="gap:20px"><div class="card navy"><h3>BVM 先行</h3><ul class="dots sm"><li>有效的 BVM 通氣給氧即可，<b>不必急著插管</b></li><li>無進階呼吸道：<b>30：2</b></li><li>給氧：可用最大可行的吸入氧濃度 <span class="cor c2b">2b</span></li></ul></div><div class="card amber"><h3>進階呼吸道</h3><ul class="dots sm"><li>聲門上呼吸道（SGA）或氣管內管</li><li>依<b>團隊的成功率與訓練</b>選擇</li><li>放置過程<b>盡量不中斷壓胸</b></li></ul></div><div class="card red"><h3>放置之後</h3><ul class="dots sm"><li><b>連續波形 ETCO₂</b> 確認並監測管位 <span class="cor c1">1</span></li><li>每 <b>6 秒 1 口氣</b>（10 次/分），壓胸不暫停</li><li>避免過度通氣</li></ul></div></div>
+  <div class="callout " style="margin-top:22px"><span class="h">對照教材</span>教材流程圖：第 2 個 2 分鐘 CPR 時「考慮進階呼吸道、量化 ETCO₂」；2025 AHA 不再偏好特定呼吸道種類，強調依團隊能力選擇。</div><div class="notes">進階呼吸道的選擇在 2025 AHA 依團隊成功率與訓練決定；連續波形二氧化碳監測仍是確認管位的標準。</div>
+</section>
 <!-- ============ ETCO2 ============ -->
 <section class="slide">
   <div class="kicker">ETCO₂ & Termination</div>
@@ -407,10 +411,47 @@ body.m .tk,body.m .tb{height:56px}
   <div class="cols c3" style="gap:20px"><div class="card teal"><h3>監測品質</h3><ul class="dots sm"><li>ETCO₂ 低或下降 → 改善壓胸</li><li>支持文字：至少 10，理想 ≥ 20 mmHg</li><li>量化波形 ETCO₂ 確認並監測氣管內管位置</li></ul></div><div class="card navy"><h3>偵測 ROSC <span class="cor c2b">2b</span></h3><ul class="dots sm"><li>壓胸中或心律檢查時 ETCO₂ <b>突然上升</b></li><li>例如 12 → 40 mmHg</li><li>→ 心律檢查時摸脈搏、看動脈波形</li></ul></div><div class="card red"><h3>終止急救</h3><ul class="dots sm"><li><b>已插管</b>：ALS 復甦 20 分鐘後 ETCO₂ ≤ 10 mmHg，可作為<b>多項因素之一</b> <span class="cor c2b">2b</span></li><li><b>未插管</b>：不可用特定 ETCO₂ 數值決定終止 <span class="cor c3">3 有害</span></li><li>不可只靠單一數值</li></ul></div></div>
   <div class="callout " style="margin-top:22px"><span class="h">2025 終止復甦（TOR）</span>依救護人員執業範圍選擇 BLS、ALS 或通用 TOR 規則；ETCO₂ 只是多面向判斷中的一項。</div><div class="notes">ETCO₂ 突然上升時不要急著停壓胸，等 2 分鐘心律檢查時一起確認。</div>
 </section>
-<!-- ============ DIVIDER 05 ============ -->
+<!-- ============ DIVIDER 08 ============ -->
 <section class="slide divider">
-  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 五 · Teaching Station</div>
-  <div class="big"><div class="no">05</div><h2>心臟停止之小站教學</h2><p>高效能團隊 · 迴路式溝通 · GAS 事後檢討</p></div>
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 八 · Reversible Causes</div>
+  <div class="big"><div class="no">08</div><h2>可恢復原因 5H5T</h2><p>找原因 · POCUS</p></div>
+</section>
+<!-- ============ 5H5T ============ -->
+<section class="slide">
+  <div class="kicker">Reversible Causes · 5H5T</div>
+  <h2>5H &amp; 5T：可恢復原因</h2><div class="rule" style="margin-bottom:14px"></div>
+  <table class="tight">
+    <tr><th style="width:24%">原因</th><th style="width:36%">線索</th><th>處置</th></tr>
+    <tr><td><b>Hypovolemia</b> 低血容</td><td>出血、脫水、肝硬化、窄 QRS 快速 PEA</td><td>晶體輸液；失血 → 輸血</td></tr>
+    <tr><td><b>Hypoxia</b> 缺氧</td><td>呼吸衰竭、溺水、呼吸道阻塞</td><td>進階呼吸道、適當給氧與通氣</td></tr>
+    <tr><td><b>Hydrogen ion</b> 酸中毒</td><td>糖尿病、腎衰竭、長時間停止</td><td>適當通氣；常規 NaHCO₃ <span class="cor c3">3 無益</span></td></tr>
+    <tr><td><b>Hyper- / Hypokalemia</b></td><td>洗腎、腎病史；寬 QRS、尖 T</td><td>高血鉀：鈣、NaHCO₃、insulin＋glucose</td></tr>
+    <tr><td><b>Hypothermia</b> 低體溫</td><td>環境暴露、溺水</td><td>回溫（第 12 章）</td></tr>
+    <tr class="gstart"><td><b>Tension pneumothorax</b></td><td>外傷、呼吸器、單側呼吸音消失</td><td>針刺減壓 → 胸管</td></tr>
+    <tr><td><b>Tamponade</b> 心包填塞</td><td>外傷、術後、頸靜脈怒張</td><td>心包膜穿刺</td></tr>
+    <tr><td><b>Toxins</b> 中毒</td><td>藥物史、精神病史、現場藥瓶</td><td>解毒劑、毒物諮詢</td></tr>
+    <tr><td><b>Thrombosis, pulmonary</b></td><td>DVT、術後、長期臥床</td><td>疑似 PE 致心臟停止：考慮血栓溶解 <span class="cor c2a">教材 IIa</span></td></tr>
+    <tr><td><b>Thrombosis, coronary</b></td><td>胸痛、STEMI、反覆 VF</td><td>緊急冠狀動脈攝影 / PCI</td></tr>
+  </table><div class="notes">表格整理自教材本文；處置欄的高血鉀、心包填塞為補充。肺栓塞血栓溶解的建議等級請以 2025 AHA Part 10（特殊狀況）核對，詳見第 12 章投影片。</div>
+</section>
+<!-- ============ POCUS ============ -->
+<section class="slide">
+  <div class="kicker">POCUS</div>
+  <h2>床邊超音波：有幫助，但不能中斷壓胸</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card teal"><h3>教材：可指引 PEA 診斷與處理</h3><ul class="dots sm">
+      <li>血管內容積狀態（心室容積）</li><li>心包填塞</li><li>腫塊病灶（腫瘤、血塊）</li><li>左心室收縮力、局部心壁運動</li></ul></div>
+    <div class="card amber"><h3>2025 AHA</h3><ul class="dots sm">
+      <li>用 POCUS 診斷可逆原因：效用尚未確立 <span class="cor c2b">2b</span></li>
+      <li>用心臟超音波<b>預測預後</b>：效用尚未確立 <span class="cor c2b">2b</span></li>
+      <li>有經驗者可考慮，<b>前提是不中斷 CPR</b></li></ul></div>
+  </div>
+  <div class="callout red" style="margin-top:24px"><span class="h">實務</span>探頭在壓胸時就位，利用心律檢查的 <b>10 秒內</b>錄影，回放判讀；不要為了看清楚而延長暫停。</div><div class="notes">研究顯示 POCUS 常讓暫停時間延長。指派專人、錄影回放。</div>
+</section>
+<!-- ============ DIVIDER 09 ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 九 · Teaching Station</div>
+  <div class="big"><div class="no">09</div><h2>心臟停止之小站教學</h2><p>高效能團隊 · 迴路式溝通 · GAS 事後檢討</p></div>
 </section>
 <!-- ============ STATION ============ -->
 <section class="slide">
@@ -530,27 +571,28 @@ body.m .tk,body.m .tb{height:56px}
 <script>
 /* 圖 6-1：上排可電擊、下排不可電擊 */
 flow("f61",[
- {x:6,y:255,w:200,h:150,t:"① 開始 CPR\nBVM 通氣給氧\n接監視器 / 去顫器",k:"navy",fs:20},
- {x:226,y:300,w:150,h:60,t:"可電擊？",k:"dec",fs:22},
- {x:410,y:40,w:190,h:150,t:"② VF / pVT\n\n③ 電擊 ⚡",k:"end",fs:22},
- {x:625,y:40,w:190,h:150,t:"④ CPR 2 分鐘\n建立 IV/IO",fs:20},
- {x:840,y:40,w:190,h:150,t:"可電擊？\n是 → ⑤ 電擊 ⚡",k:"key",fs:20},
- {x:1055,y:40,w:190,h:150,t:"⑥ CPR 2 分鐘\nEpi q3–5 min\n進階呼吸道\nETCO₂",fs:19},
- {x:1250,y:40,w:184,h:220,t:"可電擊？\n是 → ⑦ 電擊 ⚡\n⑧ CPR 2 分鐘\nAmiodarone\n或 lidocaine\n治療可逆原因",k:"key",fs:18},
- {x:410,y:420,w:190,h:150,t:"⑨ Asystole / PEA\n\nEpinephrine\n儘早給予",k:"navy",fs:20},
- {x:625,y:420,w:190,h:150,t:"⑩ CPR 2 分鐘\nIV/IO\nEpi q3–5 min\n呼吸道、ETCO₂",fs:19},
- {x:840,y:440,w:190,h:110,t:"可電擊？",k:"dec",fs:22},
- {x:1055,y:420,w:190,h:150,t:"⑪ CPR 2 分鐘\n治療可逆原因",fs:20},
- {x:1250,y:400,w:184,h:190,t:"可電擊？\n是 → 接 ⑤ / ⑦\n否 → 接 ⑩\n（或 ⑫）",k:"dec",fs:18},
- {x:140,y:612,w:1294,h:70,t:"⑫ 沒有 ROSC 徵候 → 接 ⑩ 或 ⑪；有 ROSC → 復甦後照護；考慮持續復甦的適當性",k:"note",fs:21}
+ {x:6,y:230,w:200,h:150,t:"① 開始 CPR\nBVM 通氣給氧\n接監視器 / 去顫器",k:"navy",fs:20},
+ {x:226,y:275,w:150,h:60,t:"可電擊？",k:"dec",fs:22},
+ {x:410,y:30,w:190,h:200,t:"② VF / pVT\n\n③ 電擊 ⚡",k:"navy",fs:22},
+ {x:625,y:30,w:190,h:200,t:"④ CPR 2 分鐘\n建立 IV/IO",fs:20},
+ {x:840,y:30,w:190,h:200,t:"可電擊？\n是 → ⑤ 電擊 ⚡",k:"key",fs:20},
+ {x:1055,y:30,w:190,h:200,t:"⑥ CPR 2 分鐘\nEpi q3–5 min\n進階呼吸道\nETCO₂",fs:19},
+ {x:1250,y:30,w:184,h:200,t:"可電擊？\n是 → ⑦ 電擊 ⚡\n⑧ CPR 2 分鐘\nAmiodarone\n或 lidocaine\n治療可逆原因",k:"key",fs:17},
+ {x:410,y:380,w:190,h:200,t:"⑨ Asystole / PEA\n\nEpinephrine\n儘早給予",k:"navy",fs:20},
+ {x:625,y:380,w:190,h:200,t:"⑩ CPR 2 分鐘\nIV/IO\nEpi q3–5 min\n呼吸道、ETCO₂",fs:19},
+ {x:840,y:380,w:190,h:200,t:"可電擊？",k:"dec",fs:22},
+ {x:1055,y:380,w:190,h:200,t:"⑪ CPR 2 分鐘\n治療可逆原因",fs:20},
+ {x:1250,y:380,w:184,h:200,t:"可電擊？\n是 → 接 ⑤ / ⑦\n否 → 接 ⑩\n（或 ⑫）",k:"dec",fs:18},
+ {x:140,y:620,w:1294,h:70,t:"⑫ 沒有 ROSC 徵候 → 接 ⑩ 或 ⑪；有 ROSC → 復甦後照護；考慮持續復甦的適當性",k:"note",fs:21}
 ],[
- {p:[[206,330],[226,330]]},
- {p:[[301,300],[301,115],[410,115]],l:"是",lx:320,ly:200,a:"start"},
- {p:[[301,360],[301,495],[410,495]],l:"否",lx:320,ly:440,a:"start"},
- {p:[[600,115],[625,115]]},{p:[[815,115],[840,115]]},{p:[[1030,115],[1055,115]]},{p:[[1245,115],[1250,115]]},
- {p:[[600,495],[625,495]]},{p:[[815,495],[840,495]]},{p:[[1030,495],[1055,495]]},{p:[[1245,495],[1250,495]]},
- {p:[[935,440],[935,190]],l:"是",lx:950,ly:320,a:"start"},
- {p:[[1342,590],[1342,612]]}
+ {p:[[206,305],[226,305]]},
+ {p:[[301,275],[301,130],[410,130]],l:"是",lx:316,ly:200,a:"start"},
+ {p:[[301,335],[301,480],[410,480]],l:"否",lx:316,ly:420,a:"start"},
+ {p:[[600,130],[625,130]]},{p:[[815,130],[840,130]]},{p:[[1030,130],[1055,130]]},{p:[[1245,130],[1250,130]]},
+ {p:[[600,480],[625,480]]},{p:[[815,480],[840,480]]},{p:[[1030,480],[1055,480]]},{p:[[1245,480],[1250,480]]},
+ {p:[[985,380],[985,230]],l:"是",lx:998,ly:312,a:"start"},
+ {p:[[880,230],[880,300],[720,300],[720,380]],l:"否",lx:893,ly:270,a:"start"},
+ {p:[[1342,580],[1342,620]]}
 ]);
 </script>
 <script src="../shared/deck.js"></script>
