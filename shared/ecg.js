@@ -50,6 +50,7 @@ function irregular(mean,spread,L,seed){ // RR list summing exactly to L
 
 const R={
   nsr:()=>regular(.8,10,(a,t,rr)=>{P(a,t,{});N(a,t+.105,rr)}),
+  stemi:()=>regular(.78,10,(a,t,rr)=>{P(a,t,{});N(a,t+.105,rr,{noT:1});G(a,t,t+.19,.03,.5);G(a,t,t+.25,.04,.55);G(a,t,t+.33,.055,.45)}),
   sb:()=>regular(1.25,6,(a,t,rr)=>{P(a,t);N(a,t+.105,rr)}),
   st:()=>regular(.48,16,(a,t,rr)=>{P(a,t);N(a,t+.1,rr)}),
   at:()=>regular(.48,16,(a,t,rr)=>{P(a,t+.02,{amp:.13,inv:true,sd:.017});N(a,t+.13,rr,{tAmp:.2})}),
@@ -196,5 +197,6 @@ document.addEventListener("click",e=>{const b=e.target.closest(".rbtn");if(!b)re
   c.dataset.r=b.dataset.r;set(c,b.dataset.r,b.dataset.hr||"");
   b.parentNode.querySelectorAll(".rbtn").forEach(x=>x.classList.toggle("on",x===b));
 },true);
-window.ECG={init,set,play:(c,on)=>c.__s&&setPlay(c.__s,on!==false),rhythms:Object.keys(R)};
+function reset(c,r){const st=c.__s;if(!st)return;setPlay(st,false);st.started=false;st.acc=0;st.t0=null;if(r)set(c,r,"---");setPlay(st,false)}
+window.ECG={init,set,play:(c,on)=>c.__s&&setPlay(c.__s,on!==false),reset,rhythms:Object.keys(R)};
 })();
