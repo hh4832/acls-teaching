@@ -27,7 +27,7 @@ body.m .k4{grid-template-columns:1fr 1fr}
 .chain{display:flex;align-items:stretch;gap:10px}
 .chain .cs{flex:1;background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--navy);border-radius:14px;padding:18px 16px;text-align:center;display:flex;flex-direction:column;gap:8px}
 .chain .cs.red{border-top-color:var(--red)}.chain .cs b{font:900 38px var(--mono);color:var(--navy)}.chain .cs.red b{color:var(--red)}
-.chain .cs span{font-size:20px;line-height:1.45;color:var(--ink)}.chain i{font-style:normal;align-self:center;font-size:34px;color:var(--muted)}
+.chain .cs span{font-size:20px;line-height:1.45;color:var(--ink)}.chain i{font-style:normal;align-self:center;font-size:34px;color:var(--muted)}.chain .cs em{font-style:normal;margin-top:auto;font-size:17px;line-height:1.4;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
 .bridge{margin-top:18px;background:var(--navy);color:#fff;border-radius:12px;padding:16px 22px;font-size:24px}.bridge b{color:#ffd76a}
 body.m .chain{flex-direction:column}body.m .chain i{transform:rotate(90deg)}
 .lane{font:700 18px var(--mono);letter-spacing:.08em;color:#fff;padding:6px 14px;border-radius:8px 8px 0 0;display:inline-block}
@@ -122,19 +122,13 @@ body.m .tk,body.m .tb{height:56px}
   <h2>叫叫 CABD：接到流程圖</h2><div class="rule" style="margin-bottom:18px"></div>
   <div class="chain">
     <div class="cs"><b>叫</b><span>拍肩呼叫<br>確認意識、呼吸</span></div><i>→</i>
-    <div class="cs"><b>叫</b><span>求救、啟動團隊<br>拿去顫器</span></div><i>→</i>
-    <div class="cs red"><b>C</b><span>確認脈搏 <strong>10 秒內</strong><br>沒有脈搏 →<br>立刻高品質壓胸</span></div><i>→</i>
+    <div class="cs"><b>叫</b><span>求救、啟動團隊<br>拿去顫器</span><em>第二位施救者：儘早取得去顫器、貼上貼片</em></div><i>→</i>
+    <div class="cs red"><b>C</b><span>確認脈搏 <strong>10 秒內</strong><br>沒有脈搏 →<br>立刻高品質壓胸</span><em>第一位施救者：不論有無目擊，先壓胸；不確定有脈搏 → 馬上壓胸</em></div><i>→</i>
     <div class="cs"><b>A · B</b><span>打開呼吸道<br>BVM 通氣給氧</span></div><i>→</i>
-    <div class="cs red"><b>D</b><span>貼上監視器 / 去顫器<br>判讀心律</span></div>
+    <div class="cs red"><b>D</b><span>貼上監視器 / 去顫器<br>判讀心律</span><em>已有監視器：開始 CPR 前先判讀，VF / pVT 立刻電擊</em></div>
   </div>
   <div class="bridge">＝ 流程圖 <b>①</b>「開始 CPR · BVM 通氣給氧 · 接監視器 / 去顫器」→ 接著問 <b>可電擊？</b></div>
-  <table class="tight" style="margin-top:20px">
-    <tr><th style="width:36%">到場順序</th><th>重點</th></tr>
-    <tr><td>第一位施救者</td><td>不論有無目擊，先開始<b>胸部按壓</b></td></tr>
-    <tr><td>第二位施救者</td><td>儘早取得去顫器、貼上貼片、檢查心律</td></tr>
-    <tr><td>看到有組織的心律</td><td>檢查脈搏；<b>不確定有脈搏 → 馬上壓胸</b></td></tr>
-    <tr><td>已有監視器</td><td>開始 CPR 前先判讀：VF / pVT 立刻電擊；PEA / Asystole 儘早 epinephrine</td></tr>
-  </table><div class="notes">BLS 的叫叫 CABD 做完，就是流程圖的第 ① 格：已經在壓胸、BVM 給氧、接上去顫器。下一步就是判讀心律、問可不可以電擊，從這裡分成上下兩排。</div>
+<div class="notes">BLS 的叫叫 CABD 做完，就是流程圖的第 ① 格：已經在壓胸、BVM 給氧、接上去顫器。下一步就是判讀心律、問可不可以電擊，從這裡分成上下兩排。</div>
 </section>
 <!-- ============ FIG 6-1 ============ -->
 <section class="slide">
