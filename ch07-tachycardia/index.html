@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>有症狀的心搏過速｜ACLS 講師教學投影片（2025 AHA 指引核對版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+/* ---------- chapter 7 components ---------- */
+.ecgbox{border-radius:12px;overflow:hidden;border:1px solid #1e2a40}
+.ecgbox canvas{display:block}
+.title .ekg-live{position:absolute;left:0;right:0;top:600px;opacity:.95}
+.title .ekg-live .ecgbox{border:0;border-radius:0}
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.toc-item{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:baseline;background:var(--paper);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:14px;padding:14px 22px;color:var(--ink);text-decoration:none;transition:border-color .15s}
+.toc-item:hover{border-color:var(--red)}
+.toc-no{grid-row:1/3;font:700 36px var(--mono);color:var(--red);min-width:2.2ch}
+.toc-t{font-weight:900;font-size:24px;color:var(--navy)}
+.toc-d{color:var(--muted);font-size:18px;line-height:1.4;margin-top:2px}
+.k5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.k5 .k{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--red);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-height:170px}
+.k5 .k span{font:700 40px var(--mono);color:var(--red);line-height:1}.k5 .k b{font-size:26px;color:var(--navy)}.k5 .k em{font-style:normal;font-size:18px;color:var(--muted);line-height:1.45}
+.btn{display:inline-block;background:var(--red);color:#fff;font:700 24px var(--font);padding:12px 28px;border-radius:10px;text-decoration:none}
+.btn.ghost{background:var(--paper);color:var(--navy);border:2px solid var(--navy)}
+.ans .ck{list-style:none;margin:6px 0 0;padding:0}.ans .ck li{position:relative;padding:4px 6px 4px 28px;margin-bottom:5px;border-radius:8px;background:#f3f1ec;cursor:pointer;font-size:19px;line-height:1.4}.ans .ck li:before{content:"☐";position:absolute;left:7px;top:4px}.ans .ck li.done{background:#e3f4ea;color:#2f6b46}.ans .ck li.done:before{content:"☑"}
+/* 2x2 classification */
+.quad{display:grid;grid-template-columns:150px 1fr 1fr;grid-template-rows:auto 1fr 1fr;gap:12px}
+.quad .hd{font:700 22px var(--font);color:#fff;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px}
+.quad .hd.v{writing-mode:horizontal-tb}
+.quad .q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 18px}
+.quad .q.w{border-left:8px solid var(--red)}.quad .q.n{border-left:8px solid var(--teal)}
+.quad .q li{font-size:20px;line-height:1.45}
+.quad .q .ecgbox{margin-bottom:8px}
+/* energy table */
+.joule{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.joule .j{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--navy);border-radius:14px;padding:16px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.joule .j b{font-size:22px;color:var(--navy);line-height:1.3}
+.joule .j>span{font:700 50px var(--mono);color:var(--red);line-height:1.1}
+.joule .j em{font-style:normal;font-size:17px;color:var(--muted)}
+.joule .j.def{border-top-color:var(--red);background:var(--red-soft)}
+.joule .j.def>span{font-size:30px}
+body.m .toc,body.m .k5,body.m .joule{grid-template-columns:1fr}
+body.m .quad{grid-template-columns:1fr}body.m .quad .hd.c{display:none}
+body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<!-- ============ TITLE ============ -->
+<section class="slide title">
+  <div class="ekg-live"><div class="ecgbox"><canvas class="ecg" data-r="psvt" data-h="150" data-sec="6" data-hr="180" data-lead=" " data-autoplay></canvas></div></div>
+  <div class="inner">
+    <div class="kicker">ACLS Instructor · Chapter 7 · Part 2</div>
+    <h1>有症狀的心搏過速<br><span style="font-size:58px;font-weight:500;color:#c8d3ea">Symptomatic Tachycardia</span></h1>
+    <p class="sub">穩定 / 不穩定 → 寬 / 窄 → 規則 / 不規則</p>
+    <p class="sub" style="margin-top:28px;font-size:30px;color:#fff;font-weight:700">講師：台北市立聯合醫院陽明院區　急診主治醫師 懷顥</p>
+  </div>
+  <div class="meta">原著章節：楊久滕〈第 7 章 有症狀的心搏過緩／過速心律不整的處置〉心搏過速部分｜依 2025 AHA Part 9 Adult ALS 逐項核對<br>操作：← → 翻頁 · F 全螢幕 · N 講者備註 · E 播放 / 暫停心電圖 · A 揭曉全部答案</div>
+  <div class="notes">開場：心搏過速只要問三個問題：穩不穩定？QRS 寬還是窄？規則還是不規則？三個答案就決定走哪一條路。心律辨識在第 5 章，這裡專講處置。縮寫依第 5 章：AF＝心房顫動、AFL＝心房撲動（教材寫 Af／AF）。標示 ⚠ 的是教材與 2025 AHA 不同、講課時要更正的地方。</div>
+</section>
+
+<!-- ============ TOC ============ -->
+<section class="slide">
+  <div class="kicker">Contents · 目錄</div><h2>目錄</h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="toc">
+    <a class="toc-item" data-key="Chapter 一 · Assess" href="#"><span class="toc-no"></span><span class="toc-t">一｜評估</span><span class="toc-d">是原因還是代償？五個危險徵候、寬窄 × 規則分類</span></a>
+    <a class="toc-item" data-key="Chapter 二 · Algorithm" href="#"><span class="toc-no"></span><span class="toc-t">二｜流程圖</span><span class="toc-d">圖 7-2 重繪與劑量</span></a>
+    <a class="toc-item" data-key="Chapter 三 · Cardioversion" href="#"><span class="toc-no"></span><span class="toc-t">三｜同步心臟整流</span><span class="toc-d">圖 7-3：能量、床邊準備、同步 vs 非同步</span></a>
+    <a class="toc-item" data-key="Chapter 四 · Regular Narrow" href="#"><span class="toc-no"></span><span class="toc-t">四｜規則窄 QRS</span><span class="toc-d">竇性過速、PSVT、迷走神經刺激、adenosine、CCB / β-blocker</span></a>
+    <a class="toc-item" data-key="Chapter 五 · Regular Wide" href="#"><span class="toc-no"></span><span class="toc-t">五｜規則寬 QRS</span><span class="toc-d">VT 還是 SVT 合併變異傳導？抗心律不整藥物</span></a>
+    <a class="toc-item" data-key="Chapter 六 · Irregular" href="#"><span class="toc-no"></span><span class="toc-t">六｜不規則與多型</span><span class="toc-d">AF / AFL 速率控制與整流、早激發型 AF、多型 VT / TdP</span></a>
+    <a class="toc-item" data-key="Chapter 七 · Practice" href="#"><span class="toc-no"></span><span class="toc-t">七｜小站練習</span><span class="toc-d">情境題、決策監視器、教材 vs 2025、重點回顧</span></a>
+  </div>
+  <p style="margin-top:22px;font-size:21px" class="muted">圖例：<span class="cor c1">Class 1</span> 建議 <span class="cor c2a">2a</span> 合理 <span class="cor c2b">2b</span> 可考慮 <span class="cor c3">3</span> 無益 / 有害　<span class="tag ok">✓ 已核實</span> <span class="tag warn">⚠ 需更正</span> <span class="tag new">NEW 2025</span>　點選章節可直接跳頁</p>
+</section>
+
+<!-- ============ 01 ASSESS ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 一 · Assess</div>
+  <div class="big"><div class="no">01</div><h2>評估：心搏過速是原因，還是代償？</h2><p>定義 · 危險徵候 · 分類</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 定義</div>
+  <h2>&gt; 100 是心搏過速，≥ 150 才常造成症狀</h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c3" style="gap:22px">
+    <div class="card navy"><div class="stat">&gt; 100<small> 次/分</small></div><h3 style="margin-top:12px">定義</h3><ul class="dots sm"><li>發燒、脫水等生理壓力都會讓心跳變快</li></ul></div>
+    <div class="card red"><div class="stat">≥ 150<small> 次/分</small></div><h3 style="margin-top:12px">流程圖起點</h3><ul class="dots sm"><li>臨床嚴重影響較可能發生在 ≥ 150</li><li>&lt; 150 通常不是不穩定的主因，<b>除非心室功能不良</b></li></ul></div>
+    <div class="card amber"><h3>例：敗血性休克</h3><p>竇性心搏過速 140、低血壓、不穩定。<br>心跳快是<b>代償</b>，不是不穩定的原因 → <b>同步整流無法改善</b>。</p><p style="margin-top:10px">一般而言，竇性心搏過速是對其他因素的反應，本身通常不是不穩定的原因。</p></div>
+  </div>
+  <div class="callout red" style="margin-top:22px"><span class="h">先問</span>心搏過速是<b>造成症狀的初始原因</b>？還是<b>續發於</b>潛在狀況（缺氧、休克、發燒、疼痛）？缺氧是心搏過速常見原因：先看呼吸作功與 SpO₂。</div>
+  <div class="notes">這一頁對應教材「初步評估與處置」。問學員：心率 130 的病人血壓 80，要電擊嗎？先想心跳是不是在代償。心室心率 &lt; 150 且沒有心室功能不良，心搏過速比較像是續發。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 危險徵候</div>
+  <h2>不穩定：五個危險徵候 → 立即同步整流</h2><div class="rule" style="margin-bottom:22px"></div>
+  <div class="k5">
+    <div class="k"><span>1</span><b>低血壓</b><em>灌流不足</em></div>
+    <div class="k"><span>2</span><b>急性意識改變</b><em>嗜睡、混亂</em></div>
+    <div class="k"><span>3</span><b>休克徵象</b><em>冰冷、冒冷汗、尿少</em></div>
+    <div class="k"><span>4</span><b>缺血性胸痛</b><em>胸口不適</em></div>
+    <div class="k"><span>5</span><b>急性心衰竭</b><em>肺水腫、喘</em></div>
+  </div>
+  <div class="cols c2" style="gap:22px;margin-top:24px">
+    <div class="callout red"><span class="h">判斷</span>給氧、支持呼吸道與通氣後<b>仍持續</b>，且認為是<b>心搏過速造成</b> → 立即同步整流 <span class="cor c1">1</span>；清醒病人考慮先鎮靜。</div>
+    <div class="callout ok"><span class="h">NEW 2025 · 寬 QRS</span>2025 對寬 QRS 心搏過速的不穩定給出具體門檻：<b>收縮壓 &lt; 80 mmHg</b> 或<b>意識改變</b>。</div>
+  </div>
+  <div class="notes">五個徵候和心搏過緩完全一樣。寬 QRS 的門檻是 2025 Part 9 新寫進去的說法，可以給學員一個好記的數字，但臨床仍以整體灌流判斷。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 分類</div>
+  <h2>穩定之後：寬 / 窄 × 規則 / 不規則</h2><div class="rule" style="margin-bottom:14px"></div>
+  <div class="quad">
+    <div></div><div class="hd c">窄 QRS（&lt; 0.12 秒）</div><div class="hd c">寬 QRS（≥ 0.12 秒）</div>
+    <div class="hd v">規則</div>
+    <div class="q n"><ul class="dots sm"><li>竇性心搏過速</li><li>PSVT：AVNRT、AVRT（副傳導路徑）</li><li>心房撲動（固定傳導）、心房心搏過速</li><li>房室結心搏過速（成人少見）</li></ul></div>
+    <div class="q w"><ul class="dots sm"><li><b>單型 VT</b>（最常見，先當 VT）</li><li>SVT 合併變異傳導（束枝阻斷）</li><li>早激發型心搏過速（WPW）</li><li>心室節律器心律</li></ul></div>
+    <div class="hd v">不規則</div>
+    <div class="q n"><ul class="dots sm"><li><b>心房顫動 AF</b></li><li>多發性心房心搏過速 MAT</li><li>心房撲動（可變傳導）偶爾不規則</li></ul></div>
+    <div class="q w"><ul class="dots sm"><li>AF 合併變異傳導</li><li><b>早激發型 AF</b>（AF ＋ 副傳導路徑）</li><li><b>多型 VT / Torsades de pointes</b></li></ul></div>
+  </div>
+  <div class="notes">這張表是後面四個章節的地圖：規則窄 → 第四節；規則寬 → 第五節；不規則與多型 → 第六節。依教材「分類」段落整理，窄 QRS 依發生頻率排列。複雜心律辨識、給藥決定時，視需要會診專家。</div>
+</section>
+
+<!-- ============ 02 ALGORITHM ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 二 · Algorithm</div>
+  <div class="big"><div class="no">02</div><h2>成人有脈搏心搏過速流程圖</h2><p>圖 7-2 · 2025 年更新</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">流程 · 圖 7-2</div>
+  <h2>流程圖：成人有脈搏心搏過速 <span class='tag new' style='font-size:16px'>2025</span></h2><div class="rule" style="margin-bottom:8px"></div>
+  <svg class="flow" id="f72" viewBox="0 0 1440 650"></svg>
+  <div class="notes">依教材圖 7-2 重繪。① 心率 ≥ 150 且和臨床狀況不相符 → ② 支持處置 → ③ 是否因心搏過速造成五個危險徵候。是 → ④ 同步整流（規則窄 QRS 可先試 adenosine，但不可延誤）。否 → ⑤ QRS 寬不寬。寬 → ⑥；窄 → ⑦。任何時候治療無效 → ⑧。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">流程 · 劑量</div>
+  <h2>流程圖右側：劑量一頁看完</h2><div class="rule" style="margin-bottom:18px"></div>
+  <table>
+    <tr><th style="width:20%">處置</th><th style="width:38%">劑量</th><th>注意</th></tr>
+    <tr><td><b>同步整流</b></td><td>依電擊器廠商建議能量；不知道 → <b>最大能量</b></td><td>依 2025 指引最大程度提高首次電擊成功率</td></tr>
+    <tr><td><b>Adenosine</b> IV</td><td class="dose">6 mg 快速推注 ＋ NS 沖洗<br>第二劑 12 mg</td><td>大條靜脈（前肘），20 mL 生理食鹽水推注</td></tr>
+    <tr><td><b>Procainamide</b> IV</td><td class="dose">20–50 mg/min<br>維持 1–4 mg/min</td><td>直到心律被抑制、低血壓、QRS 增寬 &gt; 50%、或達 17 mg/kg；QT 延長或 CHF 避免</td></tr>
+    <tr><td><b>Amiodarone</b> IV</td><td class="dose">150 mg 給 10 分鐘<br>之後 1 mg/min × 6 小時</td><td>VT 復發可重複；每日最大 2.2 g</td></tr>
+  </table>
+  <div class="callout" style="margin-top:18px;font-size:20px"><span class="h">記法</span>Adenosine「6、12」；amiodarone「150 / 10 分」；procainamide「20–50，停在四個條件」。</div>
+  <div class="notes">Procainamide 停止的四個條件學員常背不起來：心律不整被抑制、低血壓、QRS 變寬超過 50%、總量 17 mg/kg。</div>
+</section>
+
+<!-- ============ 03 CARDIOVERSION ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 三 · Cardioversion</div>
+  <div class="big"><div class="no">03</div><h2>同步心臟整流</h2><p>圖 7-3 · 能量 · 床邊準備 · 同步 vs 非同步</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">同步整流 · 圖 7-3</div>
+  <h2>成人心臟電擊整流流程圖 <span class='tag new' style='font-size:16px'>2025</span></h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="cols c2" style="gap:22px;margin-bottom:18px">
+    <div class="callout red"><span class="h">心率 &gt; 150 ＋ 嚴重症狀</span>準備<b>立即整流</b>；可依特定心律不整短暫試用藥物。</div>
+    <div class="callout ok"><span class="h">心率 ≤ 150</span>通常<b>不需要立即整流</b>，先想是否續發於其他狀況。</div>
+  </div>
+  <div class="joule">
+    <div class="j"><b>心房顫動<br>AF</b><span>200 J</span><em>2025：≥ 200 J <span class="cor c2a">2a</span></em></div>
+    <div class="j"><b>心房撲動<br>AFL</b><span>200 J</span><em>2025：200 J <span class="cor c2b">2b</span></em></div>
+    <div class="j"><b>窄 QRS<br>心搏過速</b><span>100 J</span><em>失敗則增加</em></div>
+    <div class="j"><b>單型 VT</b><span>100 J</span><em>失敗則增加</em></div>
+    <div class="j def"><b>多型 VT</b><span>非同步<br>高能量</span><em>＝ 去顫</em></div>
+  </div>
+  <div class="cols c2" style="gap:22px;margin-top:18px">
+    <div class="card navy"><h3>床邊準備</h3><p>血氧監測器 · 抽吸器 · 靜脈注射管路 · 插管設備</p></div>
+    <div class="card teal"><h3>若可行，給予鎮靜</h3><p>如 diazepam（midazolam）可合併 fentanyl；許多專家建議可行時施行麻醉。</p></div>
+  </div>
+  <div class="notes">⚠ 舊版流程把 AF 的雙相波能量寫 120–200 J。2025 的流程圖與 Part 9 都改為：雙相波電擊器同步整流 AF 起始能量至少 200 J（2a, B-R），失敗再增加；AFL 起始 200 J 可能合理（2b）。雙重同步整流（double sync）作為起始或救援策略，效用未確立（2b）。能量數字仍以各廠牌建議為準。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">同步整流 · 操作</div>
+  <h2>同步 vs 非同步：什麼時候要取消同步</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c46" style="gap:24px;align-items:start">
+    <div>
+      <div class="ecgbox"><canvas class="ecg" data-r="vt" data-h="150" data-sec="6" data-hr="180" data-label="同步：放電對準 QRS，避開 T 波"></canvas></div>
+      <div class="callout red" style="margin-top:16px"><span class="h">為什麼要同步</span>在 T 波（相對不反應期）電擊可能誘發 <b>VF</b>；同步讓放電落在 QRS 上。</div>
+    </div>
+    <div>
+      <div class="card navy"><h3>步驟</h3><ul class="dots sm"><li>清醒病人考慮<b>先鎮靜</b>；極度不穩定<b>勿延後</b>整流</li><li>按下 <b>SYNC</b>，確認每個 QRS 上都有標記</li><li>選能量、充電、「大家離開」、<b>按住</b>放電鍵直到放電</li><li>每次電擊後<b>可能需要重新同步</b>（很多機型電擊後回到非同步）</li></ul></div>
+      <div class="card red" style="margin-top:16px"><h3>改用非同步（去顫）</h3><ul class="dots sm"><li><b>多型 VT</b>：一律非同步高能量 <span class="cor c1">1</span></li><li>波形不規則、<b>同步延遲</b>且病情危急</li><li>無脈搏 → 走心臟停止流程</li></ul></div>
+    </div>
+  </div>
+  <div class="notes">小站最常見的錯：同步整流後忘記機器跳回非同步，下一次就變成非同步電擊；或是多型 VT 一直按同步、機器一直找不到 QRS 不放電。2025 Part 9 重點之一：多型 VT 一律視為不穩定，立即去顫，延遲電擊會讓預後變差。</div>
+</section>
+
+<!-- ============ 04 REGULAR NARROW ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 四 · Regular Narrow</div>
+  <div class="big"><div class="no">04</div><h2>規則窄 QRS 心搏過速</h2><p>竇性過速 · PSVT · 迷走神經刺激 · adenosine · CCB / β-blocker</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則窄 · 竇性</div>
+  <h2>竇性心搏過速：處理原因，不處理心率</h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c46" style="gap:24px;align-items:start">
+    <div><div class="ecgbox"><canvas class="ecg" data-r="st" data-h="160" data-sec="6" data-hr="125" data-label="竇性心搏過速"></canvas></div>
+      <div class="callout" style="margin-top:16px"><span class="h">上限</span>預估最大心率 <b>220 − 年齡</b>：協助判斷是否落在年齡推測範圍內。</div></div>
+    <div class="card navy"><h3>重點</h3><ul class="dots sm"><li>常由生理性刺激造成：<b>發燒、貧血、缺氧、低血壓、休克</b></li><li>每個 QRS 前都有正常 P 波，逐漸變快、逐漸變慢</li><li>推算為竇性心搏過速 → <b>不需藥物</b>，處理潛在原因</li><li><b>不電擊</b>：同步整流無效</li><li>心臟功能不良時，心輸出依賴增加心率；把心率壓回正常<b>反而有害</b></li></ul></div>
+  </div>
+  <div class="notes">問學員：60 歲、心率 150 的竇性心搏過速可能嗎？220−60＝160，可能；但 80 歲、心率 170，就不太像竇性，要想 AFL 2：1 或 PSVT。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則窄 · PSVT 機轉</div>
+  <h2>再進入型 SVT：迴路在房室結裡，還是在心房？</h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="cols c2" style="gap:22px">
+    <div class="card teal"><h3>迴路經過房室結 → 房室結阻斷劑可<b>終止</b></h3><ul class="dots sm"><li><b>AVNRT</b>：迴路兩枝都在房室結內，心電圖常看不到 P 波</li><li><b>AVRT</b>：一枝在房室結、一枝是副傳導路徑</li><li>統稱 <b>PSVT</b>：突然發生、突然終止，規則，常超過竇性上限（≥ 150）</li></ul></div>
+    <div class="card amber"><h3>迴路在心房 → 只能<b>減慢</b>心室速率</h3><ul class="dots sm"><li>心房撲動、心房顫動、其他心房心搏過速</li><li>迷走神經刺激、adenosine：暫時減慢、<b>協助診斷</b></li><li><b>自主性</b>心搏過速（異位性心房、MAT、房室結）：對整流無效，用降低房室結傳導的藥物控制速率</li></ul></div>
+  </div>
+  <div class="cols c2" style="gap:22px;margin-top:16px">
+    <div class="ecgbox"><canvas class="ecg" data-r="psvt_conv" data-h="120" data-sec="9" data-label="PSVT → adenosine 後終止"></canvas></div>
+    <div class="ecgbox"><canvas class="ecg" data-r="afl_reveal" data-h="120" data-sec="8" data-label="AFL → adenosine 暫時阻斷，露出鋸齒波"></canvas></div>
+  </div>
+  <div class="notes">這一頁解釋為什麼同一支 adenosine，有的人一推就好，有的人只是暫時變慢又回來：迴路依不依賴房室結。左邊：PSVT 在 adenosine 後終止回竇性；右邊：AFL 2：1 在 adenosine 暫時阻斷房室結時露出撲動波，之後又恢復，這時 adenosine 等於幫你做了診斷。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則窄 · 迷走神經刺激</div>
+  <h2>迷走神經刺激術 <span class="cor c1">1</span></h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c3" style="gap:22px">
+    <div class="card navy"><div class="stat">20–30<small> %</small></div><h3 style="margin-top:10px">標準 Valsalva</h3><p>可終止的比例（教材：單獨迷走刺激約 25% PSVT）</p></div>
+    <div class="card red"><div class="stat">~50<small> %</small></div><h3 style="margin-top:10px">改良式 Valsalva</h3><p>閉氣用力後<b>立刻躺平、抬腿</b>，成功率可到約一半</p></div>
+    <div class="card amber"><h3>頸動脈竇按摩</h3><p>小心：頸動脈粥狀硬化病人可能誘發<b>中風</b>；先聽頸動脈雜音，只做單側。</p></div>
+  </div>
+  <div class="card teal" style="margin-top:22px"><h3>改良式 Valsalva 怎麼做 <span class="tag new">2025</span></h3><ul class="dots sm"><li>半坐臥，對著接上血壓計的針筒（或 10 mL 針筒）用力吹，維持約 <b>40 mmHg、15 秒</b></li><li>吹完<b>立刻</b>平躺、被動抬腿 45° 約 15 秒，再坐回</li><li>2025 提到的其他變化：被動抬腿、仰臥重新擺位、Valsalva 後 10 秒上腹部加壓</li></ul></div>
+  <div class="notes">2025 Part 9：迷走神經刺激與 adenosine 都是規則窄 QRS 心搏過速急性治療的 Class 1（B-R）。支持文字提到標準 Valsalva 約 20–30%，改良式可達約 50%。改良式做法即 REVERT 試驗的方法，40 mmHg、15 秒的細節為補充。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則窄 · Adenosine</div>
+  <h2>Adenosine <span class="cor c1">1</span>：快推、快沖、準備電擊器</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c3" style="gap:20px">
+    <div class="card navy"><h3>怎麼給</h3><ul class="dots sm"><li><span class="dose">6 mg</span> 由大條靜脈（前肘）<b>快速推注</b></li><li>立刻 <b>20 mL</b> 生理食鹽水推注</li><li>1–2 分鐘無效 → <span class="dose">12 mg</span> 同法</li><li>半衰期極短：雙管三通、同時推</li></ul></div>
+    <div class="card amber"><h3>劑量調整</h3><ul class="dots sm"><li><b>加量</b>：theophylline、caffeine</li><li><b>減半為 3 mg</b>：dipyridamole、carbamazepine、心臟移植、中心靜脈給藥</li><li>懷孕：安全有效</li></ul></div>
+    <div class="card red"><h3>副作用 / 小心</h3><ul class="dots sm"><li>臉潮紅、喘、胸悶（多為暫時）</li><li>可能誘發 AF：<b>WPW</b> 時心跳可能非常快 → 旁邊<b>備好去顫器</b></li><li>會造成喘 → 教材：氣喘病人不使用</li><li>先告訴病人「會有幾秒很不舒服」</li></ul></div>
+  </div>
+  <div class="cols c2" style="gap:22px;margin-top:20px">
+    <div class="callout ok"><span class="h">比 CCB 好的地方</span>效果較快、較安全、副作用少；amiodarone 也可終止 PSVT，但較慢且可能引起別的心律不整。</div>
+    <div class="callout"><span class="h">矯正後</span>觀察是否復發 → 再給 adenosine 或長效房室結阻斷劑（CCB 或 β-blocker）。</div>
+  </div>
+  <div class="notes">⚠ 教材寫「不穩定、規則窄 QRS，同步整流前可先試 adenosine（IIb）」。2025 Part 9 把 adenosine 用於規則窄 QRS 心搏過速的急性治療列為 Class 1（B-R），不穩定者仍以同步整流為 Class 1；流程圖寫法是「同步整流，若為規則窄 QRS 考慮 adenosine」。講課重點：不穩定時可以在準備電擊的同時推 adenosine，但不能因為 adenosine 而延誤電擊。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則窄 · CCB 與 β-blocker</div>
+  <h2>長效房室結阻斷劑：adenosine 無效、復發、或其他 SVT</h2><div class="rule" style="margin-bottom:16px"></div>
+  <table class="tight">
+    <tr><th style="width:18%">藥物</th><th style="width:44%">PSVT 劑量（教材）</th><th>COR / 注意</th></tr>
+    <tr><td><b>Diltiazem</b></td><td class="dose">15–20 mg（0.25 mg/kg）IV 2 分鐘<br>需要時 15 分鐘後 20–25 mg（0.35 mg/kg）</td><td>穩定規則窄 QRS <span class="cor c2a">2a</span></td></tr>
+    <tr><td><b>Verapamil</b></td><td class="dose">2.5–5 mg IV 2 分鐘（老人 3 分鐘）<br>每 15–30 分鐘 5–10 mg，總量 20 mg</td><td><span class="cor c2a">2a</span>；只用於窄 QRS；心室功能不良、心衰竭不可用</td></tr>
+    <tr><td><b>β-blocker</b></td><td>metoprolol、atenolol、esmolol、propranolol</td><td>2025 無正式 COR：支持文字指出一般安全、可終止穩定規則窄 QRS</td></tr>
+  </table>
+  <div class="cols c3" style="gap:18px;margin-top:18px">
+    <div class="callout red"><span class="h">不要合併兩種長效</span>CCB ＋ β-blocker：作用重疊 → 嚴重心搏過緩；短效 adenosine 可以合併使用。</div>
+    <div class="callout red"><span class="h">心衰竭</span>LV 收縮功能不良、失代償心衰竭：不用 ND-CCB 與 IV β-blocker <span class="cor c3">3 有害</span></div>
+    <div class="callout"><span class="h">早激發</span>WPW 合併 AF / AFL：房室結阻斷劑<b>禁忌</b>（見第六節）</div>
+  </div>
+  <div class="notes">β-blocker 副作用：心搏過緩、傳導延遲、低血壓；COPD 與鬱血性心衰竭小心（2025 支持文字認為 β-blocker 在 COPD 是安全的）。Labetalol 常用於高血壓而非心律不整。</div>
+</section>
+
+<!-- ============ 05 REGULAR WIDE ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 五 · Regular Wide</div>
+  <div class="big"><div class="no">05</div><h2>規則寬 QRS 心搏過速</h2><p>先當 VT · adenosine 診斷 · 抗心律不整藥物</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則寬 · 評估</div>
+  <h2>寬 QRS：不穩定就當 VT，立刻整流</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c46" style="gap:24px;align-items:start">
+    <div><div class="ecgbox"><canvas class="ecg" data-r="vt" data-h="160" data-sec="6" data-hr="170" data-label="單型 VT"></canvas></div>
+      <div class="card" style="margin-top:16px"><h3>QRS ≥ 0.12 秒的常見原因</h3><ul class="dots sm"><li>VT（或 VF）</li><li>SVT 合併變異傳導</li><li>早激發型心搏過速（副傳導路徑）</li><li>心室節律器心律</li></ul></div></div>
+    <div class="card navy"><h3>三個步驟</h3><ul class="dots sm">
+      <li><b>① 穩定還是不穩定？</b>不穩定（收縮壓 &lt; 80 或意識改變）→ 假設為 <b>VT</b>，立即同步整流 <span class="cor c1">1</span></li>
+      <li><b>② 儘早 12 導程</b>評估心律，考慮會診專家；任何時候變不穩定 → 同步整流；變 VF 或多型 VT → 去顫</li>
+      <li><b>③ 規則還是不規則？</b>規則：VT 或 SVT 合併變異傳導；不規則：AF 合併變異傳導、早激發型 AF、多型 VT / TdP</li>
+      <li>穩定但藥物無效或禁忌 → 同步整流 <span class="cor c1">1</span></li></ul></div>
+  </div>
+  <div class="notes">無法分辨時，先當 VT 處理比較安全：把 VT 當 SVT 給 verapamil 可能造成嚴重低血壓甚至心臟停止；把 SVT 當 VT 給 procainamide 或整流，通常不會出大事。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則寬 · Adenosine</div>
+  <h2>穩定、規則、單型：adenosine 可診斷兼治療 <span class="cor c2b">2b</span></h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card teal"><h3>可以用</h3><ul class="dots sm"><li><b>穩定</b>、<b>規則</b>、<b>單型</b>、來源不明的寬 QRS</li><li>劑量同 PSVT：6 mg → 12 mg（教材：失敗可再一次 12 mg）</li><li>SVT 合併變異傳導：可能暫時變慢或轉回竇性</li><li>VT：通常無效，但藥效短，不影響血流動力</li><li>隨時準備<b>去顫器</b></li></ul></div>
+    <div class="card red"><h3>不可以用 <span class="cor c3">3 有害</span></h3><ul class="dots sm"><li><b>不穩定</b>的寬 QRS</li><li><b>不規則</b>（irregularly irregular）的寬 QRS</li><li><b>多型</b>寬 QRS → 可能引起 VF</li><li>早激發型：可能變 AF 合併快速心室反應，甚至 VF</li></ul></div>
+  </div>
+  <div class="callout red" style="margin-top:22px"><span class="h">Verapamil / Diltiazem <span class="cor c3">3 有害</span></span>寬 QRS 心搏過速<b>禁用</b>，除非已確認為心室上來源；VT 病人用了會造成嚴重低血壓。</div>
+  <div class="notes">2025 Part 9：穩定、規則、單型寬 QRS 可考慮 adenosine 治療或診斷（2b, B-NR）；不穩定、不規則或多型不應給 adenosine（3: Harm, C-LD）；verapamil 與 diltiazem 不應給（3: Harm, B-NR）。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">規則寬 · 抗心律不整藥物</div>
+  <h2>穩定單型 VT：靜脈抗心律不整藥物 <span class="cor c2b">2b</span></h2><div class="rule" style="margin-bottom:16px"></div>
+  <table class="tight">
+    <tr><th style="width:17%">藥物</th><th style="width:40%">劑量</th><th>重點</th></tr>
+    <tr><td><b>Procainamide</b></td><td class="dose">20–50 mg/min（或每 5 分鐘 100 mg）<br>維持 1–4 mg/min</td><td>研究顯示終止穩定單型 VT 優於 lidocaine；QT 延長、心衰竭避免</td></tr>
+    <tr><td><b>Amiodarone</b></td><td class="dose">150 mg 給 10 分鐘，可重複<br>1 mg/min × 6 h → 0.5 mg/min × 18 h</td><td>冠心症合併心室功能不良者有效；最大 2.2 g/天；高劑量增加低血壓</td></tr>
+    <tr><td><b>Sotalol</b></td><td class="dose">100 mg（1.5 mg/kg）給 5 分鐘</td><td>2025 與 procainamide、amiodarone 並列；QT 延長避免（劑量依 2020 流程圖）</td></tr>
+    <tr><td><b>Lidocaine</b></td><td class="dose">1–1.5 mg/kg，每 5–10 分鐘 0.5–0.75 mg/kg，最多 3 mg/kg；維持 1–4 mg/min</td><td>二線；2025 無正式建議，對穩定 VT 的效益不明確</td></tr>
+  </table>
+  <div class="cols c2" style="gap:20px;margin-top:16px">
+    <div class="callout"><span class="h">一次一種</span>用了一種抗心律不整藥物，未會診專家前勿再加第二種（教材）。</div>
+    <div class="callout ok"><span class="h">藥物無效</span>考慮<b>同步整流</b> <span class="cor c1">1</span> 或會診專家。</div>
+  </div>
+  <div class="notes">⚠ 教材：procainamide IIa、amiodarone IIb。2025 Part 9：amiodarone、procainamide 或 sotalol 都是「可考慮」2b（B-R），沒有優劣排序。Sotalol 劑量 2025 支持文字沒寫，這裡沿用 2020 流程圖的 100 mg（1.5 mg/kg）5 分鐘，請講師依院內處方集確認。</div>
+</section>
+
+<!-- ============ 06 IRREGULAR ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 六 · Irregular</div>
+  <div class="big"><div class="no">06</div><h2>不規則與多型心搏過速</h2><p>AF / AFL · 早激發型 AF · 多型 VT / TdP</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">不規則 · AF / AFL</div>
+  <h2>AF / AFL 合併快速心室反應：控制速率、矯正節律</h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="cols c2" style="gap:20px">
+    <div class="ecgbox"><canvas class="ecg" data-r="af_rvr" data-h="130" data-sec="6" data-hr="140" data-label="AF 合併 RVR"></canvas></div>
+    <div class="ecgbox"><canvas class="ecg" data-r="afl21" data-h="130" data-sec="6" data-hr="150" data-label="AFL 2：1"></canvas></div>
+  </div>
+  <div class="cols c3" style="gap:20px;margin-top:18px">
+    <div class="card red"><h3>不穩定</h3><ul class="dots sm"><li>立即同步整流 <span class="cor c1">1</span></li><li>新發 AF / AFL 合併 ACS 且血行不穩、持續缺血或速率控制不佳 → 緊急整流 <span class="cor c1">1</span></li></ul></div>
+    <div class="card navy"><h3>穩定</h3><ul class="dots sm"><li>依症狀<b>控制速率</b></li><li>診斷有疑問 → 12 導程、會診</li><li>不規則窄 QRS 也可能是 MAT 或竇性合併 APC</li></ul></div>
+    <div class="card amber"><h3>超過 48 小時</h3><ul class="dots sm"><li>血栓機會增加（較短也不能排除）</li><li>除非不穩定，<b>不建議</b>電擊或藥物整流</li><li>先抗凝 heparin，TEE 確認左心房沒有血栓</li></ul></div>
+  </div>
+  <div class="notes">AFL 2：1 心室率常常剛好 150，是「心率 150 的規則窄 QRS」要先想到的鑑別。矯正節律的藥物很多、成功率差異大，且不一定有靜脈劑型，建議會診專家。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">不規則 · 速率控制</div>
+  <h2>速率控制：β-blocker 或 ND-CCB <span class="cor c1">1</span></h2><div class="rule" style="margin-bottom:14px"></div>
+  <table class="tight">
+    <tr><th style="width:17%">藥物</th><th style="width:33%">起始</th><th style="width:24%">維持</th><th>COR / 注意</th></tr>
+    <tr><td><b>Diltiazem</b></td><td class="dose">0.25 mg/kg IV 2 分鐘</td><td class="dose">5–10 mg/h</td><td rowspan="2"><span class="cor c1">1</span>（無早激發）；負向收縮力，HFpEF 較能耐受</td></tr>
+    <tr><td><b>Verapamil</b></td><td class="dose">0.075–0.15 mg/kg IV 2 分鐘</td><td class="dose">0.005 mg/kg/min</td></tr>
+    <tr><td><b>Metoprolol</b></td><td class="dose">2.5–5 mg IV 2 分鐘，最多 3 劑</td><td>—</td><td rowspan="3"><span class="cor c1">1</span>（無早激發）；心肌病變可安全使用，失代償者可能有害</td></tr>
+    <tr><td><b>Esmolol</b></td><td class="dose">500 mcg/kg IV 1 分鐘</td><td class="dose">50–300 mcg/kg/min</td></tr>
+    <tr><td><b>Propranolol</b></td><td class="dose">1 mg IV 1 分鐘，最多 3 劑</td><td>—</td></tr>
+    <tr><td><b>Amiodarone</b></td><td class="dose">300 mg IV 1 小時</td><td class="dose">10–50 mg/h × 24 h</td><td>重症病人 <span class="cor c2a">2a</span>；可能轉回竇性</td></tr>
+    <tr><td><b>Digoxin</b></td><td class="dose">0.25 mg IV，可重複</td><td>24 h 最多 1.5 mg</td><td>多為輔助；腎功能不全小心</td></tr>
+  </table>
+  <div class="callout red" style="margin-top:14px;font-size:20px"><span class="h">LV 收縮功能不良 / 失代償心衰竭</span>ND-CCB 與 IV β-blocker <span class="cor c3">3 有害</span> → 考慮 amiodarone、digoxin；速率控制無效或不適合 → 整流。</div>
+  <div class="notes">⚠ 這張表依 2025 Part 9 Table 2，和教材表 7-1 有幾處不同：教材 diltiazem 維持 5–15 mg/h（2025：5–10）；教材 metoprolol 5 mg 每 5 分鐘到 15 mg（2025：2.5–5 mg、最多 3 劑）；AF 速率控制 β-blocker / CCB 教材 IIa，2025 升為 Class 1（B-NR）。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">不規則 · 早激發型 AF</div>
+  <h2>早激發型 AF（WPW）：房室結阻斷劑會害死人</h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card red"><h3>為什麼</h3><ul class="dots sm"><li>心房衝動經<b>房室結</b>和<b>副傳導路徑</b>（Kent 束）兩條路下傳</li><li>阻斷房室結 → 衝動全走副傳導路徑 → 心室速率<b>更快</b>，可能變 <b>VF</b></li><li>心電圖：<b>不規則、非常快、寬且形狀多變</b>的 QRS</li></ul></div>
+    <div class="card navy"><h3>怎麼處理</h3><ul class="dots sm"><li>心率通常非常快，多需要<b>緊急同步整流</b></li><li>無法同步、無效或反覆發作 → 矯正節律藥物（如 procainamide），會診專家</li><li>不規則寬 QRS 都要先想到早激發型 AF</li></ul></div>
+  </div>
+  <div class="callout red" style="margin-top:24px"><span class="h">禁用 <span class="cor c3">3 有害</span></span>adenosine、ND-CCB（diltiazem、verapamil）、β-blocker、digoxin，以及 <b>IV amiodarone</b>。</div>
+  <div class="notes">⚠ 教材表 7-1 寫 amiodarone 可用於「控制早激發心房心律不整中副傳導路徑的心室速率」，內文也說 AF 心衰竭病人可用 amiodarone。2025 Part 9 明確寫：早激發型 AF / AFL 不應給 digoxin、ND-CCB、β-blocker 和 IV amiodarone（3: Harm, C-LD）。講課時要更正。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">不規則 · 多型 VT</div>
+  <h2>多型 VT：立即去顫，再看 QT</h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="cols c2" style="gap:20px">
+    <div class="ecgbox"><canvas class="ecg" data-r="tdp_sls" data-h="140" data-sec="8" data-label="TdP：長 QT ＋ 短-長-短起始"></canvas></div>
+    <div class="callout red"><span class="h">持續性多型 VT</span>一律視為不穩定，<b>立即非同步電擊</b> <span class="cor c1">1</span>，如同 VF 治療；延遲電擊會讓預後變差。</div>
+  </div>
+  <div class="cols c2" style="gap:22px;margin-top:18px">
+    <div class="card amber"><h3>竇性心律時 QT 延長 → TdP</h3><ul class="dots sm"><li>停止造成 QT 延長的藥物；矯正電解質（K、Mg）</li><li>反覆發作：<b>magnesium 1–2 g IV 15 分鐘</b> <span class="cor c2b">2b</span></li><li>合併心搏過緩或停頓：節律器或 isoproterenol</li><li>家族性長 QT：Mg、節律器、β-blocker，避免 isoproterenol</li></ul></div>
+    <div class="card navy"><h3>QT 正常 → 想心肌缺血</h3><ul class="dots sm"><li>反覆發作：IV <b>amiodarone</b> 或 <b>lidocaine</b>，並處理缺血 <span class="cor c2b">2b</span></li><li>β-blocker、心導管打通血管</li><li>常規 magnesium <span class="cor c3">3 無益</span></li></ul></div>
+  </div>
+  <div class="notes">⚠ 教材寫「鎂於正常 QT 間期的多型 VT 無效（IIb）」，2025 寫成 3: No Benefit（C-LD）。TdP 一定是多型 VT，但多型 VT 不一定是 TdP，要看竇性心律時有沒有 QT 延長。</div>
+</section>
+
+<!-- ============ 07 PRACTICE ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 七 · Practice</div>
+  <div class="big"><div class="no">07</div><h2>小站練習</h2><p>情境題 · 決策監視器 · 教材 vs 2025</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">小站練習 · 情境題</div>
+  <h2>情境練習：點擊顯示答案</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card teal reveal"><h3>Case 1</h3><div class="ecgbox"><canvas class="ecg" data-r="psvt" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">32 歲女性突然心悸 30 分鐘。HR 190 規則窄 QRS，BP 118/76，意識清楚、無胸痛。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>處置順序？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li>穩定、規則窄 QRS → 疑 <b>PSVT</b></li><li>監視器、IV、12 導程</li><li><b>改良式 Valsalva</b> <span class="cor c1">1</span></li><li>無效 → <b>adenosine 6 mg</b> 快推＋沖洗 → 12 mg</li><li>仍無效 / 復發 → diltiazem 或 verapamil</li></ul></div></div>
+    <div class="card red reveal"><h3>Case 2</h3><div class="ecgbox"><canvas class="ecg" data-r="vt" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">68 歲男性，陳舊性心肌梗塞。HR 180 規則寬 QRS，BP 72/40，意識混亂、冒冷汗，摸得到脈搏。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>下一步？可以先推 adenosine 嗎？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li>不穩定寬 QRS → 當 <b>VT</b></li><li>立即<b>同步整流 100 J</b>，可行時鎮靜，不可延誤</li><li><b>不要</b>先推 adenosine（不穩定寬 QRS <span class="cor c3">3</span>）</li><li>每次電擊後確認是否需重新同步；變無脈搏 → 心臟停止流程</li></ul></div></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="kicker">小站練習 · 情境題</div>
+  <h2>情境練習（續）</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card navy reveal"><h3>Case 3</h3><div class="ecgbox"><canvas class="ecg" data-r="af_rvr" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">76 歲男性，HFrEF（EF 25%），喘 3 天。HR 145 不規則窄 QRS，BP 108/70，兩側濕囉音。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>可以給 diltiazem 嗎？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li>AF 合併 RVR、<b>失代償心衰竭</b></li><li>ND-CCB、IV β-blocker <span class="cor c3">3 有害</span></li><li>速率控制：<b>amiodarone</b> <span class="cor c2a">2a</span> 或 digoxin</li><li>發作 &gt; 48 小時或不明 → 抗凝、TEE 後才整流（除非不穩定）</li><li>變不穩定 → 同步整流 ≥ 200 J</li></ul></div></div>
+    <div class="card amber reveal"><h3>Case 4</h3><div class="ecgbox"><canvas class="ecg" data-r="tdp_sls" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">55 歲女性，服用多種 QT 延長藥物，腹瀉 3 天。陣發性多型 VT 自行停止，竇性時 QTc 610 ms，K 2.8。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>處置？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li>長 QT 合併 <b>TdP</b></li><li>持續發作 → <b>立即非同步電擊</b> <span class="cor c1">1</span></li><li><b>Magnesium 1–2 g IV</b> <span class="cor c2b">2b</span></li><li>停用 QT 延長藥物、補鉀</li><li>心搏過緩依賴 → 節律器或 isoproterenol</li></ul></div></div>
+  </div>
+  <script>document.querySelectorAll('.ans .ck li').forEach(li=>li.addEventListener('click',e=>{e.stopPropagation();li.classList.toggle('done')}));</script>
+</section>
+
+<section class="slide">
+  <div class="kicker">小站練習 · 決策監視器</div>
+  <h2>決策監視器 <small>講師按「下一題」· 假設病人穩定：下一步？不穩定時呢？</small></h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="ecgbox"><canvas class="ecg" id="tqc" data-r="psvt" data-h="290" data-sec="7"></canvas></div>
+  <div style="display:flex;gap:16px;align-items:center;margin-top:20px">
+    <a href="#" class="btn" id="tqNext">▶ 下一題</a><a href="#" class="btn ghost" id="tqShow">揭曉答案</a>
+  </div>
+  <div id="tqAns" style="font-size:26px;font-weight:700;color:var(--navy);margin-top:16px;min-height:100px;line-height:1.45"></div>
+  <div class="notes">讓學員用三個問題回答：寬或窄、規則或不規則、穩定時的處置；再問一句「如果不穩定，幾焦耳？同步還是非同步？」</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Instructor Checklist</div>
+  <h2>教材 vs 2025 指引：講課時要更正 / 補充的地方</h2><div class="rule" style="margin-bottom:14px"></div>
+  <table class="tight">
+    <tr><th style="width:17%">主題</th><th style="width:36%">教材敘述</th><th>2025 AHA Part 9</th></tr>
+    <tr><td><b>早激發型 AF</b></td><td>amiodarone 可控制副傳導路徑的心室速率</td><td>IV amiodarone 與房室結阻斷劑同列 <span class="cor c3">3 有害</span> <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>穩定 VT 藥物</b></td><td>procainamide IIa、amiodarone IIb</td><td>amiodarone、procainamide、sotalol 皆 <span class="cor c2b">2b</span> <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>AF 速率控制</b></td><td>β-blocker、ND-CCB：IIa</td><td><span class="cor c1">1</span>（無早激發）；失代償 HF <span class="cor c3">3 有害</span> <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>AF 劑量</b></td><td>diltiazem 維持 5–15 mg/h；metoprolol 5 mg 到 15 mg</td><td>5–10 mg/h；metoprolol 2.5–5 mg、最多 3 劑 <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>多型 VT、QT 正常</b></td><td>鎂無效（IIb）</td><td>常規鎂 <span class="cor c3">3 無益</span> <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>Adenosine（窄）</b></td><td>不穩定規則窄 QRS 整流前可試：IIb</td><td>規則窄 QRS 急性治療 <span class="cor c1">1</span>；不穩定仍以整流 <span class="cor c1">1</span>，不可延誤</td></tr>
+    <tr><td><b>迷走神經刺激</b></td><td>單獨約 25%</td><td><span class="cor c1">1</span>；改良式 Valsalva 可達約 50% <span class="tag new">NEW</span></td></tr>
+    <tr><td><b>寬 QRS 不穩定</b></td><td>五項危險徵候</td><td>具體門檻：收縮壓 &lt; 80 或意識改變 <span class="tag new">NEW</span></td></tr>
+  </table>
+  <div class="callout ok" style="margin-top:12px;font-size:19px"><span class="h">✓ 與指引一致</span>同步整流能量（AF / AFL 200 J、窄 QRS / 單型 VT 100 J、多型 VT 去顫）、adenosine 6 / 12 mg、寬 QRS 禁用 verapamil、TdP 用鎂、不穩定立即整流。</div>
+  <div class="notes">其他小地方：教材 Af＝心房顫動、AF＝心房撲動，國際通用 AF＝心房顫動、AFL＝心房撲動，本投影片用後者。2025 另寫雙重同步整流 AF 為 2b（效用未確立）。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">總結</div>
+  <h2>重點回顧</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:22px">
+    <div class="card red"><h3>評估與不穩定</h3><ul class="dots sm"><li>心跳快是原因還是代償？竇性過速不電擊</li><li>五個危險徵候 → <b>同步整流</b>，清醒先鎮靜</li><li>AF / AFL 200 J，窄 QRS / 單型 VT 100 J，多型 VT 去顫</li></ul></div>
+    <div class="card teal"><h3>規則窄 QRS</h3><ul class="dots sm"><li>迷走神經刺激（改良式 Valsalva）→ <b>adenosine 6 / 12 mg</b></li><li>無效 / 復發 → diltiazem、verapamil（或 β-blocker）</li><li>不要合併兩種長效房室結阻斷劑</li></ul></div>
+    <div class="card navy"><h3>規則寬 QRS</h3><ul class="dots sm"><li>不確定就當 VT；verapamil / diltiazem 禁用</li><li>穩定、規則、單型可試 adenosine</li><li>procainamide、amiodarone、sotalol（2b）；無效 → 整流</li></ul></div>
+    <div class="card amber"><h3>不規則與多型</h3><ul class="dots sm"><li>AF：β-blocker / ND-CCB 控制速率，HF 用 amiodarone</li><li>&gt; 48 小時先抗凝再整流（除非不穩定）</li><li>早激發 AF：房室結阻斷劑與 IV amiodarone 都禁用</li><li>TdP：去顫＋鎂</li></ul></div>
+  </div>
+  <div class="notes">一句話收尾：三個問題：穩不穩定、寬或窄、規則不規則。答完就知道走哪一條路。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">參考資料</div>
+  <h2>參考資料 <small>References</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <ul class="refs">
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">教材</span>楊久滕。〈第 7 章 有症狀的心搏過緩／過速心律不整的處置〉。ACLS 精華 第七版。圖 7-2、7-3 與表 7-1 依原圖內容重繪。</li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">指引</span>Wigginton JG, et al. Part 9: Adult Advanced Life Support. 2025 AHA Guidelines for CPR and ECC. <i>Circulation</i> 2025;152(16 Suppl 2):S538. <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support" target="_blank" rel="noopener">連結 ↗</a></li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">流程</span>AHA. Adult Electrical Cardioversion Algorithm (2025). <a href="https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-ACLS-Electrical-Cardioversion-250514.pdf" target="_blank" rel="noopener">連結 ↗</a></li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">PubMed</span>Part 9: Adult Advanced Life Support (PMID 41122884). <a href="https://pubmed.ncbi.nlm.nih.gov/41122884/" target="_blank" rel="noopener">連結 ↗</a></li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">本系列</span>第 5 章 重要危急心電圖判讀（心律辨識）。<a href="../ch05-ecg/" target="_blank" rel="noopener">連結 ↗</a>　第 7 章 心搏過緩。<a href="../ch07-bradycardia/" target="_blank" rel="noopener">連結 ↗</a></li>
+  </ul>
+  <div class="callout" style="margin-top:20px;font-size:18px;padding:10px 18px"><span class="h">使用聲明</span>心電圖為教學示意動畫。本投影片供 ACLS 教學使用，劑量請依病人狀況、藥品仿單與院內規範確認。</div>
+</section>
+
+</div></div>
+
+<div id="bar"></div>
+<div id="help">← → 翻頁 · F 全螢幕 · N 備註 · E 播放心電圖 · P 列印</div>
+<div id="notes"></div>
+<nav id="mnav"><button id="mprev" aria-label="上一頁">‹</button><div class="mid"><span id="mpg"></span><button class="nb" id="mnotes">備註</button></div><button id="mnext" aria-label="下一頁">›</button></nav>
+
+<script src="../shared/flow.js"></script>
+<script>
+/* 圖 7-2 成人有脈搏心搏過速 */
+flow("f72",[
+ {x:6,y:20,w:300,h:110,t:"① 評估是否適合臨床狀況\n心率一般 ≥ 150 次/分",k:"navy",fs:21},
+ {x:6,y:175,w:300,h:260,t:"② 初始評估和支持處置\n維持呼吸道、視需要協助呼吸\n血氧過低才給氧\n監視器：心律、BP、SpO₂\n建立 IV 管路\n12 導程 ECG（若可取得）",fs:18},
+ {x:356,y:210,w:280,h:190,t:"③ 持續心搏過速造成\n低血壓 · 急性意識改變\n休克徵兆 · 缺血性胸痛\n急性心衰竭？",k:"dec",fs:19},
+ {x:700,y:20,w:340,h:170,t:"④ 同步心臟整流\n若可行，給予鎮靜\n若為規則窄 QRS\n考慮 adenosine",k:"navy",fs:20},
+ {x:700,y:440,w:300,h:110,t:"⑤ 寬 QRS？\n≥ 0.12 秒",k:"dec",fs:22},
+ {x:1080,y:280,w:356,h:165,t:"⑥ 寬 QRS · 考慮\n規則、單型 → adenosine\n抗心律不整藥物靜注\n會診專家",fs:19},
+ {x:1080,y:470,w:356,h:170,t:"⑦ 窄 QRS\n迷走神經刺激（若規則）\nadenosine（若規則）\nβ-blocker 或鈣離子阻斷劑\n考慮會診專家",fs:18},
+ {x:1080,y:20,w:356,h:230,t:"⑧ 若治療無效，考慮\n潛在原因\n提高下次電擊能量\n增加抗心律不整藥物\n會診專家",k:"note",fs:19}
+],[
+ {p:[[156,130],[156,175]]},
+ {p:[[306,305],[356,305]]},
+ {p:[[496,210],[496,105],[700,105]],l:"是",lx:510,ly:160,a:"start"},
+ {p:[[496,400],[496,495],[700,495]],l:"否",lx:510,ly:455,a:"start"},
+ {p:[[850,440],[850,362],[1080,362]],l:"是",lx:864,ly:405,a:"start"},
+ {p:[[1000,495],[1040,495],[1040,555],[1080,555]],l:"否",lx:1050,ly:530,a:"start"},
+ {p:[[1040,105],[1080,105]],dash:true}
+]);
+</script>
+<script>
+/* 決策監視器 */
+const TQ={
+ st:"竇性心搏過速 → 找原因（發燒、缺氧、休克、疼痛）；不電擊、不壓心率",
+ psvt:"PSVT → 迷走神經刺激 → adenosine 6 / 12 mg → CCB｜不穩定：同步 100 J",
+ afl21:"AFL 2：1（心室率 ~150）→ 速率控制 β-blocker / CCB｜不穩定：同步 200 J",
+ af_rvr:"AF 合併 RVR → β-blocker / ND-CCB（HF 用 amiodarone）；> 48 h 先抗凝｜不穩定：同步 ≥ 200 J",
+ mat:"MAT → 治療肺病、缺氧、電解質；整流無效",
+ at:"心房心搏過速 → 房室結阻斷劑只減慢速率；自主性者整流無效",
+ vt:"單型 VT → 穩定：procainamide / amiodarone / sotalol（可試 adenosine 診斷）｜不穩定：同步 100 J",
+ vt_neg:"單型 VT（房室分離）→ 同上；禁用 verapamil / diltiazem",
+ tdp:"Torsades de pointes → 立即非同步電擊（去顫）；magnesium 1–2 g；停 QT 藥物",
+ af_fast:"AF 合併非常快 RVR → 若 QRS 寬、形狀多變想早激發型：禁房室結阻斷劑，準備整流"};
+(function(){const c=document.getElementById('tqc'),ans=document.getElementById('tqAns'),ks=Object.keys(TQ);let cur='psvt';
+function stop(e){e.preventDefault();e.stopPropagation()}
+document.getElementById('tqNext').addEventListener('click',e=>{stop(e);let k;do{k=ks[Math.floor(Math.random()*ks.length)]}while(k===cur);cur=k;window.ECG&&ECG.set(c,k,'');ans.textContent=''});
+document.getElementById('tqShow').addEventListener('click',e=>{stop(e);ans.textContent=TQ[cur]});})();
+</script>
+<script src="../shared/deck.js"></script>
+<script src="../shared/ecg.js"></script>
+</body>
+</html>

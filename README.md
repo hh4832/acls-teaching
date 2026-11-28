@@ -10,6 +10,8 @@ ACLS 講師教學用的 HTML 投影片，依教科書章節整理，逐項對照
 | 第 4 章 呼吸道、呼吸動力的處置及氧氣治療 | [`ch04-airway/`](ch04-airway/) | https://hh4832.github.io/acls-teaching/ch04-airway/ |
 | 第 5 章 重要危急心電圖判讀 | [`ch05-ecg/`](ch05-ecg/) | https://hh4832.github.io/acls-teaching/ch05-ecg/ |
 | 第 6 章 心臟停止之治療 | [`ch06-cardiac-arrest/`](ch06-cardiac-arrest/) | https://hh4832.github.io/acls-teaching/ch06-cardiac-arrest/ |
+| 第 7 章 有症狀的心搏過緩 | [`ch07-bradycardia/`](ch07-bradycardia/) | https://hh4832.github.io/acls-teaching/ch07-bradycardia/ |
+| 第 7 章 有症狀的心搏過速 | [`ch07-tachycardia/`](ch07-tachycardia/) | https://hh4832.github.io/acls-teaching/ch07-tachycardia/ |
 | 第 9 章 急性冠狀動脈症候群（ACS） | [`ch09-acs/`](ch09-acs/) | https://hh4832.github.io/acls-teaching/ch09-acs/ |
 | 第 11 章 急性腦中風 | [`ch11-stroke/`](ch11-stroke/) | https://hh4832.github.io/acls-teaching/ch11-stroke/ |
 

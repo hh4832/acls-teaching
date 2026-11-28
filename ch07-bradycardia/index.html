@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>有症狀的心搏過緩｜ACLS 講師教學投影片（2025 AHA 指引核對版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+/* ---------- chapter 7 components ---------- */
+.ecgbox{border-radius:12px;overflow:hidden;border:1px solid #1e2a40}
+.ecgbox canvas{display:block}
+.title .ekg-live{position:absolute;left:0;right:0;top:600px;opacity:.95}
+.title .ekg-live .ecgbox{border:0;border-radius:0}
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.toc-item{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:baseline;background:var(--paper);border:1px solid var(--line);border-top:6px solid var(--navy);border-radius:14px;padding:18px 22px;color:var(--ink);text-decoration:none;transition:border-color .15s}
+.toc-item:hover{border-color:var(--red)}
+.toc-no{grid-row:1/3;font:700 38px var(--mono);color:var(--red);min-width:2.2ch}
+.toc-t{font-weight:900;font-size:25px;color:var(--navy)}
+.toc-d{color:var(--muted);font-size:18px;line-height:1.45;margin-top:4px}
+.k5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.k5 .k{background:var(--paper);border:1px solid var(--line);border-top:8px solid var(--red);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-height:190px}
+.k5 .k span{font:700 40px var(--mono);color:var(--red);line-height:1}.k5 .k b{font-size:26px;color:var(--navy)}.k5 .k em{font-style:normal;font-size:18px;color:var(--muted);line-height:1.45}
+.vs{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center;gap:10px}
+.vs i{font-style:normal;font:900 30px var(--mono);color:var(--muted);text-align:center}
+.btn{display:inline-block;background:var(--red);color:#fff;font:700 24px var(--font);padding:12px 28px;border-radius:10px;text-decoration:none}
+.btn.ghost{background:var(--paper);color:var(--navy);border:2px solid var(--navy)}
+.ans .ck{list-style:none;margin:6px 0 0;padding:0}.ans .ck li{position:relative;padding:4px 6px 4px 28px;margin-bottom:5px;border-radius:8px;background:#f3f1ec;cursor:pointer;font-size:19px;line-height:1.4}.ans .ck li:before{content:"☐";position:absolute;left:7px;top:4px}.ans .ck li.done{background:#e3f4ea;color:#2f6b46}.ans .ck li.done:before{content:"☑"}
+.lvl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.lvl .cell{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.lvl .cell h4{font-size:21px;color:var(--navy);margin:8px 0 4px}
+.lvl .cell p{font-size:18px;line-height:1.45}
+.lvl .cell.hi{border-top:6px solid var(--red)}.lvl .cell.lo{border-top:6px solid var(--teal)}
+body.m .toc,body.m .k5,body.m .lvl{grid-template-columns:1fr}
+body.m .vs{grid-template-columns:1fr}body.m .vs i{transform:rotate(90deg)}
+body.m .title .ekg-live{position:relative;top:auto;margin-top:30px}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+
+<!-- ============ TITLE ============ -->
+<section class="slide title">
+  <div class="ekg-live"><div class="ecgbox"><canvas class="ecg" data-r="avb3w" data-h="150" data-sec="6" data-hr="35" data-lead=" " data-autoplay></canvas></div></div>
+  <div class="inner">
+    <div class="kicker">ACLS Instructor · Chapter 7 · Part 1</div>
+    <h1>有症狀的心搏過緩<br><span style="font-size:58px;font-weight:500;color:#c8d3ea">Symptomatic Bradycardia</span></h1>
+    <p class="sub">評估 → 流程圖 → Atropine → 節律器 / 升壓劑</p>
+    <p class="sub" style="margin-top:28px;font-size:30px;color:#fff;font-weight:700">講師：台北市立聯合醫院陽明院區　急診主治醫師 懷顥</p>
+  </div>
+  <div class="meta">原著章節：楊久滕〈第 7 章 有症狀的心搏過緩／過速心律不整的處置〉心搏過緩部分｜依 2025 AHA Part 9 Adult ALS 逐項核對<br>操作：← → 翻頁 · F 全螢幕 · N 講者備註 · E 播放 / 暫停心電圖 · A 揭曉全部答案</div>
+  <div class="notes">開場：第 7 章分成心搏過緩、心搏過速兩份投影片，這份是心搏過緩。心律怎麼認在第 5 章，這裡只講「怎麼處置」。一句話帶過全章：先看病人，再看心律；先問心律是不是造成症狀的原因。標示 ⚠ 的地方是教材與 2025 AHA 指引寫法不同、講課時要更正的地方。</div>
+</section>
+
+<!-- ============ TOC ============ -->
+<section class="slide">
+  <div class="kicker">Contents · 目錄</div><h2>目錄</h2><div class="rule"></div>
+  <div class="toc">
+    <a class="toc-item" data-key="Chapter 一 · Assess" href="#"><span class="toc-no"></span><span class="toc-t">一｜評估</span><span class="toc-d">不穩定 vs 有症狀 → 心律是不是原因 → 五個危險徵候 → 潛在原因 → 阻斷位置</span></a>
+    <a class="toc-item" data-key="Chapter 二 · Algorithm" href="#"><span class="toc-no"></span><span class="toc-t">二｜流程圖</span><span class="toc-d">圖 7-1 重繪：評估與支持 → atropine → TCP / 升壓劑 → TVP</span></a>
+    <a class="toc-item" data-key="Chapter 三 · Treatment" href="#"><span class="toc-no"></span><span class="toc-t">三｜治療</span><span class="toc-d">Atropine、經皮節律器、dopamine / epinephrine、經靜脈節律器、特殊情況</span></a>
+    <a class="toc-item" data-key="Chapter 四 · Practice" href="#"><span class="toc-no"></span><span class="toc-t">四｜小站練習</span><span class="toc-d">情境題、決策監視器、教材 vs 2025、重點回顧</span></a>
+  </div>
+  <p style="margin-top:30px;font-size:22px" class="muted">圖例：<span class="cor c1">Class 1</span> 建議 <span class="cor c2a">2a</span> 合理 <span class="cor c2b">2b</span> 可考慮 <span class="cor c3">3</span> 無益 / 有害　<span class="tag ok">✓ 已核實</span> <span class="tag warn">⚠ 需更正</span> <span class="tag new">NEW 2025</span>　點選章節可直接跳頁</p>
+</section>
+
+<!-- ============ 01 ASSESS ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 一 · Assess</div>
+  <div class="big"><div class="no">01</div><h2>評估：先看病人，再看心律</h2><p>不穩定 vs 有症狀 · 五個危險徵候 · 潛在原因</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 名詞</div>
+  <h2>「不穩定」與「有症狀」不一樣</h2><div class="rule" style="margin-bottom:22px"></div>
+  <div class="vs">
+    <div class="card red"><h3>不穩定 Unstable</h3><ul class="dots sm"><li>重要器官功能<b>快速惡化</b>，或<b>快要心臟停止</b></li><li>心律不整造成 → <b>立刻處置</b></li><li>例：意識變差、BP 70/40、休克</li></ul></div>
+    <i>vs</i>
+    <div class="card teal"><h3>有症狀 Symptomatic</h3><ul class="dots sm"><li>心律不整<b>引起症狀</b>：心悸、頭暈、喘</li><li>但病人<b>穩定、無立即危險</b></li><li>有時間做 12 導程、會診、選更適當的處置</li></ul></div>
+  </div>
+  <div class="callout red" style="margin-top:26px"><span class="h">兩種情況都要先問</span>這個心律<b>是不是造成</b>病人症狀或不穩定的原因？還是只是另一個問題的<b>結果</b>？</div>
+  <div class="notes">教材綜論的第一段。這兩個詞在整個第 7 章會一直出現：不穩定 → 立刻處置；有症狀但穩定 → 有時間多做一些評估。兩種都要先判斷因果關係。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 定義</div>
+  <h2>心搏過緩：治療病人，不治療數字</h2><div class="rule" style="margin-bottom:22px"></div>
+  <div class="cols c3" style="gap:22px">
+    <div class="card navy"><div class="stat">&lt; 60<small> 次/分</small></div><h3 style="margin-top:12px">定義</h3><ul class="dots sm"><li>心電圖上的心搏過緩</li><li>運動員、睡眠中可為<b>正常生理</b></li></ul></div>
+    <div class="card red"><div class="stat">&lt; 50<small> 次/分</small></div><h3 style="margin-top:12px">造成症狀時</h3><ul class="dots sm"><li>流程圖的起點：心率一般 &lt; 50</li><li>但有些人 &gt; 50 也可能<b>不夠用</b>（相對心搏過緩）</li></ul></div>
+    <div class="card amber"><div class="stat" style="font-size:56px">症狀</div><h3 style="margin-top:12px">決定要不要治療</h3><ul class="dots sm"><li>無症狀或很輕 → 不一定要治療</li><li>例外：可能惡化或威脅生命的心律（如 AMI 合併<b>高度房室阻斷</b>）</li></ul></div>
+  </div>
+  <div class="callout" style="margin-top:24px"><span class="h">嚴重度看原因</span>嚴重缺氧、即將呼吸衰竭的病人會<b>突然</b>心搏過緩，不處理就心臟停止；反過來，代償良好的<b>三度房室阻斷</b>可能只是血壓偏低、其他相對穩定。</div>
+  <div class="notes">「心率一般 &lt; 50」是流程圖第一格的寫法。數字只是門檻，真正的判斷是症狀和灌流。問學員：心率 55 的心衰竭病人一定不需要處理嗎？</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 因果</div>
+  <h2>心搏過緩是原因，還是結果？</h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c46" style="gap:26px;align-items:start">
+    <div>
+      <div class="ecgbox"><canvas class="ecg" data-r="sb" data-h="150" data-sec="6" data-hr="38" data-label="SpO₂ 78%　RR 34"></canvas></div>
+      <div class="card red" style="margin-top:18px"><h3>例：呼吸衰竭</h3><p>嚴重缺氧 → 低血壓 → 心搏過緩。<br>這時的心搏過緩<b>不是</b>不穩定的原因，只治療心搏過緩、不處理缺氧，<b>不可能改善</b>。</p></div>
+    </div>
+    <div class="card navy"><h3>缺氧是心搏過緩常見原因：先看呼吸</h3>
+      <ul class="dots sm">
+        <li>呼吸作功增加的徵象：<b>呼吸快、肋間肌與胸骨上凹陷、奇異式腹式呼吸</b></li>
+        <li>脈動式血氧監測 SpO₂</li>
+        <li>氧氣不足或呼吸作功增加 → <b>給氧</b>，必要時<b>正壓通氣</b></li>
+        <li>接監視器、量血壓、建立 IV</li>
+        <li>有心電圖機就做 12 導程，但<b>不可延誤治療</b></li>
+      </ul>
+      <div class="callout ok" style="margin-top:14px;font-size:20px"><span class="h">2025 AHA</span>評估並治療可逆原因 <span class="cor c1">1</span>（C-EO）</div>
+    </div>
+  </div>
+  <div class="notes">教材綜論舉的例子：呼吸衰竭嚴重缺氧造成低血壓和心搏過緩。這是小站教學最常見的陷阱：學員一看到慢就喊 atropine，卻沒注意病人在喘、SpO₂ 很低。正確順序：呼吸道、氧氣、通氣先處理，再評估心搏過緩是否仍造成灌流不足。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 危險徵候</div>
+  <h2>心肺功能不良：五個危險徵候</h2><div class="rule" style="margin-bottom:22px"></div>
+  <div class="k5">
+    <div class="k"><span>1</span><b>低血壓</b><em>或其他灌流不足的表現</em></div>
+    <div class="k"><span>2</span><b>急性意識改變</b><em>嗜睡、混亂、躁動</em></div>
+    <div class="k"><span>3</span><b>休克徵象</b><em>冰冷、蒼白、冒冷汗、尿少</em></div>
+    <div class="k"><span>4</span><b>缺血性胸痛</b><em>缺血性胸口不適</em></div>
+    <div class="k"><span>5</span><b>急性心衰竭</b><em>肺水腫、呼吸喘、端坐呼吸</em></div>
+  </div>
+  <div class="cols c2" style="gap:22px;margin-top:24px">
+    <div class="callout red"><span class="h">判斷重點</span>這些徵候在<b>適當的呼吸道處置與通氣之後仍持續</b>，且認為是<b>心搏過緩造成</b> → 立即處置。</div>
+    <div class="callout ok"><span class="h">NEW 2025</span>2025 Part 9 第一個重點：快速評估臨床穩定度，並更詳細描述「器官灌流不良」如何表現為不穩定。</div>
+  </div>
+  <div class="notes">五個徵候在心搏過速流程也一模一樣，可以讓學員背成一組：「低血壓、意識改變、休克、胸痛、心衰竭」。任何一項存在、且是心搏過緩造成，就走流程圖右邊的 atropine 路線。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 潛在原因</div>
+  <h2>找原因：在治療根本原因之前，心搏過緩很難解決</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:24px;align-items:start">
+    <div>
+      <table>
+        <tr><th style="width:34%">原因</th><th>舉例 / 線索</th></tr>
+        <tr><td><b>心肌缺血 / 梗塞</b></td><td>下壁 MI（RCA）常見竇性過緩、房室阻斷</td></tr>
+        <tr><td><b>藥物 / 中毒</b></td><td>鈣離子阻斷劑、β-blocker、毛地黃</td></tr>
+        <tr><td><b>缺氧</b></td><td>呼吸衰竭、氣道阻塞</td></tr>
+        <tr><td><b>電解質異常</b></td><td>高血鉀：T 波高尖、QRS 變寬</td></tr>
+        <tr><td><b>其他</b></td><td>結構性心臟病、迷走神經張力增高</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="ecgbox"><canvas class="ecg" data-r="hyperk" data-h="150" data-sec="6" data-label="高血鉀"></canvas></div>
+      <div class="callout" style="margin-top:16px"><span class="h">同時做</span>評估潛在原因的<b>同時</b>，給予緊急治療維持穩定；確認灌流不足的徵候是<b>心搏過緩引起</b>，若不是，另外找原因。</div>
+    </div>
+  </div>
+  <div class="notes">流程圖左下角的「原因」方塊就是這四項。問學員：洗腎病人漏洗、心跳慢、QRS 寬，第一個要想到什麼？高血鉀。這時 atropine 常效果不好，要做病因治療（鈣、insulin＋glucose 等）。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">評估 · 阻斷位置</div>
+  <h2>房室阻斷：阻斷在哪裡，決定 atropine 有沒有效</h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="lvl">
+    <div class="cell lo"><div class="ecgbox"><canvas class="ecg" data-r="avb1" data-h="110" data-sec="5" data-lead=" "></canvas></div><h4>一度</h4><p>PR &gt; 0.20 秒<br>常為<b>良性</b></p></div>
+    <div class="cell lo"><div class="ecgbox"><canvas class="ecg" data-r="wenck" data-h="110" data-sec="5" data-lead=" "></canvas></div><h4>二度 I 型（Mobitz I）</h4><p>阻斷在<b>房室結</b><br>常暫時性、無症狀</p></div>
+    <div class="cell hi"><div class="ecgbox"><canvas class="ecg" data-r="mobitz2" data-h="110" data-sec="5" data-lead=" "></canvas></div><h4>二度 II 型（Mobitz II）</h4><p>阻斷常在 <b>His-Purkinje</b><br>常有症狀，可能變三度</p></div>
+    <div class="cell hi"><div class="ecgbox"><canvas class="ecg" data-r="avb3w" data-h="110" data-sec="5" data-lead=" "></canvas></div><h4>三度（寬 QRS）</h4><p>房室間沒有電衝動傳遞<br>可在房室結、His 束或束枝</p></div>
+  </div>
+  <div class="cols c2" style="gap:22px;margin-top:20px">
+    <div class="callout ok"><span class="h">房室結層級</span>竇性過緩、竇性停止、Mobitz I、窄 QRS 三度 → atropine <b>常有效</b></div>
+    <div class="callout red"><span class="h">結下層級</span>Mobitz II、三度合併<b>新的寬 QRS</b> → atropine <b>可能無效</b>，直接 TCP 或 β-交感興奮劑，會診裝 TVP</div>
+  </div>
+  <div class="notes">怎麼認這些心律請回到第 5 章，這一頁只講處置意義：atropine 是阻斷副交感神經，只對房室結以上有用。阻斷在 His 束以下時，atropine 加快的是心房，心室跟不上，反而沒效。看到 Mobitz II 或寬 QRS 的三度，atropine 可以先給一劑，但同時就要準備節律器。</div>
+</section>
+
+<!-- ============ 02 ALGORITHM ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 二 · Algorithm</div>
+  <div class="big"><div class="no">02</div><h2>成人有脈搏心搏過緩流程圖</h2><p>圖 7-1 · 2025 年更新</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">流程 · 圖 7-1</div>
+  <h2>流程圖：成人有脈搏心搏過緩 <span class='tag new' style='font-size:16px'>2025</span></h2><div class="rule" style="margin-bottom:10px"></div>
+  <svg class="flow" id="f71" viewBox="0 0 1440 640"></svg>
+  <div class="notes">依教材圖 7-1 重繪，數字是講課用的編號。走法：① 確認心率真的慢、且和臨床狀況不相符 → ② 一邊找原因一邊支持 → ③ 問有沒有心肺功能不良。沒有 → ④ 觀察、找原因。有且持續 → ⑤ atropine → 無效 ⑥ TCP 和／或 dopamine 或 epinephrine 點滴 → ⑦ 會診、經靜脈節律器。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">流程 · 劑量</div>
+  <h2>流程圖右側：劑量一頁看完</h2><div class="rule" style="margin-bottom:20px"></div>
+  <table>
+    <tr><th style="width:20%">藥物 / 處置</th><th style="width:34%">劑量</th><th>重點</th></tr>
+    <tr><td><b>Atropine</b> IV</td><td class="dose">1 mg 快速推注<br>每 3–5 分鐘重複<br>最大 3 mg</td><td>第一線 <span class="cor c2a">2a</span>；不應延遲灌流不良病人的體外節律器</td></tr>
+    <tr><td><b>Dopamine</b> 點滴</td><td class="dose">5–20 mcg/kg/min</td><td>依反應調整，<b>調降要緩慢</b>；先確認血管內容積足夠</td></tr>
+    <tr><td><b>Epinephrine</b> 點滴</td><td class="dose">2–10 mcg/min</td><td>依反應調整；先確認血管內容積足夠</td></tr>
+    <tr><td><b>經皮節律器 TCP</b></td><td>atropine 無效時</td><td>與升壓劑同列，<span class="cor c2b">2b</span>；暫時處置，等待 TVP</td></tr>
+    <tr><td><b>經靜脈節律器 TVP</b></td><td>藥物與 TCP 無效</td><td><span class="cor c2a">2a</span>；會診心臟科</td></tr>
+  </table>
+  <div class="callout" style="margin-top:18px;font-size:20px"><span class="h">⚠ 單位</span>教材內文 dopamine 寫成「mg/kg/min」，正確單位是 <b>mcg（µg）/kg/min</b>。</div>
+  <div class="notes">劑量背法：atropine「1、3–5、3」：一次 1 mg、每 3–5 分鐘、最多 3 mg。Dopamine 5–20 是 per kg；epinephrine 2–10 是 per minute，不乘體重。這兩個單位學員最常搞混。</div>
+</section>
+
+<!-- ============ 03 TREATMENT ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 三 · Treatment</div>
+  <div class="big"><div class="no">03</div><h2>治療</h2><p>Atropine · 節律器 · 升壓劑 · 特殊情況</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">治療 · Atropine</div>
+  <h2>Atropine：第一線 <span class="cor c2a">2a</span></h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c3" style="gap:22px">
+    <div class="card navy"><h3>怎麼給</h3><ul class="dots sm"><li><span class="dose">1 mg IV</span> 快速推注</li><li>每 3–5 分鐘重複</li><li>總量最多 <span class="dose">3 mg</span></li><li>反轉副交感造成的心律變慢</li><li>用在<b>等待</b>經皮或經靜脈節律器時</li></ul></div>
+    <div class="card teal"><h3>適合誰</h3><ul class="dots sm"><li>有症狀的<b>竇性心搏過緩</b></li><li><b>房室結</b>層級的傳導阻斷</li><li>竇性停止</li><li>成人試驗：可改善心率與相關症狀徵候</li></ul></div>
+    <div class="card red"><h3>小心 / 可能無效</h3><ul class="dots sm"><li><b>急性冠心症</b>：增快心跳可能惡化缺氧、擴大梗塞</li><li><b>心臟移植</b>：缺乏迷走神經支配，可能無效</li><li><b>Mobitz II、三度合併新寬 QRS</b>：阻斷在結下，可能無效</li><li>劑量 &lt; 0.5 mg 可能使心跳更慢（教材）</li></ul></div>
+  </div>
+  <div class="callout red" style="margin-top:22px"><span class="h">不要卡在 atropine</span>給 atropine <b>不應延遲</b>灌流不良病人的節律器。第一劑沒效，同時就準備 TCP 或點滴。</div>
+  <div class="notes">2025 Part 9：atropine 用於有血行動力學不穩定的急性心搏過緩是合理的（2a, B-NR），與教材 IIa 一致。「劑量小於 0.5 mg 可能矛盾性變慢」是教材與舊版 ACLS 的說法，2025 流程圖沒再寫，但第一劑已經是 1 mg，實務上不會碰到。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">治療 · 經皮節律器</div>
+  <h2>經皮節律器 TCP：暫時處置 <span class="cor c2b">2b</span></h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="cols c46" style="gap:24px;align-items:start">
+    <div>
+      <div class="ecgbox"><canvas class="ecg" data-r="pace_v" data-h="150" data-sec="6" data-hr="70" data-label="電氣捕捉：每個 spike 後跟寬 QRS"></canvas></div>
+      <div class="card red" style="margin-top:16px"><h3>指引說法</h3><ul class="dots sm"><li>atropine 無效：TCP 或升壓劑點滴，<b>等待 TVP</b> <span class="cor c2b">2b</span></li><li>高度房室阻斷、不穩定、<b>沒有 IV/IO</b> → 可考慮<b>立即</b>節律 <span class="cor c2b">2b</span></li><li>清醒病人<b>相當疼痛</b>；不論有沒有效，都要準備 TVP、會診</li></ul></div>
+    </div>
+    <div class="card navy"><h3>操作步驟 <span class="tag warn">補充</span></h3>
+      <ul class="dots sm">
+        <li>貼片前後位（或前側位），接上監視導程</li>
+        <li>清醒病人先<b>鎮靜止痛</b>（如 fentanyl ＋ midazolam）</li>
+        <li>選 Pacer 模式，設定心率約 <b>60–80 次/分</b></li>
+        <li>電流（mA）由低往上調，直到<b>電氣捕捉</b>：每個 spike 後都跟著寬 QRS 與 T 波</li>
+        <li>確認<b>機械捕捉</b>：摸<b>股動脈</b>（頸動脈易被肌肉抽動誤導）、看 SpO₂ 波形與血壓</li>
+        <li>設定在捕捉閾值<b>略高</b>一點，持續監測</li>
+      </ul>
+    </div>
+  </div>
+  <div class="notes">⚠ 教材寫 TCP 用於不穩定且對 atropine 無效病人為 IIa；2025 AHA Part 9 把「升壓劑或 TCP」合併為一條，等級 2b（C-LD）。操作步驟是 ACLS 小站教學的補充，教材沒有寫。最常見的錯誤：只看到 spike 就以為成功，沒有確認每個 spike 後面都有 QRS，也沒有摸脈搏。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">治療 · 升壓劑</div>
+  <h2>Dopamine 與 Epinephrine 點滴 <span class="cor c2b">2b</span></h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card navy"><h3>Dopamine</h3><ul class="dots sm"><li>兒茶酚胺，有 α 與 β 交感作用</li><li>較低劑量以增強<b>心臟收縮與心率</b>為主；<b>≥ 10 mcg/kg/min</b> 同時有血管收縮作用</li><li>起始 <span class="dose">5–20 mcg/kg/min</span>，依反應調整</li><li>特別適合<b>合併低血壓</b>者</li></ul></div>
+    <div class="card red"><h3>Epinephrine</h3><ul class="dots sm"><li>兒茶酚胺，有 α 與 β 交感作用</li><li>起始 <span class="dose">2–10 mcg/min</span>，依反應調整</li><li>特別適合<b>合併低血壓</b>者</li><li>不乘體重；配法依院內規範</li></ul></div>
+  </div>
+  <div class="cols c2" style="gap:24px;margin-top:22px">
+    <div class="callout"><span class="h">何時用</span>atropine <b>無效或不適合</b>、等待節律器時的暫時處置；β-blocker 或鈣離子阻斷劑過量時也適用。</div>
+    <div class="callout red"><span class="h">用之前</span>評估<b>血管內容積</b>是否足夠，需要時先適當補充輸液。</div>
+  </div>
+  <div class="notes">2025 AHA：atropine 無效時，有加快心率作用的靜脈腎上腺素性藥物（如 epinephrine、dopamine）或 TCP 可能有效，同時準備經靜脈節律器（2b, C-LD）。實務上很多急診用 epinephrine 點滴比 dopamine 方便，劑量好記、不用算體重。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">治療 · TVP 與會診</div>
+  <h2>經靜脈節律器 TVP 與會診專家</h2><div class="rule" style="margin-bottom:22px"></div>
+  <div class="cols c3" style="gap:22px">
+    <div class="card navy"><h3>TVP <span class="cor c2a">2a</span></h3><ul class="dots sm"><li>持續不穩定、對藥物治療<b>無效</b>的心搏過緩</li><li>藥物與 TCP 都無效時</li><li>多數 TCP 病人最後都需要</li></ul></div>
+    <div class="card red"><h3>直接準備 TVP</h3><ul class="dots sm"><li><b>Mobitz II</b></li><li><b>三度</b>房室阻斷，尤其合併新的寬 QRS</li><li>AMI 合併高度房室阻斷（即使目前症狀輕）</li></ul></div>
+    <div class="card teal"><h3>會診時要講</h3><ul class="dots sm"><li>心律與 12 導程（阻斷位置）</li><li>血壓、意識、灌流</li><li>已給的 atropine 劑量、TCP 設定</li><li>可疑原因：MI、藥物、高血鉀</li></ul></div>
+  </div>
+  <div class="callout ok" style="margin-top:24px"><span class="h">✓ 與 2025 一致</span>對藥物治療無效的持續不穩定心搏過緩，暫時性經靜脈節律是合理的 <span class="cor c2a">2a</span>（C-LD）；教材 IIa。</div>
+  <div class="notes">TCP 是橋樑，不是終點。在 TCP 打上去的那一刻就要打電話給心臟科。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">治療 · 特殊情況</div>
+  <h2>特殊情況：先治療原因</h2><div class="rule" style="margin-bottom:20px"></div>
+  <div class="cols c2" style="gap:22px">
+    <div class="card red"><h3>急性冠心症</h3><ul class="dots sm"><li>atropine 小心使用：增快心跳可能惡化缺氧、擴大梗塞</li><li>下壁 MI ＋ 低血壓：想到<b>右心室梗塞</b>，先給輸液，避免 NTG</li><li>高度房室阻斷即使症狀輕，也要準備節律器</li></ul></div>
+    <div class="card navy"><h3>β-blocker / 鈣離子阻斷劑過量</h3><ul class="dots sm"><li>atropine 常效果不佳</li><li>epinephrine、dopamine 點滴是適當的替代</li><li>解毒處置（鈣、glucagon、高劑量胰島素等）依中毒章節，會診毒物科 <span class="tag warn">補充</span></li></ul></div>
+    <div class="card amber"><h3>高血鉀</h3><ul class="dots sm"><li>T 波高尖、P 波消失、QRS 變寬、慢</li><li>病因治療：鈣劑穩定心肌、insulin＋glucose、透析</li><li>atropine、TCP 可能效果不好</li></ul></div>
+    <div class="card teal"><h3>心臟移植</h3><ul class="dots sm"><li>缺乏迷走神經支配 → atropine 可能無效</li><li>直接用 β-交感興奮劑或節律器</li></ul></div>
+  </div>
+  <div class="notes">這一頁把教材分散在各段的特殊情況集中。教材只寫「替代藥物於 β-blocker 或鈣離子通道阻斷劑過量時也是適當的」，解毒劑細節屬 2025 AHA Part 10 特殊情況（中毒），這裡只點到為止。</div>
+</section>
+
+<!-- ============ 04 PRACTICE ============ -->
+<section class="slide divider">
+  <div class="kicker" style="position:absolute;left:84px;top:64px">Chapter 四 · Practice</div>
+  <div class="big"><div class="no">04</div><h2>小站練習</h2><p>情境題 · 決策監視器 · 教材 vs 2025</p></div>
+</section>
+
+<section class="slide">
+  <div class="kicker">小站練習 · 情境題</div>
+  <h2>情境練習：點擊顯示答案</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card red reveal"><h3>Case 1</h3><div class="ecgbox"><canvas class="ecg" data-r="mobitz2" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">78 歲女性頭暈、反應變慢。HR 40，BP 76/42，四肢冰冷，SpO₂ 96%。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>穩定嗎？處置順序？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li>判讀：<b>二度 II 型房室阻斷</b>，低血壓＋意識改變 → <b>不穩定</b></li><li>給氧視需要、監視器、IV、12 導程（不延誤）</li><li><b>Atropine 1 mg IV</b>，但阻斷在結下可能無效</li><li>同時準備 <b>TCP</b> 和／或 epinephrine 2–10 mcg/min</li><li>會診心臟科，準備 <b>TVP</b></li></ul></div></div>
+    <div class="card navy reveal"><h3>Case 2</h3><div class="ecgbox"><canvas class="ecg" data-r="sb" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">62 歲男性胸痛 1 小時，ECG II、III、aVF ST 上升。HR 42 竇性，BP 82/50，冒冷汗。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>心搏過緩怎麼處理？還要注意什麼？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li>下壁 STEMI 合併<b>竇性過緩</b>（房室結層級），atropine 常有效</li><li><b>Atropine 1 mg IV</b>，小心心跳增快惡化缺血</li><li>右側導程看 <b>RV 梗塞</b>：輸液、避免 NTG</li><li>啟動 STEMI 流程，再灌流才是治本</li></ul></div></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="kicker">小站練習 · 情境題</div>
+  <h2>情境練習（續）</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:24px">
+    <div class="card amber reveal"><h3>Case 3</h3><div class="ecgbox"><canvas class="ecg" data-r="hyperk" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">70 歲洗腎病人，漏洗兩次，全身無力。HR 38，QRS 寬、T 波高尖，BP 88/54，意識清楚。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>最可能的原因？第一步處置？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li>高度懷疑<b>高血鉀</b></li><li>先給<b>鈣劑</b>穩定心肌，再 insulin＋glucose，安排<b>透析</b></li><li>atropine、TCP 可能效果不好</li><li>持續監測，準備惡化成 PEA / VF</li></ul></div></div>
+    <div class="card teal reveal"><h3>Case 4</h3><div class="ecgbox"><canvas class="ecg" data-r="sb" data-h="90" data-sec="5" data-lead=" "></canvas></div><p style="font-size:21px;margin-top:10px">24 歲馬拉松選手，健檢發現 HR 44。無任何症狀，BP 118/70，活動時心率正常上升。</p><p style="font-size:21px;margin-top:8px"><b>Q：</b>要給 atropine 嗎？</p><p class="hint">▶ 點擊顯示</p><div class="ans" style="margin-top:8px"><b class="red">A：</b><ul class="ck"><li><b>不用</b>：運動員的<b>生理性</b>竇性心搏過緩</li><li>沒有心肺功能不良 → 流程圖 ④ 觀察</li><li>治療病人，不治療數字</li></ul></div></div>
+  </div>
+  <script>document.querySelectorAll('.ans .ck li').forEach(li=>li.addEventListener('click',e=>{e.stopPropagation();li.classList.toggle('done')}));</script>
+</section>
+
+<section class="slide">
+  <div class="kicker">小站練習 · 決策監視器</div>
+  <h2>決策監視器 <small>講師按「下一題」· 學員回答：atropine 可能有效嗎？下一步？</small></h2><div class="rule" style="margin-bottom:16px"></div>
+  <div class="ecgbox"><canvas class="ecg" id="bqc" data-r="sb" data-h="290" data-sec="7"></canvas></div>
+  <div style="display:flex;gap:16px;align-items:center;margin-top:20px">
+    <a href="#" class="btn" id="bqNext">▶ 下一題</a><a href="#" class="btn ghost" id="bqShow">揭曉答案</a>
+  </div>
+  <div id="bqAns" style="font-size:28px;font-weight:700;color:var(--navy);margin-top:16px;min-height:90px;line-height:1.45"></div>
+  <div class="notes">假設每一題的病人都「有脈搏、有症狀、低血壓」。讓學員先講心律名稱，再講阻斷位置、atropine 會不會有效、下一步。監視器不顯示心率，讓學員自己數。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Instructor Checklist</div>
+  <h2>教材 vs 2025 指引：講課時要更正 / 補充的地方</h2><div class="rule" style="margin-bottom:18px"></div>
+  <table class="tight">
+    <tr><th style="width:20%">主題</th><th style="width:36%">教材敘述</th><th>2025 AHA Part 9</th></tr>
+    <tr><td><b>TCP</b></td><td>不穩定且對 atropine 無效：Class IIa</td><td>升壓劑<b>或</b> TCP 合併為一條 <span class="cor c2b">2b</span>（C-LD） <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>綜論段落</b></td><td>atropine 無效時 β-興奮劑或 TCP（Class IIa）</td><td>同上，<span class="cor c2b">2b</span> <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>Dopamine 單位</b></td><td>「5–20 mg/kg/min」</td><td><b>mcg/kg/min</b>（流程圖本身正確） <span class="tag warn">⚠</span></td></tr>
+    <tr><td><b>找原因</b></td><td>需確認並治療根本病因</td><td>明列為 <span class="cor c1">1</span>（C-EO） <span class="tag new">NEW</span></td></tr>
+    <tr><td><b>不穩定</b></td><td>五項危險徵候</td><td>同；2025 更詳細描述器官灌流不良如何表現為不穩定 <span class="tag new">NEW</span></td></tr>
+    <tr><td><b>Atropine &lt; 0.5 mg</b></td><td>可能導致心跳更慢</td><td>2025 流程圖未再提及；首劑已是 1 mg</td></tr>
+  </table>
+  <div class="callout ok" style="margin-top:16px;font-size:20px"><span class="h">✓ 與指引一致</span>atropine 1 mg q3–5 min、最多 3 mg <span class="cor c2a">2a</span>；dopamine 5–20 mcg/kg/min、epinephrine 2–10 mcg/min <span class="cor c2b">2b</span>；TVP <span class="cor c2a">2a</span>；無 IV 的高度房室阻斷立即節律 <span class="cor c2b">2b</span>。</div>
+  <div class="notes">2025 AHA Part 9 心搏過緩共五條建議：找可逆原因（1）、atropine（2a）、TVP（2a）、atropine 無效時升壓劑或 TCP（2b）、無 IV/IO 的高度房室阻斷立即節律（2b）。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">總結</div>
+  <h2>重點回顧</h2><div class="rule" style="margin-bottom:18px"></div>
+  <div class="cols c2" style="gap:22px">
+    <div class="card red"><h3>評估</h3><ul class="dots sm"><li>先看病人：呼吸、SpO₂、血壓、意識、灌流</li><li>心搏過緩是<b>原因</b>還是<b>結果</b>？缺氧先處理</li><li>五個危險徵候：低血壓、意識改變、休克、胸痛、心衰竭</li></ul></div>
+    <div class="card navy"><h3>流程</h3><ul class="dots sm"><li>無心肺功能不良 → 觀察、找原因</li><li>有 → <b>atropine 1 mg</b>，q3–5 min，最多 3 mg</li><li>無效 → <b>TCP</b> 和／或 <b>dopamine 5–20 mcg/kg/min</b> 或 <b>epinephrine 2–10 mcg/min</b></li><li>會診專家、<b>TVP</b></li></ul></div>
+    <div class="card teal"><h3>阻斷位置</h3><ul class="dots sm"><li>房室結層級：atropine 常有效</li><li>Mobitz II、寬 QRS 三度：可能無效 → 直接準備節律器</li></ul></div>
+    <div class="card amber"><h3>原因</h3><ul class="dots sm"><li>心肌缺血 / 梗塞、藥物中毒、缺氧、高血鉀</li><li>治療根本原因之前，心搏過緩很難解決</li></ul></div>
+  </div>
+  <div class="notes">一句話收尾：慢不一定要治療；要治療時，atropine 是第一步，不是唯一一步。</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">參考資料</div>
+  <h2>參考資料 <small>References</small></h2><div class="rule" style="margin-bottom:18px"></div>
+  <ul class="refs">
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">教材</span>楊久滕。〈第 7 章 有症狀的心搏過緩／過速心律不整的處置〉。ACLS 精華 第七版。圖 7-1 依原圖內容重繪。</li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">指引</span>Wigginton JG, et al. Part 9: Adult Advanced Life Support. 2025 AHA Guidelines for CPR and ECC. <i>Circulation</i> 2025;152(16 Suppl 2):S538. <a href="https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support" target="_blank" rel="noopener">連結 ↗</a></li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">PubMed</span>Part 9: Adult Advanced Life Support (PMID 41122884). <a href="https://pubmed.ncbi.nlm.nih.gov/41122884/" target="_blank" rel="noopener">連結 ↗</a></li>
+    <li><span class="tag ok" style="vertical-align:1px;margin-right:8px">本系列</span>第 5 章 重要危急心電圖判讀（心律辨識）。<a href="../ch05-ecg/" target="_blank" rel="noopener">連結 ↗</a>　第 7 章 心搏過速。<a href="../ch07-tachycardia/" target="_blank" rel="noopener">連結 ↗</a></li>
+  </ul>
+  <div class="callout" style="margin-top:20px;font-size:18px;padding:10px 18px"><span class="h">使用聲明</span>心電圖為教學示意動畫。本投影片供 ACLS 教學使用，劑量請依病人狀況、藥品仿單與院內規範確認。</div>
+</section>
+
+</div></div>
+
+<div id="bar"></div>
+<div id="help">← → 翻頁 · F 全螢幕 · N 備註 · E 播放心電圖 · P 列印</div>
+<div id="notes"></div>
+<nav id="mnav"><button id="mprev" aria-label="上一頁">‹</button><div class="mid"><span id="mpg"></span><button class="nb" id="mnotes">備註</button></div><button id="mnext" aria-label="下一頁">›</button></nav>
+
+<script src="../shared/flow.js"></script>
+<script>
+/* 圖 7-1 成人有脈搏心搏過緩 */
+flow("f71",[
+ {x:6,y:20,w:300,h:110,t:"① 評估是否適合臨床狀況\n心率一般 < 50 次/分",k:"navy",fs:21},
+ {x:6,y:175,w:300,h:250,t:"② 辨識並治療潛在原因\n維持呼吸道、給氧\n必要時正壓通氣\n監視器：心律、BP、SpO₂\nIV 管路\n12 導程 ECG（不可延誤）",fs:19},
+ {x:356,y:215,w:270,h:170,t:"③ 持續心搏過緩\n造成心肺功能不良？\n低血壓 · 急性意識改變\n休克 · 缺血性胸痛\n急性心衰竭",k:"dec",fs:18},
+ {x:356,y:480,w:270,h:130,t:"④ 監測與觀察\n支持 ABC · 考慮給氧\n取得 12 導程",fs:19},
+ {x:680,y:215,w:250,h:170,t:"⑤ Atropine\n1 mg IV 快速推注\n每 3–5 分鐘\n最大 3 mg",k:"key",fs:20},
+ {x:985,y:175,w:240,h:250,t:"⑥ 若 atropine 無效\n經皮節律器 TCP\n和／或\nDopamine\n5–20 mcg/kg/min\n或 Epinephrine\n2–10 mcg/min",fs:19},
+ {x:1270,y:215,w:166,h:170,t:"⑦ 考慮\n會診專家\n經靜脈\n節律器 TVP",k:"navy",fs:20},
+ {x:680,y:480,w:756,h:130,t:"原因：心肌缺血／梗塞 · 藥物／中毒（鈣離子阻斷劑、β-blocker、毛地黃）\n缺氧 · 電解質異常（如高血鉀）",k:"note",fs:20}
+],[
+ {p:[[156,130],[156,175]]},
+ {p:[[306,300],[356,300]]},
+ {p:[[491,385],[491,480]],l:"否",lx:506,ly:440,a:"start"},
+ {p:[[626,300],[680,300]],l:"是",lx:653,ly:286},
+ {p:[[930,300],[985,300]]},
+ {p:[[1225,300],[1270,300]]}
+]);
+</script>
+<script>
+/* 決策監視器 */
+const BQ={
+ sb:"竇性心搏過緩 → 房室結以上，atropine 常有效；先排除缺氧",
+ junc:"房室交界心律 → atropine 可試；找藥物（β-blocker、CCB、digoxin）",
+ avb1:"一度房室阻斷 → 常為良性；若有症狀另找原因",
+ wenck:"二度 I 型（Mobitz I）→ 房室結層級，atropine 常有效",
+ mobitz2:"二度 II 型 → 結下阻斷，atropine 可能無效 → 準備 TCP / 點滴、會診 TVP",
+ avb3n:"三度房室阻斷（窄 QRS）→ 可能在房室結，atropine 可試；同時準備節律器",
+ avb3w:"三度房室阻斷（寬 QRS）→ 結下逸脫，atropine 可能無效 → TCP / epinephrine、TVP",
+ sb_bbb:"竇性過緩合併束枝阻斷 → atropine 可試；想高血鉀、藥物",
+ hyperk:"高血鉀 → 鈣劑、insulin＋glucose、透析；atropine / TCP 效果可能不好"};
+(function(){const c=document.getElementById('bqc'),ans=document.getElementById('bqAns'),ks=Object.keys(BQ);let cur='sb';
+function stop(e){e.preventDefault();e.stopPropagation()}
+document.getElementById('bqNext').addEventListener('click',e=>{stop(e);let k;do{k=ks[Math.floor(Math.random()*ks.length)]}while(k===cur);cur=k;window.ECG&&ECG.set(c,k,'');ans.textContent=''});
+document.getElementById('bqShow').addEventListener('click',e=>{stop(e);ans.textContent=BQ[cur]});})();
+</script>
+<script src="../shared/deck.js"></script>
+<script src="../shared/ecg.js"></script>
+</body>
+</html>
